@@ -1,0 +1,29 @@
+@startuml
+title UC01 Mendaftar akun
+skinparam monochrome true
+|Pengunjung|
+start
+|Pengunjung|
+label N0
+:Membuka formulir pendaftaran;
+|Pengunjung|
+label N1
+:Mengisi nama, email, kata sandi dan konfirmasi;
+|PyTurtle|
+label N2
+if (Data akun valid?) then (Tidak)
+:Tampilkan kesalahan isian;
+goto N1
+else (Ya)
+endif
+|PyTurtle|
+label N3
+:Membuat akun dan nama tampilan;
+|PyTurtle|
+label N4
+:Membuat sesi masuk;
+|PyTurtle|
+label N5
+:Menampilkan beranda;
+stop
+@enduml

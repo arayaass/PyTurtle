@@ -1,0 +1,40 @@
+PYTURTLE TERBARU - PERBAIKAN HALAMAN MODUL
+
+Dasar: proyek lokal PyTurtle-PHP, sudah dibandingkan dengan ZIP terakhir
+chat sebelumnya: PyTurtle-Maze-Langkah-Grid.zip. Semua 17 file kode dan tes
+dari ZIP tersebut cocok dengan proyek sebelum perbaikan.
+
+ISI PERBAIKAN
+- Pisahkan direktif Blade dari teks/emoji di resources/views/modules/index.blade.php.
+- Tes lama disesuaikan dengan Maze 1 kotak = 1 langkah.
+- npm test sekarang ikut menjalankan tes Maze dan editor.
+- Aset public/build sudah dibangun.
+
+PASANG KE PROYEK YANG SUDAH ADA
+1. Buat salinan cadangan proyek kamu.
+2. Buka folder ini, lalu salin isinya ke folder PyTurtle-PHP lama.
+   Gabungkan folder dan pilih Replace untuk file yang sama.
+   Jangan hapus folder proyek lama. .env, vendor, node_modules, dan data
+   pengguna tidak disertakan di paket ini; pertahankan milik proyek lama.
+3. Di terminal folder proyek, jalankan:
+   php artisan view:clear
+4. Jika pembaruan Maze grid belum pernah dipasang, jalankan:
+   php artisan db:seed --class=MazeGridSeeder
+   Seeder memperbarui peta; tidak mereset skor/progres.
+5. Buka /modules dan tekan Ctrl+F5.
+
+Aset sudah tersedia, jadi build ulang tidak diperlukan untuk pemasangan.
+Jika ada server npm run dev yang masih aktif, mulai ulang server tersebut.
+Untuk membangun ulang bila diperlukan:
+   npm run build -- --configLoader runner
+
+HASIL PEMERIKSAAN
+- 35 tes Laravel lulus (372 assertions), menggunakan SQLite in-memory.
+- 7 tes JavaScript lulus, termasuk tiga rute Maze dan editor kosong/reset.
+- Semua hasil kompilasi Blade lolos pemeriksaan sintaks PHP.
+- Build Vite berhasil dengan configLoader runner.
+- Pemeriksaan ini tidak mencakup uji visual browser menyeluruh.
+
+Paket kode ini tidak berisi .env asli, database, sesi, log, vendor,
+node_modules, atau dokumen modul/cover. Gunakan untuk digabungkan ke
+proyek yang sudah terpasang, bukan sebagai instalasi mandiri siap jalan.

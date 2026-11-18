@@ -1,0 +1,39 @@
+@startuml
+title UC03 Masuk dengan Google
+skinparam monochrome true
+|Pengunjung|
+start
+|Pengunjung|
+label N0
+:Memilih Masuk dengan Google;
+|PyTurtle|
+label N1
+:Mengarahkan permintaan autentikasi;
+|Google|
+label N2
+:Meminta pemilihan akun dan persetujuan;
+|Google|
+label N3
+:Mengembalikan hasil autentikasi;
+|PyTurtle|
+label N4
+if (Identitas valid?) then (Tidak)
+:Tampilkan kegagalan atau pembatalan;
+stop
+else (Ya)
+endif
+|PyTurtle|
+label N5
+if (Akun tertaut atau baru?) then (Tidak)
+:Minta login email lalu tautkan di profil;
+stop
+else (Ya)
+endif
+|PyTurtle|
+label N6
+:Mengambil akun tertaut atau membuat akun baru;
+|PyTurtle|
+label N7
+:Membuat sesi dan membuka halaman tujuan;
+stop
+@enduml

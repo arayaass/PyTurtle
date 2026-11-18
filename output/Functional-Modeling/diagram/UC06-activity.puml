@@ -1,0 +1,22 @@
+@startuml
+title UC06 Melihat beranda
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Membuka Beranda;
+|PyTurtle|
+label N1
+:Mengambil profil, materi dan progres level;
+|PyTurtle|
+label N2
+:Menyusun ringkasan XP dan kemajuan;
+|PyTurtle|
+label N3
+:Menampilkan beranda dan navigasi belajar;
+|Pengguna|
+label N4
+:Membaca ringkasan dan pilihan kegiatan;
+stop
+@enduml

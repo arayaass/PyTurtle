@@ -1,0 +1,1014 @@
+0 | Normal | 
+1 | Heading 1 | KATA PENGANTAR
+2 | Normal | Modul ini kami susun sebagai bahan belajar pendamping aplikasi PyTurtle. Pembahasannya dimulai dari perintah gerak yang sederhana, kemudian dilanjutkan dengan pengulangan, pengaturan pena, pembuatan bentuk, dan permainan Maze. Pembaca dapat mencoba kode sambil melihat perubahan gerak dan gambar yang dihasilkan.
+3 | Normal | Materi Python Turtle mengacu pada Bab 4 buku How to Think Like a Computer Scientist di Runestone Academy dan dokumentasi resmi Python. Penjelasan kami tulis kembali dalam bahasa Indonesia yang sederhana. Contoh dan latihan disesuaikan dengan kegiatan pada aplikasi PyTurtle.
+4 | Normal | Setiap bab berisi tujuan pembelajaran, konteks kegiatan, materi, praktik, pengujian hasil, rekap, dan evaluasi. Angka pada Python Turtle menunjukkan jarak gambar, sedangkan pada Maze satu kotak dihitung sebagai satu langkah. Perbedaan ini dijelaskan agar pembaca dapat menggunakan kode pada tempat latihan yang tepat.
+5 | Normal | Modul ini dapat digunakan untuk belajar mandiri maupun bersama pengajar. Jika hasil percobaan belum sesuai, pembaca dapat memeriksa urutan perintah, memperbaiki kode, lalu mencoba kembali. Saran dari pembaca dapat membantu kami memperbaiki penjelasan dan latihan pada modul ini.
+6 | Report List | Oktober 2026
+7 | Report List | Ahmad Rizqy Ramadhan
+8 | Report List | Ahmad Rifqy Almeyda Araya
+9 | Heading 1 | DAFTAR ISI
+10 | Report TOC | KATA PENGANTAR	ii
+11 | Report TOC | DAFTAR GAMBAR	v
+12 | Report TOC | DAFTAR TABEL	vi
+13 | Report TOC | PETUNJUK MENGGUNAKAN MODUL	vii
+14 | Report TOC | PETA PEMBELAJARAN	ix
+15 | Report TOC | BAB I GERAK DASAR DAN OBJEK TURTLE	1
+16 | Report TOC | 1.1 Tujuan Pembelajaran	1
+17 | Report TOC | 1.2 Konteks Kegiatan dalam PyTurtle	1
+18 | Report TOC | 1.3 Materi dan Praktik	1
+19 | Report TOC | 1.4 Pengujian Hasil	6
+20 | Report TOC | 1.5 Rekap Bab	6
+21 | Report TOC | 1.6 Evaluasi Pemahaman	7
+22 | Report TOC | BAB II PENGULANGAN DAN POLA GAMBAR	8
+23 | Report TOC | 2.1 Tujuan Pembelajaran	8
+24 | Report TOC | 2.2 Konteks Kegiatan dalam PyTurtle	8
+25 | Report TOC | 2.3 Materi dan Praktik	8
+26 | Report TOC | 2.4 Pengujian Hasil	13
+27 | Report TOC | 2.5 Rekap Bab	13
+28 | Report TOC | 2.6 Evaluasi Pemahaman	14
+29 | Report TOC | BAB III PENA METODE DAN BENTUK TURTLE	15
+30 | Report TOC | 3.1 Tujuan Pembelajaran	15
+31 | Report TOC | 3.2 Konteks Kegiatan dalam PyTurtle	15
+32 | Report TOC | 3.3 Materi dan Praktik	15
+33 | Report TOC | 3.4 Pengujian Hasil	20
+34 | Report TOC | 3.5 Rekap Bab	20
+35 | Report TOC | 3.6 Evaluasi Pemahaman	21
+36 | Report TOC | BAB IV MAZE PETUALANGAN SHIHA	22
+37 | Report TOC | 4.1 Tujuan Pembelajaran	22
+38 | Report TOC | 4.2 Konteks Kegiatan dalam PyTurtle	22
+39 | Report TOC | 4.3 Aturan dan Langkah Mencoba	22
+40 | Report TOC | 4.4 Praktik Maze	24
+41 | Report TOC | 4.5 Pengujian Hasil	27
+42 | Report TOC | 4.6 Rekap Bab	27
+43 | Report TOC | 4.7 Evaluasi Pemahaman	28
+44 | Report TOC | BAB V CODE MATCHING DAN PROYEK INTEGRASI	29
+45 | Report TOC | 5.1 Tujuan Pembelajaran	29
+46 | Report TOC | 5.2 Konteks Kegiatan dalam PyTurtle	29
+47 | Report TOC | 5.3 Mencocokkan Kode dan Gerakan	29
+48 | Report TOC | 5.4 Praktik Proyek Dua Bentuk	30
+49 | Report TOC | 5.5 Pengujian Hasil	31
+50 | Report TOC | 5.6 Rekap Bab	31
+51 | Report TOC | 5.7 Evaluasi Pemahaman	32
+52 | Report TOC | EVALUASI MANDIRI	33
+53 | Report TOC | A Evaluasi Pemahaman	33
+54 | Report TOC | B Evaluasi Praktik	36
+55 | Report TOC | C Penilaian dan Refleksi	37
+56 | Report TOC | KUNCI JAWABAN DAN PEMBAHASAN	39
+57 | Report TOC | A Pembahasan Evaluasi Bab	39
+58 | Report TOC | B Pembahasan Latihan Sesi	40
+59 | Report TOC | C Pembahasan Maze dan Code Matching	42
+60 | Report TOC | D Pembahasan Evaluasi Mandiri	43
+61 | Report TOC | DAFTAR PUSTAKA	44
+62 | Heading 1 | DAFTAR GAMBAR
+63 | Report TOC | Gambar 1.1 Turtle bergerak 95 unit ke timur, lalu 65 unit ke utara	2
+64 | Report TOC | Gambar 1.2 Garis putus-putus menunjukkan dua sisi yang perlu kamu tambahkan	4
+65 | Report TOC | Gambar 1.3 Perintah shiha dan teman menghasilkan dua jalur yang berbeda	5
+66 | Report TOC | Gambar 2.1 Satu putaran menambah satu sisi hingga persegi tertutup	10
+67 | Report TOC | Gambar 3.1 Garis putus-putus hanya petunjuk perpindahan saat pena terangkat	16
+68 | Report TOC | Gambar 3.2 Jumlah sisi menentukan putaran pada setiap bagian gambar	20
+69 | Report TOC | Gambar 4.1 Gunakan arah hadap untuk menentukan kiri dan kanan	22
+70 | Report TOC | Gambar 4.2 Peta Maze 1 dengan jumlah langkah pada setiap bagian jalan	24
+71 | Report TOC | Gambar 4.3 Peta Maze 2 dengan jumlah langkah pada setiap bagian jalan	25
+72 | Report TOC | Gambar 4.4 Peta Maze 3 dengan jumlah langkah pada setiap bagian jalan	26
+73 | Heading 1 | DAFTAR TABEL
+74 | Report TOC | Tabel P.1 Tempat mencoba kode Turtle	viii
+75 | Report TOC | Tabel P.2 Urutan bab dan hasil pembelajaran	ix
+76 | Report TOC | Tabel 2.1 Urutan hasil pengulangan	9
+77 | Report TOC | Tabel 2.2 Contoh urutan bilangan range	12
+78 | Report TOC | Tabel 3.1 Metode Turtle dan kegunaannya	17
+79 | Report TOC | Tabel 3.2 Istilah dalam program Turtle	18
+80 | Report TOC | Tabel 5.1 Gerakan pada kegiatan Code Matching	29
+81 | Report TOC | Tabel E.1 Rubrik penilaian praktik	37
+82 | Heading 1 | PETUNJUK MENGGUNAKAN MODUL
+83 | Normal | Mulailah dari Bab I dan lanjutkan setelah memahami hasil percobaan sebelumnya. Pada aplikasi, sesi materi dan chapter Maze berikutnya terbuka setelah bagian sebelumnya selesai. Jawaban evaluasi materi yang benar memberi 20 XP satu kali dan menampilkan pop-up hasil jawaban.
+84 | Report List | • Baca tujuan pembelajaran dan konteks kegiatan sebelum mencoba kode.
+85 | Report List | • Perkirakan arah atau gambar yang akan muncul. Jalankan contoh pada tempat latihan yang disebutkan.
+86 | Report List | • Ubah satu angka atau satu perintah, lalu amati perbedaan hasilnya.
+87 | Report List | • Lakukan pengujian hasil dan kerjakan evaluasi bab.
+88 | Report List | • Buka kunci serta pembahasan setelah mencoba menjawab sendiri.
+89 | Heading 2 | Tempat Mencoba Kode
+90 | Report Lead | Contoh Python Lengkap
+91 | Normal | Kode yang memuat import turtle dan shiha = turtle.Turtle() dijalankan di Python atau editor Python pada buku Runestone. Salin seluruh contoh agar layar dan objeknya sudah tersedia saat perintah gerak dibaca.
+92 | Normal | Jika Python sudah tersedia di komputer, simpan contoh sebagai latihan_turtle.py. Dari terminal di folder berkas tersebut, jalankan python latihan_turtle.py. Jendela gambar akan terbuka dan dapat ditutup dengan mengekliknya pada contoh yang memakai exitonclick().
+93 | Report Lead | Latihan Gerak pada Halaman Materi
+94 | Normal | Latihan ini menerima forward, backward, left, right, penup, dan pendown. Kamu dapat mengedit angka dan melihat gerakan penunjuk melalui animasi. Contoh singkatnya adalah forward(95), lalu left(90).
+95 | Report Lead | Editor Maze
+96 | Normal | Di Maze, satu kotak dihitung sebagai satu langkah. forward(3) berarti maju tiga kotak. Editor dibuka dalam keadaan kosong agar kamu menyusun kode sendiri.
+97 | Report Caption | Tabel P.1 Tempat mencoba kode Turtle
+98 | Report List | 
+99 | Normal | for, range, warna, stamp, dan goto dipelajari melalui contoh Python lengkap. Gunakan tempat latihan yang sesuai supaya hasil kode mudah dibandingkan.
+100 | Report Lead | Buka buku Python Turtle Graphics di Runestone
+101 | Heading 1 | PETA PEMBELAJARAN
+102 | Normal | Materi pada modul ini dikelompokkan menjadi lima bab. Urutan sebelas sesi materi pada aplikasi tetap menjadi acuan ketika pembaca mencoba kode di PyTurtle.
+103 | Report Caption | Tabel P.2 Urutan bab dan hasil pembelajaran
+104 | Normal | 
+105 | Normal | Setelah lima bab selesai, kerjakan evaluasi mandiri. Nilai latihan pada buku dipakai untuk melihat pemahaman dan tidak mengubah XP atau skor pada aplikasi.
+106 | Normal | 
+107 | Heading 1 | BAB I
+GERAK DASAR DAN OBJEK TURTLE
+108 | Heading 2 | 1.1 Tujuan Pembelajaran
+109 | Report List | • Membedakan perpindahan posisi dengan perubahan arah hadap.
+110 | Report List | • Membaca struktur program yang menyiapkan modul, layar, dan objek.
+111 | Report List | • Mengubah perintah untuk satu dan dua objek Turtle.
+112 | Heading 2 | 1.2 Konteks Kegiatan dalam PyTurtle
+113 | Normal | Bab ini mendampingi sesi 01 sampai 03 pada menu materi. Pembaca mulai dari gerak maju dan belokan, lalu menyiapkan program Python lengkap. Latihan gerak pada aplikasi membantu melihat urutan perintah melalui animasi.
+114 | Heading 2 | 1.3 Materi dan Praktik
+115 | Heading 3 | 1.3.1 Mengenal Gerak Turtle
+116 | Report Lead | Yang dipelajari: Mengenali fungsi Turtle. Membedakan gerak dan putaran.
+117 | Normal | Bayangkan kamu memberi petunjuk jalan kepada teman. Ia perlu tahu kapan maju dan kapan berbelok. Turtle juga mengikuti petunjuk satu per satu.
+118 | Report Lead | Gerak dan Putaran
+119 | Normal | forward(jarak) membuat Turtle maju sesuai arah hadap. backward(jarak) membuatnya mundur, tetapi arah hadap tetap. left(sudut) dan right(sudut) memutar arah di tempat. Karena itu, berputar saja tidak memindahkan posisi.
+120 | Report Code | forward(95)
+121 | Report Code | left(90)
+122 | Report Code | forward(65)
+123 | Report List | 
+124 | Report List | 
+125 | Report Caption | Gambar 1.1 Turtle bergerak 95 unit ke timur, lalu 65 unit ke utara
+126 | Report Lead | Membaca Urutannya
+127 | Report List | 1. Turtle mula-mula menghadap timur atau ke kanan.
+128 | Report List | 2. forward(95) menggambar garis pertama.
+129 | Report List | 3. left(90) mengubah arah ke utara.
+130 | Report List | 4. forward(65) menggambar garis kedua.
+131 | Normal | Angka pada forward adalah jarak. Angka pada left dan right adalah sudut dalam derajat. Contoh di atas memakai satuan gambar Turtle, bukan kotak Maze.
+132 | Report Lead | Bacaan tambahan Runestone bagian 4.1
+133 | Report Lead | Latihan Gerak Dasar
+134 | Report Lead | Program yang Bisa Dicoba
+135 | Report Code | import turtle
+136 | Report Code | 
+137 | Report Code | layar = turtle.Screen()
+138 | Report Code | shiha = turtle.Turtle()
+139 | Report Code | 
+140 | Report Code | shiha.forward(95)
+141 | Report Code | shiha.left(90)
+142 | Report Code | shiha.forward(65)
+143 | Report Code | 
+144 | Report Code | layar.exitonclick()
+145 | Report List | 
+146 | Normal | Jalankan program lengkap ini di Python atau Runestone. Pada latihan gerak di PyTurtle, cukup gunakan tiga perintah gerak dari halaman sebelumnya.
+147 | Report Lead | Coba Sendiri
+148 | Normal | Ganti jarak 95 menjadi 130. Bagian gambar mana yang berubah?
+149 | Normal | Contoh Jawaban: Garis pertama menjadi 130 unit, yaitu 35 unit lebih panjang. Garis kedua tetap 65 unit ke utara.
+150 | Normal | Apa yang berbeda jika left(90) diganti right(90)?
+151 | Normal | Contoh Jawaban: Turtle berbelok ke selatan. Garis kedua mengarah ke bawah, bukan ke atas.
+152 | Report Lead | Ingat Kembali
+153 | Normal | Perhatikan posisi dan arah secara terpisah. Setelah berputar, posisi masih sama. Setelah maju, posisi berubah mengikuti arah hadap.
+154 | Report List | Contoh Catatan: Mengubah forward(95) menjadi forward(130) memperpanjang garis pertama tanpa mengubah sudut belok.
+155 | Heading 3 | 1.3.2 Membaca Program Pertama
+156 | Report Lead | Yang dipelajari: Mengenali susunan program. Memahami penulisan metode.
+157 | Normal | Sebelum menggambar, kita menyiapkan modul, layar, dan Turtle yang akan menerima perintah. Tiga hal ini muncul pada bagian awal program.
+158 | Report Code | import turtle
+159 | Report Code | 
+160 | Report Code | layar = turtle.Screen()
+161 | Report Code | shiha = turtle.Turtle()
+162 | Report Code | 
+163 | Report Code | shiha.forward(110)
+164 | Report Code | shiha.left(90)
+165 | Report Code | shiha.forward(55)
+166 | Report Code | 
+167 | Report Code | layar.exitonclick()
+168 | Report List | 
+169 | Report Lead | Arti Bagian Program
+170 | Report Lead | import turtle
+171 | Normal | Memuat modul yang menyediakan alat gambar Turtle.
+172 | Report Lead | layar = turtle.Screen()
+173 | Normal | Membuat layar tempat gambar ditampilkan.
+174 | Report Lead | shiha = turtle.Turtle()
+175 | Normal | Membuat objek Turtle dan memberinya nama shiha.
+176 | Report Lead | shiha.forward(110)
+177 | Normal | Meminta objek shiha bergerak maju 110 unit.
+178 | Report Lead | layar.exitonclick()
+179 | Normal | Menunggu klik pada jendela sebelum menutupnya.
+180 | Normal | Titik pada shiha.forward menghubungkan objek dengan metodenya. Metode adalah perintah yang dimiliki objek. Python membedakan huruf besar dan kecil, sehingga turtle dan Turtle tidak dapat ditukar begitu saja.
+181 | Report Lead | Bacaan tambahan Runestone bagian 4.2
+182 | Report Lead | Latihan Menutup Persegi Panjang
+183 | Report List | 
+184 | Report Caption | Gambar 1.2 Garis putus-putus menunjukkan dua sisi yang perlu kamu tambahkan
+185 | Report Lead | Coba Sendiri
+186 | Normal | Tambahkan dua gerakan dan dua belokan untuk menutup persegi panjang.
+187 | Report Code | shiha.left(90)
+shiha.forward(110)
+shiha.left(90)
+shiha.forward(55)
+188 | Normal | Empat perintah tambahan diletakkan sebelum layar.exitonclick().
+189 | Normal | Contoh Jawaban: Empat perintah di atas diletakkan setelah shiha.forward(55), sebelum layar.exitonclick().
+190 | Report Lead | Periksa Saat Mencoba
+191 | Normal | Setiap belokan pada persegi panjang sebesar 90 derajat. Cocokkan sisi yang berhadapan: keduanya harus sama panjang. Jika bentuk belum tertutup, cek urutan gerak dan arah beloknya.
+192 | Report List | Contoh Catatan: Dua sisi tambahan memiliki panjang 110 dan 55 unit. Sisi yang berhadapan sama panjang sehingga persegi panjang tertutup.
+193 | Heading 3 | 1.3.3 Menggunakan Dua Turtle
+194 | Report Lead | Yang dipelajari: Membedakan dua objek Turtle. Memanggil objek yang tepat.
+195 | Normal | Satu layar dapat memuat lebih dari satu Turtle. Masing-masing memiliki posisi, arah, warna, dan jejak sendiri.
+196 | Report Code | import turtle
+197 | Report Code | 
+198 | Report Code | layar = turtle.Screen()
+199 | Report Code | shiha = turtle.Turtle()
+200 | Report Code | teman = turtle.Turtle()
+201 | Report Code | 
+202 | Report Code | shiha.color("forestgreen")
+203 | Report Code | shiha.forward(95)
+204 | Report Code | teman.color("darkorange")
+205 | Report Code | teman.left(90)
+206 | Report Code | teman.forward(65)
+207 | Report Code | 
+208 | Report Code | layar.exitonclick()
+209 | Report List | 
+210 | Report List | 
+211 | Report Caption | Gambar 1.3 Perintah shiha dan teman menghasilkan dua jalur yang berbeda
+212 | Normal | Pada contoh, Shiha bergerak ke timur. Objek teman berputar ke utara, lalu maju. Perintah kepada teman tidak otomatis mengubah keadaan Shiha.
+213 | Report Lead | Coba Sendiri
+214 | Normal | Buat teman menghadap kiri sebelum bergerak. Apakah Shiha ikut berputar?
+215 | Normal | Contoh Jawaban: Ganti teman.left(90) menjadi teman.left(180). Teman menghadap barat, sedangkan Shiha tetap menghadap timur.
+216 | Report Lead | Bacaan tambahan Runestone bagian 4.3
+217 | Heading 2 | 1.4 Pengujian Hasil
+218 | Report List | • Turtle bergerak sesuai angka dan arah yang ditulis.
+219 | Report List | • Perintah left atau right mengubah arah tanpa memindahkan posisi.
+220 | Report List | • Program persegi panjang menutup setelah dua sisi terakhir ditambahkan.
+221 | Report List | • Perintah kepada teman tidak mengubah arah Shiha.
+222 | Heading 2 | 1.5 Rekap Bab
+223 | Normal | Gerak maju dan mundur memindahkan posisi, sedangkan kiri dan kanan memutar arah hadap. Program lengkap menyiapkan modul, layar, dan objek sebelum menggambar. Setiap objek Turtle memiliki keadaan sendiri.
+224 | Heading 2 | 1.6 Evaluasi Pemahaman
+225 | Normal | Pilih satu jawaban yang paling tepat. Catat jawabanmu dan periksa pembahasannya setelah selesai mengerjakan.
+226 | Report Lead | 1. Apa yang dilakukan forward(95) saat Turtle menghadap timur?
+227 | Report List | A. Maju 95 unit ke timur
+228 | Report List | B. Berputar 95 derajat
+229 | Report List | C. Mundur 95 unit ke barat
+230 | Report List | D. Maju 95 kotak Maze
+231 | Report List | 
+232 | Report Lead | 2. Turtle menghadap timur. Setelah right(90), arah hadapnya menjadi ...
+233 | Report List | A. Utara
+234 | Report List | B. Selatan
+235 | Report List | C. Barat
+236 | Report List | D. Tetap timur
+237 | Report List | 
+238 | Report Lead | 3. Apa yang tetap sama setelah backward(40) dijalankan?
+239 | Report List | A. Posisi Turtle
+240 | Report List | B. Panjang jejak
+241 | Report List | C. Arah hadap Turtle
+242 | Report List | D. Jarak ke titik awal
+243 | Report List | 
+244 | Report Lead | 4. Baris mana yang membuat objek Turtle bernama shiha?
+245 | Report List | A. import shiha
+246 | Report List | B. shiha = turtle.Screen()
+247 | Report List | C. turtle = shiha.Turtle()
+248 | Report List | D. shiha = turtle.Turtle()
+249 | Report List | 
+250 | Report Lead | 5. Shiha dan teman dibuat sebagai dua objek berbeda. Jika teman berputar, apa yang terjadi pada Shiha?
+251 | Report List | A. Shiha tetap pada arah semula
+252 | Report List | B. Shiha ikut berputar
+253 | Report List | C. Shiha otomatis menghilang
+254 | Report List | D. Shiha berpindah ke posisi teman
+255 | Report List | 
+256 | Report List | Contoh Jawaban: 1 = A   2 = B   3 = C   4 = D   5 = A
+257 | Heading 1 | BAB II
+PENGULANGAN DAN POLA GAMBAR
+258 | Heading 2 | 2.1 Tujuan Pembelajaran
+259 | Report List | • Mengenali blok dan urutan pelaksanaan for.
+260 | Report List | • Menentukan urutan bilangan yang dihasilkan range.
+261 | Report List | • Menggunakan pengulangan untuk menggambar pola yang sama.
+262 | Heading 2 | 2.2 Konteks Kegiatan dalam PyTurtle
+263 | Normal | Bab ini mendampingi sesi 04 sampai 07. Pembaca mencoba pengulangan teks sebelum menggunakannya untuk pola gambar. Kode for dan range dijalankan pada Python atau editor Runestone, sedangkan editor gerak PyTurtle dipakai untuk membandingkan perintah sederhana.
+264 | Heading 2 | 2.3 Materi dan Praktik
+265 | Heading 3 | 2.3.1 Mengulang Perintah dengan for
+266 | Report Lead | Yang dipelajari: Mengenali isi pengulangan. Memahami indentasi.
+267 | Normal | Ketika beberapa orang mendapat sapaan yang sama, kita bisa mengulang perintah untuk setiap nama. Dalam Python, tugas seperti ini dapat memakai for.
+268 | Report Code | for nama in ["Shiha", "Nara", "Bimo"]:
+269 | Report Code |     print("Halo", nama)
+270 | Report Code | print("Ayo berangkat!")
+271 | Report List | 
+272 | Report Lead | Bagian yang Diulang
+273 | Normal | Daftar di dalam tanda kurung siku berisi tiga nama. Variabel nama mengambil satu nama pada setiap putaran. Baris print yang menjorok ke kanan dijalankan untuk nama tersebut. Gunakan empat spasi agar bloknya mudah dibaca.
+274 | Report Lead | Keluaran Program
+275 | Report Code | Halo Shiha
+276 | Report Code | Halo Nara
+277 | Report Code | Halo Bimo
+278 | Report Code | Ayo berangkat!
+279 | Report List | 
+280 | Normal | Contoh ini menampilkan teks. Baris print("Ayo berangkat!") berada di luar blok, jadi dijalankan setelah semua sapaan selesai.
+281 | Report Lead | Coba Sendiri
+282 | Normal | Tambahkan satu nama ke daftar. Berapa kali sapaan dicetak sekarang?
+283 | Normal | Contoh Jawaban: Setelah nama "Raya" ditambahkan ke daftar, sapaan dicetak empat kali. Teks "Ayo berangkat!" tetap dicetak satu kali setelah pengulangan.
+284 | Report Lead | Bacaan tambahan Runestone bagian 4.4
+285 | Heading 3 | 2.3.2 Memahami Urutan Pengulangan
+286 | Report List | Yang dipelajari: Menelusuri setiap putaran. Membedakan baris di dalam dan di luar for.
+287 | Normal | Program kembali ke awal blok for selama masih ada item yang harus diproses. Setelah item habis, program melanjutkan baris di luar blok.
+288 | Report Code | for langkah in [2, 4]:
+289 | Report Code |     print("Pos", langkah)
+290 | Report Code | print("Selesai")
+291 | Report List | 
+292 | Report Caption | Tabel 2.1 Urutan hasil pengulangan
+293 | Report List | 
+294 | Normal | Variabel langkah berubah dari 2 menjadi 4. print("Selesai") sejajar dengan for, sehingga tidak menjadi bagian yang diulang.
+295 | Report Lead | Bandingkan dengan Kode Ini
+296 | Report Code | for langkah in [2, 4]:
+297 | Report Code |     print("Pos", langkah)
+298 | Report Code |     print("Selesai")
+299 | Report List | 
+300 | Normal | Sekarang kedua print berada di dalam blok. Keluaran menjadi Pos 2, Selesai, Pos 4, lalu Selesai. Perubahan spasi membuat urutan hasilnya berbeda.
+301 | Report Lead | Coba Sendiri
+302 | Normal | Geser print("Selesai") ke dalam for. Bandingkan urutan keluarannya.
+303 | Normal | Contoh Jawaban: Di dalam for, urutannya menjadi Pos 2, Selesai, Pos 4, Selesai. Di luar for, urutannya Pos 2, Pos 4, lalu Selesai.
+304 | Report Lead | Bacaan tambahan Runestone bagian 4.5
+305 | Heading 3 | 2.3.3 Menggambar Pola Berulang
+306 | Report Lead | Yang dipelajari: Menemukan pola berulang. Menggambar persegi dengan for.
+307 | Normal | Persegi memiliki empat sisi yang sama. Pada setiap sisi, Turtle melakukan pola yang sama: maju, lalu berputar 90 derajat.
+308 | Report Code | import turtle
+309 | Report Code | 
+310 | Report Code | layar = turtle.Screen()
+311 | Report Code | shiha = turtle.Turtle()
+312 | Report Code | 
+313 | Report Code | for sisi in [1, 2, 3, 4]:
+314 | Report Code |     shiha.forward(75)
+315 | Report Code |     shiha.left(90)
+316 | Report Code | 
+317 | Report Code | layar.exitonclick()
+318 | Report List | 
+319 | Report List | 
+320 | Report Caption | Gambar 2.1 Satu putaran menambah satu sisi hingga persegi tertutup
+321 | Report Lead | Mengapa Bentuknya Menutup
+322 | Normal | Daftar [1, 2, 3, 4] membuat blok dijalankan empat kali. Setiap putaran memakai jarak yang sama. Jumlah putarannya 4 kali 90 derajat, yaitu 360 derajat, sehingga arah akhirnya kembali seperti semula.
+323 | Report Lead | Bacaan tambahan Runestone bagian 4.6
+324 | Report Lead | Latihan Pola Persegi
+325 | Report Lead | Coba Sendiri
+326 | Normal | Ubah panjang semua sisi menjadi 105 dengan mengedit satu angka.
+327 | Report Code | for sisi in [1, 2, 3, 4]:
+    shiha.forward(105)
+    shiha.left(90)
+328 | Normal | Berapa perintah maju yang dijalankan untuk membuat satu persegi?
+329 | Normal | Contoh Jawaban: Perintah maju dijalankan empat kali, satu kali untuk setiap sisi persegi.
+330 | Report Lead | Mencoba pada Latihan Gerak
+331 | Normal | Editor latihan gerak menggunakan perintah sederhana. Untuk membandingkan hasil dengan for, coba pola berikut tanpa pengulangan.
+332 | Report Code | forward(75)
+333 | Report Code | left(90)
+334 | Report Code | forward(75)
+335 | Report Code | left(90)
+336 | Report Code | forward(75)
+337 | Report Code | left(90)
+338 | Report Code | forward(75)
+339 | Report Code | left(90)
+340 | Report List | 
+341 | Normal | Pada versi for, satu perubahan angka 75 mengubah semua sisi. Pada kode di atas, jarak setiap sisi ditulis sendiri.
+342 | Report List | Contoh Catatan: Satu perubahan angka pada forward berlaku pada seluruh putaran, sehingga semua sisi tetap sama panjang.
+343 | Heading 3 | 2.3.4 Mengatur Pengulangan dengan range
+344 | Report Lead | Yang dipelajari: Membaca batas range. Mengenali langkah bilangan.
+345 | Normal | range menyediakan urutan bilangan. Kita dapat menentukan angka awal, batas akhir, dan besar kenaikannya.
+346 | Report Caption | Tabel 2.2 Contoh urutan bilangan range
+347 | Report List | 
+348 | Normal | Batas akhir tidak ikut dimasukkan. Pada range(4), ada empat bilangan meskipun bilangan terakhirnya 3. Gunakan list untuk melihat urutannya saat dicetak.
+349 | Report Code | print(list(range(2, 9, 3)))
+350 | Report List | 
+351 | Normal | Keluaran: [2, 5, 8]. Angka 2 adalah awal, 9 batas akhir, dan 3 besar kenaikannya.
+352 | Report Lead | Menggambar Persegi dengan range
+353 | Report Code | for sisi in range(4):
+354 | Report Code |     shiha.forward(75)
+355 | Report Code |     shiha.left(90)
+356 | Report List | 
+357 | Normal | Potongan ini menggantikan for pada program persegi. Baris import, pembuatan layar, objek, dan exitonclick tetap digunakan.
+358 | Report Lead | Coba Sendiri
+359 | Normal | Buat urutan 3, 6, 9 dengan range.
+360 | Report Code | list(range(3, 12, 3))  # hasil: [3, 6, 9]
+361 | Report Lead | Bacaan tambahan Runestone bagian 4.7
+362 | Heading 2 | 2.4 Pengujian Hasil
+363 | Report List | • Baris yang diulang memiliki indentasi yang konsisten.
+364 | Report List | • Tulisan di luar blok muncul setelah seluruh putaran selesai.
+365 | Report List | • Urutan range berhenti sebelum batas akhir.
+366 | Report List | • Pola persegi memiliki empat sisi sama panjang dan kembali ke titik awal.
+367 | Heading 2 | 2.5 Rekap Bab
+368 | Normal | For mengulang isi blok untuk setiap nilai. Indentasi menentukan bagian yang diulang. Range memudahkan penentuan jumlah putaran dan urutan bilangan. Pada gambar berulang, jumlah sisi dan sudut putaran harus sesuai.
+369 | Heading 2 | 2.6 Evaluasi Pemahaman
+370 | Normal | Pilih satu jawaban yang paling tepat. Catat jawabanmu dan periksa pembahasannya setelah selesai mengerjakan.
+371 | Report Lead | 1. Bagaimana penulisan isi for yang benar?
+372 | Report List | A. Semua baris wajib sejajar dengan for
+373 | Report List | B. Baris isi menjorok ke dalam di bawah for
+374 | Report List | C. Isi ditulis sebelum for
+375 | Report List | D. Isi hanya boleh berupa komentar
+376 | Report List | 
+377 | Report Lead | 2. Berapa kali blok for sisi in range(4) dijalankan?
+378 | Report List | A. Tiga kali
+379 | Report List | B. Lima kali
+380 | Report List | C. Empat kali
+381 | Report List | D. Sekali
+382 | Report List | 
+383 | Report Lead | 3. Apa hasil list(range(2, 9, 3))?
+384 | Report List | A. [2, 3, 9]
+385 | Report List | B. [2, 5, 8, 9]
+386 | Report List | C. [3, 6, 9]
+387 | Report List | D. [2, 5, 8]
+388 | Report List | 
+389 | Report Lead | 4. print("Selesai") berada sejajar dengan for setelah blok berakhir. Kapan baris itu dijalankan?
+390 | Report List | A. Setelah seluruh putaran selesai
+391 | Report List | B. Pada awal setiap putaran
+392 | Report List | C. Sebelum baris for
+393 | Report List | D. Tidak pernah dijalankan
+394 | Report List | 
+395 | Report Lead | 5. Pola maju lalu left(90) diulang empat kali dengan jarak yang sama. Bentuk yang dihasilkan adalah ...
+396 | Report List | A. Segitiga
+397 | Report List | B. Persegi
+398 | Report List | C. Segi enam
+399 | Report List | D. Garis lurus
+400 | Report List | 
+401 | Report List | Contoh Jawaban: 1 = B   2 = C   3 = D   4 = A   5 = B
+402 | Heading 1 | BAB III
+PENA METODE DAN BENTUK TURTLE
+403 | Heading 2 | 3.1 Tujuan Pembelajaran
+404 | Report List | • Mengatur jejak gambar dengan penup dan pendown.
+405 | Report List | • Memilih metode berdasarkan tujuan gerak atau gambar.
+406 | Report List | • Menghitung putaran untuk membuat bangun beraturan.
+407 | Heading 2 | 3.2 Konteks Kegiatan dalam PyTurtle
+408 | Normal | Bab ini mendampingi sesi 08 sampai 11. Pembaca mengamati perpindahan tanpa jejak dan membuat bentuk menggunakan program Python lengkap. Latihan gerak pada aplikasi digunakan untuk mencoba gerak serta pena yang didukung editor.
+409 | Heading 2 | 3.3 Materi dan Praktik
+410 | Heading 3 | 3.3.1 Mengatur Pena dan Cap
+411 | Report Lead | Yang dipelajari: Mengatur pena. Membedakan cap dan garis.
+412 | Normal | Turtle dapat berpindah tanpa membuat garis. Caranya adalah mengangkat pena sebelum bergerak, lalu menurunkannya saat ingin mulai menggambar.
+413 | Report Code | import turtle
+414 | Report Code | 
+415 | Report Code | layar = turtle.Screen()
+416 | Report Code | shiha = turtle.Turtle()
+417 | Report Code | 
+418 | Report Code | shiha.shape("turtle")
+419 | Report Code | shiha.penup()
+420 | Report Code | shiha.forward(85)
+421 | Report Code | shiha.stamp()
+422 | Report Code | shiha.pendown()
+423 | Report Code | shiha.forward(55)
+424 | Report Code | 
+425 | Report Code | layar.exitonclick()
+426 | Report List | 
+427 | Report List | 
+428 | Report Caption | Gambar 3.1 Garis putus-putus hanya petunjuk perpindahan saat pena terangkat
+429 | Normal | penup mengangkat pena; pendown menurunkannya. stamp meninggalkan cap bentuk penunjuk pada posisi saat itu. Cap tersebut menjadi gambar, bukan objek Turtle baru yang bisa diberi perintah.
+430 | Report Lead | Bacaan tambahan Runestone bagian 4.8
+431 | Report Lead | Latihan Pena dan Animasi
+432 | Report Lead | Mencoba Jejak pada PyTurtle
+433 | Report Code | penup()
+434 | Report Code | forward(85)
+435 | Report Code | pendown()
+436 | Report Code | forward(55)
+437 | Report List | 
+438 | Normal | Pada latihan gerak, lihat bahwa gerakan pertama tidak membuat garis. Setelah pendown, gerakan berikutnya meninggalkan jejak.
+439 | Report Lead | Coba Sendiri
+440 | Normal | Ganti forward(85) menjadi forward(-85). Ke arah mana Turtle bergerak?
+441 | Normal | Contoh Jawaban: Dari arah awal timur, forward(-85) bergerak 85 unit ke barat. Arah hadap tetap timur.
+442 | Normal | Sebutkan bagian gerak yang tidak meninggalkan garis.
+443 | Normal | Contoh Jawaban: Gerakan forward(-85) saat pena terangkat tidak meninggalkan garis. Setelah pendown(), gerakan forward(55) membuat garis.
+444 | Report Lead | Mengamati Gerakan
+445 | Normal | Atur kecepatan animasi pada latihan PyTurtle agar perubahan arah mudah diamati. Di Python Turtle, shiha.speed(1) memperlambat gerak. speed(0) langsung menampilkan hasil tanpa animasi. Tambahkan baris speed setelah objek dibuat jika ingin membandingkannya.
+446 | Normal | Di Python Turtle, jarak negatif membalik arah gerak. forward(-85) bergerak berlawanan dengan arah hadap, tanpa memutar penunjuk.
+447 | Report List | Contoh Catatan: Pena terangkat membuat perpindahan tanpa jejak. Pena yang diturunkan membuat garis pada gerakan berikutnya.
+448 | Heading 3 | 3.3.2 Memilih Metode Turtle
+449 | Report Lead | Yang dipelajari: Memilih metode. Membedakan gerak dan pembacaan keadaan.
+450 | Normal | Gunakan daftar ini ketika kamu sudah tahu tujuan gerakan, tetapi belum ingat nama perintahnya. Metode dipanggil melalui objek, misalnya shiha.forward(75).
+451 | Report Caption | Tabel 3.1 Metode Turtle dan kegunaannya
+452 | Report List | 
+453 | Normal | goto menggunakan koordinat tujuan. forward menggunakan jarak dari posisi saat ini mengikuti arah hadap. Keduanya bisa menghasilkan gerak yang berbeda.
+454 | Normal | Contoh shiha.goto(-65, 35) menuju titik dengan x = -65 dan y = 35. Titik asalnya (0, 0). Nilai x negatif berada di kiri titik asal, sedangkan y positif berada di atasnya. Arah hadap tetap.
+455 | Report Lead | Coba Sendiri
+456 | Normal | Pilih metode untuk membaca posisi tanpa menggerakkan Turtle.
+457 | Normal | Contoh Jawaban: Gunakan shiha.position(). Metode ini membaca koordinat Turtle tanpa mengubah posisinya.
+458 | Report Lead | Bacaan tambahan Runestone bagian 4.9
+459 | Heading 3 | 3.3.3 Mengenal Istilah dalam Program
+460 | Report Lead | Yang dipelajari: Menjelaskan istilah dengan kata sendiri.
+461 | Normal | Istilah berikut membantu kita menjelaskan bagian kode. Coba hubungkan setiap istilah dengan contoh yang sudah kamu jalankan.
+462 | Report Caption | Tabel 3.2 Istilah dalam program Turtle
+463 | Report List | 
+464 | Report Code | for langkah in range(2):
+465 | Report Code |     shiha.forward(45)
+466 | Report List | 
+467 | Normal | shiha adalah objek. forward adalah metode. langkah adalah variabel pengulangan. Baris yang menjorok ke dalam menjadi loop body.
+468 | Report Lead | Coba Sendiri
+469 | Normal | Jelaskan arti method dan attribute kepada teman dengan satu contoh.
+470 | Normal | Contoh Jawaban: Method adalah tindakan milik objek, misalnya shiha.forward(45). Attribute adalah sifat atau keadaan objek, misalnya warna penanya.
+471 | Report Lead | Bacaan tambahan Runestone bagian 4.10
+472 | Heading 3 | 3.3.4 Membuat Bentuk Sendiri
+473 | Report Lead | Yang dipelajari: Merancang bentuk teratur. Memeriksa hasil program.
+474 | Normal | Kamu dapat mengubah jumlah sisi untuk membuat bangun beraturan yang berbeda. Panjang sisi dibuat sama, sedangkan putaran setiap sisi dihitung dari 360 dibagi jumlah sisi.
+475 | Report Code | import turtle
+476 | Report Code | 
+477 | Report Code | layar = turtle.Screen()
+478 | Report Code | shiha = turtle.Turtle()
+479 | Report Code | 
+480 | Report Code | jumlah_sisi = 6
+481 | Report Code | for sisi in range(jumlah_sisi):
+482 | Report Code |     shiha.forward(55)
+483 | Report Code |     shiha.left(360 / jumlah_sisi)
+484 | Report Code | 
+485 | Report Code | layar.exitonclick()
+486 | Report List | 
+487 | Report List | 
+488 | Report Caption | Gambar 3.2 Jumlah sisi menentukan putaran pada setiap bagian gambar
+489 | Normal | Pada segi enam, putaran setiap sisi 60 derajat. Pada segitiga, putarannya 120 derajat. Angka ini adalah sudut putaran di luar bentuk, bukan sudut dalamnya.
+490 | Report Lead | Bacaan tambahan Runestone bagian 4.11
+491 | Heading 2 | 3.4 Pengujian Hasil
+492 | Report List | • Gerak saat pena terangkat tidak meninggalkan garis.
+493 | Report List | • Pendown membuat gerak berikutnya menghasilkan jejak.
+494 | Report List | • Cap ditinggalkan pada posisi stamp dipanggil.
+495 | Report List | • Bangun beraturan tertutup setelah jumlah pengulangan dan putarannya sesuai.
+496 | Heading 2 | 3.5 Rekap Bab
+497 | Normal | Penup dan pendown menentukan apakah gerak meninggalkan garis. Metode dipilih sesuai tujuan, seperti membaca posisi atau berpindah ke koordinat tertentu. Bangun beraturan menggunakan putaran luar sebesar 360 derajat dibagi jumlah sisi.
+498 | Heading 2 | 3.6 Evaluasi Pemahaman
+499 | Normal | Pilih satu jawaban yang paling tepat. Catat jawabanmu dan periksa pembahasannya setelah selesai mengerjakan.
+500 | Report Lead | 1. Apa fungsi penup()?
+501 | Report List | A. Menghapus semua jejak
+502 | Report List | B. Memutar penunjuk ke utara
+503 | Report List | C. Mengangkat pena agar gerak tidak membuat garis
+504 | Report List | D. Membuat objek baru
+505 | Report List | 
+506 | Report Lead | 2. Apa hasil stamp() pada posisi Turtle saat ini?
+507 | Report List | A. Jendela gambar baru
+508 | Report List | B. Objek baru yang bisa diberi perintah
+509 | Report List | C. Garis ke titik asal
+510 | Report List | D. Cap dari bentuk penunjuk
+511 | Report List | 
+512 | Report Lead | 3. Apa perbedaan goto(120, 0) dengan forward(120)?
+513 | Report List | A. Goto menuju koordinat tertentu, forward mengikuti arah hadap
+514 | Report List | B. Goto selalu bergerak mundur
+515 | Report List | C. Forward selalu menuju titik (120, 0)
+516 | Report List | D. Keduanya selalu menghasilkan gerak yang sama
+517 | Report List | 
+518 | Report Lead | 4. Berapa sudut putaran pada tiap sisi segi enam beraturan?
+519 | Report List | A. 90 derajat
+520 | Report List | B. 60 derajat
+521 | Report List | C. 120 derajat
+522 | Report List | D. 180 derajat
+523 | Report List | 
+524 | Report Lead | 5. Segitiga sama sisi dibuat dengan tiga gerak maju. Berapa putaran pada setiap sisinya?
+525 | Report List | A. 60 derajat
+526 | Report List | B. 90 derajat
+527 | Report List | C. 120 derajat
+528 | Report List | D. 360 derajat
+529 | Report List | 
+530 | Report List | Contoh Jawaban: 1 = C   2 = D   3 = A   4 = B   5 = C
+531 | Heading 1 | BAB IV
+MAZE PETUALANGAN SHIHA
+532 | Heading 2 | 4.1 Tujuan Pembelajaran
+533 | Report List | • Menghitung perpindahan antarkotak sebagai langkah.
+534 | Report List | • Menentukan belokan berdasarkan arah hadap Shiha.
+535 | Report List | • Menyusun kode yang melewati penanda dan mencapai tujuan.
+536 | Heading 2 | 4.2 Konteks Kegiatan dalam PyTurtle
+537 | Normal | Pada Maze, pembaca membantu Shiha mengikuti peta peninggalan kakeknya. Tiga chapter dimainkan berurutan. Editor dibuka dalam keadaan kosong agar kode disusun berdasarkan peta, kemudian hasilnya diamati melalui gerakan Shiha.
+538 | Heading 2 | 4.3 Aturan dan Langkah Mencoba
+539 | Normal | Shiha mengikuti peta peninggalan kakeknya. Ia harus melewati penanda secara berurutan hingga sampai ke tujuan. Tugasmu adalah memberi arah dan jumlah langkah melalui kode.
+540 | Report Lead | Satu Kotak Satu Langkah
+541 | Normal | Pada Maze PyTurtle, forward(3) berarti maju tiga kotak. Setiap bagian jalan pada latihan ini memerlukan satu sampai tiga langkah. Shiha mulai menghadap timur. Belokan memakai left(90) atau right(90).
+542 | Report List | 
+543 | Report Caption | Gambar 4.1 Gunakan arah hadap untuk menentukan kiri dan kanan
+544 | Normal | Saat menghadap timur, belok kiri menuju utara. Saat menghadap utara, belok kanan menuju timur. Kiri dan kanan selalu mengikuti arah hadap Shiha.
+545 | Report Lead | Urutan Mencoba
+546 | Report List | 1. Hitung perpindahan antar pusat kotak.
+547 | Report List | 2. Catat titik belok dan urutan penanda.
+548 | Report List | 3. Tulis kode pada editor yang kosong.
+549 | Report List | 4. Klik Run Code dan amati gerakan Shiha.
+550 | Report List | 5. Periksa kode jika Shiha berhenti di tepi jalan.
+551 | Normal | Reset Code mengosongkan editor dan mengembalikan Shiha ke awal. Chapter berikutnya terbuka setelah chapter sebelumnya selesai. Hint memberi petunjuk dengan pengurangan 5 poin sekali per chapter. Skor terbaik tetap tersimpan.
+552 | Normal | Penup mengatur jejak gambar. Perintah ini tetap harus mengikuti jalan dan tidak dapat melewati rintangan.
+553 | Heading 2 | 4.4 Praktik Maze
+554 | Heading 3 | 4.4.1 Maze 1 Memasuki Hutan
+555 | Normal | Jadi ini hutan yang ditunjukkan peta Kakek… Aku Shiha. Maukah kamu menemaniku?
+556 | Normal | Maju 3 kotak ke timur untuk mencapai tujuan. Penanda pertama berada 1 kotak dari titik awal. Setiap kotak berarti 1 langkah.
+557 | Report List | 
+558 | Report Caption | Gambar 4.2 Peta Maze 1 dengan jumlah langkah pada setiap bagian jalan
+559 | Normal | Panah membantu membaca arah jalan. Angka pada titik adalah urutan penanda. Hitung satu langkah saat berpindah dari pusat kotak ke pusat kotak di sebelahnya.
+560 | Report Lead | Contoh Rencana Jalan
+561 | Normal | Urutan gerak yang digunakan adalah sebagai berikut.
+562 | Normal | Dari titik awal, maju 3 kotak ke timur. Lewati penanda pada kotak pertama dan akhiri gerakan di kotak tujuan.
+563 | Report Lead | Contoh Kode
+564 | Report Code | forward(3)
+565 | Report Lead | Contoh Hasil Maze 1
+566 | Normal | Contoh Hasil: Berhasil. Shiha mencapai tujuan setelah maju 3 kotak dan melewati penanda pertama. Kode ini tidak memerlukan belokan.
+567 | Heading 3 | 4.4.2 Maze 2 Jembatan Sungai
+568 | Normal | Dengar suara air itu! Jembatan ini pasti yang digambar Kakek.
+569 | Normal | Maju 3 kotak ke timur, belok kiri 90°, maju 3 kotak ke utara melewati jembatan, lalu belok kanan 90° dan maju 3 kotak ke timur.
+570 | Report List | 
+571 | Report Caption | Gambar 4.3 Peta Maze 2 dengan jumlah langkah pada setiap bagian jalan
+572 | Normal | Panah membantu membaca arah jalan. Angka pada titik adalah urutan penanda. Hitung satu langkah saat berpindah dari pusat kotak ke pusat kotak di sebelahnya.
+573 | Report Lead | Contoh Rencana Jalan
+574 | Normal | Urutan gerak yang digunakan adalah sebagai berikut.
+575 | Normal | Maju 3 kotak ke timur, belok kiri ke utara, maju 3 kotak, lalu belok kanan ke timur dan maju 3 kotak.
+576 | Report Lead | Contoh Kode
+577 | Report Code | forward(3)
+left(90)
+forward(3)
+right(90)
+forward(3)
+578 | Report Lead | Contoh Hasil Maze 2
+579 | Normal | Contoh Hasil: Berhasil. Shiha mencapai tujuan melalui jembatan. Belokan pertama memakai left(90), lalu right(90) agar kembali menghadap timur.
+580 | Heading 3 | 4.4.3 Maze 3 Jejak Terakhir
+581 | Normal | Ini tempatnya. Reruntuhan tua dengan tanda yang sama seperti di peta!
+582 | Normal | Ikuti penanda berurutan: timur 2 kotak, utara 2, timur 3, selatan 2, timur 2, lalu utara 3 kotak. Belokan memakai left(90) atau right(90).
+583 | Report List | 
+584 | Report Caption | Gambar 4.4 Peta Maze 3 dengan jumlah langkah pada setiap bagian jalan
+585 | Normal | Panah membantu membaca arah jalan. Angka pada titik adalah urutan penanda. Hitung satu langkah saat berpindah dari pusat kotak ke pusat kotak di sebelahnya.
+586 | Report Lead | Contoh Rencana Jalan
+587 | Normal | Urutan gerak yang digunakan adalah sebagai berikut.
+588 | Normal | Ikuti jalur timur 2 kotak, utara 2, timur 3, selatan 2, timur 2, lalu utara 3 kotak. Lewati seluruh penanda secara berurutan.
+589 | Report Lead | Contoh Kode
+590 | Report Code | forward(2)
+left(90)
+forward(2)
+right(90)
+forward(3)
+right(90)
+forward(2)
+left(90)
+forward(2)
+left(90)
+forward(3)
+591 | Report Lead | Contoh Hasil Maze 3
+592 | Normal | Contoh Hasil: Berhasil. Shiha mencapai tujuan setelah melewati enam bagian jalan. Periksa arah belokan pada setiap penanda agar tetap mengikuti jalur.
+593 | Heading 2 | 4.5 Pengujian Hasil
+594 | Report List | • Jumlah pada forward menyatakan banyak kotak, bukan jarak gambar Turtle.
+595 | Report List | • Belokan memakai kelipatan 90 derajat dan sesuai arah hadap.
+596 | Report List | • Semua penanda dilewati dalam urutan yang benar.
+597 | Report List | • Shiha tetap mengikuti jalan hingga sampai ke tujuan.
+598 | Heading 2 | 4.6 Rekap Bab
+599 | Normal | Pada Maze, satu kotak adalah satu langkah. Kode dibaca dari atas ke bawah dan tiap percobaan dimulai dari titik awal. Periksa jumlah langkah, belokan, serta urutan penanda ketika hasilnya belum sesuai.
+600 | Heading 2 | 4.7 Evaluasi Pemahaman
+601 | Normal | Pilih satu jawaban yang paling tepat. Catat jawabanmu dan periksa pembahasannya setelah selesai mengerjakan.
+602 | Report Lead | 1. Dalam Maze PyTurtle, forward(3) berarti ...
+603 | Report List | A. Maju tiga kotak
+604 | Report List | B. Maju 180 kotak
+605 | Report List | C. Putar tiga derajat
+606 | Report List | D. Berpindah ke koordinat (3, 0)
+607 | Report List | 
+608 | Report Lead | 2. Shiha menghadap utara. Belokan menuju timur ditulis dengan ...
+609 | Report List | A. left(90)
+610 | Report List | B. right(90)
+611 | Report List | C. right(180)
+612 | Report List | D. backward(90)
+613 | Report List | 
+614 | Report Lead | 3. Apa fungsi Reset Code pada Maze versi ini?
+615 | Report List | A. Mengisi solusi otomatis
+616 | Report List | B. Menghapus skor terbaik
+617 | Report List | C. Mengosongkan editor dan kembali ke titik awal
+618 | Report List | D. Membuka semua chapter
+619 | Report List | 
+620 | Report Lead | 4. Apa yang perlu dilakukan ketika jalur memiliki beberapa penanda?
+621 | Report List | A. Melewati tujuan terlebih dahulu
+622 | Report List | B. Mengabaikan titik belok
+623 | Report List | C. Menggunakan penup untuk memotong jalan
+624 | Report List | D. Melewati penanda secara berurutan
+625 | Report List | 
+626 | Report Lead | 5. Shiha berhenti di tepi jalan. Apa yang sebaiknya diperiksa lebih dahulu?
+627 | Report List | A. Jumlah kotak dan arah belokan
+628 | Report List | B. Warna sampul modul
+629 | Report List | C. Nama akun
+630 | Report List | D. Ketebalan garis saja
+631 | Report List | 
+632 | Report List | Contoh Jawaban: 1 = A   2 = B   3 = C   4 = D   5 = A
+633 | Heading 1 | BAB V
+CODE MATCHING DAN PROYEK INTEGRASI
+634 | Heading 2 | 5.1 Tujuan Pembelajaran
+635 | Report List | • Mencocokkan kode dengan gerakan yang dihasilkan.
+636 | Report List | • Menjelaskan posisi dan arah akhir setelah beberapa perintah.
+637 | Report List | • Menggabungkan pengulangan dan pengaturan pena untuk membuat dua bentuk.
+638 | Heading 2 | 5.2 Konteks Kegiatan dalam PyTurtle
+639 | Normal | Code Matching membantu pembaca memeriksa hubungan antara kode dan animasi. Setelah itu, proyek dua bentuk menggabungkan materi pengulangan dan pena. Proyek dilakukan di Python atau Runestone sebagai latihan lanjutan dari materi aplikasi.
+640 | Heading 2 | 5.3 Mencocokkan Kode dan Gerakan
+641 | Normal | Pada Code Matching, cocokkan gerakan dengan kode yang menghasilkan gerakan tersebut. Angkanya memakai jarak gambar Turtle, bukan kotak Maze.
+642 | Report Caption | Tabel 5.1 Gerakan pada kegiatan Code Matching
+643 | Report List | 
+644 | Report Lead | Pilihan Kode
+645 | Report Lead | Pilihan A
+646 | Report Code | left(90)
+647 | Report Code | forward(60)
+648 | Report List | 
+649 | Report Lead | Pilihan B
+650 | Report Code | forward(120)
+651 | Report Code | backward(40)
+652 | Report List | 
+653 | Report Lead | Pilihan C
+654 | Report Code | forward(100)
+655 | Report List | 
+656 | Report Lead | Pilihan D
+657 | Report Code | forward(80)
+658 | Report Code | right(90)
+659 | Report Code | forward(80)
+660 | Report List | 
+661 | Report List | Contoh Jawaban: 1 = C   2 = D   3 = B   4 = A
+662 | Normal | Berikut contoh penjelasan arah dan hasil akhir pada satu pasangan.
+663 | Normal | Contoh Jawaban: Nomor 3 cocok dengan pilihan B. Turtle maju 120 unit lalu mundur 40 unit, sehingga posisi akhirnya 80 unit ke timur dari titik awal. Arah hadap tetap timur.
+664 | Heading 2 | 5.4 Praktik Proyek Dua Bentuk
+665 | Report Lead | Tugas Gambar
+666 | Normal | Ubah contoh segi enam menjadi segitiga. Setelah bentuk pertama selesai, angkat pena dan pindahkan Turtle, lalu gambar persegi di tempat yang berbeda. Jalankan tugas ini sebagai program Python lengkap.
+667 | Normal | Jumlah sisi dan sudut putaran kedua bentuk adalah sebagai berikut.
+668 | Normal | Contoh Jawaban: Segitiga memiliki 3 sisi dengan putaran 120 derajat. Persegi memiliki 4 sisi dengan putaran 90 derajat.
+669 | Report Lead | Contoh Potongan Kode
+670 | Report Code | for sisi in range(3):
+    shiha.forward(55)
+    shiha.left(120)
+shiha.penup()
+shiha.goto(120, 0)
+shiha.pendown()
+for sisi in range(4):
+    shiha.forward(55)
+    shiha.left(90)
+671 | Report Lead | Contoh Hasil dan Perbaikan
+672 | Normal | Contoh Hasil: Segitiga dan persegi terbentuk di dua tempat berbeda tanpa garis penghubung. Jika garis penghubung muncul, letakkan penup() sebelum goto() dan pendown() sesudahnya.
+673 | Report Lead | Periksa Hasilnya
+674 | Normal | Bentuk harus tertutup dan perpindahan antar bentuk tidak meninggalkan garis penghubung. Periksa jumlah pengulangan, sudut putaran, serta posisi penup dan pendown.
+675 | Heading 2 | 5.5 Pengujian Hasil
+676 | Report List | • Pasangan gerak dan kode sesuai urutan maju, mundur, serta putarannya.
+677 | Report List | • Perpindahan bersih dihitung dengan mempertimbangkan gerak mundur.
+678 | Report List | • Segitiga dan persegi terbentuk serta tertutup.
+679 | Report List | • Perpindahan ke bentuk kedua tidak menghasilkan garis penghubung.
+680 | Heading 2 | 5.6 Rekap Bab
+681 | Normal | Code Matching menghubungkan perintah dengan hasil gerak. Proyek integrasi menggunakan perintah yang sudah dipelajari untuk membuat dua bangun. Perbaikan dilakukan dengan mengubah satu bagian, mengamati hasilnya, lalu mencatat penyebab perubahan.
+682 | Heading 2 | 5.7 Evaluasi Pemahaman
+683 | Normal | Pilih satu jawaban yang paling tepat. Catat jawabanmu dan periksa pembahasannya setelah selesai mengerjakan.
+684 | Report Lead | 1. Turtle menghadap timur, maju 120 unit, lalu mundur 40 unit. Posisi akhirnya terhadap titik awal adalah ...
+685 | Report List | A. 160 unit ke timur
+686 | Report List | B. 80 unit ke timur
+687 | Report List | C. 40 unit ke barat
+688 | Report List | D. Kembali ke titik awal
+689 | Report List | 
+690 | Report Lead | 2. Dari arah timur, left(90) lalu forward(60) menghasilkan gerak ke ...
+691 | Report List | A. Selatan
+692 | Report List | B. Barat
+693 | Report List | C. Utara
+694 | Report List | D. Timur
+695 | Report List | 
+696 | Report Lead | 3. Mengapa perintah dan animasi perlu dicocokkan?
+697 | Report List | A. Agar angka selalu sama pada semua latihan
+698 | Report List | B. Agar kode tidak perlu dibaca
+699 | Report List | C. Agar seluruh gambar berwarna hijau
+700 | Report List | D. Agar urutan gerak dan arah dapat diperiksa
+701 | Report List | 
+702 | Report Lead | 4. Bagaimana memindahkan Turtle tanpa garis penghubung sebelum menggambar bentuk kedua?
+703 | Report List | A. Penup, berpindah, lalu pendown
+704 | Report List | B. Pendown, berpindah, lalu stamp
+705 | Report List | C. Forward tanpa mengangkat pena
+706 | Report List | D. Mengubah warna saja
+707 | Report List | 
+708 | Report Lead | 5. Saat memperbaiki kode, cara yang memudahkan pengamatan adalah ...
+709 | Report List | A. Mengubah semua baris sekaligus
+710 | Report List | B. Mengubah satu bagian lalu membandingkan hasil
+711 | Report List | C. Menghapus kode tanpa memeriksa hasil
+712 | Report List | D. Mengganti tujuan latihan setiap kali
+713 | Report List | 
+714 | Report List | Contoh Jawaban: 1 = B   2 = C   3 = D   4 = A   5 = B
+715 | Heading 1 | EVALUASI MANDIRI
+716 | Normal | Evaluasi ini mengulang kemampuan yang dipelajari pada lima bab. Kerjakan soal dan praktik sebelum melihat pembahasan. Kegiatan ini merupakan latihan pada modul dan dapat dilakukan menggunakan Python, Runestone, serta Maze PyTurtle sesuai jenis tugasnya.
+717 | Heading 2 | A Evaluasi Pemahaman
+718 | Normal | Pilih satu jawaban. Kerjakan sebelum membuka pembahasan di bagian akhir.
+719 | Report Lead | 1. Apa fungsi forward pada Turtle?
+720 | Report List |     A. Bergerak maju sesuai arah hadap.
+721 | Report List |     B. Mengubah warna latar.
+722 | Report List |     C. Memutar ke kiri.
+723 | Report List | 
+724 | Report Lead | 2. Apa yang berubah ketika left(90) dijalankan?
+725 | Report List |     A. Posisi saja.
+726 | Report List |     B. Arah hadap.
+727 | Report List |     C. Warna pena.
+728 | Report List | 
+729 | Report Lead | 3. Shiha menghadap timur. Setelah right(90), ia menghadap ke mana?
+730 | Report List |     A. Utara.
+731 | Report List |     B. Barat.
+732 | Report List |     C. Selatan.
+733 | Report List | 
+734 | Report Lead | 4. Apa yang dilakukan backward pada arah hadap?
+735 | Report List |     A. Membalik arah.
+736 | Report List |     B. Membiarkan arah tetap.
+737 | Report List |     C. Memutar 90 derajat.
+738 | Report List | 
+739 | Report Lead | 5. Dalam Maze, apa arti forward(3)?
+740 | Report List |     A. Maju tiga kotak.
+741 | Report List |     B. Maju 180 kotak.
+742 | Report List |     C. Putar tiga derajat.
+743 | Report List | 
+744 | Report Lead | 6. Apa yang dilakukan import turtle pada program Python lengkap?
+745 | Report List |     A. Memuat alat Turtle.
+746 | Report List |     B. Menghapus gambar.
+747 | Report List |     C. Memulai tiga langkah Maze.
+748 | Report List | 
+749 | Report Lead | 7. Apa yang terjadi jika teman berputar tetapi Shiha tidak diberi perintah?
+750 | Report List |     A. Shiha ikut berputar.
+751 | Report List |     B. Shiha tetap pada keadaannya.
+752 | Report List |     C. Kedua objek hilang.
+753 | Report List | 
+754 | Report Lead | 8. Bagian mana yang menjadi isi for?
+755 | Report List |     A. Baris yang berada setelah program selesai.
+756 | Report List |     B. Baris yang menjorok ke dalam di bawah for.
+757 | Report List |     C. Semua komentar.
+758 | Report List | 
+759 | Report Lead | 9. Berapa kali isi for i in range(4) dijalankan?
+760 | Report List |     A. Tiga kali.
+761 | Report List |     B. Empat kali.
+762 | Report List |     C. Lima kali.
+763 | Report List | 
+764 | Report Lead | 10. Apa isi list(range(1, 4))?
+765 | Report List |     A. 1, 2, 3.
+766 | Report List |     B. 1, 2, 3, 4.
+767 | Report List |     C. 0, 1, 2, 3.
+768 | Report List | 
+769 | Report Lead | 11. Apa fungsi penup?
+770 | Report List |     A. Mengubah arah menjadi utara.
+771 | Report List |     B. Mengangkat pena agar gerak tidak membuat garis.
+772 | Report List |     C. Menghapus Turtle.
+773 | Report List | 
+774 | Report Lead | 12. Apakah penup dapat digunakan untuk menembus rintangan Maze?
+775 | Report List |     A. Ya, semua rintangan hilang.
+776 | Report List |     B. Ya, jika bergerak tiga kotak.
+777 | Report List |     C. Tidak, jalan tetap harus diikuti.
+778 | Report List | 
+779 | Report Lead | 13. Berapa putaran pada tiap sisi persegi dengan pola forward lalu left?
+780 | Report List |     A. 45 derajat.
+781 | Report List |     B. 90 derajat.
+782 | Report List |     C. 180 derajat.
+783 | Report List | 
+784 | Report Lead | 14. Berapa putaran pada tiap sisi segitiga sama sisi?
+785 | Report List |     A. 60 derajat.
+786 | Report List |     B. 90 derajat.
+787 | Report List |     C. 120 derajat.
+788 | Report List | 
+789 | Report Lead | 15. Apa arti position pada Turtle?
+790 | Report List |     A. Metode untuk membaca posisi.
+791 | Report List |     B. Perintah membuka Maze.
+792 | Report List |     C. Jumlah poin.
+793 | Report List | 
+794 | Report Lead | 16. Pada halaman materi, apa yang membuka sesi berikutnya?
+795 | Report List |     A. Membuka halaman lalu langsung keluar.
+796 | Report List |     B. Menjawab evaluasi sesi dengan benar.
+797 | Report List |     C. Mengubah kecepatan animasi.
+798 | Report List | 
+799 | Report Lead | 17. Jika jawaban evaluasi salah, apa yang sebaiknya dilakukan?
+800 | Report List |     A. Baca penjelasan dan coba kembali.
+801 | Report List |     B. Langsung anggap materi selesai.
+802 | Report List |     C. Menghapus akun.
+803 | Report List | 
+804 | Report Lead | 18. Apa fungsi Reset Code pada Maze versi ini?
+805 | Report List |     A. Mengisi solusi lengkap.
+806 | Report List |     B. Mengosongkan editor dan kembali ke titik awal.
+807 | Report List |     C. Menghapus semua skor.
+808 | Report List | 
+809 | Report Lead | 19. Mengapa urutan perintah perlu diperhatikan?
+810 | Report List |     A. Karena komputer memilih urutan secara acak.
+811 | Report List |     B. Karena tiap perintah selalu berjalan bersamaan.
+812 | Report List |     C. Karena perintah dijalankan dari atas ke bawah.
+813 | Report List | 
+814 | Report Lead | 20. Apa yang perlu dicek saat Shiha berhenti di tepi jalan?
+815 | Report List |     A. Warna latar saja.
+816 | Report List |     B. Jumlah kotak dan arah belokan.
+817 | Report List |     C. Nama berkas modul saja.
+818 | Report List | 
+819 | Heading 2 | B Evaluasi Praktik
+820 | Report Lead | Tugas 1 Jalan di Maze
+821 | Normal | Shiha mulai menghadap timur. Susun kode untuk maju 3 kotak ke timur, 3 kotak ke utara, lalu 3 kotak ke timur. Gunakan gerak dan putaran yang sesuai.
+822 | Report Code | forward(3)
+left(90)
+forward(3)
+right(90)
+forward(3)
+823 | Report Lead | Tugas 2 Persegi di Python
+824 | Normal | Buat program Python lengkap untuk menggambar persegi dengan sisi 60 unit menggunakan for dan range. Jalankan di Python atau Runestone.
+825 | Report Code | import turtle
+layar = turtle.Screen()
+shiha = turtle.Turtle()
+for sisi in range(4):
+    shiha.forward(60)
+    shiha.left(90)
+layar.exitonclick()
+826 | Report Lead | Contoh Kesalahan dan Perbaikannya
+827 | Normal | Contoh Jawaban: Jika bentuk belum tertutup karena putaran memakai 60 derajat, ubah menjadi 90 derajat. Pastikan blok for berjalan empat kali.
+828 | Heading 2 | C Penilaian dan Refleksi
+829 | Normal | Setiap jawaban benar pada evaluasi pemahaman dapat diberi 5 poin. Ada 20 soal, sehingga nilai tertinggi 100. Penilaian pada modul ini tidak mengubah XP aplikasi.
+830 | Report Lead | Penilaian Tugas Praktik
+831 | Normal | Pengajar dapat menilai tiap tugas dengan rubrik berikut. Nilai tertinggi setiap tugas adalah 10.
+832 | Report Caption | Tabel E.1 Rubrik penilaian praktik
+833 | Report List | 
+834 | Report Lead | Refleksi Belajar
+835 | Report Lead | Konsep yang Sudah Dipahami
+836 | Normal | Contoh Refleksi: Saya memahami perbedaan gerak maju, mundur, dan berputar. Saya juga memahami bahwa satu langkah Maze berarti berpindah satu kotak.
+837 | Report Lead | Konsep yang Perlu Dicoba Lagi
+838 | Normal | Contoh Refleksi: Saya masih perlu mencoba range dengan nilai awal dan selang yang berbeda, serta memperkirakan koordinat pada goto().
+839 | Report Lead | Perubahan Kode yang Membantu
+840 | Normal | Contoh Refleksi: Mengubah satu angka pada forward membantu saya melihat perubahan panjang sisi. Menambahkan penup sebelum berpindah mencegah garis penghubung antar bentuk.
+841 | Normal | Baca kembali contoh yang berkaitan dengan kesalahanmu. Coba ubah satu angka atau satu perintah agar pengaruhnya dapat diamati dengan jelas.
+842 | Normal | Evaluasi setiap bab terdiri atas lima soal. Pengajar dapat memberi 20 poin untuk setiap jawaban benar, sehingga nilai tertinggi per bab adalah 100. Nilai bab dan nilai evaluasi mandiri dicatat secara terpisah. Aturan ini merupakan penilaian modul dan tidak mengubah penilaian aplikasi.
+843 | Heading 1 | KUNCI JAWABAN DAN PEMBAHASAN
+844 | Normal | Bagian ini memuat alasan jawaban dan pembahasan latihan. Cocokkan dengan contoh jawaban pada setiap kegiatan, lalu kembali ke materi jika ada bagian yang belum dipahami.
+845 | Heading 2 | A Pembahasan Evaluasi Bab
+846 | Heading 3 | Bab I
+847 | Report List | 1. A. Pada Python Turtle, forward menggunakan jarak pada bidang gambar dan mengikuti arah hadap.
+848 | Report List | 2. B. Putaran kanan 90 derajat dari timur mengarah ke selatan.
+849 | Report List | 3. C. Backward memindahkan posisi ke belakang tanpa memutar arah hadap.
+850 | Report List | 4. D. Turtle() membuat objek penunjuk, sedangkan Screen() membuat layar.
+851 | Report List | 5. A. Perintah pada satu objek tidak otomatis mengubah keadaan objek lain.
+852 | Heading 3 | Bab II
+853 | Report List | 1. B. Indentasi menandai baris yang menjadi bagian pengulangan.
+854 | Report List | 2. C. Range(4) menghasilkan 0, 1, 2, 3, sehingga terdapat empat putaran.
+855 | Report List | 3. D. Urutan dimulai dari 2, bertambah 3, dan berhenti sebelum 9.
+856 | Report List | 4. A. Baris yang berada di luar blok dijalankan setelah pengulangan selesai.
+857 | Report List | 5. B. Empat sisi sama panjang dan empat putaran 90 derajat membentuk persegi.
+858 | Heading 3 | Bab III
+859 | Report List | 1. C. Pena terangkat membuat perpindahan berlangsung tanpa jejak garis.
+860 | Report List | 2. D. Stamp meninggalkan gambar bentuk penunjuk dan tidak membuat objek Turtle baru.
+861 | Report List | 3. A. Goto memakai koordinat tujuan. Forward memakai jarak dari posisi saat ini.
+862 | Report List | 4. B. Sudut putaran luar segi enam adalah 360 dibagi 6, yaitu 60 derajat.
+863 | Report List | 5. C. Sudut putaran luar segitiga adalah 360 dibagi 3, yaitu 120 derajat.
+864 | Heading 3 | Bab IV
+865 | Report List | 1. A. Satuan pada Maze adalah kotak, dengan satu perpindahan antarpusat kotak sebagai satu langkah.
+866 | Report List | 2. B. Saat menghadap utara, arah timur berada di kanan Shiha.
+867 | Report List | 3. C. Reset mengembalikan percobaan ke awal dan mengosongkan editor.
+868 | Report List | 4. D. Jalur dan urutan penanda menjadi bagian dari syarat penyelesaian Maze.
+869 | Report List | 5. A. Periksa apakah jarak dan belokan sesuai peta sebelum mencoba kembali.
+870 | Heading 3 | Bab V
+871 | Report List | 1. B. Perpindahan bersih adalah 120 dikurangi 40, yaitu 80 unit ke timur.
+872 | Report List | 2. C. Putaran kiri dari timur membuat Turtle menghadap utara sebelum bergerak.
+873 | Report List | 3. D. Animasi membantu membandingkan perintah dengan hasil yang benar-benar terjadi.
+874 | Report List | 4. A. Angkat pena saat berpindah dan turunkan kembali sebelum menggambar.
+875 | Report List | 5. B. Satu perubahan memudahkan pembaca mengenali pengaruh angka atau perintah yang diubah.
+876 | Heading 2 | B Pembahasan Latihan Sesi
+877 | Report List | 
+878 | Report Lead | Sesi 01
+879 | Normal | Mengganti 95 menjadi 130 memperpanjang garis pertama. Garis kedua tetap 65 unit. Jika left diganti right, garis kedua mengarah ke selatan. Putaran mengubah arah tanpa memindahkan posisi.
+880 | Report Lead | Sesi 02
+881 | Normal | turtle.Turtle() membuat objek. Tambahkan kode berikut sebelum exitonclick untuk menggambar dua sisi yang masih kosong.
+882 | Report Code | shiha.left(90)
+883 | Report Code | shiha.forward(110)
+884 | Report Code | shiha.left(90)
+885 | Report Code | shiha.forward(55)
+886 | Report List | 
+887 | Report Lead | Sesi 03
+888 | Normal | Ganti teman.left(90) menjadi teman.left(180) agar teman menghadap kiri. Shiha tetap menghadap timur karena kedua objek berbeda.
+889 | Report Lead | Sesi 04
+890 | Normal | Jika satu nama ditambahkan, sapaan dicetak empat kali. Baris yang menjorok di bawah for menjadi isi pengulangan.
+891 | Report Lead | Sesi 05
+892 | Normal | Pada contoh awal, Selesai dicetak sekali setelah Pos 2 dan Pos 4. Jika print Selesai masuk ke blok, keluarannya menjadi Pos 2, Selesai, Pos 4, Selesai.
+893 | Report Lead | Sesi 06
+894 | Normal | Ganti shiha.forward(75) menjadi shiha.forward(105). Isi for dijalankan empat kali, dengan satu gerak maju untuk setiap sisi persegi.
+895 | Report List | 
+896 | Report Lead | Sesi 07
+897 | Normal | Gunakan range(3, 12, 3) untuk urutan 3, 6, 9. Batas akhir tidak ikut digunakan. Hasil list(range(2, 7, 2)) adalah [2, 4, 6].
+898 | Report Lead | Sesi 08
+899 | Normal | forward(-85) membawa Turtle ke barat karena arah awalnya timur. Gerak saat pena terangkat tidak meninggalkan garis. stamp hanya membuat cap di posisi saat itu.
+900 | Report Lead | Sesi 09
+901 | Normal | position() membaca posisi tanpa memindahkan Turtle. goto menuju koordinat tertentu; forward bergerak dari posisi sekarang mengikuti arah hadap.
+902 | Report Lead | Sesi 10
+903 | Normal | Method adalah tindakan milik objek, seperti shiha.forward(45). Attribute adalah sifat atau keadaan objek, misalnya warna. Baris dalam blok for disebut loop body.
+904 | Report Lead | Sesi 11
+905 | Normal | Segitiga memakai tiga pengulangan dan putaran 120 derajat. Segi delapan memakai putaran 45 derajat. Untuk proyek dua bentuk, contoh potongan berikut ditulis setelah objek dibuat.
+906 | Report Code | for sisi in range(3):
+907 | Report Code |     shiha.forward(55)
+908 | Report Code |     shiha.left(120)
+909 | Report Code | shiha.penup()
+910 | Report Code | shiha.goto(120, 0)
+911 | Report Code | shiha.pendown()
+912 | Report Code | for sisi in range(4):
+913 | Report Code |     shiha.forward(55)
+914 | Report Code |     shiha.left(90)
+915 | Report List | 
+916 | Heading 2 | C Pembahasan Maze dan Code Matching
+917 | Report Lead | Maze 1
+918 | Report Code | forward(3)
+919 | Report List | 
+920 | Report Lead | Maze 2
+921 | Report Code | forward(3)
+922 | Report Code | left(90)
+923 | Report Code | forward(3)
+924 | Report Code | right(90)
+925 | Report Code | forward(3)
+926 | Report List | 
+927 | Report Lead | Maze 3
+928 | Report Code | forward(2)
+929 | Report Code | left(90)
+930 | Report Code | forward(2)
+931 | Report Code | right(90)
+932 | Report Code | forward(3)
+933 | Report Code | right(90)
+934 | Report Code | forward(2)
+935 | Report Code | left(90)
+936 | Report Code | forward(2)
+937 | Report Code | left(90)
+938 | Report Code | forward(3)
+939 | Report List | 
+940 | Normal | Maze 1 juga bisa memakai forward(1) lalu forward(2). Semua kode dimulai saat Shiha menghadap timur. Perintah maju menghitung kotak; belokan mengubah arah hadap.
+941 | Report Lead | Code Matching
+942 | Normal | Pasangan yang benar: 1 dengan C, 2 dengan D, 3 dengan B, dan 4 dengan A. Pada nomor 3, jarak bersihnya 80 unit karena maju 120 lalu mundur 40. Arah hadap tetap sama.
+943 | Heading 2 | D Pembahasan Evaluasi Mandiri
+944 | Report Lead | Kunci Evaluasi Pemahaman
+945 | Report Lead | 1. A    2. B    3. C    4. B    5. A
+946 | Report Lead | 6. A    7. B    8. B    9. B    10. A
+947 | Report Lead | 11. B    12. C    13. B    14. C    15. A
+948 | Report Lead | 16. B    17. A    18. B    19. C    20. B
+949 | Normal | Soal 2 dan 4: putaran mengubah arah, sedangkan mundur tetap mempertahankan arah hadap. Soal 10: batas akhir range tidak masuk urutan. Soal 14: segitiga memakai putaran 120 derajat.
+950 | Normal | Soal 5 dan 12: Maze memakai langkah per kotak dan tetap harus mengikuti jalan. Soal 16: jawaban materi yang benar membuka sesi berikutnya.
+951 | Report Lead | Contoh Jawaban Praktik
+952 | Normal | Tugas 1
+953 | Report Code | forward(3)
+954 | Report Code | left(90)
+955 | Report Code | forward(3)
+956 | Report Code | right(90)
+957 | Report Code | forward(3)
+958 | Report List | 
+959 | Normal | Tugas 2
+960 | Report Code | import turtle
+961 | Report Code | layar = turtle.Screen()
+962 | Report Code | shiha = turtle.Turtle()
+963 | Report Code | for sisi in range(4):
+964 | Report Code |     shiha.forward(60)
+965 | Report Code |     shiha.left(90)
+966 | Report Code | layar.exitonclick()
+967 | Report List | 
+968 | Normal | Blok for dijalankan empat kali. Setiap putaran menggambar satu sisi dan berbelok 90 derajat. Hasilnya persegi dengan panjang sisi 60 unit.
+969 | Heading 1 | DAFTAR PUSTAKA
+970 | Normal | Miller, B., dan Ranum, D. (tanpa tahun). How to Think Like a Computer Scientist: Interactive Edition. Bab 4 Python Turtle Graphics. Runestone Academy. https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/toctree.html (diakses 1 Oktober 2026).
+971 | Normal | Python Software Foundation. (tanpa tahun). Turtle graphics. Dokumentasi Python 3. https://docs.python.org/3/library/turtle.html (diakses 1 Oktober 2026).

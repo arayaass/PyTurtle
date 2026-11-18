@@ -1,0 +1,270 @@
+[
+    {
+        "id": 1,
+        "title": "Memasuki Hutan",
+        "subtitle": "Langkah pertama, petualangan besar.",
+        "objective": "Bantu Shiha mencapai gerbang hutan pertamanya. Kenali cara menyimpan jarak dalam variabel dan menjalankan gerakan maju.",
+        "commands": ["forward", "backward"],
+        "start": {
+            "x": 90,
+            "y": 270,
+            "angle": 0
+        },
+        "path": [[60, 244, 240, 52]],
+        "checkpoints": [
+            [150, 270],
+            [270, 270]
+        ],
+        "starter": "",
+        "solution": "langkah = 3\nforward(langkah)",
+        "hint": "langkah = 3\nforward(langkah)",
+        "dialogue": [
+            "Jadi ini hutan yang ditunjukkan peta Kakek… Aku Shiha. Maukah kamu menemaniku?",
+            "Shiha baru tiba di pintu hutan. Ayo bantu ia menemukan penanda pertama dan mempelajari bekal perjalanan!"
+        ],
+        "outro": ["Kita berhasil melewati pintu hutan! Jejak Kakek berlanjut menuju sungai."],
+        "movement_unit": "grid",
+        "step_size": 60,
+        "require_variables": true,
+        "tutorial_stages": [
+            {
+                "title": "Langkah Pertama",
+                "objective": "Bantu Shiha mencapai gerbang hutan pertamanya. Kenali cara menyimpan jarak dalam variabel dan menjalankan gerakan maju.",
+                "commands": ["forward", "backward"],
+                "start": {
+                    "x": 90,
+                    "y": 350,
+                    "angle": 0
+                },
+                "checkpoints": [
+                    [150, 350],
+                    [270, 350]
+                ],
+                "path": [[64, 324, 232, 52]],
+                "solution": "langkah = 3\nforward(langkah)",
+                "hint": "langkah = 3\nforward(langkah)"
+            },
+            {
+                "title": "Belokan Kiri",
+                "objective": "Jalan menuju pos penjaga mulai berbelok. Bantu Shiha mengikuti jalur dengan gerakan maju dan belokan kiri.",
+                "commands": ["forward", "backward", "left"],
+                "start": {
+                    "x": 90,
+                    "y": 350,
+                    "angle": 0
+                },
+                "checkpoints": [
+                    [270, 350],
+                    [270, 170]
+                ],
+                "path": [
+                    [64, 324, 232, 52],
+                    [244, 144, 52, 232]
+                ],
+                "solution": "langkah = 3\nsudut = 90\nforward(langkah)\nleft(sudut)\nforward(langkah)",
+                "hint": "langkah = 3\nsudut = 90\nforward(langkah)\nleft(sudut)\nforward(langkah)"
+            },
+            {
+                "title": "Kiri dan Kanan",
+                "objective": "Pos penjaga sudah dekat! Gabungkan gerakan maju, belokan kiri, dan belokan kanan untuk mengantar Shiha.",
+                "commands": ["forward", "backward", "left", "right"],
+                "start": {
+                    "x": 90,
+                    "y": 350,
+                    "angle": 0
+                },
+                "checkpoints": [
+                    [270, 350],
+                    [270, 170],
+                    [450, 170]
+                ],
+                "path": [
+                    [64, 324, 232, 52],
+                    [244, 144, 52, 232],
+                    [244, 144, 232, 52]
+                ],
+                "solution": "langkah = 3\nsudut = 90\nforward(langkah)\nleft(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)",
+                "hint": "langkah = 3\nsudut = 90\nforward(langkah)\nleft(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Jembatan Sungai",
+        "subtitle": "Belokan baru, sudut pandang baru.",
+        "objective": "Sungai memisahkan Shiha dari jejak Kakek. Ayo bantu ia menyeberangi jembatan dengan selamat!",
+        "commands": ["forward", "backward", "left", "right"],
+        "start": {
+            "x": 90,
+            "y": 350,
+            "angle": 0
+        },
+        "path": [
+            [60, 324, 236, 52],
+            [244, 144, 52, 232],
+            [244, 144, 232, 52]
+        ],
+        "checkpoints": [
+            [270, 350],
+            [270, 170],
+            [450, 170]
+        ],
+        "starter": "",
+        "solution": "langkah = 3\nsudut = 90\nforward(langkah)\nleft(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)",
+        "hint": "Setiap bagian jalan berjarak 3 kotak. Gunakan forward(3), left(90), forward(3), right(90), lalu forward(3). Simpan jarak pada variabel, misalnya langkah = 3 lalu forward(langkah).",
+        "dialogue": [
+            "Dengar suara air itu! Jembatan ini pasti yang digambar Kakek.",
+            "Sungai memisahkan Shiha dari jejak Kakek. Ayo bantu ia menyeberangi jembatan dengan selamat!"
+        ],
+        "outro": [
+            "Jembatan terlewati. Di balik pepohonan, aku melihat reruntuhan yang ada di peta!"
+        ],
+        "movement_unit": "grid",
+        "step_size": 60,
+        "require_variables": true
+    },
+    {
+        "id": 3,
+        "title": "Jejak Reruntuhan",
+        "subtitle": "Setiap langkah menyimpan cerita.",
+        "objective": "Di antara reruntuhan, Shiha menemukan petunjuk menuju lembah. Bantu ia menyusuri jalan dan mengumpulkan semua penanda.",
+        "commands": ["forward", "backward", "left", "right", "penup", "pendown"],
+        "start": {
+            "x": 90,
+            "y": 350,
+            "angle": 0
+        },
+        "path": [
+            [64, 324, 172, 52],
+            [184, 204, 52, 172],
+            [184, 204, 232, 52],
+            [364, 204, 52, 172],
+            [364, 324, 172, 52],
+            [484, 144, 52, 232]
+        ],
+        "checkpoints": [
+            [210, 350],
+            [210, 230],
+            [390, 230],
+            [390, 350],
+            [510, 350],
+            [510, 170]
+        ],
+        "starter": "",
+        "solution": "langkah = 3\nsudut = 90\nforward(2)\nleft(sudut)\nforward(2)\nright(sudut)\nforward(langkah)\nright(sudut)\nforward(2)\nleft(sudut)\nforward(2)\nleft(sudut)\nforward(langkah)",
+        "hint": "Jumlah kotak setiap bagian adalah 2, 2, 3, 2, 2, 3. Arah: timur, utara, timur, selatan, timur, utara. penup() mengangkat pena; Shiha tetap harus mengikuti jalan. Simpan jarak pada variabel, misalnya langkah = 3 lalu forward(langkah).",
+        "dialogue": [
+            "Ini tempatnya. Reruntuhan tua dengan tanda yang sama seperti di peta!",
+            "Di antara reruntuhan, Shiha menemukan petunjuk menuju lembah. Bantu ia menyusuri jalan dan mengumpulkan semua penanda."
+        ],
+        "outro": [
+            "Catatan Kakek menyebut lembah berliku di balik reruntuhan. Perjalanan kita belum selesai!"
+        ],
+        "movement_unit": "grid",
+        "step_size": 60,
+        "require_variables": true
+    },
+    {
+        "id": 4,
+        "title": "Lembah Berliku",
+        "subtitle": "Temukan pola, ringkas perjalanan.",
+        "objective": "Shiha harus melintasi lembah bertingkat sebelum senja. Temukan pola jalannya dan gunakan perulangan agar perjalanan lebih teratur.",
+        "commands": ["forward", "backward", "left", "right"],
+        "start": {
+            "x": 60,
+            "y": 390,
+            "angle": 0
+        },
+        "path": [
+            [42, 372, 156, 36],
+            [162, 252, 36, 156],
+            [162, 252, 156, 36],
+            [282, 132, 36, 156],
+            [282, 132, 156, 36],
+            [402, 12, 36, 156],
+            [402, 12, 156, 36]
+        ],
+        "checkpoints": [
+            [180, 390],
+            [180, 270],
+            [300, 270],
+            [300, 150],
+            [420, 150],
+            [420, 30],
+            [540, 30]
+        ],
+        "starter": "",
+        "require_variables": true,
+        "recommend_loop": true,
+        "movement_unit": "grid",
+        "step_size": 40,
+        "dialogue": [
+            "Peta ini dipenuhi jejak berulang. Dengan variabel dan perulangan, kita bisa merencanakan perjalanan lebih rapi."
+        ],
+        "outro": ["Lembah terlewati! Kini tinggal labirin terakhir menuju harta Kakek."],
+        "solution": "langkah = 3\nsudut = 90\nfor i in range(3):\n    forward(langkah)\n    left(sudut)\n    forward(langkah)\n    right(sudut)\nforward(langkah)",
+        "hint": "Amati penanda secara berurutan. Gunakan langkah = 3 dan sudut = 90. Pola berulang bisa ditulis dengan for i in range(jumlah): lalu indentasi empat spasi.\n\nlangkah = 3\nsudut = 90\nfor i in range(3):\n    forward(langkah)\n    left(sudut)\n    forward(langkah)\n    right(sudut)\nforward(langkah)"
+    },
+    {
+        "id": 5,
+        "title": "Harta Kakek",
+        "subtitle": "Harta terbaik menanti di ujung perjalanan.",
+        "objective": "Peti Kakek tersembunyi di balik labirin penjaga. Bantu Shiha melewati seluruh penanda dan menemukan harta terakhir!",
+        "commands": ["forward", "backward", "left", "right"],
+        "start": {
+            "x": 60,
+            "y": 390,
+            "angle": 0
+        },
+        "path": [
+            [42, 372, 156, 36],
+            [162, 252, 36, 156],
+            [42, 252, 156, 36],
+            [42, 132, 36, 156],
+            [42, 132, 156, 36],
+            [162, 12, 36, 156],
+            [162, 12, 156, 36],
+            [282, 12, 36, 156],
+            [282, 132, 156, 36],
+            [402, 12, 36, 156],
+            [402, 12, 156, 36],
+            [522, 12, 36, 156],
+            [522, 132, 36, 156],
+            [402, 252, 156, 36],
+            [402, 252, 36, 156],
+            [402, 372, 156, 36]
+        ],
+        "checkpoints": [
+            [180, 390],
+            [180, 270],
+            [60, 270],
+            [60, 150],
+            [180, 150],
+            [180, 30],
+            [300, 30],
+            [300, 150],
+            [420, 150],
+            [420, 30],
+            [540, 30],
+            [540, 150],
+            [540, 270],
+            [420, 270],
+            [420, 390],
+            [540, 390]
+        ],
+        "starter": "",
+        "require_variables": true,
+        "recommend_loop": true,
+        "movement_unit": "grid",
+        "step_size": 40,
+        "dialogue": [
+            "Peta ini dipenuhi jejak berulang. Dengan variabel dan perulangan, kita bisa merencanakan perjalanan lebih rapi."
+        ],
+        "outro": [
+            "Akhirnya, peti Kakek! Di dalamnya ada kompas, catatan perjalanan, dan sepucuk surat.",
+            "“Shiha, harta terbaik adalah hal yang kamu pelajari di perjalanan.” Terima kasih telah membantuku!"
+        ],
+        "solution": "langkah = 3\nsudut = 90\nforward(langkah)\nleft(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)\nright(sudut)\nfor i in range(2):\n    forward(langkah)\nright(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)",
+        "hint": "Ikuti penanda sesuai urutan. Bagian jalan yang berulang dapat diringkas dengan for i in range(jumlah):. Contoh rencana:\n\nlangkah = 3\nsudut = 90\nforward(langkah)\nleft(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)\nright(sudut)\nforward(langkah)\nright(sudut)\nfor i in range(2):\n    forward(langkah)\nright(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)\nleft(sudut)\nforward(langkah)"
+    }
+]

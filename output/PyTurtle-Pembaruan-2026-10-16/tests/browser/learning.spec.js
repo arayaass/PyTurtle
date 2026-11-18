@@ -1,0 +1,81 @@
+import { test, expect } from '@playwright/test';
+
+async function closeStory(page) {
+    const dialog = page.getByRole('dialog', { name: 'Cerita Shiha' });
+    for (let i = 0; i < 5 && await dialog.isVisible(); i++) {
+        await dialog.getByRole('button', { name: 'Tampilkan teks' }).click();
+        await dialog.getByRole('button', { name: /Berikutnya|Lanjutkan/ }).click();
+    }
+}
+
+test('predict, trace, compare and repair without awarding practice XP', async ({ page }) => {
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.goto('/register');
+    await page.getByLabel('Nama penjelajah').fill('Logic Explorer');
+    await page.getByLabel('Email', { exact: true }).fill(`logic-${Date.now()}@example.test`);
+    await page.locator('input[name="password"]').fill('ForestAdventure123!');
+    await page.locator('input[name="password_confirmation"]').fill('ForestAdventure123!');
+    await page.getByRole('button', { name: 'Buat akun & mulai jelajah' }).click();
+    await expect(page).toHaveURL(/\/home$/);
+    await page.goto('/maze/1');
+    await closeStory(page);
+    const lab = page.locator('.maze-learning');
+    const editor = page.locator('.cm-content');
+    await editor.fill('forward(1)');
+    await lab.getByRole('button', { name: 'Kunci prediksi & telusuri' }).click();
+    await expect(lab).toContainText('Isi prediksi X dan Y');
+    await lab.getByLabel('Posisi X').fill('3');
+    await lab.getByLabel('Posisi Y').fill('0');
+    await lab.getByLabel('Arah akhir').selectOption('0');
+    await lab.getByRole('button', { name: 'Kunci prediksi & telusuri' }).click();
+    await expect(lab).toContainText('Prediksi terkunci');
+    await expect(page.getByRole('button', { name: 'Run Code' })).toBeDisabled();
+    await lab.getByRole('button', { name: 'Instruksi berikutnya' }).click();
+    await expect(lab).toContainText('Prediksi dan hasil berbeda');
+    await expect(lab).toContainText('Posisi (1, 0)');
+    await expect(page.locator('.world-top')).toContainText('1 / 2 checkpoint');
+    await lab.getByRole('button', { name: 'Sebelumnya' }).click();
+    await expect(lab).toContainText('Posisi (0, 0)');
+    await lab.getByRole('button', { name: 'Instruksi berikutnya' }).click();
+    await lab.getByLabel('Apa yang perlu').fill('Jarak perlu tiga kotak, bukan satu.');
+    await lab.getByRole('button', { name: 'Kembali ke editor' }).click();
+    await editor.fill('forward(3)');
+    await lab.getByRole('button', { name: 'Kunci prediksi & telusuri' }).click();
+    await lab.getByRole('button', { name: 'Instruksi berikutnya' }).click();
+    await expect(lab).toContainText('Prediksimu tepat!');
+    await expect(page.getByRole('link', { name: 'Chapter berikutnya' })).toBeHidden();
+    await page.setViewportSize({ width: 390, height: 844 });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await page.screenshot({ path: 'storage/testing/learning-mobile.png', fullPage: true });
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await lab.getByRole('button', { name: 'Kembali ke editor' }).click();
+    const saved = page.waitForResponse(response => response.url().endsWith('/game/progress/save') && response.request().postDataJSON().phase === 'final');
+    await page.getByRole('button', { name: 'Run Code' }).click();
+    expect((await (await saved).json()).score).toBe(95);
+    await expect(page.getByRole('dialog', { name: 'Cerita Shiha' })).toBeVisible();
+    await closeStory(page);
+    await page.goto('/maze/2');
+    await closeStory(page);
+    await editor.fill('forward(3)\nleft(90)\nforward(1)');
+    await lab.getByLabel('Posisi X').fill('3');
+    await lab.getByLabel('Posisi Y').fill('-1');
+    await lab.getByLabel('Arah akhir').selectOption('270');
+    await lab.getByRole('button', { name: 'Kunci prediksi & telusuri' }).click();
+    await lab.getByRole('button', { name: 'Instruksi berikutnya' }).click();
+    await lab.getByRole('button', { name: 'Instruksi berikutnya' }).click();
+    await expect(lab).toContainText('Posisi (3, 0) · Utara');
+    await expect(lab.locator('.trace-command')).toContainText('Baris 2: left(90)');
+    await lab.getByRole('button', { name: 'Instruksi berikutnya' }).click();
+    await expect(lab).toContainText('Prediksimu tepat!');
+    await page.screenshot({ path: 'storage/testing/learning-desktop.png', fullPage: true });
+    await lab.getByRole('button', { name: 'Kembali ke editor' }).click();
+    await editor.fill('invalid()');
+    await lab.getByRole('button', { name: 'Kunci prediksi & telusuri' }).click();
+    await expect(lab).toContainText('Kode belum dijalankan');
+    await editor.fill('forward(30)');
+    await lab.getByRole('button', { name: 'Kunci prediksi & telusuri' }).click();
+    await lab.getByRole('button', { name: 'Instruksi berikutnya' }).click();
+    await expect(lab).toContainText('Shiha berhenti di tepi jalan');
+    expect(errors).toEqual([]);
+});

@@ -1,0 +1,19 @@
+@startuml
+title UC05 Keluar dari akun
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Memilih Keluar;
+|PyTurtle|
+label N1
+:Mengakhiri autentikasi pengguna;
+|PyTurtle|
+label N2
+:Menghapus sesi aktif dan memperbarui token;
+|PyTurtle|
+label N3
+:Menampilkan halaman login;
+stop
+@enduml

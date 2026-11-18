@@ -1,0 +1,94 @@
+[
+  {
+    "file": "app/Http/Controllers/LogicChallengeController.php",
+    "sha256": "f1df2a36d0feaefd47499360264e19b2ca4441f836d566694886c1f8781f01ce"
+  },
+  {
+    "file": "app/Services/LogicChallengeService.php",
+    "sha256": "f5f07972da23ada46d6d3f55a058eb10574d0491e85b78f3b379f186abd187f7"
+  },
+  {
+    "file": "BERSIHKAN-LABORATORIUM.ps1",
+    "sha256": "db269f00854b27f1870c2de8e6181d0173087085982ec2d73103c439c4132032"
+  },
+  {
+    "file": "CARA-PASANG-UJI-LOGIKA.txt",
+    "sha256": "433711cb4f621647323e95a195b4fd49e09dfea3253c78f4549bb07ced90f551"
+  },
+  {
+    "file": "database/migrations/2026_10_16_000001_create_logic_challenge_tables.php",
+    "sha256": "4b7bb1c3cc72cb7ed1243a568ff32f57ba21e3f6f089a5ba19e04369beb3041f"
+  },
+  {
+    "file": "public/build/assets/app-BQhgpP5i.js",
+    "sha256": "bbb82e7840b7c28a162f5c999fe15fda66864560c265cfc99e589b4b0b6caf4c"
+  },
+  {
+    "file": "public/build/assets/app-BRZtVLfn.css",
+    "sha256": "f598e42832b22f260a86995ea301b1c97feda5194bd97be625250177fa8ca074"
+  },
+  {
+    "file": "public/build/assets/app-DJpGJTow.css",
+    "sha256": "4686cd99832cbd2ea12b2fa477130cc9ad3d94bad2f3fdf360931228d6b534aa"
+  },
+  {
+    "file": "public/build/assets/editor-DS8BLRtc.js",
+    "sha256": "fc58a64602aea5b113f3c248fd1798a079799fc2d8bbfc51075e443e3009667a"
+  },
+  {
+    "file": "public/build/manifest.json",
+    "sha256": "92f97d4f761ab6a189785accaa901fba4af5cfa495c2a754c42d46cd47900194"
+  },
+  {
+    "file": "resources/css/app.css",
+    "sha256": "451b91c39be67a1d9b296a99b545cf26a739f989ff6642de3065dd5ddd258c94"
+  },
+  {
+    "file": "resources/js/app.js",
+    "sha256": "88876c571c10e59c0f049d870245378783946b793f795f2aee40ea7f0472379c"
+  },
+  {
+    "file": "resources/js/game/logic-challenge.js",
+    "sha256": "786a57d2c9f838faa6ba7b0ca8e2ba9bc334fab15426870bc1c2677a9c5a0edd"
+  },
+  {
+    "file": "resources/js/game/maze.js",
+    "sha256": "6276295060b4e55b60cfb31acb1177f5a72344934c7ff32309e59877dfde177a"
+  },
+  {
+    "file": "resources/views/components/final-reward.blade.php",
+    "sha256": "827ca4cad66d1de48cc1d848def60c7fcee072e149c158074fcc272c6b78a5c2"
+  },
+  {
+    "file": "resources/views/components/navbar.blade.php",
+    "sha256": "ff2a8db4179261f436a0e19784dd2df85fb7c3eecf3dd1b8846c64995a0b5649"
+  },
+  {
+    "file": "resources/views/logic/index.blade.php",
+    "sha256": "4b2c0000cd39b0b39f0cab58498b7ba90bb645840338ef869b050b4ca6283fab"
+  },
+  {
+    "file": "resources/views/logic/show.blade.php",
+    "sha256": "41ccab4ec31c3dd293952d52e2d46c372afd13230fda3e16f4b0856ce2a52a4b"
+  },
+  {
+    "file": "resources/views/maze/show.blade.php",
+    "sha256": "116e899c0c363134b7f39ea8ae017404c9f0080cc6fdcf7bbcdcee0a1f0d1f5d"
+  },
+  {
+    "file": "routes/web.php",
+    "sha256": "f7e653553c2afd03307c0ae41440aaecbe9d8b1393eaaeff78f65e4d32dac921"
+  },
+  {
+    "file": "tests/browser/logic.spec.js",
+    "sha256": "88e44b82a383b343864b53b0574bf9de5a355f919d659095818828a4f4b2eb88"
+  },
+  {
+    "file": "tests/Feature/LogicChallengeTest.php",
+    "sha256": "216ffde245f8a1189992f5f915ab3a45dc5d7cf3805b6b42185473d1d8cf0623"
+  },
+  {
+    "file": "tests/game/maze-editor.test.mjs",
+    "sha256": "e38ab85385c53a069d08cf5a57402238003b09d57783bfa5b2a9873f856e3e8f"
+  }
+]

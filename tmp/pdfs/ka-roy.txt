@@ -1,0 +1,3573 @@
+
+--- PAGE 1 ---
+ 
+ 
+i 
+ 
+ 
+ 
+ 
+PENGEMBANGAN LINGKUNGAN PEMBELAJARAN 
+INTERAKTIF BERBASIS WEB UNTUK PEMROGRAMAN 
+TURTLE DENGAN MODEL TUTORIAL 
+ 
+ 
+ 
+ 
+ 
+SKRIPSI 
+Diajukan Untuk Memenuhi Persyaratan Memperoleh Gelar Sarjana  
+Strata-1 Pendidikan Komputer 
+ 
+ 
+ 
+ 
+ 
+ 
+Oleh : Khoyrur Roykhan 
+NIM 2110131210002 
+ 
+ 
+ 
+ 
+ 
+ 
+JURUSAN PENDIDIKAN KOMPUTER 
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN 
+UNIVERSITAS LAMBUNG MANGKURAT 
+BANJARMASIN  
+JULI 2025 
+
+--- PAGE 2 ---
+ 
+ 
+i 
+ 
+PENGEMBANGAN LINGKUNGAN PEMBELAJARAN 
+INTERAKTIF BERBASIS WEB UNTUK PEMROGRAMAN 
+TURTLE DENGAN MODEL TUTORIAL 
+ 
+ 
+ 
+ 
+ 
+SKRIPSI 
+Diajukan Untuk Memenuhi Persyaratan Memperoleh Gelar Sarjana  
+Strata-1 Pendidikan Komputer 
+ 
+ 
+ 
+ 
+ 
+Oleh: Khoyrur Roykhan 
+NIM 2110131210002 
+ 
+ 
+ 
+ 
+ 
+ 
+JURUSAN PENDIDIKAN KOMPUTER 
+FAKULTAS KEGURUAN DAN ILMU PENDIDIKAN 
+UNIVERSITAS LAMBUNG MANGKURAT 
+BANJARMASIN  
+JULI 2025  
+--- PAGE 3 ---
+ii 
+ 
+HALAMAN PENGESAHAN 
+ 
+SKRIPSI 
+PENGEMBANGAN LINGKUNGAN PEMBELAJARAN 
+INTERAKTIF BERBASIS WEB UNTUK PEMROGRAMAN 
+TURTLE DENGAN MODEL TUTORIAL  
+ 
+Oleh: Khoyrur Roykhan 
+NIM 2110131210002 
+ 
+Telah dipertahankan dihadapan dewan penguji pada tanggal 1 Juli 2025 dan 
+dinyatakan lulus. 
+ 
+Susunan Dewan Penguji: 
+Ketua Penguji/Pembimbing I 
+ 
+ 
+ 
+Dr. Harja Santana Purba, M.Kom.  
+NIP. 19630705 198903 1 002 
+ 
+ 
+Sekretaris Penguji/Pembimbing II 
+ 
+ 
+ 
+Rizky Pamuji, S.Kom., M.Kom. 
+NIP. 19940601 202203 1007 
+ 
+ 
+Banjarmasin, Juli 2025 
+Jurusan Pendidikan Komputer 
+Ketua, 
+ 
+ 
+ 
+Dr. Harja Santana Purba, M.Kom.  
+NIP. 19630705 198903 1 002 
+ 
+Anggota Dewan Penguji: 
+1. Nuruddin Wiranda, S.Kom., M.Cs 
+2. Delsika Pramata Sari, S.Pd., M.Pd. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- PAGE 4 ---
+iii 
+ 
+LEMBAR PERSETUJUAN 
+ 
+Ini adalah menyatakan bahwa Skripsi oleh Khoyrur Roykhan NIM 2110131210002 
+dengan judul “Pengembangan Lingkungan Pembelajaran Interaktif Berbasis Web 
+untuk Pemrograman Turtle dengan Model Tutorial ” telah disetujui oleh Dewan 
+Penguji sebagai syarat untuk menyelesaikan Program Pendidikan Sarjana pada 
+Jurusan Pendidikan Komputer. 
+Ketua, 
+ 
+ 
+ 
+Dr. Harja Santana Purba, M.Kom.  
+NIP. 196307051989031002 
+ 
+Anggota, 
+ 
+ 
+ 
+Rizky Pamuji, S.Kom., M.Kom. 
+NIP. 199406012022031007 
+ 
+Anggota, 
+ 
+ 
+ 
+Nuruddin Wiranda, S.Kom., M.Cs. 
+NIPK. 19900315201608101001 
+ 
+Anggota, 
+ 
+ 
+ 
+Delsika Pramata Sari, M.Pd. 
+NIPK. 19921229201608201001 
+ 
+Mengetahui,  
+Ketua Jurusan Pendidikan Komputer 
+ 
+ 
+ 
+Dr. Harja Santana Purba, M.Kom.  
+NIP. 196307051989031002 
+Tanggal, ....../....../2025 
+ 
+ 
+ 
+ 
+ 
+ 
+Tanggal, ....../ ....../2025 
+ 
+ 
+ 
+ 
+ 
+ 
+Tanggal, ....../ ....../2025 
+ 
+ 
+ 
+ 
+ 
+ 
+Tanggal, ....../ ....../2025 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Tanggal, ....../ ....../2025 
+ 
+  
+
+--- PAGE 5 ---
+iv 
+ 
+PERNYATAAN 
+ 
+Dengan ini saya menyatakan bahwa dalam skripsi ini tidak terdapat karya yang 
+pernah diajukan untuk gelar kesarjanaan di suatu perguruan tinggi dan sepanjang 
+pengetahuan saya juga tidak terdapat karya atau pendapat yang pernah ditulis atau 
+diterbitkan oleh orang lain, kecuali yang secara tertulis diacu dalam naskah ini dan 
+disebutkan dalam daftar pustaka. 
+ 
+ 
+  Banjarmasin, 12 Juli 2025 
+ 
+ 
+ 
+ 
+ 
+Khoyrur Roykhan 
+NIM 2110131210002 
+ 
+  
+
+--- PAGE 6 ---
+v 
+ 
+PENGEMBANGAN LINGKUNGAN PEMBELAJARAN INTERAKTIF 
+BERBASIS WEB UNTUK PEMROGRAMAN TURTLE DENGAN MODEL 
+TUTORIAL (Oleh: Khoyrur Roykhan; Pembimbing: Harja Santana Purba, Rizky 
+Pamuji; 2025; 98 halaman) 
+ 
+ABSTRAK 
+ 
+Pada mata pelajaran Informatika kelas VII Kurikulum Merdeka, algoritma dan 
+pemrograman diperkenalkan menggunakan Scratch. Namun, untuk membantu 
+siswa beralih ke pemrograman tekstual, dibutuhkan pendekatan yang ramah 
+pemula. Salah satu alternatifnya adalah Turtle Programming berbasis Python. 
+Pembelajaran Turtle versi desktop memiliki keterbatasan, seperti harus membaca 
+buku panduan lalu mencoba kodenya di IDLE atau VS Code yang sudah diinstal, 
+menyimpan file .py, dan menjalankannya secara terpisah. Penelitian ini bertujuan 
+mengembangkan lingkungan p embelajaran interaktif berbasis web untuk 
+pemrograman Turtle dengan model tutorial serta menganalisis kevalidannya. 
+Lingkungan ini mengintegrasikan materi dan editor Turtle dalam satu platform. 
+Penelitian menggunakan metode R&D dengan model ADDIE (analisis , desain, 
+pengembangan, evaluasi). Produk dikembangkan menggunakan React, Node.js, 
+Bootstrap, Skulpt, CodeMirror, dan Firebase. Pengumpulan data dilakukan melalui 
+angket validasi oleh dua ahli materi dan dua ahli media menggunakan instrumen 
+sesuai standar BSNP dan LORI. Uji fungsionalitas dilakukan dengan metode Black 
+Box Testing oleh lima pengguna untuk menilai kesesuaian fungsi sistem dengan 
+spesifikasi. Analisis data dilakukan secara kuantitatif melalui penilaian validitas 
+dan fungsionalitas. Hasil menunjukkan validitas materi 82%, media 80%, dan 
+fungsionalitas 100%. Lingkungan  ini dinyatakan valid dan berfungsi sepenuhnya 
+untuk digunakan dalam proses pembelajaran pemrograman. 
+Kata kunci: Turtle Programming, lingkungan pembelajaran, web interaktif, model 
+tutorial, ADDIE 
+  
+--- PAGE 7 ---
+vi 
+ 
+DEVELOPMENT OF AN INTERACTIVE WEB -BASED LEARNING 
+ENVIRONMENT FOR TURTLE PROGRAMMING USING A TUTORIAL 
+MODEL (Oleh: Khoyrur Roykhan; Pembimbing: Harja Santana Purba, Rizky 
+Pamuji; 2025; 98 pages) 
+ 
+ABSTRACT 
+ 
+In the Grade VII Informatics subject of the Merdeka Curriculum, algorithms and 
+programming are introduced using Scratch. To help students transition to textual 
+programming, a beginner-friendly approach is required. One alternative is Python-
+based Turtle Programming. However, the desktop version has limitations, such as 
+requiring students to read manuals and try code using pre-installed tools like IDLE 
+or VS Code, save .py files, and run them separately. This study aims to develop a 
+web-based interactive lea rning environment for Turtle Programming using a 
+tutorial model and analyze its validity. The platform integrates learning materials 
+and a built -in Turtle editor. The research uses the R&D method with the ADDIE 
+model (analysis, design, development, evaluat ion). The product was developed 
+using React, Node.js, Bootstrap, Skulpt, CodeMirror, and Firebase. Data were 
+collected through expert validation questionnaires based on BSNP and LORI 
+standards. Functionality was tested using the Black Box method by five us ers to 
+ensure system performance matched specifications. Data analysis was conducted 
+quantitatively through assessments of content validity and system functionality. 
+Results showed 82% content validity, 80% media validity, and 100% functionality. 
+The learn ing environment was found to be valid and fully functional for use in 
+programming education. 
+Keywords: Turtle Programming, learning environment, interactive web, tutorial 
+model, ADDIE 
+ 
+ 
+  
+--- PAGE 8 ---
+vii 
+ 
+KATA PENGANTAR 
+ 
+Puji syukur peneliti panjatkan ke hadirat  Allah SWT yang telah 
+melimpahkan rahmat dan hidayah -Nya sehingga peneliti dapat menyelesaikan 
+skripsi yang berjudul “ Pengembangan Lingkungan Pembelajaran Interkatif 
+Berbasis Web untuk Pemrograman Turtle dengan Model Tutorial ”. Skripsi ini 
+dibuat dengan maksud untuk memenuhi salah satu syarat dalam menyelesaikan 
+program Strata-1 Pendidikan Komputer, Fakultas Keguruan dan Ilmu Pendidikan, 
+Universitas Lambung Mangkurat. 
+Dalam kesempatan ini pula, peneliti ingin mengucapkan terima kasih yang 
+sebesar-besarnya kepada semua pihak yang telah memberikan dukungan, 
+bimbingan, dan bantuan selama proses penyusunan skripsi ini, terutama kepada: 
+1. Dekan FKIP Universitas Lambung Mangkurat. 
+2. Ketua Jurusan Pendidikan Komputer FKIP ULM. 
+3. Dr. Harja Santana Purba, M.Kom., selaku dosen Pembimbing I yang telah 
+meluangkan waktu dalam membimbing, membantu dan memberikan 
+masukan selama pengerjaan skripsi ini.  
+4. Rizky Pamuji , M.Kom., selaku dosen Pembimbing II yang telah 
+meluangkan waktu dalam membimbing, membantu dan memberikan 
+masukan selama pengerjaan skripsi ini. 
+Peneliti sangat menyadari bahwa dalam penulisan skripsi ini masih terdapat 
+banyak kesalahan dan kekeliruan, maka dari itu peneliti berharap untuk 
+--- PAGE 9 ---
+viii 
+ 
+mendapatkan saran dan masukan agar dapat meningkatkan kualitas penelitian yang 
+lainnya dimasa yang akan datang. 
+ 
+  Banjarmasin, Juli 2025 
+ 
+ 
+Khoyrur Roykhan 
+NIM 2110131210002 
+  
+
+--- PAGE 10 ---
+ix 
+ 
+DAFTAR ISI 
+ 
+ 
+HALAMAN PENGESAHAN ............................................................................... ii 
+LEMBAR PERSETUJUAN ................................................................................ iii 
+PERNYATAAN ..................................................................................................... iv 
+ABSTRAK ............................................................................................................. v 
+ABSTRACT .......................................................................................................... vi 
+KATA PENGANTAR .......................................................................................... vii 
+DAFTAR ISI ......................................................................................................... ix 
+DAFTAR TABEL ................................................................................................. xi 
+DAFTAR GAMBAR ........................................................................................... xii 
+DAFTAR LAMPIRAN ...................................................................................... xiv 
+BAB I PENDAHULUAN ...................................................................................... 1 
+1.1 Latar Belakang.......................................................................................... 1 
+1.2 Rumus Masalah ........................................................................................ 3 
+1.3 Tujuan Penelitian ...................................................................................... 3 
+1.4 Manfaat Penelitian .................................................................................... 4 
+1.5 Spesifikasi Produk yang diharapkan ........................................................ 4 
+1.6 Batasan Masalah ....................................................................................... 4 
+BAB II TINJAUAN PUSTAKA ........................................................................... 5 
+2.1 Lingkungan Pembelajaran ........................................................................ 5 
+2.2 Lingkungan Pembelajaran Interaktif Berbasis Web ................................. 5 
+2.3 Teknologi yang Digunakan ....................................................................... 6 
+2.4 Model Tutorial ........................................................................................ 14 
+2.5 Library Turtle ......................................................................................... 16 
+2.6 Black Box Testing ................................................................................... 18 
+2.7 Kriteria Validitas Produk ........................................................................ 18 
+2.8 Penelitian Relevan .................................................................................. 19 
+2.9 Aplikasi Relevan .................................................................................... 21 
+2.10 Kerangka Berpikir .................................................................................. 24 
+BAB III METODE PENGEMBANGAN .......................................................... 25 
+3.1 Jenis Penelitian ....................................................................................... 25 
+3.2 Model Pengembangan ............................................................................ 26 
+3.3 Prosedur Pengembangan ........................................................................ 28 
+3.4 Subjek dan Objek Penelitian .................................................................. 31 
+3.5 Teknik Pengumpulan Data ..................................................................... 31 
+3.6 Instrumen Pengumpulan Data ................................................................ 31 
+3.7 Teknik Analisi Data ................................................................................ 35 
+BAB IV HASIL DAN PEMBAHASAN ............................................................. 39 
+4.1 Hasil Pengembangan Produk .................................................................. 39 
+4.2 Hasil Validasi Produk ............................................................................. 87 
+4.3 Pembahasan ............................................................................................ 89 
+--- PAGE 11 ---
+x 
+ 
+BAB V PENUTUP ............................................................................................... 93 
+5.1 Kesimpulan ............................................................................................. 93 
+5.2 Saran ....................................................................................................... 94 
+DAFTAR PUSTAKA........................................................................................... 95 
+LAMPIRAN ......................................................................................................... 99 
+ 
+  
+--- PAGE 12 ---
+xi 
+ 
+DAFTAR TABEL 
+ 
+Tabel                  Halaman 
+3.1 Kisi-kisi instrumen validasi materi ................................................................. 32 
+3.2 Kisi-kisi instrumen validasi media .................................................................. 32 
+3.3 Instrumen pengujian fungsionalitas ................................................................ 33 
+3.4 Pedoman Skor Butir Instrumen V alidasi  Materi dan Media .......................... 35 
+3.5 Skor harapan validasi materi ........................................................................... 36 
+3.6 Skor harapan validasi media ........................................................................... 36 
+3.7 Kriteria validitas materi dan media ................................................................. 37 
+3.8 Interpretasi persentase fungsionalitas ............................................................. 38 
+4.1 Analisis aplikasi relevan .................................................................................. 41 
+4.2 Analisis materi ................................................................................................. 44 
+4.3 Penerapan identitas model tutorial pada media pembelajaran ........................ 48 
+4.4 Analisis teknologi menjalankan kode python di web ...................................... 56 
+4.5 Daftar teknologi tambahan yang diperlukan ................................................... 57 
+4.6 Hasil black box testing .................................................................................... 84 
+4.7 Perhitungan hasil uji validasi materi ............................................................... 88 
+4.8 Hasil perhitungan uji validitas media .............................................................. 89 
+ 
+  
+--- PAGE 13 ---
+xii 
+ 
+DAFTAR GAMBAR 
+ 
+Gambar                 Halaman 
+2.1 Kerangka berpikir............................................................................................ 24 
+3.1 Konsep ADDIE menurut Branch, 2009) ......................................................... 27 
+3.2 Kerangka Kerja Lingkungan Pembelajaran .................................................... 28 
+4.1 Import komponen codemirror dan ekstensinya ............................................... 51 
+4.2 Kode meyimpan isi editor ............................................................................... 52 
+4.3 Kode menampilkankan CodeMirror pada web ............................................... 52 
+4.4 Kode meng-embed Skulpt ke halaman web .................................................... 53 
+4.5 Fungsi untuk output dan file reader ................................................................ 53 
+4.6 Fungsi untuk mengeksekusi kode python menggunakan Skulpt .................... 53 
+4.7 Kode untuk menampilkan hasil visualisasi dari kode perintah ....................... 54 
+4.8 Fungsi kode parser .......................................................................................... 55 
+4.9 Alur ekseskusi kode pada media ..................................................................... 56 
+4.10. Flowchart alur utama penggunaan media .................................................... 59 
+4.11. Diagram use case ......................................................................................... 61 
+4.12 Skema basis data ........................................................................................... 63 
+4.13 Palet warna yang digunakan.......................................................................... 64 
+4.14 Rancangan untuk landing page ..................................................................... 65 
+4.15 Rancangan untuk halaman materi ................................................................. 65 
+4.16 Rancangan halaman kuis ............................................................................... 66 
+4.17 Rancangan halaman tantangan ...................................................................... 66 
+4.18 Rancangan halaman editor ............................................................................ 67 
+4.19 Rancangan halaman dashboard guru ............................................................ 67 
+4.20 Kode koneksi firestore .................................................................................. 70 
+4.21 Halaman landing ........................................................................................... 71 
+4.22 Halaman materi ............................................................................................. 72 
+4.23 Tampilan latihan menjalankan printah dengan editor ................................... 73 
+4.24 Aktivitas pilihan ganda .................................................................................. 74 
+4.25 Aktivitas tantangan pada materi .................................................................... 74 
+4.26 Contoh petunjuk aktivitas tantangan ............................................................. 75 
+4.27 Halaman sebelum memulai kuis ................................................................... 75 
+4.28 Halaman menjawab kuis ............................................................................... 76 
+4.29 Potongan kode memproses pertanyaan pilihan ganda .................................. 77 
+4.30 Potongan kode memproses tantangan ........................................................... 78 
+4.31 Potongan kode memproses nilai kuis ............................................................ 79 
+4.32 Tampilan respon jawaban salah..................................................................... 79 
+4.33 Tampilan respon jawaban benar .................................................................... 80 
+4.34 Tampilan respon ketika salah pada aktivitas tantangan ................................ 80 
+4.35 Respon ketika aktivitas tantangan selesai ..................................................... 81 
+4.36 Respon jika nilai kuis kurang dari KKM ...................................................... 81 
+--- PAGE 14 ---
+xiii 
+ 
+4.37 Respon jika nilai kuis lebih dari KKM ......................................................... 82 
+4.38 Tampilan halaman terbuka dan terkunci ....................................................... 83 
+4.39 Tampilan menyelesaikan evaluasi ................................................................. 83 
+ 
+  
+--- PAGE 15 ---
+xiv 
+ 
+DAFTAR LAMPIRAN 
+ 
+Lampiran                 Halaman 
+1. QR Code untuk tautan materi ajar ..................................................................... 99 
+2. QR Code untuk tautan media pembelajaran...................................................... 99 
+3. Lembar validasi ahli materi I .......................................................................... 100 
+4. Lembar validasi ahli materi II ......................................................................... 104 
+5. Lembar validasi ahli media I ........................................................................... 108 
+6. Lembar validasi ahli media II .......................................................................... 111 
+7. Angket Pengujian Fungsionalitas Responden I ................................................ 114 
+8. Angket Pengujian Fungsionalitas Responden II .............................................. 117 
+9. Angket Pengujian Fungsionalitas Responden III ............................................ 120 
+10. Angket Pengujian Fungsionalitas Responden IV .......................................... 123 
+11. Angket Pengujian Fungsionalitas Responden V ........................................... 126 
+12. Kartu Konsultasi Skripsi ............................................................................... 129 
+ 
+ 
+ 
+--- PAGE 16 ---
+ 
+ 
+1 
+ 
+BAB I  
+PENDAHULUAN 
+ 
+ 
+1.1 Latar Belakang 
+Kemampuan berpikir komputasional menjadi salah satu keterampilan 
+penting di era digital saat ini. Salah satu cara efektif untuk melatih kemampuan 
+tersebut adalah melalui pembelajaran pemrograman  (Maulana & Waluya, 2024) . 
+Penelitian menunjukkan bahwa anak -anak yang dikenalkan pada pemrograman 
+lebih awal memiliki potensi yang lebih tinggi dalam berpikir logis, pemecahan 
+masalah, dan kreativitas (Silva et al., 2023). 
+Pada mata pelajaran Informatika Kelas VII Kurikulum Merdeka, 
+pembelajaran algoritma dan pemrograman pada Bab 7 diperkenalkan menggunakan 
+Scratch, yaitu salah satu bentuk pemrograman visual berbasis blok . Pemrograman 
+visual seperti ini membantu pemula memahami alur logika program dengan cara 
+yang mudah dipahami dan sekaligus melatih kemampuan berpikir komputasional 
+sejak dini (Azaharani et al., 2024). Namun, agar siswa dapat berkembang ke tahap 
+berikutnya seperti menulis perintah sendiri dan memahami cara kerja program 
+secara langsung, mereka perlu diperkenalkan dengan pemrograman tekstual guna 
+mengasah kemampuan berpikir komputasional yang lebih mendalam. 
+Salah satu pendekatan pemrograman tekstual yang ramah untuk pemula 
+adalah Turtle Programming berbasis Python. Turtle Programming sendiri berasal 
+dari bahasa Logo dan telah terbukti efektif dalam memperkenalkan konsep 
+--- PAGE 17 ---
+2 
+ 
+ 
+ 
+pemrograman dasar secara visual, eksploratif, dan kreatif, karena menggunakan 
+objek berbentuk kura-kura yang dapat digerakkan dengan perintah (Solomon et al., 
+2020). Namun, dalam praktiknya, pembelajaran pemrograman Turtle dengan 
+Python versi desktop memiliki beberapa keterbatasan. Siswa perlu menggunakan 
+perangkat lunak seperti IDLE atau VS Code, lalu menulis kode dalam file .py, 
+menyimpannya, menjalankan file tersebut, dan melihat hasilnya di jendela terpisah. 
+Proses ini tidak terintegrasi dan sering kali membingungkan bagi pemula. Hal itu 
+juga dapat  menyebabkan kehilangan konteks saat harus berpindah -pindah antara 
+membaca materi, menulis kode, dan melihat hasil eks ekusi. Selain itu, menurut 
+penelitian yang dilakukan (Bakar et al., 2020) , pemula yang baru belajar 
+pemrograman mengalami kesulitan dalam penulisan sintaks. 
+Berdasarkan uraian ini, peneliti melihat adanya kebutuhan untuk  
+mengembangkan lingkungan pembelajaran yang menyatukan semua komponen 
+pembelajaran pemrograman Turtle dalam satu platform berbasis web. Dalam satu 
+tampilan, siswa dapat mengakses materi, menulis kode, menjalankan perintah, dan 
+langsung melihat hasil visualnya melalui kanvas. Denga n pendekatan ini, proses 
+belajar menjadi lebih terpadu, efisien, dan ramah bagi pemula. Dalam 
+pengembangan environment ini, penulisan perintah Turtle dimodifikasi agar lebih 
+menyerupai gaya bahasa Logo yang lebih sed erhana, seperti forward 100 alih-alih 
+forward(100). Modifikasi ini bertujuan untuk membantu peserta didik lebih fokus 
+memahami logika perintah, tanpa terbebani oleh aturan sintaks Python yang 
+kompleks. Selanjutnya, lingkungan pembelajaran  ini dikembangkan dengan 
+menggunakan model tutorial, yang memungkinkan siswa belajar secara bertahap: 
+--- PAGE 18 ---
+3 
+ 
+ 
+ 
+mulai dari memahami konsep, mencoba contoh kode, hingga menyelesaikan 
+tantangan yang dirancang untuk memperkuat pemahaman. Model ini telah banyak 
+digunakan dalam pengembangan media pembelajaran dan terbukti mendukung 
+pemahaman progresif serta keterlibatan aktif siswa dalam proses belajar. 
+Dengan demikian, pengembangan lingkugan pembelajaran interaktif berbasis 
+web untuk pemrograman Turtle dengan model tutorial diharapkan dapat menjadi 
+solusi alternatif dalam memperkenalkan pemrograman tekstual secara lebih 
+sederhana, menyenangkan, dan mudah dipahami oleh peserta didik pemula. 
+1.2 Rumus Masalah 
+Berdasarkan latar belakang di  atas, rumusan masalah yang dalam 
+penelitian ini adalah: 
+(1) Bagaimana mengembangkan lingkungan pembelajaran interaktif berbasis web 
+untuk pemrograman turtle dengan model tutorial? 
+(2) Bagaimana kevalidan lingkungan pembelajaran interaktif berbasis web untuk  
+pemrograman turtle dengan model tutorial? 
+1.3 Tujuan Penelitian 
+Berdasarkan paparan dari rumusan masalah di atas, maka tujuan penelitian 
+ini adalah: 
+(1) Mengembangkan lingkungan pembelajaran interaktif berbasis web untuk  
+pemrograman turtle dengan model tutorial. 
+(2) Menganalisis kevalidan lingkungan pembelajaran interaktif berbasis web 
+untuk pemrograman turtle dengan model tutorial. 
+--- PAGE 19 ---
+4 
+ 
+ 
+ 
+1.4 Manfaat Penelitian 
+Berdasarkan pada tujuan penelitian, a dapun beberapa manfaat dari 
+penelitian ini adalah sebagai berikut: 
+(1) Menambah pengetahuan dan pengalaman mengembangkan lingkungan 
+pembelajaran interaktif berbasis web untuk pemrograman turtle dengan model 
+tutorial. 
+(2) Sebagai alternatif pilihan media pembelajaran yang dapat mempermudah 
+dalam penyampaian materi. 
+(3) Membantu peserta didik saat pembelajaran dikelas ataupun belajar secara 
+mandiri dirumah. 
+1.5 Spesifikasi Produk yang diharapkan 
+Berdasarkan tujuan penelitian dan manfaat penelitian, berikut adalah 
+spesifikasi produk yang diharapkan dari penelitian ini: 
+(1) Lingkungan pembelajaran berbasis web. 
+(2) Lingkungan pembelajaran berisi materi  pemrograman turtle dengan m odel 
+tutorial. 
+1.6 Batasan Masalah 
+Penelitian ini berfokus pada pengembangan lingkungan pembelajaran 
+interaktif berbasis web untuk pemrograman turtle dengan model tutorial. Kemudian 
+menguji validas materi dan media yang telah di kembangkan.  
+--- PAGE 20 ---
+ 
+ 
+5 
+ 
+BAB II  
+TINJAUAN PUSTAKA 
+ 
+ 
+2.1 Lingkungan Pembelajaran 
+Lingkungan pembelajaran adalah konteks  di mana proses pendidikan 
+berlangsung, mencakup semua elemen yang mempengaruhi pengalaman belajar 
+siswa. Menurut (El-Sabagh, 2021) , lingkungan pendidikan yang baik dapat 
+mendukung pengembangan keterampilan dan pengetahuan siswa, serta 
+meningkatkan motivasi dan keterlibatan mereka dalam proses belajar. Lingkungan 
+ini harus mampu menyesuaikan dengan kebutuhan dan gaya belajar siswa, sehingga 
+setiap individu dapat belajar dengan cara yang paling efektif bagi mereka.  Dalam 
+konteks pemrograman, lingkungan pembelajaran menyediakan berbagai sumber 
+daya yang diperlukan untuk mendukung proses belajar. Ini termasuk materi 
+pembelajaran, soal lat ihan, dan kesempatan untuk menjalankan kode secara 
+langsung. Dengan adanya fitur ini, siswa dapat memahami konsep pemrograman 
+dengan lebih baik, karena mereka tidak hanya belajar teori, tetapi juga dapat 
+menerapkannya secara praktis. 
+2.2 Lingkungan Pembelajaran Interaktif Berbasis Web 
+Lingkungan pembelajaran interaktif berbasis web adalah platform yang 
+memungkinkan siswa untuk aktif belajar menggunakan teknologi digital.  Menurut  
+(Ouh et al., 2022) , lingkungan pembelajaran ini dirancang untuk meningkatkan 
+keterlibatan siswa dalam pembelajaran, terutama dalam pemrograman. Dengan 
+--- PAGE 21 ---
+6 
+ 
+ 
+teknologi web, siswa dapat mengakses materi pembelajaran, mengikuti latihan 
+interaktif, dan mendapatkan umpan balik secara langsung. 
+Sistem seperti ClassCode menunjukkan bagaimana lingkungan 
+pembelajaran interaktif dapat memberikan pengalaman belajar yang lebih baik. 
+Siswa dapat mengikuti tutorial online, melakukan latihan pemrograman, dan 
+menjalankan kode secara langsung. Fitur ini mem ungkinkan siswa melihat hasil 
+dari kode yang mereka tulis dan melakukan perbaikan jika diperlukan (Suzuki et 
+al., 2020) . Penelitian juga menunjukkan bahwa penggunaan lingkungan 
+pembelajaran interaktif dapat meningkatkan hasil belajar siswa dalam 
+pemrograman (Syahidi et al., 2022). Dengan adanya elemen interaktif, seperti kuis 
+dan latihan pemrograman, siswa dapat belajar dengan cara yang lebih 
+menyenangkan dan efektif. 
+Secara keseluruhan, lingkungan pembelajaran interaktif berbasis web 
+tidak hanya memudahkan akses ke materi, tetapi juga memberikan kesempatan bagi 
+siswa untuk langsung menerapkan apa yang mereka pelajari. 
+2.3 Teknologi yang Digunakan 
+Dalam pengembangan web dibutuhkan berbagai macam teknologi 
+standar pengembangan web dan beberapa teknologi tambahan lainnya. Berikut 
+adalah beberapa teknologi yang digunakan. 
+2.3.1 HTML 
+Hypertext Markup Language  (HTML) adalah bahasa standar yang 
+digunakan untuk menampilkan konten pada halaman website (Mariko, 2019), yang 
+pertama kali dikembangkan oleh Tim Berners -Lee pada tahun 1991. HTML 
+--- PAGE 22 ---
+7 
+ 
+ 
+berfungsi untuk mengatur dan mendesain tampilan isi halaman, membuat tabel, 
+serta mempublikasikan halaman secara online. Struktur dasar dari dokumen HTML 
+terdiri dari elemen -elemen seperti  <html>, <head>, dan  <body>, di mana 
+elemen <head> digunakan untuk m enempatkan identitas file, sedangkan 
+elemen <body> digunakan untuk menentukan konten yang akan ditampilkan. 
+Seiring dengan perkembangan teknologi informasi dan komunikasi, HTML terus 
+mengalami pembaruan untuk memenuhi kebutuhan pengguna dalam membuat 
+konten web yang lebih interaktif dan responsif. Dalam konteks pendidikan, HTML 
+berperan penting dalam pengembangan aplikasi pembelajaran berbasis web, yang 
+dapat diakses dengan mudah melalui web browser. 
+2.3.2 CSS 
+Cascading Style Sheets  (CSS) adalah teknologi yang digunakan untuk 
+mempercantik tampilan HTML dan menentukan bagaimana elemen HTML 
+ditampilkan di dalam browser  (Muthohir, 2021). CSS digunakan untuk mengatur 
+berbagai aspek tampilan seperti warna, ukuran teks, jenis font, tata letak, jarak antar 
+elemen, hingga animasi. CSS bekerja dengan cara memilih elemen HTML tertentu, 
+lalu menerapkan aturan-aturan gaya padanya. 
+Ada tiga cara utama dalam menerapkan CSS: 
+(1) Inline CSS, ditulis langsung di dalam tag HTML menggunakan atribut style. 
+(2) Internal CSS, ditulis dalam tag <style> di bagian <head> dokumen HTML. 
+(3) Eksternal CSS, ditulis di file terpisah dengan ekstensi .css, lalu dihubungkan 
+ke dokumen HTML menggunakan tag <link>. 
+ 
+--- PAGE 23 ---
+8 
+ 
+ 
+2.3.3 JavaScript 
+JavaScript adalah bahasa pemrograman yang sangat penting dalam 
+pengembangan aplikasi berbasis web. JavaScript berfungsi untuk membuat website 
+lebih interaktif dan dinamis. Dengan menggunakan JavaScript, pengembang dapat 
+menerapkan fitur kompleks pada halaman web, sep erti pembaruan konten secara 
+langsung, animasi, dan interaksi pengguna yang lebih responsif. JavaScript sering 
+digunakan bersamaan dengan HTML dan CSS, yang memungkinkan pengembang 
+untuk menciptakan pengalaman pengguna yang lebih baik. Selain it u, JavaScript 
+memberikan kemampuan untuk memanipulasi elemen HTML dan CSS secara 
+langsung, sehingga meningkatkan fungsionalitas dan estetika situs web (Arisantoso 
+et al., 2023) . Dengan demikian, JavaScript menjadi salah satu komponen utama 
+dalam pengembangan web modern yang tidak dapat diabaikan. 
+2.3.4 React 
+React adalah sebuah library JavaScript yang digunakan untuk membangun 
+antarmuka pengguna ( user interface ) secara efisien. React dikembangkan oleh 
+Facebook (sekarang dikenal sebagai Meta) dan pertama kali dirilis sebagai open-
+source pada tahun 2013. Library ini dirancang untuk memudahkan pengembangan 
+aplikasi web dengan menyediakan cara baru untuk membangun dan mengelola 
+komponen UI yang dapat digunakan kembali ( reusable components). Salah satu 
+fitur unggulan React adalah Virtual DOM, yang memungkinkan aplik asi untuk 
+merender ulang hanya bagian yang diperlukan, sehingga meningkatkan kinerja dan 
+responsivitas (Chen et al., 2019). 
+ 
+--- PAGE 24 ---
+9 
+ 
+ 
+2.3.5 Node.js 
+Node.js adalah platform yang dibangun di atas mesin JavaScript V8 
+Chrome untuk membangun aplikasi dengan cepat dan mudah. Platform ini 
+menggunakan bahasa pemrograman JavaScript dan dirancang untuk dijalankan di 
+sisi server, sehingga memungkinkan pengembangan aplikasi web yang efisien dan 
+skalabel. Node.js dikenal karena teknik non-blocking yang memungkinkan operasi 
+dijalankan secara paralel tanpa harus menunggu operasi sebelumnya selesai, 
+sehingga memungkinkan banyak  request dapat diproses secara bersamaan  
+(Mubariz et al., 2020). 
+Dalam beberapa penelitian, Node.js telah dibandingkan dengan framework 
+lain seperti Django dan Laravel. Dari hasil penelitian tersebut, Node.js 
+menunjukkan kinerja yang lebih baik dalam hal kecepatan eksekusi dan 
+kemampuan menangani permintaan secara bersamaan. Misalnya, dalam penelitian 
+yang dilakukan oleh  (Amarulloh et al., 2023) , Node.js (Express) memiliki 
+kecepatan eksekusi tercepat dibandingkan dengan Django dan Laravel, terutama 
+dalam skenario dengan tingkat konkurensi yang tinggi. Selain itu, Node.js juga 
+memiliki keunggulan dalam hal kinerja request per second dan HTML transferred, 
+yang membuatnya sangat cocok untuk aplikasi web yang membutuhkan 
+responsivitas tinggi. 
+Dengan demikian, Node.js merupakan pilihan yang tepat untuk 
+pengembangan aplikasi web yang membutuhkan kinerja tinggi, skalabilitas, dan 
+kemampuan menangani permintaan secara bersamaan. 
+ 
+--- PAGE 25 ---
+10 
+ 
+ 
+2.3.6 Bootstrap 
+Bootstrap adalah kerangka kerja ( framework) front-end yang digunakan 
+untuk pengembangan tata letak web yang responsif dengan lebih cepat dan mudah. 
+Bootstrap dirancang untuk membantu developer dalam menciptakan desain web 
+yang konsisten dan terstandardisasi, sehingga memudahkan dalam pembuatan 
+aplikasi web yang dapat diakses melalui berbagai perangkat, seperti komputer, 
+tablet, dan smartphone. Dalam konteks pengembangan sistem  pembelajaran yang 
+dibahas dalam artikel, Bootstrap digunakan untuk memastikan tampilan materi 
+pembelajaran dapat diakses dengan mudah dan responsif, baik melalui laptop 
+maupun ponsel pintar (Meilani, 2019). 
+Beberapa paket utama yang mendukung pengembangan tata letak web 
+dengan Bootstrap antara lain: 
+a. Scaffolding 
+Scaffolding adalah struktur dasar yang disediakan Bootstrap untuk 
+memudahkan pembuatan tata letak web. Struktur ini mencakup Grid System, link 
+style, dan background yang dapat digunakan sebagai landasan awal dalam 
+membangun halaman web. 
+b. CSS (Cascading Style Sheets) 
+ Bootstrap menyediakan pengaturan CSS global yang dapat digunakan 
+untuk menata elemen dasar HTML, seperti typography, spacing, dan color. Selain 
+itu, Bootstrap juga menyediakan sistem grid yang responsif, yang memungkinkan 
+tata letak web menyesuaikan ukuran layar yang berbeda. 
+ 
+--- PAGE 26 ---
+11 
+ 
+ 
+c. Components 
+Bootstrap menyediakan berbagai komponen yang dapat digunakan 
+kembali ( reusable components ), seperti navigasi, dropdowns, alerts, dan cards. 
+Komponen-komponen ini siap pakai dan dapat disesuaikan dengan kebutuhan 
+pengembangan. 
+d. JavaScript Plugins 
+ Bootstrap juga dilengkapi dengan plugin jQuery yang dapat digunakan 
+untuk menambahkan interaktivitas pada halaman web, seperti modal, accordion, 
+dan carousel. Plugin-plugin ini dapat dimodifikasi sesuai dengan kebutuhan. 
+Dengan menggunakan Bootstrap, pengembangan tata letak web menjadi 
+lebih efisien dan cepat. Selain itu, Bootstrap juga memastikan bahwa tampilan web 
+responsif dan dapat diakses melalui berbagai perangkat, sehingga meningkatkan 
+pengalaman pengguna. 
+2.3.7 Skulpt 
+Skulpt adalah sebuah implementasi bahasa pemrograman Python yang 
+ditulis dalam JavaScript, yang memungkinkan kode Python dijalankan langsung di 
+dalam browser. Hal ini berarti pengguna tidak perlu menginstal Python atau 
+interpreter tambahan di komputer mere ka. Umumnya, jika seseorang ingin 
+menjalankan program Python di komputer, mereka harus terlebih dahulu 
+mengunduh dan menginstal interpreter Python, seperti Python dari python.org. 
+Namun, dengan Skulpt, proses tersebut tidak diperlukan karena semua eksekusi  
+kode dilakukan langsung di sisi klien (client-side) melalui browser. 
+--- PAGE 27 ---
+12 
+ 
+ 
+Skulpt dirancang untuk menjalankan sebagian besar sintaks Python versi 
+3, dan mendukung banyak fitur dasar seperti tipe data, fungsi, perulangan, kondisi, 
+serta beberapa modul standar. Salah satu keunggulan utamanya adalah 
+kemampuannya untuk di-embed ke dalam halaman web, memungkinkan pengguna 
+menulis dan mengeksekusi kode Python secara langsung dalam antarmuka berbasis 
+web. 
+Dalam penelitian yang dilakukan oleh  (Blydt-Hansen, 2018) , Skulpt 
+digunakan untuk memvisualisasikan objek Turtle secara real-time. Setiap baris 
+kode Python yang dijalankan akan menghasilkan perubahan grafis, memungkinkan 
+pengguna untuk melihat secara langsung bagaimana instruksi dalam kode 
+memengaruhi tampilan visual. 
+2.3.8 Codemirror 
+CodeMirror adalah sebuah versatile web -based code editor  yang 
+dikembangkan khusus untuk mendukung pengeditan teks terstruktur seperti kode 
+sumber. Dibangun dengan JavaScript, CodeMirror dirancang agar dapat dengan 
+mudah disematkan ke dalam halaman web atau aplikasi berbasis web, menyediakan 
+pengalaman pengeditan kode yang cepat, responsif, dan sangat dapat dikustomisasi. 
+Menurut dokumentasi resminya, CodeMirror 6 (versi terbarunya) dibangun dari 
+awal dengan fokus pada kinerja, fleksibilitas, dan kemudahan integrasi. Editor ini 
+mendukung tampilan real-time feedback , live preview , serta bisa disesuaikan 
+tampilannya agar cocok untuk berbagai tema dan perangkat. 
+Dalam konteks pengembangan PyCodeLab  yang dilakukan (Libman, 
+2020), CodeMirror digunakan sebagai komponen editor utama yang 
+--- PAGE 28 ---
+13 
+ 
+ 
+memungkinkan pengguna untuk menulis dan mengedit skrip Python secara efisien. 
+Dengan integrasi bersama Skulpt, pengguna dapat langsung mengeksekusi kode 
+Python yang ditulis di dalam editor dan melihat hasilnya secara interaktif. Fitur 
+seperti penyorotan si ntaks Python, indentasi otomatis, serta penanganan error 
+secara visual, sangat membantu dalam proses pembelajaran coding di lingkungan 
+berbasis web. 
+2.3.9 Firebase 
+Firebase adalah sebuah platform yang dikembangkan oleh Google yang 
+menyediakan berbagai layanan backend sebagai layanan ( Backend-as-a-Service / 
+BaaS) untuk membantu pengembang dalam membangun aplikasi web dan mobile 
+dengan lebih cepat dan efisien (Kurniawan et al., 2021). 
+Beberapa fitur utama Firebase meliputi: 
+(1) Firebase Authentication: Layanan autentikasi yang mendukung berbagai 
+metode login seperti email/sandi, nomor telepon, serta integrasi dengan akun 
+Google, Facebook, dan lainnya. 
+(2) Cloud Firestore dan Realtime Database: Basis data NoSQL yang dapat 
+digunakan untuk menyimpan dan menyinkronkan data antar pengguna secara 
+real-time. 
+(3) Firebase Hosting: Layanan hosting statis yang cepat dan aman untuk men -
+deploy aplikasi web. 
+(4) Firebase Cloud Functions: Menyediakan kemampuan menjalankan kode 
+backend tanpa perlu mengelola server (serverless). 
+--- PAGE 29 ---
+14 
+ 
+ 
+(5) Firebase Cloud Messaging (FCM): Digunakan untuk mengirim notifikasi push 
+ke perangkat pengguna secara gratis. 
+(6) Firebase Analytics: Alat analitik yang memungkinkan pelacakan aktivitas 
+pengguna dalam aplikasi secara detail dan real-time. 
+(7) Firebase Storage: Penyimpanan file berbasis cloud yang cocok untuk 
+menyimpan gambar, video, dan konten besar lainnya. 
+2.3.10 Vercel 
+Vercel adalah platform yang memungkinkan pengembang untuk 
+melakukan deployment aplikasi web dengan mudah dan efisien . Dalam konteks 
+pengembangan aplikasi pembelajaran seni budaya berbasis website, Vercel 
+digunakan untuk mengunggah kode yang telah dikembangkan, sehingga aplikasi 
+dapat diakses oleh pengguna umum. Proses deployment ini sangat penting bagi 
+programmer untuk meluncurkan atau memperkenalkan aplikasi yang telah dibuat 
+sebelumnya kepada pengguna. Dengan Vercel, pengembang dapat melakukan 
+deploy dari kode yang diunggah di repositori GitHub tanpa biaya tambahan, 
+sehingga mempermudah aksesibilitas aplikasi (Choldun & Rahmadewi, 2023). 
+2.4 Model Tutorial 
+Model tutorial adalah suatu strategi pembelajaran yang dilakukan secara 
+individual atau dalam kelompok kecil, di mana siswa berinteraksi langsung dengan 
+tutor atau perangkat lunak pembelajaran untuk memahami materi. Dalam konteks 
+pembelajaran berbasis komputer, metode ini merupakan pendekatan  yang efektif 
+untuk meningkatkan hasil belajar siswa. Sistem ini biasanya dilengkapi dengan fitur 
+interaktif seperti animasi, video, audio, dan simulasi, yang memudahkan siswa 
+--- PAGE 30 ---
+15 
+ 
+ 
+untuk memahami konsep -konsep yang sulit. Sebagaimana dijelaskan dalam 
+penelitian (Noverdika, 2021) , metode tutorial interaktif dapat meningkatkan 
+partisipasi siswa dan hasil belajar karena siswa dapat belajar secara mandiri tanpa 
+terikat oleh waktu dan tempat. 
+Model tutorial berbasis komputer terbukti efektif dalam meningkatkan 
+hasil belajar siswa. Penelitian menunjukkan bahwa siswa yang menggunakan 
+multimedia interaktif model tutorial menunjukkan rata-rata hasil belajar yang lebih 
+tinggi dibandingkan dengan siswa yang menggunakan metode konvensional. Selain 
+itu, model ini juga dapat meningkatkan keterampilan siswa dalam menggunakan 
+teknologi informasi dan komunikasi (TIK). Dalam artikel (Sukardi & Rozi, 2019) 
+menemukan bahwa penggunaan tutorial online Moodle dalam model  blended 
+learning dapat meningkatkan prestasi belajar mahasiswa secara signifikan. Metode 
+tutorial juga berfungsi sebagai media untuk memperkaya materi pembelajaran dan 
+meningkatkan motivasi belajar siswa. 
+Adapun langkah-langkah pembelajaran berbasis komputer menggunakan 
+model tutorial menurut (Rusman, 2012) adalah: 
+(1) Pendahuluan (introduction) 
+(2) Penyajian informasi ( presentation of information ), berupa materi pelajaran 
+yang akan dipelajari siswa. 
+(3) Pertanyaan dan respon (question of responses), berupa soal-soal Latihan yang 
+harus dikerjakan siswa. 
+(4) Penilaian respon ( judging of responses ), komputer akan memberikan respon 
+terhadap kinerja dan jawaban siswa. 
+--- PAGE 31 ---
+16 
+ 
+ 
+(5) Pemberian respon balik ( providing feedback about responses ), yaitu setelah 
+selesai, program akan memberikan respon balik. Apakah telah berhasil atau 
+harus mengulang. 
+(6) Pengulangan (remedial). 
+(7) Segmen pengaturan pembelajaran (sequencing lesson segment). 
+(8) Penutup (closing) 
+2.5 Library Turtle 
+Turtle adalah sebuah library dalam bahasa pemrograman Python yang 
+digunakan untuk menggambar grafik dan memperkenalkan konsep pemrograman 
+kepada pemula, terutama anak -anak. Konsep Turtle berasal dari bahasa 
+pemrograman Logo yang dikembangkan pada tahun 1960-an oleh Seymour Papert 
+dan rekan -rekannya (Solomon et al., 2020) . Dalam Turtle, pengguna dapat 
+mengendalikan objek yang disebut "turtle" (yang biasanya digambarkan sebagai 
+panah) untuk menggambar berbagai bentuk dan pola di layar. Dengan perintah 
+sederhana seperti  forward, backward, left, dan  right, pengguna dapat 
+menggerakkan turtle dan menciptakan gambar yang menarik. Library ini dirancang 
+untuk memberikan pengalaman belajar yang menyenangkan dan interaktif, 
+sehingga sangat cocok untuk pengenalan pemrograman bagi anak-anak. 
+Seiring dengan perkembangan teknologi, Turtle telah menjadi alat yang 
+populer dalam pendidikan komputer. Kegunaan Turtle tidak hanya terbatas pada 
+menggambar, tetapi juga mencakup pengajaran konsep dasar pemrograman seperti 
+kontrol alur, fungsi, dan variable (Briggs, 2019). Dengan Turtle, pengguna dapat 
+belajar tentang logika pemrograman sambil berkreasi, menjadikannya alat yang 
+--- PAGE 32 ---
+17 
+ 
+ 
+efektif untuk mengembangkan keterampilan berpikir kritis dan kreatif. Selain itu, 
+Turtle juga mendukung pembuatan animasi sederhana, yang memungkinkan 
+pengguna untuk mengeksplorasi lebih jauh dalam dunia grafis dan pemrograman. 
+Selain itu, Turtle juga dapat dimanfaatkan sebagai sarana pembelajaran 
+matematika, khususnya pada materi geometri. Berdasarkan penelitian Mendiola 
+(2023), penggunaan Python Turtle melalui Edublocks membantu siswa memahami 
+konsep sudut istimewa seperti sudu t komplementer dan suplementer dengan cara 
+yang interaktif dan kontekstual. Dalam konteks Kurikulum Merdeka tingkat SMP, 
+Turtle dapat digunakan untuk membantu siswa memahami berbagai materi 
+matematika.  
+Pada kelas VII, misalnya, Turtle dapat dimanfaatkan untuk materi 
+kesebangunan pada segitiga dan hubungan antar sudut dengan menggunakan 
+perintah left, right, forward, dan setheading untuk menggambar sudut dan sisi 
+segitiga, serta untuk materi data dan statistika dengan memplot data pada sumbu 
+menggunakan setx, sety, dan dot. Selain itu, Turtle juga mendukung pengenalan 
+titik koordinat dasar melalu i perintah setposition, home, dan dot. Pada kelas VIII, 
+Turtle dapat diterapkan pada materi sistem persamaan linear dua variabel (SPLDV) 
+dan fungsi linear dengan menggambar grafik menggunakan setposition, setx, sety, 
+dan dot, serta pada materi bangun geometri dan kekongruenan dengan perintah left, 
+right, forward, dan setheading untuk menggambar poligon dan memeriksa posisi 
+titik. Untuk materi segitiga dan segi empat, Turtle dapat digunakan untuk 
+menggambar dengan perintah forward, left, right, dan setpositi on. Pada kelas IX, 
+Turtle dapat membantu pembelajaran bangun ruang seperti lingkaran dengan 
+--- PAGE 33 ---
+18 
+ 
+ 
+perintah circle dan dot untuk menggambar lingkaran dan titik pusat, serta untuk 
+materi transformasi geometri seperti translasi, refleksi, rotasi, dan dilatasi dengan 
+perintah setposition, setx, sety, setheading, left, right, dan home untuk 
+memindahkan titi k koordinat. Dengan demikian, Turtle tidak hanya mendukung 
+pembelajaran pemrograman, tetapi juga berpotensi menjadi media kreatif dalam 
+mendukung pembelajaran matematika yang kontekstual dan menyenangkan.  
+2.6 Black Box Testing 
+Black Box Testing  adalah metode pengujian perangkat lunak yang 
+digunakan untuk mengecek apakah sistem bekerja sesuai dengan fungsinya, tanpa 
+melihat atau memeriksa isi kode program. Pengujian ini dilakukan dari sudut 
+pandang pengguna, sehingga penguji cukup fokus pada inpu t dan output yang 
+dihasilkan sistem. Metode ini cocok digunakan oleh pemula karena tidak 
+memerlukan pemahaman bahasa pemrograman. Terdapat beberapa teknik dalam 
+Black Box Testing, salah satunya adalah Equivalence Partitioning, yaitu teknik yang 
+membagi input menjadi beberapa kelompok untuk diuji. Teknik ini bertujuan 
+menemukan kesalahan pada fungsi, antarmuka, struktur data, performa, hingga 
+inisialisasi sistem. Pengujian dengan metode ini dapat membantu memastikan 
+bahwa sistem berjalan dengan benar sesuai desain awal (Uminingsih et al., 2022). 
+2.7 Kriteria Validitas Produk 
+Validitas adalah ukuran yang digunakan untuk menilai seberapa baik suatu 
+alat atau media dalam melaksanakan fungsinya. Dalam konteks pengembangan 
+media pembelajaran multimedia, validitas didefinisikan sebagai kemampuan media 
+untuk mencapai tujuan yang tela h ditetapkan. Validitas tidak hanya berfokus pada 
+--- PAGE 34 ---
+19 
+ 
+ 
+akurasi media dalam menyampaikan informasi, tetapi juga pada seberapa baik 
+media tersebut dapat digunakan dan diterima oleh pengguna.  Dalam penelitian ini 
+akan dilakukan uji validitas materi kepada ahli materi dan uji validitas media 
+kepada ahli media. 
+Dalam penilaian validitas materi berdasarkan Standar Nasional Pendidikan 
+(BSNP), terdapat beberapa aspek penting yang digunakan untuk menilai kelayakan 
+dan mutu materi. Aspek-aspek tersebut meliputi kelayakan isi, kelayakan Bahasa, 
+dan kelayakan penyajian. Dalam validitas media pembelajaran digunakan indicator 
+penilaian berdasarkan  Learning Object Review Instrument (LORI)  version 2.0 
+tahun 2009, validitas media pembelajaran dinilai berdasarkan delapan aspek utama,  
+yang digunakan, meliputi ,Feedback and Adaptation (Umpan Balik dan Adaptasi), 
+Presentation Design  (Penyajian Tampilan) , Interaction Usability  (Interaksi 
+Pengguna) dan Accessibility (Aksesibilitas). 
+Validitas dihitung menggunakan rumus yang membandingkan skor yang 
+diperoleh dari penilaian validator dengan skor maksimum yang mungkin. Hasil 
+validitas kemudian diklasifikasikan berdasarkan kriteria tertentu untuk menentukan 
+apakah media tersebut valid dan  layak digunakan. Dengan demikian, validitas 
+menjadi indikator penting dalam menentukan kualitas dan efektivitas media 
+pembelajaran (Hutabri, 2022). 
+2.8 Penelitian Relevan 
+Penelitian yang relevan dengan penelitian yang dilakukan penelitian 
+diantaranya: 
+--- PAGE 35 ---
+20 
+ 
+ 
+(1) Penelitian (Suzuki et al., 2020)  yang berjudul  “ClassCode: An Interactive 
+Teaching and Learning Environment for Programming Education in Class -
+rooms” Penelitian ini memperkenalkan ClassCode, sebuah lingkungan berbasis 
+web yang dirancang khusus untuk pendidikan pemrograman di dalam 
+kelas. Pengembangan ClassCode berfokus pada penyediaan platform yang 
+memungkinkan siswa untuk belajar pemrograman secara inte raktif dan 
+mandiri, sekaligus memberikan visibilitas kepada instruktur mengenai 
+kemajuan belajar siswa. Dalam ClassCode tersedia tutorial online interaktif 
+yang disisipi dengan latihan coding. Siswa dapat membaca materi dan langsung 
+mempraktikkan kode dalam lingkungan yang terintegrasi. Terdapat fitur 
+"milestone problem" yang menyediakan ruang untuk menulis kode dan konsol 
+untuk debugging interaktif. Meskipun prototipe saat ini hanya mendukung 
+pemrograman JavaScript, sistem ini dirancang agar mudah diperluas untuk 
+mendukung bahasa skrip lain seperti Ruby dan Python. 
+(2) Penelitian (Sakkinah et al., 2022) yang berjudul “Pengembangan Hypermedia 
+Learning Environment (HLE) untuk Meningkatkan Self-Regulated Learning 
+Berdasarkan Kemampuan Self-Monitoring” Penelitian ini 
+mengembangkan Hypermedia Learning Environment  (HLE) berbasis web 
+yang adaptif, dengan tujuan utama  meningkatkan Self-Regulated 
+Learning (SRL) mahasiswa berdasarkan kemampuan  self-
+monitoring mereka. Pengembangan sistem HLE ini menggunakan 
+metode agile Scrum, dengan bahasa pemrograman PHP dan MySQL sebagai 
+basis data.  Yang dibuat dalam HLE adalah  lingkungan pembelajaran yang 
+--- PAGE 36 ---
+21 
+ 
+ 
+menyediakan materi dalam bentuk teks dan video, serta kuis dan tugas 
+praktis. Pada aplikasi HLE siswa bisa mengkode (ngoding) pada bagian 
+"Practical Skill". Menu ini menyediakan  compiler dan notepad yang 
+memungkinkan siswa untuk mengunggah kode program yang telah mereka 
+buat sebagai implementasi dari materi yang telah dipelajari. Ini menunjukkan 
+bahwa HLE tidak hanya berfokus pada penyampaian materi teoritis tetapi juga 
+pada praktik pengkodean. 
+Secara keseluruhan, kedua penelitian ini menunjukkan bahwa lingkungan 
+pembelajaran berbasis web yang mengintegrasikan penyajian materi secara 
+terstruktur, aktivitas coding interaktif, dan dukungan terhadap pembelajaran 
+mandiri merupakan pendekatan yang efektif dalam meningkatkan keterlibatan dan 
+pemahaman siswa dalam belajar pemrograman. Meskipun tidak secara eksplisit 
+menggunakan model tutorial, fitur-fitur seperti tutorial interaktif, latihan langsung, 
+serta kemampuan menjalankan dan menguji kode di tempa t menunjukkan 
+keselarasan dengan prinsip -prinsip model tutorial. Oleh karena itu, penelitian ini 
+mengambil inspirasi dari pendekatan tersebut dan mengembangkannya lebih lanjut 
+melalui penerapan model tutorial secara eksplisit dalam lingkungan pembelajaran 
+pemrograman Turtle, guna memberikan alur belajar yang lebih terarah dan 
+sistematis bagi siswa. 
+2.9 Aplikasi Relevan 
+Aplikasi yang relevan dengan media yang akan dikembangkan oleh 
+peneliti diantaranya: 
+(1) Turtle Academy 
+--- PAGE 37 ---
+22 
+ 
+ 
+Turtle Academy merupakan platform berbasis web yang dirancang untuk 
+mengajarkan bahasa pemrograman Logo secara interaktif. Aplikasi ini 
+menyediakan materi pembelajaran secara bertahap dari tingkat dasar, lengkap 
+dengan fitur tantangan yang memungkinkan pen gguna menguji pemahaman 
+mereka. Pengguna dapat menggerakkan turtle dengan mengetikkan perintah 
+teks, sehingga proses belajar menjadi langsung dan eksploratif. Platform ini 
+bersifat interaktif dan sepenuhnya dapat diakses melalui web. 
+(2) CodeCombat 
+CodeCombat adalah platform edukasi berbasis game yang menggunakan 
+bahasa pemrograman Python untuk mengontrol karakter dalam permainan 
+bergaya RPG. Siswa belajar coding dengan cara menyelesaikan berbagai 
+tantangan yang dirancang seperti petualangan, sehingga proses belajar menjadi 
+menarik dan kontekstual. Materi pembelajaran ter sedia secara sistematis, dan 
+pengguna dituntut untuk menerapkan logika pemrograman untuk 
+menyelesaikan misi. Aplikasi ini bersifat interaktif dan berjalan pada platform 
+web. 
+(3) Web TurtleArt 
+Web TurtleArt merupakan aplikasi berbasis web yang menggunakan 
+antarmuka blok visual untuk menyusun instruksi dalam menggambar dengan 
+turtle. Pengguna dapat menciptakan karya seni digital dengan menggabungkan 
+blok-blok perintah yang mencerminkan logika pergerakan dan penggambaran. 
+Aplikasi ini berbasis Logo, namun dirancang agar lebih mudah diakses oleh 
+pemula melalui pendekatan blok. Meskipun tidak menyediakan tantangan atau 
+--- PAGE 38 ---
+23 
+ 
+ 
+kuis, materi pembelajaran tersedia melalui buku panduan atau dokumentasi 
+tambahan. Platform ini bersifat interaktif dan dapat digunakan langsung 
+melalui browser web. 
+(4) Code with Anna and Elsa 
+Code with Anna and Elsa adalah aplikasi pembelajaran interaktif berbasis 
+Blockly yang merupakan bagian dari inisiatif Hour of Code. Dalam aplikasi 
+ini, pengguna belajar dasar -dasar logika pemrograman melalui aktivitas yang 
+melibatkan karakter animasi Anna dan Elsa dari film Frozen. Meskipun tidak 
+tersedia materi pembelajaran, pengguna diarahkan langsung untuk 
+menyelesaikan serangkaian tantangan berbasis blok yang menarik dan mudah 
+diikuti. Aplikasi ini bersifat sangat interaktif dan sepenuhnya dapat diakses  
+melalui platform web. 
+Berdasarkan aplikasi-aplikasi yang relevan  tersebut, Peneliti 
+mengadaptasi keunggulan dari masing -masing aplikasi tersebut untuk merancang 
+dan mengembangkan lingkungan pembelajaran  Turtle yang lebih terpadu dan 
+sesuai dengan kebutuhan pembelajaran pemula. Media yang akan dikembangkan 
+mencakup materi pembelajaran yang disusun secara sistematis, latihan interaktif 
+yang mendukung eksplorasi langsung, tantangan yang berjenjang, kuis sebagai alat 
+evaluasi, serta text editor Turtle yang memungkinkan pengguna menulis dan 
+menjalankan perintah langsung dalam satu antarmuka. Dengan pendekatan ini, 
+diharapkan lingkungan pembelajaran  yang dikembangkan dapat menjadi sarana 
+belajar yang menyenangk an, terarah, dan efektif dalam mengenalkan konsep 
+pemrograman melalui Turtle. 
+--- PAGE 39 ---
+24 
+ 
+ 
+2.10 Kerangka Berpikir 
+Dalam penelitian ini, kerangka berpikir disusun untuk menggambarkan 
+alur logis pemikiran peneliti dalam merumuskan solusi terhadap permasalahan yang 
+dihadapi. Adapun kerangka berpikir pada penelitian ini dapat dilihat pada Gambar 
+dibawah ini. 
+ 
+Gambar 2.1 Kerangka berpikir 
+
+--- PAGE 40 ---
+ 
+ 
+25 
+ 
+BAB III  
+METODE PENGEMBANGAN 
+ 
+ 
+3.1 Jenis Penelitian 
+Jenis penelitian yang digunakan dalam penelitian ini adalah Research and 
+Development (R&D). Research and Development  Penelitian dan Pengembangan 
+adalah suatu metode penelitian yang bertujuan untuk menghasilkan produk atau 
+model baru melalui proses ilmiah yang sistematis. Penelitian ini dimulai dari 
+analisis kebutuhan untuk mengidentifikasi masalah yang perlu dipecahkan, 
+kemudian dilanjutkan dengan pengembangan produk atau model, evaluasi, dan 
+validasi (Okpatrioka, 2023; Waruwu, 2024) . R&D juga dapat digunakan untuk 
+menyempurnakan produk yang sudah ada dengan memperbaiki kualitas atau 
+menambahkan fitur baru. Dalam konteks pendidikan, R&D banyak digunakan 
+untuk mengembangkan model pembelajaran, modul pelatihan, atau alat bantu 
+pembelajaran yang efektif dan inovatif.  Salah satu pakar yang mengembangkan 
+konsep metode penelitian dan pengembangan bernama Borg and Gall menjelaskan 
+empat ciri utama metode penelitian pengembangan ini (Okpatrioka, 2023), yaitu: 
+Pertama, adanya penyelidikan terhadap hasil penelitian berkaitan dengan 
+produk yang akan dikembangkan. Peneliti melakukan kajian atau penelitian 
+pendahuluan (preliminary) untuk mengembangkan hasil penelitian yang berkaitan 
+dengan produk yang akan dikembangkan. Kedua, pengembangan produk 
+berdasarkan temuan analisis masalah. Pengembangan produk berdasarkan hasil 
+--- PAGE 41 ---
+26 
+ 
+ 
+penelitian awal (pendahuluan). Ketiga, pengujian lapangan di lingkungan yang 
+pada akhirnya akan digunakan. Pengujian lapangan dilakukan di lingkungan atau 
+situasi yang paling realistis di mana produk akan digunakan. Keempat, ditinjau 
+untuk mengatasi semua kekurangan yang diidentifikasi selama fase pengujian 
+lapangan. Peneliti melakukan revisi untuk memperbaiki kelemahan yang 
+ditemukan pada tahap uji lapangan. Dari empat ciri utama tersebut dapat 
+disimpulkan bahwa ciri peneli tian pengembangan diawali dengan proses analisis 
+terhadap produk terdahulu, pengembangan produk, uji lapangan, dan revisi. 
+Keempat hal tersebut merupakan tahapan yang perlu dilakukan pada penelitian 
+pengembangan. 
+3.2 Model Pengembangan 
+Produk yang dikembangkan merupakan sebuah media pembelajaran 
+interaktif berbasis web yang berisi topik Pemrograman Turtle dengan menggunakan 
+model tutorial. Produk ini dirancang menggunakan model pengembangan ADDIE 
+(Analyze, Design, Develop, Implement, Evaluate), yang merupakan kerangka kerja 
+sistematis untuk merancang dan mengembangkan materi pembelajaran yang 
+efektif. Proses ini dimulai dengan fase analisis, di mana kebutuhan dan masalah 
+yang ada diidentifikasi untuk memastikan bahwa pengembangan yang dilakuka n 
+relevan dan sesuai dengan konteks yang dihadapi (Branch, 2009). Selanjutnya, pada 
+fase desain, tujuan pembelajaran ditentukan dan strategi pengajaran dirancang 
+untuk mencapai hasil yang diinginkan. Fase pengembangan melibatkan pembuatan 
+dan validasi sumber belajar yang akan digunakan dalam proses pembelajaran. 
+Implementasi dilakukan dengan mempersiapkan lingkungan belajar dan melibatkan 
+--- PAGE 42 ---
+27 
+ 
+ 
+siswa dalam pengalaman belajar yang telah dirancang. Terakhir, evaluasi dilakukan 
+untuk menilai kualitas produk pembelajaran dan proses yang telah dilaksanakan, 
+serta untuk melakukan perbaikan yang diperlukan (Branch, 2009).  
+Model ADDIE dapat digunakan untuk pengembangan materi dan media 
+pembelajaran. Dalam penelitian yang dilakukan oleh (Andi Rustandi & Rismayanti, 
+2021), mereka menunjukkan bahwa penerapan model ADDIE dalam 
+pengembangan media pembelajaran di SMPN 22 Kota Samarinda menghasilkan 
+media yang dinyatakan "sangat layak" . Selain itu,  (Mulyasari et al., 2023)  
+menekankan bahwa model ADDIE dapat digunakan untuk mengembangkan bahan 
+ajar yang efektif di sekolah dasar, dengan hasil validasi yang menunjukkan bahwa 
+bahan ajar yang dikembangkan sangat baik dan dapat digunakan secara efektif 
+dalam proses pembelajaran.  Dengan demikian, penerapan model ADDIE dalam 
+pengembangan materi dan media pembelajaran dapat memberikan dampak positif 
+terhadap kualitas pendidikan dan hasil belajar siswa. 
+ 
+Gambar 3.1 Konsep ADDIE menurut Branch, 2009) 
+ 
+
+--- PAGE 43 ---
+28 
+ 
+ 
+3.3 Prosedur Pengembangan 
+Dalam pengembangan yang dilakukan, peneliti mengadaptasi Konsep 
+ADDIE yang dikemukakan oleh Robert Maribe Branch dalam buku Instructional 
+Design: The ADDIE Approach. Sesuai dengan akronimnya, tahapan penelitian dan 
+pengembangan media pembelajaran menurut konsep ADDIE terdiri dari tahap 
+Analyze (Analisis), Design (Desain), Development (Pengembangan), Implement 
+(Implementasi), dan Evaluate (Evaluasi). Pada Pengembangan ini penulis 
+membatasi langkah -langkah pengembangan media model ADDIE dengan hanya 
+melaksakan tahap analisis, desain, pengembangan dan evaluasi.  Kerangka kerja 
+pengembangan ini dapat dilihat pada Gambar 3.2. 
+ 
+Gambar 3.2 Kerangka Kerja Lingkungan Pembelajaran  
+
+--- PAGE 44 ---
+29 
+ 
+ 
+3.3.1 Tahap Analisis (Analyze) 
+Tahap Analisis merupakan langkah awal dalam model pengembangan 
+pembelajaran ADDIE yang bertujuan untuk mengidentifikasi penyebab utama dari 
+kesenjangan kinerja (performance gap) antara kondisi saat ini dengan kondisi yang 
+diharapkan dengan studi literatur terhadap buku, artikel, dan aplikasi relevan. 
+Dalam tahap ini, dilakukan validasi terhadap adanya kesenjangan kinerja serta 
+penetapan tujuan pembelajaran yang ingin dicapai. Selanjutnya, ditentukan siapa 
+audiens yang menjadi sasaran program pembelajaran, serta diidentifikasi sumber 
+daya yang diperlukan untuk mendukung proses pembelajaran. Selain itu, tahap ini 
+juga mencakup penentuan sistem penyampaian pembelajaran.  Pada tahap ini pula 
+dilakukan Analisis Konten terhadap materi yang akan disampaikan, Analisis Model 
+Tutorial untuk menentukan pendekatan pedagogi yang digu nakan, serta Analisis 
+Teknologi yang berkaitan dengan pengembangan environment pembelajaran yang 
+sesuai. 
+3.3.2 Tahap Perancangan (Design) 
+Tahap kedua yaitu tahap pembuatan desain produk yang akan 
+dikembangkan. Pada tahap ini, peneliti membuat rancangan secara umum yang 
+meliputi pembuatan desain sistem berupa flowchart, diagram use case , dan 
+rancangan basis data , serta pembuatan desain antarmuka yang mencakup aspek 
+UI/UX untuk memastikan kemudahan penggunaan dan tampilan yang menarik. 
+Selain itu, dirancang pula struktur modul pembelajaran yang akan disusun dan 
+disesuaikan dengan kebutuhan pengguna. 
+ 
+--- PAGE 45 ---
+30 
+ 
+ 
+3.3.3 Tahap Pengembangan (Development) 
+Pada tahap ini, pengembangan produk akan dilakukan. Penggunaan 
+teknologi yang diperlukan akan disesuaikan dengan hasil analisis sebelumnya. 
+Peneliti mulai mengembangkan bahan ajar berdasarkan hasil analisis, kemudian 
+mengembangkan editor Turtle di dalam web sebagai sarana interaktif bagi 
+pengguna. Setelah itu, dilakukan integrasi antara bahan ajar dan editor Turtle ke 
+dalam platfor m web dengan menyesuaikan penerapan Model Tutorial agar 
+pembelajaran berjalan sistematis dan terarah.  Selain itu, dilakukan pula 
+pengumpulan bahan-bahan pendukung seperti gambar dan pembuatan video untuk 
+konten media. Jika pengembangan produk telah selesai, dilakukan penilaian uji 
+kevalidannya oleh para ahli materi dan ahli media. Hasil dari penilaian ini akan 
+digunakan sebagai pedoman revisi sehingga nantinya menghasilkan media 
+pembelajaran yang valid. Pengujian fungsionalitas juga dilakukan menggun akan 
+metode black box testing  untuk memastikan bahwa seluruh fitur dalam media 
+bekerja sesuai dengan yang dirancang, berdasarkan input dan output yang 
+dihasilkan tanpa melihat kode program. 
+3.3.4 Tahap Evaluasi (Evaluation) 
+Tahap evaluasi proses untuk melihat apakah lingkungan pembelajaran 
+yang sedang dibangun berhasil sesuai dengan harapan awal atau tidak. Pada tahap 
+ini peneliti melakukan revisi terhadap media yang dikembangkan berdasarkan 
+masukan atau catatan yang di dapat dari angket yang digunakan untuk uji validasi 
+materi dan media. Hal ini bertujuan agar media pembelajaran yang dikembangkan 
+benar benar sesuai dan dapat digunakan. 
+--- PAGE 46 ---
+31 
+ 
+ 
+3.4 Subjek dan Objek Penelitian 
+Subjek penelitian dan pengembangan media pembelajaran adalah dua 
+orang ahli materi dan dua orang ahli media. Sedangkan objek dari penelitian adalah 
+validitas media pembelajaran yang dikembangkan. 
+3.5 Teknik Pengumpulan Data 
+Pada penelitian ini, pengumpulan data dilakukan melalui angket. Angket 
+menjadi sarana untuk mengumpulkan data penilaian validitas materi dan validias 
+media pembelajaran. Penilaian akan dilakukan oleh para pakar, Dimana untuk 
+penilaian validitas materi terdiri dari dua orang pakar materi dan untuk penilaian 
+validitas media pembelajaran juga terditi atas dua orang pakar media. Angket yang 
+digunakan oleh masing-masing pakar materi dan media berupa instrument lembar 
+validasi. 
+3.6 Instrumen Pengumpulan Data 
+Instrumen untuk pengumpulan data yang digunakan pada penelitian ini 
+berupa instrument lembar validasi materi oleh ahli materi dan validitas media oleh 
+ahli media. 
+3.6.1 Instrumen Lembar Validasi Ahli Materi 
+Instrumen lembar validasi ahli materi digunakan untuk mengukur cukup 
+atau tidaknya materi yang digunakan sebagai konten media pembelajaran. Kriteria 
+penilaian validitas konten bahan ajar diadaptasi dari komponen penilaian aspek 
+kelayakan isi, kelayakan pen yajian, dan kelayakan kebahasaan bahan ajar oleh 
+Badan Standar Nasional Pendidikan (BSNP). Adapun kisi -kisi instrument lembar 
+penilaian validitas materi dapat dilihat pada Tabel 3.1. 
+--- PAGE 47 ---
+32 
+ 
+ 
+Tabel 3.1 Kisi-kisi instrumen validasi materi 
+No Aspek Penilaian Jumlah Pertanyaan 
+1 Kelayakan isi 9 
+2 Kelayakan Penyajian 8 
+3 Kelayakan Kebahasaan 8 
+Total 25 
+(Diadaptasi dari BSNP) 
+3.6.2 Instrumen Lembar Validasi Ahli Media 
+Instrumen lembar validasi ahli  media digunakan untuk menilai validitas  
+media pembelajaran yang meliputi tampilan dan fungsional dari media 
+pembelajaran yang dikembangkan. Kriteria penilaian kelayakan media mengacu 
+pada aspek Feedback and Adaptation ( Umpan Balik dan Adaptasi), Presentation 
+Design ( Penyajian Tampilan), Interaction Usability ( Interaksi Pengguna), dan 
+Accessibility ( Aksesibilitas) yang diadaptasi dari standar baku LORI ( Learning 
+Object Review Instrument ) versi 2 yang dikembangkan oleh Nesbit, Beifer dan 
+Leacock pada tahun 2 009. Kisi-kisi instrument validasi media dapat dilihat pada 
+Tabel 3.2. 
+Tabel 3.2 Kisi-kisi instrumen validasi media 
+No Aspek Penilaian Jumlah Pertanyaan 
+1 Umpan Balik dan Adaptasi 1 
+2 Penyajian Tampilan 8 
+3 Interaksi Pengguna 3 
+4 Aksesibilitas 2 
+Total 14 
+(Diadaptasi dari Nesbit et al., 2009) 
+3.6.3 Instrumen Lembar Pengujian Fungsionalitas 
+Pengujian fungsionalitas pada media pembelajaran dilakukan 
+menggunakan metode black box testing  untuk memastikan bahwa semua fitur 
+--- PAGE 48 ---
+33 
+ 
+ 
+bekerja dengan baik dan tidak ada kesalahan selama digunakan. Pengujian ini 
+melibatkan lima responden, dan instrumen yang digunakan berupa lembar checklist 
+skenario pengujian. Lembar ini digunakan untuk mencatat hasil nyata dari setiap 
+fungsi utama dalam media serta memverifikasi bahwa fungsinya sesuai dengan 
+yang diharapkan. Rincian instrumen untuk menguji fitur yang terdapat pada aplikasi 
+dapat dilihat pada Tabel 3.3. 
+Tabel 3.3 Instrumen pengujian fungsionalitas 
+No Fungsi Hasil yang Diharapkan Status 
+Sukses Gagal 
+Testing Daftar dan Masuk 
+1 Daftar akun Sistem berhasil menyimpan data 
+akun yang di daftarkan. 
+  
+2 Masuk akun 
+System berhasil mendeteksi data 
+akun dan menyimpan nama user di 
+navbar. 
+  
+Testing Sebagai Siswa 
+3 
+Tidak bisa 
+akses halaman 
+materi jika 
+belum login 
+Sistem akan memindahkan siswa 
+ke halaman login saat siswa 
+mencoba mengakases halaman 
+materi tanpa login. 
+  
+4 
+Tidak bisa 
+akses halaman 
+tantangan jika 
+belum login 
+Sistem akan memindahkan siswa 
+ke halaman login saat siswa 
+mencoba mengakases halaman 
+tantangan tanpa login. 
+  
+5 
+Bisa mengakses 
+halaman editor 
+meskipun tanpa 
+login 
+Sistem mengizinkan siswa 
+mengakases halaman editor dan 
+menjalankan kode mesikpun tanpa 
+login. 
+  
+6 
+Akses halaman 
+materi jika 
+login 
+Sistem menampilkan halaman 
+materi 
+  
+7 
+Akses halaman 
+tantangan jika 
+login 
+Sitem menampilkan halaman 
+tantangan. 
+  
+ 
+--- PAGE 49 ---
+34 
+ 
+ 
+Lanjutan tabel 3.3 
+No Fungsi Hasil yang Diharapkan Status 
+Sukses Gagal 
+Testing Sebagai Siswa 
+8 
+Pengerjaan soal 
+di halaman 
+materi 
+Sistem berhasil menentukan 
+jawaban benar atau salah dan 
+memberikan feedback dari hasil 
+tersebut. 
+  
+9 Pengerjaan 
+tantangan 
+Sistem berhasil menentukan 
+inputan siswa benar atau salah dan 
+memberikan feedback dari hasil 
+tersebut. 
+  
+10 Pengerjaan kuis 
+dan evaluasi 
+Sistem berhasil memberikan nilai 
+sesuai benar dan salahnya jawaban 
+ketika pengerjaan dan menyimpan 
+nilainya. 
+  
+11 
+Menjalankan 
+kode pada 
+editor 
+Sistem berhasil memvisualisasikan 
+hasil kode perintah yang 
+dijalankan. 
+  
+12 Membuka file 
+pada editor 
+Sistem berhasil membuka file 
+python dan memuat nya pada text 
+editor. 
+  
+13 Menyimpan file 
+pada editor 
+Sistem berhasil menyimpan kode 
+yang diketikan pada text editor 
+dengan ekstensi .py yang langsung 
+terdownload ke perangkat. 
+  
+Testing Sebagai Guru 
+14 Akses 
+Dashboard 
+Sistem berhasil menampilkan 
+halaman dashboard guru. 
+  
+15 Akses halaman 
+data siswa 
+Sistem berhasil menampilkan 
+halaman data siswa. 
+  
+16 Akses halaman 
+progres belajar 
+Sistem berhasil menampilkan 
+halaman progres belajar siswa. 
+  
+17 
+Akses halaman 
+progress 
+tantangan 
+Sistem berhasil menampilkan 
+halaman progres tantangan. 
+  
+18 Akses halaman 
+Data nilai 
+Sistem menampilkan data nilai 
+siswa. 
+  
+18 Mengatur KKM Sistem dapat mengubah nilai KKM 
+sesuai dengan inputan guru. 
+  
+ 
+--- PAGE 50 ---
+35 
+ 
+ 
+3.7 Teknik Analisi Data 
+Teknis analisis data dalam penelitian ini menggunakan pendekatan analisis 
+data kuantitatf. Data kuantitatif dikumpulkan meliputi penilaian pengujian 
+fungsionalitas media pembelajaran melalui metode Black Box Testing yang dinilai 
+berdasarkan angket oleh pengguna, serta penilaian validasi media pembelajaran 
+interaktif berbasis web berdasarkan angket yang diisi oleh para ahli materi dan ahli 
+media mengenai produk media pembelajaran interaktif tersebut 
+3.7.1 Analisis Validitas 
+Data hasil validitas materi dan media pembelajaran diperoleh dari hasil uji 
+validitas konten bahan ajar dan media. Hasil tersebut kemudian dianalisi untuk 
+menentukan Tingkat validitasnya. Pada lembar penilaian validitas, terdapat lima 
+pilihan jawaban seperti yang di tunjukan pada Tabel 3.4. 
+Tabel 3.4 Pedoman Skor Butir Instrumen Validasi  Materi dan Media 
+Skor Keterangan 
+1 Tidak Baik 
+2 Kurang Baik 
+3 Cukup 
+4 Baik 
+5 Sangat Baik 
+ 
+Dari lembar peniaian validitas tersebut, dilakukan analisis data 
+menggunakan statistika deskriptif. Penentuan kevalidan mater i ataupun media 
+ditentukan oleh persentase capaian (PC) dari skor yang diharapkan (SH). Skor yang 
+diharapkan dalam setiap aspek didapat dari perhitungan rumus berikut (Sukmawati 
+et al., 2021). 
+SH = S × Σ𝐼 × ΣR 
+--- PAGE 51 ---
+36 
+ 
+ 
+Keterangan:  
+SH  = Skor yang diharapkan  
+S  = Skor tertinggi tiap butir soal  
+Σ𝐼  = Jumlah butir soal pada aspek yang diukur  
+Σ𝑅 = Jumlah responden 
+Dalam lembar penilaian materi, aspek penilaian terdiri atas kelayakan isi, 
+kelayakan penyajian, kelayakan kebahasaan yang dilakukan oleh dua pakar materi. 
+Sehingga, skor yang diharapkan untuk tiap aspek penilaian dengan skor tertinggi 5 
+dapat dilihat pada Tabel 3.5. 
+Tabel 3.5 Skor harapan validasi materi 
+Aspek Penilaian Jumlah Pertanyaan Skor Harapan 
+Kelayakan Isi 9 90 
+Kelayakan Penyajian 8 80 
+Kelayakan Kebahasaan 8 80 
+Total 25 250 
+ 
+Pada lembar penilaian validitas media, aspek penilian terdiri atas 
+Feedback and Adaptation (Umpan Balik dan Adaptasi), Presentation Design  
+(Penyajian Tampilan), Interactive Usability  (Interaksi Penggunaan ), dan 
+Accessibility (Aksebilitas) yang dilakukan oleh dua pakar media. Dengan demikian, 
+skor yang diharapkan untuk tiap aspek penilaian dengan skor tertinggi 5 dapat 
+dilihat pada tabel. 
+Tabel 3.6 Skor harapan validasi media 
+Aspek Penilaian Jumlah Pertanyaan Skor Harapan 
+Umpan Balik dan Adaptasi 1 10 
+Penyajian Tampilan 8 80 
+Interaksi Penggunaan 3 30 
+Aksesibilitas 2 20 
+Total 14 140 
+--- PAGE 52 ---
+37 
+ 
+ 
+ 
+Hasil perolehan skor  harapan dari lembar validitas lalu dihitung 
+menggunakan rumus yang diadaptasi dari Arikunto (2013) untuk mendapatkan 
+persentase capaian (Munawarah et al., 2021). 
+Persentase Capaian (PC) = 𝑆𝑘𝑜𝑟 𝑦𝑎𝑛𝑔 𝑑𝑖𝑐𝑎𝑝𝑎𝑖
+𝑆𝑘𝑜𝑟 𝑦𝑎𝑛𝑔 𝑑𝑖ℎ𝑎𝑟𝑎𝑝𝑘𝑎𝑛  × 100% 
+ 
+Persentase capaian yang diperoleh kemudian dibandingkan dengan kriteria 
+validitas tiap aspek. Kriteria validitas dapat dilihat pada Tabel 3.7. 
+Tabel 3.7 Kriteria validitas materi dan media 
+Persentase Capaian (PC) Kriteria 
+20 < PC ≤ 40 Validitas Rendah 
+41 < PC ≤ 60 Validitas Sedang 
+61 < PC ≤ 80 Validitas Tinggi 
+81 < PC ≤ 100 Validitas Sangat Tinggi 
+ 
+Persentasi pada Tabel 3.7 dijadikan acuan untuk menentukan validitas 
+media pembelajaran interaktif yang telah dikembangkan. Media dianggap valid jika 
+memenuhi kriteria validitas tinggi atau memiliki presentase capaian minimal 61 %  
+(Rasyied et al., 2025). 
+3.7.2 Analisis Fungsionalitas 
+Lembar pengujian fungsionalitas menggunakan skala Guttman. Setiap 
+item pada angket menunjukkan apakah suatu fitur dalam media pembelajaran 
+berfungsi dengan baik (Berhasil) atau tidak berjalan sebagaimana mestinya (Gagal). 
+Persentase tingkat fungsionalitas dihitung menggunakan rumus sebagai berikut. 
+--- PAGE 53 ---
+38 
+ 
+ 
+Persentase = 𝑆𝑘𝑜𝑟 𝑦𝑎𝑛𝑔 𝑑𝑖𝑐𝑎𝑝𝑎𝑖
+𝑆𝑘𝑜𝑟 𝑚𝑎𝑘𝑠𝑖𝑚𝑎𝑙  × 100% 
+Hasil perhitungan selanjutnya diubah ke dalam bentuk pernyataan predikat 
+sesuai dengan pedoman yang dikembangkan oleh Guritno, Sudaryono, dan Raharja 
+dalam (Ghaffur, 2017) sehingga dapat diinterpretasikan pada Tabel 3.8. 
+Tabel 3.8 Interpretasi persentase fungsionalitas 
+Presentase Fungsionalitas Interpretasi 
+0%-20% Sangat Buruk 
+21%-40% Buruk 
+41%-60% Cukup 
+61%-80% Baik 
+81%-100% Sangat Baik 
+(Sumber Ghaffur, 2017) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 54 ---
+ 
+ 
+39 
+ 
+BAB IV  
+HASIL DAN PEMBAHASAN 
+ 
+ 
+4.1 Hasil Pengembangan Produk 
+Produk pada penelitian ini adalah media pembelajaran interaktif berbasis 
+web materi pemrograman turtle dengan model tutorial. Dalam pengembangan yang 
+dilakukan, peneliti mengadaptasi Konsep ADDIE yang dikemukakan oleh Robert 
+Maribe Branch dalam buku Instructional Design: The ADDIE Approach.  Sesuai 
+dengan akronimnya, tahapan penelitian dan pengembangan media pembelajaran 
+menurut konsep ADDIE terdiri dari tahap Analyze (Analisis), Design (Desain), 
+Development (Pengembangan), Implement (Implementasi), dan Evaluate 
+(Evaluasi). Pada Pengembangan ini penulis membatasi langkah -langkah 
+pengembangan media model ADDIE dengan hanya melaksakan tahap analisis, 
+desain, pengembangan dan evaluasi.  Penjelasan dari tiap fase dapat dilihat pada 
+uraian berikut. 
+4.1.1 Tahap Analisis 
+Tahap pertama dari model ADDIE yaitu tahap analisis. Tujuan dari tahap 
+analisis ini adalah untuk mengetahui kebutuhan awal dalam mengembangkan media 
+pembelajaran d an mendefinisikan apa yang akan dipelajari oleh peserta didik. 
+Analisi yang dilakukan terdiri dari analisis umum, analisis konten , analisis 
+penerapan model tutorial pada media dan analisis teknologi. 
+--- PAGE 55 ---
+40 
+ 
+ 
+a. Analisis umum 
+Analisis umum merupakan langkah awal dalam tahap analisis pada model 
+pengembangan ADDIE yang bertujuan untuk mengumpulkan data dan informasi 
+sebagai dasar pengembangan produk lingkungan pembelajaran. Pada tahap ini, 
+peneliti melakukan studi literatur yang mendalam guna memperoleh landasan teori 
+dan referensi yang relevan terkait pengembangan media pembelajaran berbasis web 
+dan materi pembelajaran pemrograman turtle. 
+Studi literatur dilakukan melalui berbagai sumber yang kredibel, baik 
+berupa buku, artikel ilmiah, jurnal penelitian, maupun sumber daring yang 
+terpercaya. Beberapa referensi utama yang digunakan antara lain buku Python for 
+Kids yang memberikan pengantar pemrograman Python secara visual dan 
+menyenangkan bagi anak-anak, serta dokumentasi resmi dari modul turtle Python 
+yang menjelaskan fungsi -fungsi dasar dan lanjutan dalam membangun grafika 
+menggunakan pendekatan prosedural.  peneliti juga menelaah dokumentasi teknis 
+dari berbagai teknologi pengembangan web yang akan digunakan untuk 
+membangun media pembelajaran interaktif, seperti HTML, CSS, JavaScript, serta 
+framework pendukung seperti React dan pustaka pendukung eksekusi Python di 
+browser seperti Skulpt. 
+Selain studi literatur, peneliti juga menganalisis beberapa aplikasi relevan 
+yang telah dikembangkan oleh pihak lain sebagai bahan perbandingan dan inspirasi. 
+Salah satu aplikasi yang dianalisis adalah Turtle Academy, sebuah platform 
+pembelajaran yang menggunakan pendekatan visual dalam mengajarkan dasar -
+dasar pemrograman menggunakan pemrograman turtle. Analisis ini dilakukan 
+--- PAGE 56 ---
+41 
+ 
+ 
+untuk mengidentifikasi kelebihan dan kekurangan dari masing -masing aplikasi 
+sehingga dapat menjadi acuan dalam merancang media pembelajaran yang lebih 
+efektif dan sesuai kebutuhan siswa. Dengan membandingkan fitur, materi, serta 
+tingkat interaktivitas, peneliti dapat menentukan elemen-elemen penting yang akan 
+diadaptasi maupun ditingkatkan. Dibawah ini adalah tabel analisis yang dilakukan 
+pada aplikasi yang relevan. 
+Tabel 4.1 Analisis aplikasi relevan 
+Aplikasi Bahasa Materi 
+Pembelajaran 
+Tantangan/ 
+Kuis Interaktif Platform 
+Turtle 
+Academy 
+Logo Ya Ya Ya Web 
+Web 
+TurtleArt 
+Logo Ya (Guide 
+Book) Tidak Ya Web 
+Code with 
+Anna and 
+Elsa 
+Blockly Ya (Video) Ya Ya Web 
+Code 
+Combat 
+Python/
+JS Ya Ya Ya Web 
+ 
+b. Analisis konten 
+Analisis konten dilakukan untuk mengidentifikasi dan menentukan jenis 
+serta struktur konten yang dibutuhkan dalam pengembangan media pembelajaran 
+interaktif. Tujuan dari analisis ini adalah untuk memastikan bahwa materi yang 
+disajikan dalam media pembelajaran mampu mendukung tercapainya tujuan 
+pembelajaran serta sesuai dengan karakteristik peserta didik dan pendekatan 
+pembelajaran yang digunakan. 
+Berdasarkan hasil dari analisis umum yang dilakukan melalui studi 
+literatur, konten yang dibutuhkan dalam media pembelajaran ini meliputi: 
+--- PAGE 57 ---
+42 
+ 
+ 
+(1) Teks Penjelas Materi 
+Konten berupa narasi atau penjelasan konsep digunakan untuk 
+memperkenalkan perintah pemrograman turtle. Penjelasan ini disajikan secara 
+bertahap dan disesuaikan dengan tingkat pemahaman peserta didik pemula, 
+menggunakan bahasa yang sederhana dan ilustrasi yang menarik. 
+(2) Potongan Kode Program 
+Potongan kode digunakan untuk memberi contoh penulisan perintah turtle, 
+seperti perintah menggambar garis, lingkaran, mengatur arah dan warna. Potongan 
+kode ini tidak hanya menjadi referensi, tetapi juga dapat dijalankan langsung oleh 
+pengguna dalam editor interaktif yang disediakan. 
+(3) Output Visual dari Kode 
+Visualisasi hasil dari potongan kode ditampilkan agar peserta didik dapat 
+langsung melihat dampak dari instruksi yang diberikan. Hal ini mendukung 
+pendekatan belajar berbasis visual dan eksperiensial, di mana peserta didik dapat 
+memahami hubungan antara kode dan hasilnya secara langsung. 
+(4) Aktivitas Praktikum 
+Aktivitas praktikum berisi instruksi langsung yang dapat dicoba oleh 
+peserta didik menggunakan fitur editor interaktif berbasis web. Dalam aktivitas ini, 
+peserta didik diminta untuk menjalankan perintah turtle sesuai petunjuk, misalnya 
+menggambar garis lurus, membuat persegi, atau mengubah warna garis. Praktikum 
+ini bertujuan untuk memberikan pengalaman belajar langsung ( hands-on) dan 
+--- PAGE 58 ---
+43 
+ 
+ 
+meningkatkan pemahaman terhadap perintah dasar pemrograman dengan Python 
+turtle secara eksploratif dan menyenangkan. 
+(5) Pertanyaan dan Evaluasi 
+Latihan dan evaluasi bertujuan untuk menguji kembali lagi pengetahuan 
+mengenai materi yang sudah dipelajari yang dapat berbentuk soal pilihan ganda. 
+(6) Tantangan 
+Tantangan disediakan untuk mendorong peserta didik untuk berpikir 
+kreatif dan menyelesaikan masalah. Tantangan ini dirancang dengan tingkat 
+kesulitan yang meningkat secara bertahap, mulai dari yang sederhana hingga 
+kompleks. Melalui tantangan ini, peserta didik dituntut untuk menyelesaikan 
+persoalan dengan perintah perintah yang telah dipelajari. 
+Analisis konten juga dilakukan untuk mengidentifikasi dan menyusun sub-
+sub materi Pemrograman Turtle yang akan diajarkan dalam media pembelajaran 
+interaktif. Materi dikaji dari beberapa sumber berikut: 
+(1) Dokumentasi resmi pustaka turtle Python. 
+(2) Buku Python for Kids karya Jason R. Briggs. 
+(3) Platform pembelajaran Turtle Academy  yang menggunakan pendekatan 
+visual dan bertahap dalam mengajarkan dasar-dasar pemrograman turtle. 
+Hasil kajian menunjukkan bahwa materi dibagi menjadi beberapa subtopik 
+yang disusun secara berurutan dan bertingkat sesuai dengan kemampuan yang perlu 
+dikuasai oleh pemula. Struktur konten yang disusun juga mengadopsi pendekatan 
+bertahap dan praktis seperti yang diterapkan oleh Turtle Academy, di mana konsep 
+--- PAGE 59 ---
+44 
+ 
+ 
+diperkenalkan melalui latihan interaktif dan eksperimen langsung. Tabel di bawah 
+ini menunjukkan hasil analisis materi yang telah disusun ke dalam kelompok 
+materi, subtopik, dan isi materi terkait pemrograman Turtle. 
+Tabel 4.2 Analisis materi 
+Kelompok 
+materi Subtopik Isi Materi 
+BAB 1 
+Pendahuluan 
+Pengantar Turtle Pengenalan konsep turtle graphics, 
+tujuan pembelajaran, dan 
+pengenalan antarmuka editor. 
+BAB 2 
+Pergerakan 
+Left & Right Penggunaan perintah left dan 
+right untuk memutar arah turtle. 
+Forward & Backward Penggunaan perintah forward dan 
+backward untuk menggerakkan 
+turtle maju dan mundur. 
+Setposition Menentukan posisi turtle secara 
+langsung menggunakan koordinat 
+x dan y. 
+Setx & Sety Mengatur posisi x atau y turtle 
+secara terpisah menggunakan setx 
+dan sety. 
+Setheading Mengubah arah hadap  turtle 
+menggunakan derajat dengan 
+setheading. 
+Home Mengembalikan turtle ke posisi 
+awal (0,0) dan arah awal dengan 
+home. 
+Circle Menggambar lingkaran dengan 
+circle, termasuk variasi arah dan 
+radius. 
+Dot Menggambar titik -titik berwarna 
+dengan ukuran tertentu 
+menggunakan dot. 
+ 
+ 
+ 
+ 
+--- PAGE 60 ---
+45 
+ 
+ 
+Lanjutan Tabel 4.2 
+Kelompok 
+Materi Subtopik Isi Materi 
+BAB 3 
+Mengetahui 
+Status 
+Position Mengetahui posisi turtle saat ini 
+menggunakan position. 
+Xcor & Ycor Mengetahui nilai koordinat x 
+(xcor) dan y ( ycor) secara 
+terpisah. 
+Heading Mengetahui arah turtle dalam 
+satuan derajat menggunakan 
+heading. 
+Distance Menghitung jarak antara posisi 
+turtle dengan titik lain 
+menggunakan distance. 
+BAB 4 Kontrol 
+Pena dan Warna 
+Penup & Pendown Mengangkat dan menurunkan 
+pena untuk menghentikan atau 
+melanjutkan garis. 
+Pensize Mengatur ketebalan garis dengan 
+pensize. 
+Isdown Mengecek apakah pena sedang 
+aktif (menyentuh kanvas) dengan 
+isdown. 
+Pencolor Mengatur warna garis yang 
+digambar oleh turtle. 
+Fillcolor, Begin_fill, & 
+End_fill 
+Mewarnai bentuk tertutup dengan 
+fillcolor, begin_fill, dan end_fill. 
+BAB 5 Kontrol 
+Gambar 
+Lanjutan 
+Reset Mengembalikan semua posisi, 
+arah, dan status turtle ke kondisi 
+awal. 
+Clear Menghapus gambar dari kanvas 
+tanpa memindahkan turtle. 
+Write Menampilkan teks di kanvas 
+menggunakan write. 
+For Menggunakan perulangan for 
+untuk menggambar pola atau 
+bentuk berulang. 
+ 
+ 
+--- PAGE 61 ---
+46 
+ 
+ 
+c. Analisis penerapan model tutorial pada media 
+Model tutorial merupakan salah satu pendekatan dalam pembelajaran 
+berbasis komputer yang menempatkan sistem sebagai tutor atau pembimbing dalam 
+proses belajar peserta didik. Dalam konteks pengembangan media pembelajaran 
+interaktif berbasis web untuk materi pemrograman turtle, model tutorial diterapkan 
+untuk membimbing peserta didik secara bertahap dari tahap memahami konsep 
+dasar hingga menyelesaikan tantangan pemrograman. 
+Menurut Rusman (2012), terdapat delapan langkah utama dalam 
+penerapan m odel tutorial berbasis komputer. Ke delapan langkah tersebut 
+diintegrasikan ke dalam media pembelajaran sebagai berikut: 
+1) Pendahuluan (introduction) 
+Pada bagian pendahuluan, peserta didik akan disambut dengan halaman 
+pengenalan ( landing page ) yang menjelaskan secara ringkas tujuan dari media 
+pembelajaran ini. Halaman ini juga mengarahkan peserta didik untuk mulai dari 
+materi awal yang memperkenalkan konsep Turtle secara sederhana dan visual. 
+2) Penyajian Informasi (Presentation of Information) 
+Materi disajikan dalam bentuk teks penjelas, ilustrasi visual, serta 
+potongan kode. Penyampaian materi dilakukan secara bertahap dan terstruktur agar 
+peserta didik dapat memahami konsep -konsep dasar pemrograman secara 
+sistematis. Informasi disajikan pada d iawal pembelajaran sebelum peserta didik 
+mencoba praktikum atau menjawab soal. 
+3) Pertanyaan dan Respon (Question of Responses) 
+--- PAGE 62 ---
+47 
+ 
+ 
+Setelah memahami materi, peserta didik diberikan pertanyaan atau latihan 
+yang harus diselesaikan. Bentuk latihan ini dapat berupa pertanyaan pilihan ganda, 
+isian singkat, atau instruksi untuk menjalankan kode tertentu di editor. Latihan 
+disusun untuk memperkuat pemahaman serta mendorong keterlibatan aktif peserta 
+didik dalam proses belajar. 
+4) Penilaian Respon (Judging of Responses) 
+Media pembelajaran dilengkapi dengan sistem evaluasi otomatis yang 
+akan memeriksa jawaban peserta didik, baik berupa kuis maupun hasil eksekusi 
+kode. Sistem ini akan mengevaluasi apakah jawaban yang diberikan sesuai dengan 
+kriteria yang ditentukan, seperti output gambar yang dihasilkan dari instruksi turtle. 
+5) Pemberian Respon Balik (Providing Feedback about Responses) 
+Setelah sistem melakukan penilaian, peserta didik akan menerima umpan 
+balik secara langsung. Jika jawaban benar, maka peserta didik akan diberi 
+konfirmasi positif dan bisa melanjutkan ke materi berikutnya. Jika jawaban salah, 
+akan diberikan penjelasan atau petunjuk untuk memperbaiki kesalahan. 
+6) Pengulangan (Remedial) 
+Bagi peserta didik yang belum mencapai hasil yang diharapkan, sistem 
+akan memberikan kesempatan untuk mengulang materi atau mencoba kembali 
+latihan yang belum berhasil. Proses ini memungkinkan peserta didik belajar dalam 
+kecepatan masing-masing hingga mereka benar-benar memahami materi. 
+7) Segmen Pengaturan Pembelajaran (Sequencing Lesson Segment) 
+Pembelajaran dibagi ke dalam segmen-segmen yang terstruktur, mulai dari 
+pengenalan konsep dasar hingga ke aplikasi dan tantangan yang lebih kompleks. 
+--- PAGE 63 ---
+48 
+ 
+ 
+Pengaturan ini dibuat secara berurutan dan sistematis, mengikuti alur logika dari 
+mudah ke sulit, untuk memastikan pembelajaran berlangsung secara progresif dan 
+mendalam. 
+8) Penutup (closing) 
+Setelah menyelesaikan seluruh materi dan kuis, peserta didik akan 
+diarahkan ke halaman penutup yang memberikan apresiasi atas keberhasilan 
+mereka menyelesaikan pembelajaran. 
+Berdasarkan analisis di atas, Tabel 4.3 memaparkan penerapan model 
+tutorial pada media pembelajaran yang dikembangkan, serta perbandingannya 
+dengan pembelajaran konvensional di kelas berdasarkan pengalaman pribadi. 
+Tabel 4.3 Penerapan identitas model tutorial pada media pembelajaran 
+Identitas Penerapan pada kelas Penerapan pada media 
+Pendahuluan Guru menjelaskan tujuan 
+pembelajaran, manfaat 
+belajar pemrograman Turtle 
+Media menampilkan halaman 
+landing dan halaman 
+pendahuluan yang berisi 
+pengenalan tentang konsep 
+pemrograman Turtle. 
+Penyajian 
+Informasi 
+Guru memberikan penjelasan 
+awal, mendampingi siswa 
+memahami materi melalui 
+modul, dan memberi contoh 
+kode. 
+Materi disajikan dalam bentuk 
+teks penjelas, ilustrasi, dan 
+potongan kode  turtle secara 
+bertahap pada setiap modul atau 
+level pembelajaran. 
+Pertanyaan 
+dan Respon 
+Siswa menjawab kuis dan 
+menjalankan perintah coding 
+secara langsung di kelas 
+dengan bimbingan guru. 
+Peserta didik diberikan latihan 
+berupa kuis pilihan ganda dan 
+perintah coding yang harus 
+dijalankan melalui editor 
+interaktif yang tersedia. 
+Penilaian 
+Respon 
+Guru memantau hasil dan 
+progres siswa melalui sistem, 
+serta memberi intervensi jika 
+dibutuhkan. 
+Sistem mengevaluasi secara 
+otomatis jawaban peserta didik, 
+baik berupa jawaban kuis 
+maupun output dari eksekusi 
+kode pemrograman. 
+ 
+--- PAGE 64 ---
+49 
+ 
+ 
+Lanjutan Tabel 4.3. 
+Identitas Penerapan pada kelas Penerapan pada media 
+Pemberian 
+Respon Balik 
+Guru melengkapi umpan 
+balik dari media dengan 
+diskusi atau bimbingan 
+individual jika siswa masih 
+kesulitan. 
+Media memberikan umpan 
+balik langsung setelah 
+penilaian, seperti notifikasi 
+"jawaban benar" atau "kode 
+belum sesuai", disertai saran 
+perbaikan bila diperlukan. 
+Pengulangan 
+(Remedial) 
+Guru memberi waktu 
+tambahan untuk latihan 
+ulang, remedial mandiri, 
+atau pendampingan 
+kelompok kecil. 
+Peserta didik yang belum 
+berhasil dapat mengulangi 
+latihan atau mempelajari ulang 
+materi sebelumnya sebelum 
+melanjutkan ke tahap 
+berikutnya. 
+Segmen 
+Pengaturan 
+Pembelajaran 
+Guru mengikuti urutan 
+segmen dalam 
+pembelajaran, memberi 
+penilaian pada setiap akhir 
+modul/topik. 
+Materi dibagi menjadi beberapa 
+segmen/topik secara berurutan 
+dari tingkat dasar ke tingkat 
+lanjut (modular), disusun agar 
+peserta didik belajar secara 
+progresif. 
+Penutup Guru menyimpulkan materi 
+yang telah dipelajari, 
+memberi apresiasi, serta 
+memberikan motivasi untuk 
+terus belajar. 
+Setelah menyelesaikan semua 
+kuis dan materi, media 
+menampilkan halaman 
+memberikan apresiasi atas 
+keberhasilan mereka 
+menyelesaikan pembelajaran 
+ 
+Untuk dapat melakukan manajemen terhadap pengguna ( siswa), maka 
+akan terdapat sebuah halaman khusus untuk tenaga pendidik ( guru) agar dapat 
+melihat data dari siswa, nil ai dan progres belajarnya. Karena pada media yang 
+dikembangkan ini akan terdapat dua tipe pengguna pada media, maka diperlukan 
+sebuah sistem login dan signup akun pada media pembelajaran sehingga media 
+dapat membedakan pengguna berdasarkan peran dari penggun a. Dengan adanya 
+--- PAGE 65 ---
+50 
+ 
+ 
+akun yang dapat membedakan tiap pengguna, media dapat melakukan monitor 
+aktifitas siswa pada media. 
+d. Analisis teknologi 
+Berdasarkan hasil analisis umum, analisis konten dan analisis penerapan 
+model tutorial pada media peneliti menyimpulkan teknologi pengembangan media 
+yang akan digunakan pada pengembangan media pembelajaran adalah sebagai 
+berikut. 
+Dalam mengembangkan sebuah aplikasi web, penggunaan teknologi dasar 
+seperti HTML, CSS, dan JavaScript menjadi fondasi utama. Namun, untuk 
+membangun aplikasi web yang kompleks dan interaktif, diperlukan pula integrasi 
+dengan teknologi modern seperti framewo rk dan pustaka pendukung.  Pada 
+penelitian ini, pengembangan media pembelajaran interaktif dilakukan dengan 
+menggunakan React.js sebagai pustaka utama untuk membangun antarmuka 
+pengguna (UI). React memberikan kemudahan dalam membuat komponen UI yang 
+modular, dinamis, dan dapat digunakan kembali, sehingga sangat mendukung 
+proses pengembangan aplikasi yang terstruktur dan efisien.  Untuk sisi backend, 
+digunakan Node.js sebagai platform server-side yang berbasis JavaScript. Node.js 
+dikombinasikan dengan framework Express.js untuk membangun server API yang 
+menangani otentikasi pengguna, penyimpanan data, dan pengelolaan progres 
+belajar. Kombinasi ini memungkinkan komunikasi client-server yang cepat dan 
+efisien menggunakan bahasa pemrograman yang sama, yaitu JavaScript. 
+Agar tampilan aplikasi lebih menarik, responsif, dan mudah digunakan, 
+digunakan pustaka Bootstrap yang diintegrasikan ke dalam komponen React. 
+--- PAGE 66 ---
+51 
+ 
+ 
+Bootstrap menyediakan berbagai komponen siap pakai seperti tombol, form, 
+navigasi, dan grid sistem, yang dapat disesuaikan dengan kebutuhan tampilan 
+aplikasi. 
+Pada media pembelajaran ini, pengguna diberikan kemampuan untuk 
+mengetikkan dan menjalankan kode secara langsung sebagai bagian dari aktivitas 
+pembelajaran. Untuk memberikan pengalaman yang menyerupai lingkungan 
+pengembangan sesungguhnya, dibutuhkan sebuah  teks editor khusus, yaitu code 
+editor, yang memiliki berbagai fitur pendukung pemrograman.  Salah satu fitur 
+utama yang sangat dibutuhkan adalah syntax highlighting, yaitu kemampuan untuk 
+memberikan warna khusus pada kata kunci dalam bahasa pemrograman ter tentu. 
+Hal ini tidak hanya membuat kode lebih mudah dibaca, tetapi juga membantu 
+peserta didik dalam memahami struktur kode dengan lebih baik.  Untuk memenuhi 
+kebutuhan tersebut, media pembelajaran ini menggunakan CodeMirror . Untuk 
+dapat menggunakan CodeMirror dalam aplikasi React, terlebih dahulu kita perlu 
+melakukan instalasi pustaka yang mendukung integrasi CodeMirror dengan React. 
+Dalam hal ini, digunakan paket @uiw/react -codemirror bersama dengan ekstensi 
+bahasa Python @codemirror/lang-python. Berikut langkah-langkah instalasinya: 
+npm install @uiw/react-codemirror @codemirror/lang-python 
+Setelah instalasi selesai, CodeMirror dapat langsung digunakan dalam 
+komponen React. Pertama-tama, impor komponen dan ekstensi yang diperlukan: 
+ 
+Gambar 4.1 Import komponen codemirror dan ekstensinya 
+
+--- PAGE 67 ---
+52 
+ 
+ 
+Kemudian, buat state untuk menyimpan isi dari editor menggunakan useState: 
+ 
+Gambar 4.2 Kode meyimpan isi editor 
+Setelah itu, embed CodeMirror ke dalam komponen dengan menambahkan properti 
+seperti value, onChange, dan extensions untuk mengaktifkan mode Python: 
+ 
+Gambar 4.3 Kode menampilkankan CodeMirror pada web 
+Dengan konfigurasi ini, editor CodeMirror akan tampil di halaman React dengan 
+dukungan penyorotan sintaks Python, tema gelap, dan ukuran editor yang sesuai. 
+Setiap kali pengguna mengetik atau mengubah kode, nilainya akan tersimpan di 
+state pythonCode. Dengan penerapan CodeMirror, diharapkan peserta didik dapat 
+lebih nyaman dan fokus dalam menyusun kode untuk mencoba instruksi turtle. 
+Selain menyediakan code editor , media pembelajaran ini juga 
+memungkinkan pengguna untuk menjalankan kode Python yang disajikan dalam 
+materi maupun kode yang mereka tulis sendiri. Fitur ini penting untuk mendukung 
+pembelajaran berbasis praktik secara langsung ( learning by doing ), khususnya 
+dalam materi seperti turtle graphics yang membutuhkan umpan balik visual dari 
+hasil eksekusi kode. Skulpt merupakan solusi paling tepat untuk kebutuhan ini. 
+Skulpt adalah interpreter Python berbasis JavaScript yang berjalan sepenuhnya di 
+sisi klien (client-side) di dalam browser. Skulpt mendukung Python 3 dan dapat 
+
+--- PAGE 68 ---
+53 
+ 
+ 
+dijalankan langsung tanpa koneksi ke server eksternal. Yang paling penting, Skulpt 
+telah dikembangkan dan dikustomisasi agar mendukung pustaka turtle melalui 
+integrasi dengan elemen HTML seperti <canvas>.  Untuk meng-embed Skulpt ke 
+dalam halaman web, dua pustaka perlu dimuat terlebih dahulu dengan 
+menambahkan tag berikut di dalam <head> atau sebelum </body> dalam HTML 
+atau melalui tag script di React: 
+ 
+Gambar 4.4 Kode meng-embed Skulpt ke halaman web 
+Setelah itu, proses eksekusi kode dilakukan dengan langkah-langkah berikut: 
+a) Menyiapkan fungsi output dan file reader: 
+ 
+Gambar 4.5 Fungsi untuk output dan file reader 
+b) Mengeksekusi kode Python menggunakan Skulpt: 
+ 
+      Gambar 4.6 Fungsi untuk mengeksekusi kode python menggunakan Skulpt 
+
+--- PAGE 69 ---
+54 
+ 
+ 
+c) Menyiapkan elemen canvas sebagai target gambar turtle: 
+ 
+Gambar 4.7 Kode untuk menampilkan hasil visualisasi dari kode perintah 
+Elemen div dengan id="mycanvas" menjadi tempat visualisasi hasil kode 
+turtle. Skulpt akan menggambar langsung di elemen ini ketika perintah turtle seperti 
+forward(), left(), atau circle() dijalankan. Seluruh proses ini berjalan di browser 
+pengguna. 
+Namun, agar pengguna  terutama pemula  lebih mudah memahami dan 
+menuliskan perintah, media pembelajaran ini dilengkapi juga dengan parser khusus 
+yang memproses perintah sederhana menjadi bentuk fungsi  Python yang valid.  
+Contoh penerapan parser, jika pengguna mengetik `forward 100` maka parser akan 
+otomatis mengubahnya menjadi `forward(100)`. Parser ini dirancang untuk 
+memudahkan penulisan kode, khususnya bagi peserta didik yang belum familiar 
+dengan sintaks Python lengkap. Pengguna cukup menuliskan perintah dalam bentuk 
+yang disederhanakan, dan sistem akan menerjemahkannya menjadi kode turtle yang 
+valid sebelum dieksekusi oleh Skulpt.  Berikut adalah cuplikan fungsi parser 
+parseSimpleCommands yang digunakan: 
+
+--- PAGE 70 ---
+55 
+ 
+ 
+ 
+ 
+Gambar 4.8 Fungsi kode parser 
+Parser ini bekerja dengan membaca setiap baris kode yang diketik oleh pengguna, 
+mengenali pola perintah, lalu mengonversinya sesuai sintaks Python. Perintah 
+sederhana seperti “ forward 100” atau “ left 90” akan diterjemahkan menjadi 
+forward(100) atau left(90). Dengan cara ini, pengguna dapat menjalankan perintah 
+
+--- PAGE 71 ---
+56 
+ 
+ 
+Turtle secara langsung, dan alur eksekusi kode pada media akan sesuai dengan yang 
+ditampilkan pada Gambar 4.9. 
+ 
+Gambar 4.9 Alur ekseskusi kode pada media 
+Berikut adalah tabel analisis teknologi untuk menjalankan kode Turtle 
+Python yang  dapat di -embed di web, membandingkan pendekatan Skulpt + 
+CodeMirror + Fungsi Parser dengan beberapa alternatif populer seperti Trinket, 
+Replit Embed, dan Brython: 
+Tabel 4.4 Analisis teknologi menjalankan kode python di web 
+Teknologi Kelebihan Kekurangan 
+Skulpt + 
+Codemirror 
++ Parser 
+- Berjalan sepenuhnya di sisi klien 
+(tidak butuh koneksi internet saat 
+runtime). 
+- Ringan dan cepat. 
+- Dapat dikustomisasi penuh (parser, 
+UI, dll). 
+- Dukungan penuh untuk Turtle via 
+<canvas>. 
+- Bisa disederhanakan untuk pemula 
+dengan parser. 
+- Tidak mendukung 
+seluruh fitur Python 
+(hanya subset Python 
+3). 
+- Butuh effort awal 
+cukup besar untuk 
+integrasi dan 
+debugging. 
+- Kinerja menurun jika 
+kode kompleks. 
+Trinket - Mendukung Python dan Turtle 
+secara utuh. 
+- Tidak perlu setup manual (cukup 
+embed iframe). 
+- Hasil visual bisa langsung terlihat. 
+- Mudah digunakan oleh pemula. 
+ 
+- Perlu koneksi internet 
+(cloud-based). 
+- Tidak bisa 
+dikustomisasi penuh 
+(UI, parser, integrasi 
+dengan sistem sendiri 
+terbatas). 
+- Gratisan terbatas fitur. 
+ 
+
+--- PAGE 72 ---
+57 
+ 
+ 
+Lanjutan Tabel 4.4. 
+Teknologi Kelebihan Kekurangan 
+Replit - Lingkungan Python lengkap, bisa 
+menjalankan hampir semua kode 
+Python. 
+- Mendukung kolaborasi dan akun 
+pengguna. 
+- Mendukung turtle dengan GUI. 
+ 
+- Berat dan lambat 
+untuk user pemula. 
+- Tidak didesain khusus 
+untuk pembelajaran 
+Turtle. 
+- Tampilan tidak dapat 
+disesuaikan untuk 
+anak-anak. 
+Brython + 
+CodeMirror 
+- Juga berjalan di browser (client -
+side). 
+- Lebih dekat dengan implementasi 
+Python standar. 
+- Bisa manipulasi DOM langsung 
+dengan Python. 
+ 
+- Tidak ada dukungan 
+langsung untuk turtle. 
+- Dokumentasi turtle 
+untuk Brython sangat 
+terbatas. 
+- Lebih sulit 
+diintegrasikan untuk 
+visual turtle. 
+Selain itu, diperlukan beberapa teknologi lain seperti dalam memformat 
+media materi seperti teks dan gambar, validasi kode yang ditulis oleh pengguna, 
+mengambil dan menyimpan data, desain media pembelajaran, penulisan sumber 
+kode media pembelajaran dan lain sebagainya. 
+Tabel 4.5 Daftar teknologi tambahan yang diperlukan 
+Teknologi Penggunaan 
+Firebase Dalam pengembangan media ini, Firebase Firestore 
+berperan sebagai basis data untuk menyimpan berbagai 
+informasi yang dibutuhkan oleh aplikasi.  
+Git dan Github Teknologi ini digunakan untuk melacak perubahan 
+pada sumber kode, sehingga setiap aktivitas seperti 
+penghapusan, pengeditan, atau penghilangan kode 
+dapat tercatat dengan baik. 
+Vercel Pengembang dapat melakukan deploy dari kode yang 
+diunggah di repositori GitHub tanpa biaya tambahan 
+ 
+ 
+--- PAGE 73 ---
+58 
+ 
+ 
+e. Evaluasi Tahap Analisis 
+Evaluasi pada tahap analisis bertujuan untuk mengidentifikasi kekurangan 
+dalam perancangan media pembelajaran, terutama dalam penggunaan sintaks yang 
+masih menyerupai bahasa pemrograman Python dan dinilai kurang ramah bagi 
+siswa pemula. Oleh karena itu, disarankan penggunaan sintaks yang lebih 
+sederhana dan mudah dipahami seperti pada bahasa Logo, agar siswa dapat lebih 
+mudah memahami dan menulis perintah. Untuk mendukung hal tersebut, digunakan 
+fungsi parser yang berfungsi mengubah perintah sederhana dari siswa menjadi 
+sintaks Python yang dapat dijalankan oleh sistem. 
+4.1.2 Tahap Desain 
+Pada tahap ini, dilakukan penyusunan desain atau perancangan dari media 
+pembelajaran interaktif yang akan dikembangkan. Rangkaian proses perancangan 
+yang dilakukan oleh peneliti dijelaskan sebagai berikut. 
+a. Desain sistem 
+Pada tahap perancangan sistem, dilakukan pembuatan desain aplikasi 
+media pembelajaran, yang mencakup flowchart alur penggunaan media, diagram 
+use case, serta diagram skema basis data yang akan diterapkan. Hasil dari proses 
+perancangan sistem ini untuk media pembelajaran yang dikembangkan dapat dilihat 
+sebagai berikut. 
+ 
+  
+--- PAGE 74 ---
+59 
+ 
+ 
+1) Desain flowchart 
+ 
+Gambar 4.10. Flowchart alur utama penggunaan media 
+Berdasarkan diagram alur di atas, alur pembelajaran disusun mengikuti 
+model tutorial yang terdiri dari beberapa tahapan. Ketika pengguna pertama kali 
+mengakses media pembelajaran, mereka akan melewati tahap autentikasi. 
+Pengguna yang belum memiliki akun akan diarahkan ke halaman pendaftaran untuk 
+mengisi data yang diperlukan. Jika proses pendaftaran berhasil, pengguna dapat 
+melanjutkan ke halaman masuk.  Pengguna yang sudah memiliki akun dapat 
+langsung menuju halaman login tanpa perlu mendaftar ulang. Setelah berhasil 
+masuk, pengguna akan diarahkan untuk membaca tujuan pembelajaran dan mulai 
+mempelajari materi yang telah disusun. Materi disajikan dalam be ntuk teks, 
+gambar, dan editor kode interaktif yang memungkinkan pengguna mencoba 
+perintah Turtle secara langsung. Setelah mempelajari materi, pengguna 
+
+--- PAGE 75 ---
+60 
+ 
+ 
+mengerjakan aktivitas berupa instruksi kode dan tantangan untuk membangun 
+pemahaman. Selanjutnya, pengguna mengerjakan kuis sebagai bentuk evaluasi 
+terhadap pemahaman materi. Jika nilai kuis belum mencapai KKM, maka sistem 
+akan memberikan umpan balik berupa perintah untuk mengulang materi dan latihan 
+sebelumnya. Namun, jika pengguna berhasil lulus, maka sistem akan memeriksa 
+apakah semua materi telah diselesaikan. Jika belum, pengguna diarahkan ke materi 
+selanjutnya. Setelah seluruh materi dan kuis selesai dikerjakan, pengguna 
+mengikuti evaluasi akhir sebagai penutup proses pembelajaran. Di akhir proses, 
+pengguna dinyatakan telah menyelesaikan seluruh rangkaian pembelajaran secara 
+tuntas. 
+2) Desain diagram use case 
+Pada Gambar 4. 11 ditampilkan desain diagram use case  dari media 
+pembelajaran berbasis web yang dikembangkan. Berdasarkan diagram tersebut, 
+dapat dilihat fungsionalitas-fungsionalitas utama yang dapat diakses oleh pengguna 
+media pembelajaran. Media ini memiliki dua jenis pengguna, yaitu siswa dan guru. 
+Siswa sebagai pengguna utama memiliki beberapa aktivitas yang dapat dilakukan 
+dalam sistem, di antaranya adalah mendaftar dan masuk ke akun, mengakses 
+halaman materi, mengerjakan kuis, evaluasi, serta tantangan pemrograman. Siswa 
+juga dapat menggunakan fitur kode editor untuk menjalankan perintah Turtle, 
+menyimpan hasil kode yang telah dibuat, serta  memuat ulang kode sebelumnya. 
+Selain itu, siswa dapat melihat nilai dari kuis dan evaluasi yang telah dikerjakannya. 
+Sementara itu, guru memiliki peran sebagai pengelola dan pemantau 
+aktivitas pembelajaran siswa. Guru dapat melihat dan mengubah data siswa, 
+--- PAGE 76 ---
+61 
+ 
+ 
+melihat progres belajar dan tantangan siswa, serta melihat dan mengevaluasi nilai 
+dari hasil pembelajaran yang dilakukan siswa. Guru juga memiliki akses untuk 
+mengekspor data nilai siswa serta mengatur atau mengubah Kriteria Ketuntasan 
+Minimal (KKM) sesuai kebutuhan. 
+ 
+Gambar 4.11. Diagram use case 
+3) Desain skema basis data 
+Gambar 4.12 menunjukkan rancangan skema basis data yang digunakan 
+dalam aplikasi. Dalam pengembangan ini, dibutuhkan sistem basis data untuk 
+menyimpan berbagai informasi yang berkaitan dengan proses kerja aplikasi. Tabel 
+guru berfungsi sebagai pusat kendali kelas, menyimpan informasi seperti id sebagai 
+primary key, nama, email, password, instansi, token, dan refresh_token. Token 
+digunakan sebagai kode kelas yang memungkinkan siswa bergabung ke dalam kelas 
+
+--- PAGE 77 ---
+62 
+ 
+ 
+tertentu saat mendaftar. Dengan demikian, guru dapat memantau siswa yang berada 
+dalam kelasnya. Field refresh_token digunakan untuk menyimpan sesi login agar 
+guru tetap masuk tanpa harus login ulang setiap waktu.  
+Tabel kkm menyimpan nilai ambang batas (Kriteria Ketuntasan Minimal) 
+untuk setiap kuis dan evaluasi, dengan atribut seperti id, kuis_1 sampai kuis_5, 
+evaluasi, dan token. Token pada tabel ini berelasi langsung dengan token milik guru 
+dengan kardinalitas one to one, sehingga setiap kelas guru memiliki satu set KKM 
+yang dapat disesuaikan oleh masing masing guru. 
+Selanjutnya, tabel siswa menyimpan data peserta didik yang mencakup id, 
+nama, nisn, email, progres_belajar, progres_tantangan, token_kelas, dan 
+refresh_token. progres_belajar mencatat kemajuan siswa dalam menyelesaikan 
+materi, nilai progress_belajar akan bertambah tiap menyelesaikan sub materi.  
+Sedangkan progres_tantangan mencatat kemajuan mereka dalam menyelesaikan 
+tantangan, nilai progres_tantangan juga bertambah setelah siswa menyelesaikan 
+tantangan. Field token_kelas menjadi penghubung antara siswa dengan kelas guru 
+melalui token, dengan relasi one to many , sehingga satu guru dapat memiliki 
+banyak siswa. Field refresh_token juga digunakan untuk menyimpan sesi login 
+siswa. 
+Terakhir, tabel nilai_siswa mencatat hasil kuis dan evaluasi dari masing -
+masing siswa, dengan field id sebagai primary key dan id_user sebagai foreign key 
+yang merujuk ke tabel siswa. Nilai-nilai seperti kuis_1 hingga kuis_5 serta evaluasi 
+disimpan berdasarkan siswa yang mengerjakannya. Relasi antara nilai_siswa dan 
+siswa bersifat one to one, yang berarti setiap siswa hanya memiliki satu entri nilai 
+--- PAGE 78 ---
+63 
+ 
+ 
+dalam tabel ini. Hubungan antara masing-masing tabel tersebut dapat dilihat pada 
+skema berikut. 
+ 
+ 
+ 
+Gambar 4.12 Skema basis data 
+b. Desain antarmuka 
+Desain antarmuka berfungsi untuk menggambarkan tampilan aplikasi 
+yang akan dikembangkan, sehingga dapat menjadi acuan dalam proses pembuatan 
+media pembelajaran. Adapun hasil rancangan antarmuka dari media ini dijelaskan 
+sebagai berikut.  
+1) Tema media pembelajaran 
+Media pembelajaran ini dirancang menggunakan konsep tema untuk 
+menjaga konsistensi tampilan di setiap halamannya. Tema tersebut mencakup 
+penggunaan palet warna dan jenis huruf yang seragam di seluruh media. Dalam 
+pengembangannya, palet warna yang digunakan diadaptasi dari palet warna milik 
+Bootstrap, guna menciptakan tampilan yang bersih dan profesional. Untuk jenis 
+font, media ini menggunakan Segoe UI, sebuah font modern dan mudah dibaca 
+yang banyak digunakan pada antarmuka aplikasi. Pemilihan font ini bertujuan 
+untuk meningkatkan kenyamanan pengguna dalam membaca materi, sehingga 
+
+--- PAGE 79 ---
+64 
+ 
+ 
+mengurangi rasa lelah dan kejenuhan saat mengikuti proses pembelajaran melalui 
+media tersebut. 
+ 
+Gambar 4.13 Palet warna yang digunakan 
+2) Desain antarmuka 
+Perancangan antarmuka pengguna dimulai dengan pembuatan beberapa 
+halaman utama yang akan ditampilkan dalam  media pembelajaran. Langkah awal 
+dilakukan dengan merancang low-fidelity design untuk memberikan gambaran awal 
+mengenai tampilan akhir dari masing -masing halaman. Beberapa halaman yang 
+dirancang dengan pendekatan ini meliputi landing page, materi, kuis, tantangan, 
+serta halaman khusus untuk guru.  
+a) Landing page 
+Halaman ini berfungsi sebagai halaman pembuka yang menyambut 
+pengguna saat pertama kali mengakses media pembelajaran. Dihalaman ini terdapat 
+tombol masuk atau daftar, serta navigasi menuju halaman materi atau fitur lainnya. 
+
+--- PAGE 80 ---
+65 
+ 
+ 
+ 
+Gambar 4.14 Rancangan untuk landing page 
+b) Halaman Materi 
+Menampilkan konten pembelajaran dalam bentuk teks, gambar, atau video 
+yang tersusun berdasarkan sub -topik. Halaman ini dirancang untuk membantu 
+siswa memahami konsep dasar sebelum mengerjakan kuis atau tantangan. 
+ 
+Gambar 4.15 Rancangan untuk halaman materi 
+ 
+ 
+ 
+ 
+
+--- PAGE 81 ---
+66 
+ 
+ 
+c) Halaman Kuis 
+Digunakan untuk mengukur pemahaman siswa terhadap materi yang telah 
+dipelajari. Kuis terdiri dari pertanyaan pilihan ganda dengan sistem penilaian 
+otomatis. 
+ 
+Gambar 4.16 Rancangan halaman kuis 
+d) Halaman Tantangan 
+Berisi latihan pemrograman interaktif yang dirancang untuk melatih 
+logika dan penerapan perintah Turtle.  
+ 
+Gambar 4.17 Rancangan halaman tantangan 
+
+--- PAGE 82 ---
+67 
+ 
+ 
+e) Halaman Editor  
+Menyediakan area bagi pengguna untuk menulis dan menjalankan kode 
+turtle secara langsung. Dilengkapi dengan tombol run, reset, buka file, simpan file, 
+serta tampilan hasil visual dari turtle. 
+ 
+Gambar 4.18 Rancangan halaman editor 
+f) Halaman Guru 
+Dashboard khusus untuk guru yang menampilkan data siswa, nilai, progres 
+belajar, serta progres tantangan . Halaman ini memungkinkan guru memantau 
+perkembangan siswa. 
+ 
+Gambar 4.19 Rancangan halaman dashboard guru 
+
+--- PAGE 83 ---
+68 
+ 
+ 
+c. Evaluasi Tahap Desain 
+Evaluasi pada tahap desain difokuskan untuk menilai kesesuaian 
+rancangan media pembelajaran dengan kebutuhan pengguna serta prinsip 
+kemudahan penggunaan. Dari hasil evaluasi, diperoleh satu saran utama, yaitu 
+menjadikan tampilan beranda lebih efektif dalam satu halaman penuh tanpa perlu 
+melakukan scroll, agar informasi utama dapat langsung terlihat secara menyeluruh 
+oleh pengguna saat pertama kali membuka media pembelajaran. 
+4.1.3 Tahap Pengembangan 
+Tahap pengembangan merupakan langkah lanjutan dalam model ADDIE. 
+Pada tahap ini, media pembelajaran mulai dikembangkan berdasarkan hasil dari 
+tahap analisis dan desain. Dengan mengintegrasikan model tutorial dalam proses 
+pengembangan, peneliti merancang me dia pembelajaran yang sesuai dengan 
+penerapan model tersebut, sebagaimana dijelaskan dalam Tabel 4.1. 
+a. Konfigurasi awal proyek pengembangan media  
+Untuk membangun media pembelajaran interaktif berbasis web dalam 
+penelitian ini, digunakan kombinasi teknologi React untuk antarmuka pengguna 
+(frontend) dan Node.js untuk server ( backend). Sebelum memulai pengembangan 
+proyek, langkah awal yang perlu dilakukan adalah menginstal Node.js pada 
+perangkat komputer atau laptop yang digunakan. Node.js dibutuhkan agar 
+pengembang dapat menggunakan NPM (Node Package Manager), sebuah alat yang 
+memudahkan dalam mengelola dependensi dan pustaka yang diperlukan dalam 
+proyek. 
+--- PAGE 84 ---
+69 
+ 
+ 
+Node.js dapat diunduh sesuai dengan sistem operasi perangkat melalui 
+situs resminya di https://nodejs.org/en/download. Setelah instalasi selesai, perintah 
+npm dapat digunakan melalui terminal di MacOS dan Linux, atau melalui 
+Command Prompt maupun PowerShell di Windows. Untuk memulai proyek React 
+baru, perintah yang digunakan adalah: 
+npx create-react-app nama-proyek 
+Setelah menjalankan perintah tersebut dan mengikuti petunjuk yang 
+diberikan, sebuah struktur proyek React baru akan terbentuk. Langkah berikutnya 
+adalah menginstal pustaka tambahan yang dibutuhkan untuk mendukung 
+fungsionalitas media pembelajaran yang akan dikembangkan, seperti pustaka untuk 
+routing, manajemen state, atau koneksi ke server Node.js. 
+b. Konfigurasi Database 
+Media pembelajaran ini menggunakan Firebase Firestore sebagai sistem 
+basis datanya. Firestore merupakan layanan database real-time berbasis NoSQL 
+yang disediakan oleh Firebase. Untuk mulai memanfaatkan layanan ini, langkah 
+pertama adalah mendaftar melalui Firebase Console  di 
+https://console.firebase.google.com, dengan memastikan sudah login 
+menggunakan akun Google. 
+Setelah berhasil masuk ke halaman utama Firebase Console, pengguna 
+perlu membuat proyek baru, mengisi informasi yang dibutuhkan, dan mengikuti 
+tahapan hingga proyek berhasil dibuat. Selanjutnya, tambahkan aplikasi web  ke 
+dalam proyek tersebut agar aplikasi dapat terhubung ke basis data. 
+--- PAGE 85 ---
+70 
+ 
+ 
+Setelah aplikasi berhasil ditambahkan, Firebase akan menampilkan file konfigurasi 
+yang berisi detail penting untuk menghubungkan aplikasi web dengan Firestore 
+yang akan digunakan sebagai sumber data. 
+Konfigurasi tersebut digunakan untuk menghubungkan aplikasi Node.js 
+dengan Firebase Firestore menggunakan Firebase Admin SDK. Pertama, file .env 
+dimuat menggunakan dotenv agar kredensial Firebase seperti private_key, 
+project_id, dan lainnya dapat diakses m elalui process.env. Data kredensial 
+kemudian disusun dalam objek serviceAccount, termasuk konversi karakter 
+newline ( \n) pada private_key agar sesuai dengan format aslinya. Setelah itu, 
+Firebase Admin diinisialisasi dengan kredensial tersebut (jika belum d iinisialisasi 
+sebelumnya), dan koneksi ke Firestore dibuat melalui admin.firestore(). Objek db 
+hasil koneksi ini diekspor agar bisa digunakan di file lain dalam aplikasi untuk 
+mengakses dan mengelola data di Firestore. 
+ 
+Gambar 4.20 Kode koneksi firestore 
+
+--- PAGE 86 ---
+71 
+ 
+ 
+c. Implementasi Penerapan Identitas Model Tutorial pada Media 
+Semua fitur -fitur yang didapatkan dari hasil analisis penerapan model 
+tutorial pada media akan diterapkan. Berikut adalah pemaparan hasil dari penerapan 
+tiap-tiap identitas model tutorial pada media pembelajaran. 
+1) Pendahuluan 
+Identitas pengenalan pada model tutorial diterapkan dalam media sebagai 
+sebuah halaman arahan ( landing page ), yang ditampilkan  pada Gambar 4.21 . 
+Halaman ini menampilkan nama media, deskripsi singkat mengenai manfaatnya 
+sebagai alat bantu belajar interaktif untuk memahami konsep pemrograman Turtle. 
+Di dalamnya juga terdapat menu navigasi ke fitur-fitur utama seperti belajar turtle, 
+tantangan, dan editor. 
+ 
+Gambar 4.21 Halaman landing page 
+2) Penyajian informasi (presentation of information) 
+Penerapan identitas penyajian informasi pada model tutorial diwujudkan 
+dalam bentuk halaman materi  pada media pembelajaran. Halaman ini dirancang 
+untuk menyajikan berbagai jenis konten pembelajaran kepada pengguna. Di 
+
+--- PAGE 87 ---
+72 
+ 
+ 
+dalamnya terdapat beragam elemen interaktif yang berfungsi mendukung pengguna 
+dalam membaca dan memahami isi materi secara lebih efektif. 
+ 
+Gambar 4.22 Halaman materi 
+Sebagaimana ditampilkan pada Gambar 4. 22, halaman materi terdiri dari 
+beberapa komponen utama. Di bagian atas terdapat navigation bar yang berfungsi 
+untuk mengakses berbagai menu yang tersedia dalam media pembelajaran, serta 
+tombol humburger di sisi kiri yang digunakan untuk menutup dan membuka 
+navigation bar. Sementara itu, pada bagian kanan navigation bar terdapat materi 
+yang ditampilkan sesuai dengan menu yang dipilih  pada navigation bar. Pada 
+bagian materi tersebut ditampilkan judul materi yang sedang dipelajari  dan diikuti 
+dengan tujuan pembelajaran. Setelah itu, disediakan pula narasi penjelasan berupa 
+teks dan media pendukung untuk membantu peserta didik memahami isi materi 
+dengan lebih mudah dan interaktif. 
+Pada halaman materi ini juga disediakan latihan interaktif yang dilengkapi 
+dengan teks editor  seperti pada gambar 4. 23. Pengguna dapat langsung 
+mengetikkan perintah Python Turtle di kolom editor, menjalankan kode tersebut 
+
+--- PAGE 88 ---
+73 
+ 
+ 
+dengan menekan tombol "Run Code", dan melihat hasil visualisasinya secara 
+langsung di area tampilan. Fitur ini dirancang agar pengguna dapat belajar secara 
+langsung dan memahami efek dari setiap perintah yang dijalankan, seperti memutar 
+karakter atau mengu bah posisi, sehingga pengalaman belajar menjadi lebih 
+menyenangkan. 
+ 
+Gambar 4.23 Tampilan latihan menjalankan printah dengan editor 
+3) Pertanyaan dan respon (question of responses) 
+Setiap materi dalam media pembelajaran ini dilengkapi dengan pertanyaan 
+untuk menguji pemahaman pengguna secara bertahap. Pertanyaan disajikan satu 
+per satu, dan pengguna harus menjawab dengan benar untuk dapat melanjutkan ke 
+soal berikutnya. Jika jawaban yang diberikan salah, sist em akan memberikan 
+respons yang menandakan kesalahan tersebut dan pengguna diminta mencoba 
+kembali hingga jawaban benar. Proses ini memastikan bahwa setiap soal benar -
+benar dipahami sebelum pengguna melanjutkan ke soal berikutnya. Pertanyaan 
+dianggap selesai hanya jika seluruh soal berhasil dijawab dengan benar. 
+
+--- PAGE 89 ---
+74 
+ 
+ 
+ 
+Gambar 4.24 Aktivitas pilihan ganda 
+Selain pertanyaan, pada beberapa materi juga terdapat tantangan berupa 
+instruksi yang harus diikuti pengguna dengan menuliskan perintah Turtle. 
+Tantangan ini bersifat praktik langsung, di mana jika perintah yang dimasukkan 
+salah, sistem akan memberikan peringatan melalui alert yang menjelaskan bahwa 
+kode tidak sesuai dengan instruksi yang diberikan. 
+ 
+Gambar 4.25 Aktivitas tantangan pada materi 
+
+--- PAGE 90 ---
+75 
+ 
+ 
+ 
+Gambar 4.26 Contoh petunjuk aktivitas tantangan 
+Di akhir setiap bab, tersedia kuis yang menguji pemahaman secara 
+keseluruhan dengan batas waktu pengerjaan selama 15 menit. Evaluasi ini 
+memberikan skor yang akan dibandingkan dengan nilai KKM (Kriteria Ketuntasan 
+Minimal). Apabila skor pengguna berada di bawah KKM, sistem akan memberikan 
+respons berupa notifikasi bahwa pengguna harus mengerjakan ulang evaluasi 
+tersebut, sehingga pengguna mendapatkan kesempatan untuk memperbaiki hasil 
+belajarnya. 
+ 
+Gambar 4.27 Halaman sebelum memulai kuis 
+
+--- PAGE 91 ---
+76 
+ 
+ 
+ 
+Gambar 4.28 Halaman menjawab kuis 
+4) Penilaian respon (judging of responses) 
+Penilaian respon ( judging of responses ) dalam sistem ini diterapkan 
+melalui beberapa mekanisme berbeda tergantung pada jenis aktivitas pengguna. 
+Untuk kuis pilihan ganda, sistem menggunakan state seperti selectedAnswer, 
+selectedAnswer2, dan feedback untuk mencatat jawaban dan memberikan umpan 
+balik langsung, seperti “Benar!” atau “Salah!”. Jika semua jawaban benar dan 
+progres belajar berada pada tahap tertentu, sistem akan memperbarui progres 
+belajar pengguna ke tahap berikutnya melalui permintaan axios.put , serta 
+menampilkan notifikasi sukses menggunakan SweetAlert. Selain itu, sistem juga 
+memeriksa apakah materi telah diselesaikan sebelumnya dan memberikan respons 
+yang berbeda jika pengguna mencoba mengulang materi yang sama. Mekanisme 
+ini memungkinkan sis tem memberikan kontrol pembelajaran yang adaptif dan 
+mendukung proses remedial secara otomatis. 
+
+--- PAGE 92 ---
+77 
+ 
+ 
+ 
+Gambar 4.29 Potongan kode memproses pertanyaan pilihan ganda 
+Pada tantangan berbasis kode  Python Turtle, penilaian dilakukan dengan 
+mencocokkan urutan perintah yang diketik pengguna dengan kunci jawaban 
+menggunakan proses parsing dan normalisasi kode. Sistem memeriksa apakah 
+setiap langkah sudah sesuai secara berurutan. Jika pengguna menyelesaikan semua 
+langkah dengan benar, maka tantangan dianggap selesai dan muncul pesan 
+keberhasilan. Sebaliknya, jika terdapat kesalahan, pengguna akan mendapatkan 
+umpan balik agar memperbaiki bagian yang salah. Pendekatan ini mendorong 
+eksplorasi mandiri dan penguatan konsep melalui percobaan langsung. 
+
+--- PAGE 93 ---
+78 
+ 
+ 
+ 
+Gambar 4.30 Potongan kode memproses tantangan 
+Sedangkan untuk kuis akhir bab, sistem memeriksa seluruh jawaban 
+pengguna dan menghitung skor akhir. Jika skor memenuhi ambang batas nilai 
+minimum (KKM), progres belajar akan diperbarui, dan nilai kuis akan disimpan di 
+server. Sistem juga menangani berbagai kondisi: jika pengguna sudah pernah 
+menyelesaikan kuis, akan ditampilkan informasi bahwa tidak ada perubahan 
+progres; dan jika nilai belum memenuhi, pengguna diarahkan untuk mengulang 
+materi. Semua proses ini didukung oleh notifikasi interaktif dengan SweetAlert dan 
+pembaruan data melalui API dengan autentikasi token. 
+
+--- PAGE 94 ---
+79 
+ 
+ 
+ 
+Gambar 4.31 Potongan kode memproses nilai kuis 
+5) Pemberian respon balik (providing feedback about responses) 
+Setelah jawaban pengguna diperiksa oleh sistem, maka akan ditampilkan 
+umpan balik yang sesuai dengan hasil dari jawaban pengguna. Untuk aktivitas 
+pilihan ganda, umpan balik berupa pesan kecil di bagian bawah yang menunjukkan 
+apakah jawaban pengguna benar atau tidak.  
+ 
+Gambar 4.32 Tampilan respon jawaban salah 
+
+--- PAGE 95 ---
+80 
+ 
+ 
+ 
+Gambar 4.33 Tampilan respon jawaban benar 
+Untuk aktivitas tantangan, sistem akan menampilkan alert pemberitahuan 
+ketika pengguna berhasil menyelesaikan tantangan. Jika seluruh perintah sudah 
+benar dan sesuai, akan muncul alert yang menyatakan bahwa tantangan telah 
+selesai. Sebaliknya, jika terdapat perintah yang salah, sistem juga akan memberikan 
+pemberitahuan berupa alert yang menunjukkan adanya kesalahan, seperti yang 
+ditampilkan pada Gambar 4.34, sehingga pengguna dapat memperbaikinya. 
+ 
+Gambar 4.34 Tampilan respon ketika salah pada aktivitas tantangan 
+
+--- PAGE 96 ---
+81 
+ 
+ 
+ 
+Gambar 4.35 Respon ketika aktivitas tantangan selesai 
+Pada bagian kuis, jika nilai yang diperoleh pengguna tidak memenuhi nilai 
+minimum (KKM), maka sistem akan menampilkan  alert yang menyatakan bahwa 
+nilai belum mencukupi dan pengguna diminta untuk membaca kembali materinya  
+seperti pada Gambar 4.36. Sebaliknya, jika nilai lebih dari atau sama dengan KKM, 
+sistem akan menampilkan alert selesai yang berisi informasi nilai yang diperoleh 
+serta tombol yang dapat diklik untuk melanjutkan ke halaman berikutnya  seperti 
+pada Gambar 4.37. 
+ 
+Gambar 4.36 Respon jika nilai kuis kurang dari KKM 
+
+--- PAGE 97 ---
+82 
+ 
+ 
+ 
+Gambar 4.37 Respon jika nilai kuis lebih dari KKM 
+6) Pengulangan (remedial) 
+Jika pengguna belum berhasil menyelesaikan soal dengan benar atau nilai 
+kuis belum mencapai batas minimum (KKM), sistem akan memberikan kesempatan 
+untuk melakukan pengulangan atau remedial. Pengguna akan menerima alert yang 
+memuat informasi bahwa jawabannya masih salah atau nilainya belum mencukupi, 
+disertai dengan ajakan untuk membaca ulang materi yang telah dipelajari. Setelah 
+itu, pengguna dapat mencoba kembali soal atau kuis tersebut sampai mencapai hasil 
+yang diharapkan. Dengan demikian, proses pembelajaran menjadi lebih adaptif dan 
+mendukung penguasaan materi secara bertahap. 
+7) Segmen pengaturan pembelajaran (sequencing lesson segment). 
+Untuk penerapan identitas segmen pengaturan pengajaran, media 
+dirancang agar setiap materi dipelajari oleh pengguna secara berurutan dari awal 
+hingga akhir. Untuk memastikan urutan ini diikuti, materi yang belum seharusnya 
+diakses akan dikunci terlebih dah ulu. Pengguna hanya dapat membuka materi 
+berikutnya setelah menyelesaikan materi sebelumnya. Sementara itu, akses ke 
+
+--- PAGE 98 ---
+83 
+ 
+ 
+materi yang sudah dipelajari tetap terbuka dan dapat diakses kembali melalui menu 
+di sidebar sesuai dengan judul materi yang tersedia. 
+ 
+Gambar 4.38 Tampilan halaman terbuka dan terkunci  
+8) Penutup 
+Ketika pengguna telah menyelesaikan seluruh materi, menjawab kuis, dan 
+mengikuti evaluasi, maka pada bagian akhir akan ditampilkan pesan yang 
+menyatakan bahwa semua materi dalam media pembelajaran ini telah berhasil 
+diselesaikan. 
+ 
+Gambar 4.39 Tampilan menyelesaikan evaluasi 
+
+--- PAGE 99 ---
+84 
+ 
+ 
+d. Pengujian Fungsionalitas (Black Box Testing) 
+Setelah menyelesaikan pemrograman media pembelajaran, langkah 
+selanjutnya adalah melakukan uji coba pada sistem yang telah dibangun 
+menggunakan metode black box testing . Metode ini digunakan  untuk pengujian 
+perangkat lunak yang berfokus pada fungsionalitas aplikasi tanpa 
+mempertimbangkan struktur internal atau desain dari aplikasi tersebut. Metode ini 
+bertujuan untuk memastikan bahwa aplikasi berfungsi sesuai dengan spesifikasi 
+yang telah ditentuka n (Azimi & Rinjani, 2024) .  Pengujian ini dilakukan oleh 5 
+orang pengguna, hasil dari pengujian dengan Black Box Testing dapat dilihat pada 
+tabel berikut. 
+Tabel 4.6 Hasil black box testing 
+No Fungsi Hasil yang Diharapkan Status 
+Sukses Gagal 
+Pengujian Daftar dan Masuk 
+1 Daftar akun Sistem berhasil menyimpan data 
+akun yang di daftarkan. 5 0 
+2 Masuk akun 
+System berhasil mendeteksi data 
+akun dan menyimpan nama user di 
+navbar. 
+5 0 
+Pengujian Sebagai Siswa 
+3 
+Tidak bisa 
+akses halaman 
+materi jika 
+belum login 
+Sistem akan memindahkan siswa 
+ke halaman login saat siswa 
+mencoba mengakases halaman 
+materi tanpa login 
+5 0 
+4 
+Tidak bisa 
+akses halaman 
+tantangan jika 
+belum login 
+Sistem akan memindahkan siswa 
+ke halaman login saat siswa 
+mencoba mengakases halaman 
+tantangan tanpa login 
+5 0 
+5 
+Bisa mengakses 
+halaman editor 
+meskipun tanpa 
+login 
+Sistem mengizinkan siswa 
+mengakases halaman editor dan 
+menjalankan kode mesikpun tanpa 
+login 
+5 0 
+ 
+--- PAGE 100 ---
+85 
+ 
+ 
+Lanjutan tabel 4.6 
+No Fungsi Hasil yang Diharapkan Status 
+Sukses Gagal 
+Pengujian Sebagai Siswa 
+6 
+Akses halaman 
+materi jika 
+login 
+Sistem menampilkan halaman 
+materi 5 0 
+7 
+Akses halaman 
+tantangan jika 
+login 
+Sitem menampilkan halaman 
+tantangan 5 0 
+8 
+Pengerjaan soal 
+di halaman 
+materi 
+Sistem berhasil menentukan 
+jawaban benar atau salah dan 
+memberikan feedback dari hasil 
+tersebut 
+5 0 
+9 Pengerjaan 
+tantangan 
+Sistem berhasil menentukan 
+inputan siswa benar atau salah dan 
+memberikan feedback dari hasil 
+tersebut 
+5 0 
+10 Pengerjaan kuis 
+dan evaluasi 
+Sistem berhasil memberikan nilai 
+sesuai benar dan salahnya jawaban 
+ketika pengerjaan dan menyimpan 
+nilainya 
+5 0 
+11 
+Menjalankan 
+kode pada 
+editor 
+Sistem berhasil memvisualisasikan 
+hasil kode perintah yang 
+dijalankan 
+5 0 
+12 Membuka file 
+pada editor 
+Sistem berhasil membuka file 
+python dan memuat nya pada text 
+editor 
+5 0 
+13 Menyimpan file 
+pada editor 
+Sistem berhasil menyimpan kode 
+yang diketikan pada text editor 
+dengan ekstensi .py yang langsung 
+terdownload ke perangkat 
+5 0 
+Pengujian Sebagai Guru 
+14 Akses 
+Dashboard 
+Sistem berhasil menampilkan 
+halaman dashboard guru 5 0 
+15 Akses halaman 
+data siswa 
+Sistem berhasil menampilkan 
+halaman data siswa 5 0 
+16 Akses halaman 
+progres belajar 
+Sistem berhasil menampilkan 
+halaman progres belajar siswa 5 0 
+ 
+--- PAGE 101 ---
+86 
+ 
+ 
+Lanjutan Tabel 4.6 
+No Fungsi Hasil yang Diharapkan Status 
+Sukses Gagal 
+Pengujian Sebagai Guru 
+17 
+Akses halaman 
+progress 
+tantangan 
+Sistem berhasil menampilkan 
+halaman progres tantangan 5 0 
+18 Akses halaman 
+Data nilai 
+Sistem menampilkan data nilai 
+siswa 5 0 
+19 Mengatur KKM Sistem dapat mengubah nilai 
+KKM sesuai dengan inputan guru 5 0 
+Total 95 0 
+ 
+Berdasarkan hasil pengujian fungsional diatas pada tabel 4. 6, persentase 
+fungsionalitas media pembelajaran dihitung dengan rumus berikut: 
+Persentase = 𝑆𝑘𝑜𝑟 𝑦𝑎𝑛𝑔 𝑑𝑖𝑐𝑎𝑝𝑎𝑖
+𝑆𝑘𝑜𝑟 𝑚𝑎𝑘𝑠𝑖𝑚𝑎𝑙  × 100% 
+ 
+Dengan nilai skor 95 dari skor maksimal 95, diperoleh persentase fungsionalitas 
+sebesar: 
+Persentase = 95
+95  × 100% = 100% 
+Berdasarkan interpretasi dari (Ghaffur, 2017) , Tingkat fungsionalitas 
+perangkat lunak dikategorikan sebagai Sangat Baik apabila persentasenya dalam 
+rentang 81% -100%. Dengan demikian, media pembelajaran yang dikembangkan 
+termasuk dalam kategori Sangat Baik berdasarkan pengujian fungsionalitas. 
+e. Evaluasi Tahap Pengembangan 
+Evaluasi pada tahap pengembangan bertujuan untuk memastikan bahwa 
+fitur-fitur yang diimplementasikan telah sesuai dengan rancangan serta mendukung 
+--- PAGE 102 ---
+87 
+ 
+ 
+kebutuhan pengguna secara fungsional. Salah satu masukan penting pada tahap ini 
+adalah memberikan kemampuan bagi guru untuk menyetel atau mengatur nilai 
+Kriteria Ketuntasan Minimal ( KKM) secara mandiri, baik untuk masing -masing 
+kuis maupun evaluasi akhir. Dengan fitur ini, guru dapat menyesuaikan standar 
+penilaian sesuai dengan karakteristik peserta didik dan kebijakan sekolah masing -
+masing. 
+4.2 Hasil Validasi Produk 
+Produk materi dan  media pembelajaran yang telah dikembangkan akan 
+menjalani uji validasi untuk mengukur tingkat keabsahannya sehingga hasil yang 
+diperoleh sesuai dengan harapan. Dalam penelitian ini, uji validasi dilakukan 
+dengan melibatkan dua ahli materi untuk menilai ko nten pembelajaran, serta dua 
+ahli media untuk menilai aspek media pembelajaran itu sendiri. Lembar validasi 
+berupa angket disebarkan kepada para ahli tersebut untuk menilai validitas media 
+dan materi. Setelah pengisian selesai, peneliti ak an menghitung hasil validasi 
+berdasarkan rumus dan prosedur yang dijelaskan pada bab 3 metode penelitian. 
+4.2.1 Uji Validitas Materi 
+Penilaian uji validitas materi diperoleh dari dua orang ahli materi yaitu satu 
+orang dosen Program Studi Pendidikan Komputer dan satu  orang guru mata 
+Pelajaran Informatika SMPN 2 Banjarmasin.  Berdasarkan perhitungan hasil uji 
+validitas oleh ahli materi, didapatkan hasil yang dapat dilihat pada Tabel 4.7. 
+ 
+ 
+--- PAGE 103 ---
+88 
+ 
+ 
+Tabel 4.7 Perhitungan hasil uji validasi materi 
+Aspek 
+Penilaian 
+SC 
+SH PC Kriteria Validator 
+1 
+Validator 
+2 Total 
+Kelayakan 
+isi 36 40 76 90 84.44% ST 
+Kelayakan 
+Penyajian 29 36 65 80 81.25% ST 
+Kelayakan 
+Kebahasaan 32 32 64 80 80% T 
+Total 97 108 205 250 82% ST 
+Ket: SH = skor harapan; SC = skor capaian; PC = persentase capaian; ST = 
+sangat tinggi, T = tinggi 
+ 
+Berdasarkan pada Tabel 4.7, hasil penilaian validitas oleh dua orang 
+validator memperoleh total persentase capaian 82%. Berdasarkan kriteria 
+kevalidan, materi berupa bahan ajar yang akan menjadi konten media pembelajaran 
+memiliki kriteria sangat tinggi sehingga sesuai pada lembar validasi, bahan ajar 
+dapat dikatakan valid dan dapat digunakan dengan revisi. Dengan demikian, bahan 
+ajar yang sudah divalidasi dapat digunakan  untuk dimasukkan ke dalam media 
+pembelajaran interaktif. 
+4.2.2 Uji Validitas Media 
+Penilaian uji validitas media diperoleh dari dua orang ahli media yaitu dua 
+orang dosen Program Studi Pendidikan Komputer FKIP ULM.  Berdasarkan 
+perhitungan hasil uji validitas oleh ahli media, didapatkan hasil yang dapat dilihat 
+pada Tabel 4.8. 
+ 
+ 
+ 
+--- PAGE 104 ---
+89 
+ 
+ 
+Tabel 4.8 Hasil perhitungan uji validitas media 
+Aspek 
+Penilaian 
+SC 
+SH PC Kriteria Validator 
+1 
+Validator 
+2 Total 
+Umpan Balik 
+dan Adaptasi 5 5 10 10 100% ST 
+Penyajian 
+Tampilan 33 30 63 80 78,75% ST 
+Interaksi 
+Penggunaan 12 12 24 30 80% T 
+Aksebilitas 9 6 15 20 75% T 
+Total 59 53 112 140 80% T 
+Ket: SH = skor harapan; SC = skor capaian; PC = persentase capaian; ST = 
+sangat tinggi, T = tinggi 
+ 
+Berdasarkan pada Tabel  4.8, hasil penilaian validitas oleh dua orang 
+validator memperoleh total persentase capaian 80% dengan kriteria  Tinggi. 
+Berdasarkan kriteria kevalidan, media pembelajaran interaktif yang dikembangkan 
+memiliki kriteria Sangat Tinggi sehingga sesuai pada lembar angket validasi, media 
+dapat dikatakan valid dan dapat digunakan dengan revisi. 
+4.3 Pembahasan 
+Jenis penelitian yang digunakan pada penelitian ini adalah penelitian R&D 
+atau Research and Development yang bertujuan untuk menghasilkan suatu produk  
+(Okpatrioka, 2023) , dalam konteks penelitian ini adalah sebuah media 
+pembelajaran interaktif berbasis web materi pemrograman turtle  dengan m odel 
+tutorial. Pengembangan media ini mengacu pada model pengembangan ADDIE 
+yang terdiri dari lima tahapan, yaitu Analysis (analisis), Design (perancangan), 
+Development (pengembangan), Implementation (implementasi), dan Evaluation 
+(evaluasi). Pada pengembangan ini, penulis membatasi langkah -langkah ADDIE 
+dengan hanya melaksanakan tahap analisis, desain, pengembangan, dan evaluasi, 
+--- PAGE 105 ---
+90 
+ 
+ 
+sedangkan tahap implementasi belum dilaksanakan secara luas karena fokus 
+penelitian ini hanya sampai pada pengembangan produk dan uji kevalidan.  
+Seluruh proses pengembangan diintegrasikan dengan pendekatan model 
+tutorial yang berfungsi sebagai model pembelajaran utama dalam media ini. Model 
+tutorial ini diterapkan melalui delapan komponen utama yang saling terhubung. 
+Pertama, pendahuluan dilakukan dengan menampilkan halaman awal yang 
+menjelaskan tujuan, manfaat, dan pengantar materi pemrograman Turtle sehingga 
+peserta didik memahami arah belajar sejak awal. Kedua, penyajian informasi 
+disusun dalam bentuk teks penjelas,  ilustrasi, serta potongan kode Turtle yang 
+ditampilkan secara bertahap sesuai tingkat kesulitan untuk mempermudah 
+pemahaman konsep. Ketiga, pertanyaan dan respon dihadirkan melalui latihan 
+berupa kuis pilihan ganda dan perintah coding yang dapat langsung dijalankan 
+melalui editor interaktif di dalam media. Keempat, penilaian respon dilakukan 
+otomatis oleh sistem untuk memeriksa jawaban kuis maupun hasil eksekusi kode, 
+sehingga peserta didik segera mengetahui hasil belajarnya.  Kelima, pemberian 
+umpan balik diwujudkan dengan adanya notifikasi jawaban benar atau salah beserta 
+saran perbaikan jika diperlukan. Keenam, pengulangan (remedial) diberikan 
+kesempatan melalui fitur yang memungkinkan peserta didik mengulang latihan atau 
+mempelajari kembali materi sebelu m melanjutkan ke tahap berikutnya. Ketujuh, 
+segmen pengaturan pembelajaran diterapkan dengan membagi materi ke dalam 
+beberapa segmen atau topik, mulai dari tingkat dasar hingga lanjutan, sehingga 
+proses belajar berlangsung secara terstruktur dan progresif.  Terakhir, kedelapan, 
+penutup diberikan dalam bentuk rangkuman, apresiasi terhadap capaian peserta 
+--- PAGE 106 ---
+91 
+ 
+ 
+didik, serta motivasi agar mereka terus belajar dan berlatih pemrograman secara 
+mandiri. 
+Penerapan model tutorial dalam media pembelajaran berbasis web ini 
+memiliki beberapa kelebihan dibandingkan pembelajaran tutorial konvensional di 
+kelas. Kelebihan utamanya yaitu media dapat diakses kapan saja dan di mana saja, 
+sehingga mendukung pembelajaran mandiri yang fleksibel. Seluruh materi, latihan, 
+editor kode, dan hasil visualisasi sudah terintegrasi dalam satu platform, membuat 
+peserta didik tidak perlu berpindah aplikasi atau perangkat lunak lain. Selain itu, 
+umpan balik diberikan secara otomatis dan inst an, sehingga peserta didik dapat 
+segera mengetahui hasil belajarnya tanpa harus menunggu penjelasan guru. Di 
+samping itu, pembelajaran berbasis web memerlukan perangkat dan koneksi 
+internet yang stabil agar dapat berjalan optimal. 
+Setelah media pembelajaran dikembangkan, dilakukan uji fungsionalitas 
+menggunakan teknik Black Box Testing untuk memastikan bahwa sistem berjalan 
+sesuai dengan fungsionalitas yang diharapkan. Pengujian ini dilakukan oleh lima 
+responden yang bertindak sebagai pengguna, untuk memeriksa setiap fitur utama 
+dari sisi input dan output tanpa melihat kode program seca ra langsung. Hasil dari 
+uji coba menunjukkan bahwa seluruh fungsi sistem dapat dijalankan dengan baik 
+tanpa kesalahan. 
+Selain pengujian fungsionalitas, validasi terhadap isi materi juga dilakukan 
+untuk memastikan kelayakan konten yang disajikan. Validasi materi menggunakan 
+instrumen lembar validasi yang disusun berdasarkan kriteria dari Badan Standar 
+Nasional Pendidikan (B SNP). Terdapat tiga aspek utama yang dinilai, yaitu 
+--- PAGE 107 ---
+92 
+ 
+ 
+kelayakan isi, kelayakan penyajian, dan kelayakan kebahasaan, dengan jumlah total 
+25 butir pertanyaan. Penilaian dilakukan oleh dua validator, yaitu seorang dosen 
+Pendidikan Komputer dan seorang guru informatika tingkat SMP. Berdasarkan 
+hasil perhitungan, diperoleh total skor capaian sebesar 82% dengan kategori Sangat 
+Tinggi. 
+Selanjutnya, validasi media pembelajaran dilakukan dengan instrumen 
+yang disusun mengacu pada indikator dari Learning Object Review Instrument  
+(LORI) versi 2 yang dikembangkan oleh Nesbit, Belfer, dan Leacock (2009). 
+Instrumen ini mencakup empat aspek utama, yaitu umpan balik dan adaptasi, 
+penyajian tampilan, interaksi pengguna, dan aksesibilitas, dengan total 14 butir 
+pertanyaan. Penilaian vali ditas media dilakukan oleh dua dosen ahli media dari 
+Program Studi Pendidikan Komputer. Berdasarkan hasil pengisia n angket, 
+diperoleh nilai capaian sebesar 80% yang termasuk dalam kategori Tinggi.  
+Berdasarkan hasil uji validitas materi dan media, dapat dikatakan bahwa 
+lingkungan pembelajaran interaktif berbasis web untuk materi pemrograman Turtle 
+dengan model tutorial yang dikembangkan oleh peneliti dinyatakan valid dan dapat 
+digunakan dengan revisi.
+--- PAGE 108 ---
+ 
+ 
+93 
+ 
+BAB V  
+PENUTUP 
+ 
+ 
+5.1 Kesimpulan 
+Berdasarkan hasil penelitian dan pembahasan yang telah dipaparkan 
+tentang pengembangan media pembelajaran interaktif berbasis web materi  
+pemrograman turtle dengan m odel tutorial, kesimpulan yang dapat diambil oleh 
+peniliti adalah sebagai berikut. 
+(1) Penelitian ini menghasilkan sebuah produk berupa lingkungan pembelajaran 
+interaktif berbasis web pembelajaran interaktif berbasis web materi 
+pemrograman turtle dengan m odel tutorial yang dikembangkan dengan 
+menggunakan beberapa teknologi pengembangan web yakni React, Node js, 
+Bootstrap, Sklupt, CodeMirror, Firebase, Vercel, Git dan Github . Media 
+pembelajaran ini dikembangkan dengan menggunakan model pengembangan 
+ADDIE yang sudah dibatasi.  Media ini juga telah dilakukan pengujian 
+fungsionalitas menggunakan m etode Black Box Testing  yang menunjukan 
+bahwa berjalan dengan baik dan sesuai dengan fungsinya. 
+(2) Setelah selesai dikembangkan dilakukan uji validitas pada materi dan media. 
+Uji validitas tersebut dilakukan oleh ahli materi dan ahli media. Hasil validasi 
+menunjukkan bahwa media ini memperoleh persentase capaian 82% untuk 
+materi yang termasuk dalam kategori “Sangat Tinggi” dan 80% untuk media 
+yang termasuk dalam kategori "Tinggi". Hal ini menunjukkan bahwa 
+--- PAGE 109 ---
+94 
+ 
+ 
+lingkungan pembelajaran interaktif yang dikembangkan valid dan dapat 
+digunakan dengan beberapa revisi. 
+5.2 Saran 
+Peneliti sangat menyadari bahwa penelitian ini masih banyak terdapat 
+kekurangan baik disengaja maupun tidak disengaja. Adapun saran sangat 
+diperlukan dalam penelitian ini dapat dijadikan acuan untuk peneliti selanjutnya, 
+agar dapat melakukan penelitian dan  pengembangan dengan maksimal. Adapun 
+saran-saran yang diberikan adalah sebagai berikut:  
+(1) Aplikasi yang telah di kembangkan dapat dikembangkan lebih lanjut dengan 
+menambahkan fitur sistem penghargaan seperti badge, poin, atau level untuk 
+memberikan motivasi tambahan kepada siswa dalam menyelesaikan materi, 
+latihan, dan tantangan. 
+(2) Tampilan media perlu dioptimalkan untuk mendukung berbagai jenis 
+perangkat, terutama mobile, agar siswa dapat mengakses materi kapan saja dan 
+di mana saja. Selain itu, aspek aksesibilitas untuk pengguna berkebutuhan 
+khusus, seperti pilihan kontras warna tinggi atau pembaca layar, juga sebaiknya 
+mulai dipertimbangkan dalam pengembangan selanjutnya. 
+(3) Agar efektivitas aplikasi dapat dievaluasi lebih komprehensif, uji coba 
+lapangan sebaiknya dilakukan. Penelitian lanjutan juga dapat menggali lebih 
+dalam dampak penggunaan media ini. 
+ 
+--- PAGE 110 ---
+ 
+ 
+95 
+ 
+DAFTAR PUSTAKA 
+Amarulloh, A., Kurniasih, K., & Muchlis, M. (2023). Analisis perbandingan 
+performa web service rest menggunakan framework laravel, django, dan node 
+Js pada aplikasi berbasis website. Jurnal Teknik Informatika , 9(1), 14 –19. 
+https://doi.org/https://doi.org/10.51998/jti.v9i1.515 
+Andi Rustandi, & Rismayanti. (2021). Penerapan model ADDIE dalam 
+pengembangan media pembelajaran di SMPN 22 kota samarinda. Jurnal 
+Fasilkom, 11(2), 57–60. https://doi.org/10.37859/jf.v11i2.2546 
+Arisantoso, Yulianti, S. D., Shalahudin, M. A. T. D., Zahranda, H., Julian, M. A., 
+Savana, G. I., Hidayat, D. A., Darma, Z., Rambe, A. A., Rachman, A. F., 
+Ramadhan, M. R., & Julius, A. (2023). Perancangan dan pemrograman web: 
+Memahami HTML, CSS, JavaScript, PHP, serta web hosting secara praktis. 
+Azaharani, M. A., Hidayati, A., & Rahmayanti, E. (2024). Pengaruh bahasa 
+pemrograman scratch pada mata pelajaran informatika untuk meningkatkan 
+self efficacy siswa kelas VII di SMP 8 Padang . 54(4), 5119 –5127. 
+https://doi.org/https://doi.org/10.54373/imeij.v5i4.1742 
+Azimi, I. A., & Rinjani, D. (2024). Pengujian black box testing pada multimedia 
+interaktif berbasis website techedu. Jurnal Education and Development, 12(1), 
+43–45. https://doi.org/https://doi.org/10.37081/ed.v12i1.4775 
+Bakar, M. A., Mukhtar, M., & Khalid, F. (2020). The effect of turtle graphics 
+approach on students’ motivation to learn programming: A case study in a 
+malaysian university. International Journal of Information and Education 
+Technology, 10(4), 290–297. https://doi.org/10.18178/ijiet.2020.10.4.1378 
+Blydt-Hansen, C. (2018). Understanding Object Oriented Programming: Utilizing 
+Visualization Tools to Simplify The Transition From Python to Java. 1–23. 
+Branch, R. M. (2009). Instructional Design: The ADDIE Approach. 
+Briggs, J. R. (2019). Python for Kids a Playful introduction to Programming. Book, 
+53(9), 1689–1699. 
+BSNP. (n.d.). Standar penilaian buku teks pelajaran. 
+Chen, S., Thaduri, U. R., & Ballamudi, V. K. R. (2019). Front -End Development 
+in React: An Overview. Engineering International , 7(2), 117 –126. 
+https://doi.org/10.18034/ei.v7i2.662 
+Choldun, I., & Rahmadewi, R. (2023). Penerapan Metode Waterfall Pada Aplikasi 
+Pembelajaran Seni Budaya Berbasis Website Menggunakan Framework 
+--- PAGE 111 ---
+96 
+ 
+ 
+Reactjs. 9(13), 335 –348. 
+https://doi.org/https://doi.org/10.5281/zenodo.8151254 
+El-Sabagh, H. A. (2021). Adaptive e-learning environment based on learning styles 
+and its impact on development students’ engagement. International Journal of 
+Educational Technology in Higher Education , 18(1). 
+https://doi.org/10.1186/s41239-021-00289-4 
+Ghaffur, T. A. (2017). Analisis Kualitas Sistem Informasi Kegiatan Sekolah 
+Berbasis Mobile Web Di Smk Negeri 2 Yogyakarta. Elinvo (Electronics, 
+Informatics, and Vocational Education) , 2(1), 94 –101. 
+https://doi.org/10.21831/elinvo.v2i1.16426 
+Hutabri, E. (2022). Validitas Media Pembelajaran Multimedia Pada Mata Pelajaran 
+Simulasi dan Komunikasi Digital. Snistek, 296 –301. 
+https://forum.upbatam.ac.id/index.php/prosiding/article/view/5363 
+Kurniawan, T., Samsudin, S., & Triase, T. (2021). Implementasi Layanan Firebase 
+pada Pengembangan Aplikasi Sewa Sarana Olahraga Berbasis Android. 
+Jurnal Informatika Universitas Pamulang , 6(1), 13. 
+https://doi.org/10.32493/informatika.v6i1.10270 
+Libman, T. (2020). PyCodeLab: An Online Python Evaluator  [Mills College]. 
+https://www.proquest.com/openview/21ba5fd352bbd07712dd7f12d97df6b1/
+1?pq-origsite=gscholar&cbl=18750&diss=y 
+Mariko, S. (2019). Aplikasi website berbasis html dan javascript untuk 
+menyelesaikan fungsi integral pada mata kuliah kalkulus . 6(1), 80 –91. 
+https://doi.org/http://dx.doi.org/10.21831/jitp.v6.1.22280 
+Maulana, B. S., & Waluya, S. B. (2024). Systematic Review tentang Berpikir 
+Komputasional dengan Scratch dalam Pendidikan Selama 2018 -2023. … 
+Seminar Nasional Matematika , 7, 328 –334. 
+https://proceeding.unnes.ac.id/prisma/article/view/2970 
+Meilani, Y. I. (2019). Implementasi Metode Proyotyping Dan Twitter Bootstrap 
+Responsive Pada Sistem Pembelajaran Bagi Siswa/I Sma Di Palembang. 
+Simetris: Jurnal Teknik Mesin, Elektro Dan Ilmu Komputer , 10(2), 753–762. 
+https://doi.org/https://doi.org/10.24176/simet.v10i2.3685 
+Mubariz, A., Nur, D., Tungadi, E., & Utomo, M. N. Y. (2020). Perancangan back -
+end server menggunakan arsitektur rest dan platform node.JS ( Studi Kasus : 
+Sistem pendaftaran ujian masuk Politeknik Negeri Ujung Pandang ). Seminar 
+Nasional Teknik Elektro Dan Informatika (SNTEI) , 72 –77. 
+https://doi.org/https://doi.org/10.61290/gm.v14i1.698 
+Mulyasari, R., Irvan, & Doly, M. (2023). Pengembangan Bahan Ajar Bangun 
+--- PAGE 112 ---
+97 
+ 
+ 
+Ruang Sisi Datar Dengan Model ADDIE (Sekolah Dasar). Jurnal Genta 
+Mulia, 14(1), 334–342. https://doi.org/https://doi.org/10.61290/gm.v14i1.698 
+Munawarah, F., Sukmawati, R. A., Mahardika, A. I., Komputer, P., & Keguruan, 
+F. (2021). Pengembangan Media Pembelajaran Interaktif Berbasis Web 
+Materi Sistem Koordinat Kelas VIII dengan Metode Problem Based Learning. 
+1, 28–43. https://doi.org/https://doi.org/10.20527/cetj.v1i0.4429 
+Muthohir, M. (2021). Mudah Membuat Web Bagi Pemula: Mengenal HTML, 
+HTML5, CSS, dan JavaScript. In Yayasan Prima Agus Teknik . 
+https://penerbit.stekom.ac.id/index.php/yayasanpat/article/download/225/253 
+Nesbit, J., Belfer, K., & Leacock, T. (2009). Learning Object Review Instrument 
+(LORI). 1–11. 
+Noverdika, Y. (2021). Pengaruh penggunaan multimedia interaktif model tutorial 
+dalam pembelajaran teknologi informasi dan komunikasi terhadap hasil 
+belajar siswa kelas VIII SMPN 17 Padang. Jurnal Literasiologi , 5(1). 
+https://doi.org/https://doi.org/10.47783/literasiologi.v5i1.181 
+Okpatrioka. (2023). Research And Development (R&D) penelitian yang inovatif 
+dalam pendidikan . 1(1), 86 –100. 
+https://doi.org/https://doi.org/10.47861/jdan.v1i1.154 
+Ouh, E. L., Gan, B. K. S., & Lo, D. (2022). ITSS: Interactive web-based authoring 
+and playback integrated environment for programming tutorials. In ICSE-
+SEET ’22: Proceedings of the ACM/IEEE 44th International Conference on 
+Software Engineering: Software Engineering Education and Training (Vol. 1, 
+Issue 1). Association for Computing Machinery. 
+https://doi.org/https://doi.org/10.1145/3510456.3514142 
+Rasyied, A., Purba, H. S., Sari, D. P., Sukmawati, R. A., & Pamuji, R. (2025). 
+Pendekatan Gamifikasi dalam Pengembangan Media Interaktif Bilangan 
+Berpangkat dengan Strategi Pembelajaran REACT . 4(2024), 23 –34. 
+https://doi.org/https://doi.org/10.20527/cetj.v4i2.13274 
+Rusman. (2012). Model-Model Pembelajaran: Mengembangkan Profesionalisme 
+Guru Ed.2. Rajawali Pers. 
+Sakkinah, I. S., Hartanto, R., & Permanasari, A. E. (2022). Pengembangan 
+Hypermedia Learning Environment (HLE) untuk Meningkatkan Self -
+Regulated Learning Berdasarkan Kemampuan Self -Monitoring. Jurnal 
+Nasional Teknik Elektro Dan Teknologi Informasi , 11(2), 97 –104. 
+https://doi.org/10.22146/jnteti.v11i2.3480 
+Silva, D. I. De, Vidhanaarachchi, S., Ruwanpura, M. W. H. S. L., Wickramasinghe, 
+T. D. B., Rathnayaka, G. T. S. T., & Hewapathiranage, T. K. (2023). 
+--- PAGE 113 ---
+98 
+ 
+ 
+EduCode : A Beginner -Friendly educational programming environment . 
+44(5), 269–276. https://doi.org/https://doi.org/10.52783/tjjpt.v44.i5.2458 
+Solomon, C., Harvey, B., Kahn, K., Lieberman, H., Miller, M. L., Minsky, M., 
+Papert, A., & Silverman, B. (2020). History of Logo. Proceedings of the ACM 
+on Programming Languages, 4(HOPL). https://doi.org/10.1145/3386329 
+Sukardi, S., & Rozi, F. (2019). Pengaruh model pembelajaran online dilengkapi 
+dengan tutorial terhadap hasil belajar. JIPI (Jurnal Ilmiah Penelitian Dan 
+Pembelajaran Informatika), 4(2), 97. https://doi.org/10.29100/jipi.v4i2.1066 
+Sukmawati, R. A., Ridhani, M., Adini, M. H., Pramita, M., & Sari, P. (2021). 
+Metode drill and practice dalam pembelajaran bentuk aljabar siswa kelas vii 
+berkonteks lahan basah menggunakan multimedia interaktif . 6(April). 
+https://snllb.ulm.ac.id/prosiding/index.php/snllb-lit/article/view/572 
+Suzuki, R., Kato, J., & Yatani, K. (2020). ClassCode: An interactive teaching and 
+learning environment for programming education in classrooms . 
+http://arxiv.org/abs/2001.08194 
+Syahidi, A. A., Supianto, A. A., Tolle, H., & Hirashima, T. (2022). An interactive 
+learning environment system on basic programming bubjects: Effects of 
+learning outcomes and question Level Patterns. JTEV (Jurnal Teknik Elektro 
+Dan Vokasional), 8(1), 1. https://doi.org/10.24036/jtev.v8i1.113579 
+Uminingsih, Nur Ichsanudin, M., Yusuf, M., & Suraya, S. (2022). Pengujian 
+fungsional perangkat lunak sistem informasi perpustakaan dengan metode 
+Black Box Testing bagi pemula. STORAGE: Jurnal Ilmiah Teknik Dan Ilmu 
+Komputer, 1(2), 1–8. https://doi.org/10.55123/storage.v1i2.270 
+Waruwu, M. (2024). Metode Penelitian dan Pengembangan (R&D): Konsep, jenis, 
+tahapan dan kelebihan . 9, 1220 –1230. 
+https://doi.org/https://doi.org/10.29303/jipp.v9i2.2141 
+--- PAGE 114 ---
+99 
+ 
+ 
+ 
+ 
+LAMPIRAN 
+ 
+Lampiran 1.  QR Code untuk tautan materi ajar 
+ 
+Lampiran 2. QR Code untuk tautan media pembelajaran 
+ 
+  
+
+--- PAGE 115 ---
+100 
+ 
+ 
+ 
+Lampiran 3. Lembar validasi ahli materi I 
+ 
+
+--- PAGE 116 ---
+101 
+ 
+ 
+ 
+ 
+
+--- PAGE 117 ---
+102 
+ 
+ 
+ 
+ 
+
+--- PAGE 118 ---
+103 
+ 
+ 
+ 
+ 
+  
+
+--- PAGE 119 ---
+104 
+ 
+ 
+ 
+Lampiran 4. Lembar validasi ahli materi II 
+ 
+
+--- PAGE 120 ---
+105 
+ 
+ 
+ 
+ 
+
+--- PAGE 121 ---
+106 
+ 
+ 
+ 
+ 
+
+--- PAGE 122 ---
+107 
+ 
+ 
+ 
+ 
+  
+
+--- PAGE 123 ---
+108 
+ 
+ 
+ 
+Lampiran 5. Lembar validasi ahli media I 
+ 
+
+--- PAGE 124 ---
+109 
+ 
+ 
+ 
+ 
+
+--- PAGE 125 ---
+110 
+ 
+ 
+ 
+ 
+
+--- PAGE 126 ---
+111 
+ 
+ 
+ 
+Lampiran 6. Lembar validasi ahli media II 
+ 
+
+--- PAGE 127 ---
+112 
+ 
+ 
+ 
+ 
+
+--- PAGE 128 ---
+113 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- PAGE 129 ---
+114 
+ 
+ 
+ 
+Lampiran 7. Angket Pengujian Fungsionalitas Responden I 
+ 
+
+--- PAGE 130 ---
+115 
+ 
+ 
+ 
+ 
+
+--- PAGE 131 ---
+116 
+ 
+ 
+ 
+ 
+
+--- PAGE 132 ---
+117 
+ 
+ 
+ 
+Lampiran 8. Angket Pengujian Fungsionalitas Responden II 
+ 
+
+--- PAGE 133 ---
+118 
+ 
+ 
+ 
+ 
+
+--- PAGE 134 ---
+119 
+ 
+ 
+ 
+ 
+ 
+
+--- PAGE 135 ---
+120 
+ 
+ 
+ 
+Lampiran 9. Angket Pengujian Fungsionalitas Responden III 
+ 
+
+--- PAGE 136 ---
+121 
+ 
+ 
+ 
+ 
+
+--- PAGE 137 ---
+122 
+ 
+ 
+ 
+ 
+
+--- PAGE 138 ---
+123 
+ 
+ 
+ 
+Lampiran 10. Angket Pengujian Fungsionalitas Responden IV 
+ 
+
+--- PAGE 139 ---
+124 
+ 
+ 
+ 
+ 
+
+--- PAGE 140 ---
+125 
+ 
+ 
+ 
+ 
+
+--- PAGE 141 ---
+126 
+ 
+ 
+ 
+Lampiran 11. Angket Pengujian Fungsionalitas Responden V 
+ 
+
+--- PAGE 142 ---
+127 
+ 
+ 
+ 
+ 
+
+--- PAGE 143 ---
+128 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+--- PAGE 144 ---
+129 
+ 
+ 
+ 
+Lampiran 12. Kartu Konsultasi 
+ 
+
+--- PAGE 145 ---
+130 
+ 
+ 
+ 
+ 
+ 

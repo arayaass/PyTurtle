@@ -1,0 +1,32 @@
+@startuml
+title UC19 Mengubah pengaturan
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Membuka Pengaturan;
+|PyTurtle|
+label N1
+:Menampilkan preferensi saat ini;
+|Pengguna|
+label N2
+:Mengubah musik, suara atau pengurangan animasi;
+|Pengguna|
+label N3
+:Memilih Simpan;
+|PyTurtle|
+label N4
+if (Pengaturan valid?) then (Tidak)
+:Tampilkan kesalahan pengaturan;
+goto N2
+else (Ya)
+endif
+|PyTurtle|
+label N5
+:Membuat atau memperbarui preferensi akun;
+|PyTurtle|
+label N6
+:Menampilkan konfirmasi tersimpan;
+stop
+@enduml

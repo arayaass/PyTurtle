@@ -1,0 +1,26 @@
+@startuml
+title UC11 Meminta hint
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Memilih Hint pada halaman level;
+|PyTurtle|
+label N1
+if (Akses dan versi valid?) then (Tidak)
+:Tolak permintaan dan tampilkan pesan;
+stop
+else (Ya)
+endif
+|PyTurtle|
+label N2
+:Mencatat penggunaan hint;
+|PyTurtle|
+label N3
+:Mengirim petunjuk level;
+|Pengguna|
+label N4
+:Membaca petunjuk dan kembali menulis kode;
+stop
+@enduml

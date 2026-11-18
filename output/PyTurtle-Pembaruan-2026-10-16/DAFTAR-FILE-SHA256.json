@@ -1,0 +1,666 @@
+[
+  {
+    "file": ".editorconfig",
+    "sha256": "f78cc5a2ef8ba61ad956d0f5db453748a981270f6a1b9f4a5a00df8690e7946d"
+  },
+  {
+    "file": ".env.example",
+    "sha256": "b5c07f7161ce4e38c578de8729db483a03b35d255efd46d9e25f0bd3f39d2f7f"
+  },
+  {
+    "file": ".gitattributes",
+    "sha256": "a40eb27ee0b545ca5b5542daaf99fec51f84f23b3766a6353864ef2a115bc51c"
+  },
+  {
+    "file": ".gitignore",
+    "sha256": "a9d0b2e0c1e009619d667e2dbef3f4b4b2218e9bc504c9dcd5af8994a41286b0"
+  },
+  {
+    "file": ".prettierrc.json",
+    "sha256": "e666ea307f38841453afc1910fcd79dcbd634de766b856dcc68cfdb8e77831c1"
+  },
+  {
+    "file": ".styleci.yml",
+    "sha256": "8e7b438bc4ac85df1e2f928a1632b18ea78b5f65f68053b1d485d9e9d4770620"
+  },
+  {
+    "file": "app/Http/Controllers/AuthController.php",
+    "sha256": "540462b3254309a5d9be31339c8aa2fa00dfc167e24bd8645e1d58ad5b2d1a64"
+  },
+  {
+    "file": "app/Http/Controllers/CodeMatchController.php",
+    "sha256": "e60acc3fa83ee89043b90e1004756e1ffde65e5e19f9fd857e4856c73bde20c7"
+  },
+  {
+    "file": "app/Http/Controllers/Controller.php",
+    "sha256": "25d1c1ef8e6cc8a376553faacfba2b07d9dfaee9bdbb84f14f77517580e9deb1"
+  },
+  {
+    "file": "app/Http/Controllers/GameProgressController.php",
+    "sha256": "8f592156217f8fa4df18894f0fb17bf2d581f3fc5d0cd947f2fd31ad99d39b5a"
+  },
+  {
+    "file": "app/Http/Controllers/GoogleAuthController.php",
+    "sha256": "d39b5bf30792394c8e36cab33ca7752a1166ce69631820f82537fd715fb0c8b6"
+  },
+  {
+    "file": "app/Http/Controllers/HomeController.php",
+    "sha256": "9c5d497eed89a5a1119afcb6722bac7b205babb6526b0d74cc506fede2e2d05e"
+  },
+  {
+    "file": "app/Http/Controllers/LeaderboardController.php",
+    "sha256": "a34d9bf8ee10b1a716d765c052c2b54eac08d2a3b774e3be957a2c93487d729d"
+  },
+  {
+    "file": "app/Http/Controllers/MazeController.php",
+    "sha256": "44141a03cc9757b7d2f97edbef6947ee9ed85ef565f21356ac481fff0847ff8b"
+  },
+  {
+    "file": "app/Http/Controllers/ModuleController.php",
+    "sha256": "dc887c93a71ad4bda22695fed251379b688fa9248d4c7b9205f83c5b69300d42"
+  },
+  {
+    "file": "app/Http/Controllers/ProgressController.php",
+    "sha256": "33fafbfc3fd535fc183d4982a1ac861fcb668dc26c2a1bcde2f3943534366562"
+  },
+  {
+    "file": "app/Http/Controllers/SettingsController.php",
+    "sha256": "537106f808c37a56ca34cd3adc1a9da8728b2a0e8fe470484dec6782c8455144"
+  },
+  {
+    "file": "app/Models/CodeMatchResult.php",
+    "sha256": "e948a4cdbbf5b45da18ca0a15e9994b6bdb01198c2949fd0bf46d953d164b61d"
+  },
+  {
+    "file": "app/Models/CodeSubmission.php",
+    "sha256": "cc2201fe745516d37f7d60daf4140b26d6b39194dad20f18271868f613236143"
+  },
+  {
+    "file": "app/Models/GameProgress.php",
+    "sha256": "44412def83497b536428f8beb196d0a90571564f2143828b4535d86562245660"
+  },
+  {
+    "file": "app/Models/Lesson.php",
+    "sha256": "ca53b3a9a1494c43ece9e0a206ef0bfb637780c8f1d712902dbbf5efa60c7c8a"
+  },
+  {
+    "file": "app/Models/Level.php",
+    "sha256": "70ad1748909b46e5509300349fc94235f257512b761066bb03948434aadb545c"
+  },
+  {
+    "file": "app/Models/LevelProgress.php",
+    "sha256": "06086c26f346c5c0d38c05e223b2de51bd4ab5574dd1c3c74c3db93c8d6a706a"
+  },
+  {
+    "file": "app/Models/User.php",
+    "sha256": "ac2de23aff7dda137313c2bbf5a8e71d64016f84295bd85caa63cc275288d157"
+  },
+  {
+    "file": "app/Models/UserSetting.php",
+    "sha256": "f2a7883e94259f37b90ec4d3de5d5d29f6761bdba08c6e220421a1b71c9a092c"
+  },
+  {
+    "file": "app/Providers/AppServiceProvider.php",
+    "sha256": "caf306ef6a25a547bbb7edd5508a39b51c365083eb6dd58378cf2242018e94c7"
+  },
+  {
+    "file": "app/Services/CodeMatchService.php",
+    "sha256": "f4a7bf012b94d8ffff5912e32e0e6b8d63c4e55c53d0621ec7feec9b8a270ea5"
+  },
+  {
+    "file": "app/Services/FinalLevelRewardService.php",
+    "sha256": "2b818e22f37d95665e16a9b4eabcc58258491c3d51cc52c002204055be6a991e"
+  },
+  {
+    "file": "app/Services/GameProgressService.php",
+    "sha256": "17c6807f6bae84b16bff6cda5c55b75a1cd4df87a07c6dbae256790d36ae0eb2"
+  },
+  {
+    "file": "app/Services/GoogleAccountService.php",
+    "sha256": "14bb5e0f9c25271aef0dbd0c063ea7e36cfd1fe18367f9ed7fe5042aa5bce57d"
+  },
+  {
+    "file": "app/Services/LessonAccessService.php",
+    "sha256": "f4326db12b3a43a416c88c07298b143364d3dab62cf71aa9eed532244dea1702"
+  },
+  {
+    "file": "app/Services/TurtleService.php",
+    "sha256": "dfd621325c8589867fff02f892255b65ce429d1e1341dd88be39dce390cac975"
+  },
+  {
+    "file": "artisan",
+    "sha256": "f91a517c0c5d3a904c3f390933964a5e08ec1fc68146882730daac4aca4ffcec"
+  },
+  {
+    "file": "bootstrap/app.php",
+    "sha256": "02a8654e74028c7768574f80f9118d0a0464c7603e7c6304e077b032c1a92065"
+  },
+  {
+    "file": "bootstrap/providers.php",
+    "sha256": "f720e185207a343d4c19fc99dbb317a4187efbcd7d38a303a695bbdd77ffb943"
+  },
+  {
+    "file": "CARA-PASANG-PERBAIKAN.txt",
+    "sha256": "8f042f786579d25202a4e551b12ebe0fb2a27c2eac7b30af2ee493d8b169ad55"
+  },
+  {
+    "file": "CHANGELOG.md",
+    "sha256": "581279a258add1f2ba0526db7abd97e8c1561c5e6b77ed25a0307ec06e4a16bd"
+  },
+  {
+    "file": "composer.json",
+    "sha256": "5fa025b3d74254c90593da6cf08186560be20d4d67685b9788b4a2fc7017ff70"
+  },
+  {
+    "file": "composer.lock",
+    "sha256": "f9ef91df7cef70d7c73623d4b755b514c5e41f20272f7dbef97e52f6aeb9418e"
+  },
+  {
+    "file": "config/app.php",
+    "sha256": "118d582c14ec61f64de0f3811ac380013f58846bc1a53a70ec1ec1f8a9cd706f"
+  },
+  {
+    "file": "config/auth.php",
+    "sha256": "c7e204e9785c9f596d66fb884b493f658f2327f157646bdb4088efd6b3a7773f"
+  },
+  {
+    "file": "config/cache.php",
+    "sha256": "b8bcf382283330b94c0a602ff06452de819041ea709e28eea5065d51d1d7d085"
+  },
+  {
+    "file": "config/database.php",
+    "sha256": "ebdc948def3b0d086964452f0fcff4776f767001b31b531202e515a1ebab7969"
+  },
+  {
+    "file": "config/filesystems.php",
+    "sha256": "ba7060d7a23e490c3ce830656f6d24ad3ccf5b868e3293f2a12e411959dc5635"
+  },
+  {
+    "file": "config/logging.php",
+    "sha256": "299ec1ba5b5a803c8e20f666ae7628e442e856cc2ff7ac9e2adb17b97e8ad63b"
+  },
+  {
+    "file": "config/mail.php",
+    "sha256": "c43ff49a31c5f32ce21eb7159f2a4b3cd2f4074eaed5838d265646dbfedd3474"
+  },
+  {
+    "file": "config/queue.php",
+    "sha256": "6101774da7c8b79af46d0028f2b8b31a484c3f7eda10b76e5b27b6093ad364a4"
+  },
+  {
+    "file": "config/services.php",
+    "sha256": "e19b419bbd6abfe4ed93e3de1348ff0beb92a9281c61cd70e01d4b0e8f77ad8f"
+  },
+  {
+    "file": "config/session.php",
+    "sha256": "f2e75e189021597e29940c0859c00c3088ec591e403768fff5143c5687a80f59"
+  },
+  {
+    "file": "database/factories/UserFactory.php",
+    "sha256": "50bdc543f1b09d1a57260be55ad0e1a68aee4b34f63e1109dc94d9bcd3080526"
+  },
+  {
+    "file": "database/migrations/0001_01_01_000000_create_users_table.php",
+    "sha256": "10d79883bc08ce46510f9ad8b1830b4d06d586dc56ae2c8bac3b3e491f69a90f"
+  },
+  {
+    "file": "database/migrations/0001_01_01_000001_create_cache_table.php",
+    "sha256": "2ca8398390ecef8eaf72aeac7fefce67f7de631b6f2ec7b7081c8db8953215dc"
+  },
+  {
+    "file": "database/migrations/0001_01_01_000002_create_jobs_table.php",
+    "sha256": "7c9c712adf4091c87bf2612f4d0dccdfa1df4501553e4ac068b83d7bd5462fa5"
+  },
+  {
+    "file": "database/migrations/2026_09_30_000001_create_learning_tables.php",
+    "sha256": "d3b0e9d8d55d079a108131e43c38e83be5e56759a9549c8f84fa26a863a2c228"
+  },
+  {
+    "file": "database/migrations/2026_09_30_000002_add_matching_material_to_lessons.php",
+    "sha256": "4f72d05c761444386b6d447b238f98746170d405d03baff39719291bdc657768"
+  },
+  {
+    "file": "database/migrations/2026_10_01_000003_add_runestone_content_to_lessons.php",
+    "sha256": "525e95e337fec6b8331d8ddd810a3dd216302404a6fe5cc8db71a7f1a1cba0fa"
+  },
+  {
+    "file": "database/migrations/2026_10_15_000001_add_final_level_runs_and_google_identity.php",
+    "sha256": "259b13a772dbe4386cb2a035fc389e6060b5822d12e3e6db79d214e7f18e0e88"
+  },
+  {
+    "file": "database/seeders/DatabaseSeeder.php",
+    "sha256": "b5e74f473391876b40c95997ee018fc8f3551fe0c70e6dcf1ae16d13ceee1f8e"
+  },
+  {
+    "file": "database/seeders/MazeGridSeeder.php",
+    "sha256": "941367ebdc8208597dcd07f4d307e26cc5f4c110cb603047dcf9b57508c93442"
+  },
+  {
+    "file": "database/seeders/RunestoneTurtleSeeder.php",
+    "sha256": "bbea8c45d86a566cb02bf5a8abc677d84c0161f1b9c25253fed68288f65b31aa"
+  },
+  {
+    "file": "docs/GOOGLE-AUTH.md",
+    "sha256": "73dadd40f4beeb7553cb04491ae7bed1e02809d549ea0167283a8bf87ae99a46"
+  },
+  {
+    "file": "docs/LOGIC-LAB.md",
+    "sha256": "bec8b912281f17211329edf37d2457ad45f7f1f1e4ecba3370f4944c3d1f9cb5"
+  },
+  {
+    "file": "docs/VERIFICATION-2026-10-15.md",
+    "sha256": "ed99860ccef049764d646e90b3c413a30167ef85981bf613a8d39358a16c403e"
+  },
+  {
+    "file": "docs/VERIFICATION.md",
+    "sha256": "1b36eef650dd045e48cbcfd45e34532008a7707ebc8271d763f036fb167c3b97"
+  },
+  {
+    "file": "lang/id/validation.php",
+    "sha256": "110f56742f824ab59181980907232a044711dd910e36b785df7c093d3ac50e37"
+  },
+  {
+    "file": "package-lock.json",
+    "sha256": "b63f99e085bc420f215160bae684649df3ee8afd8619005709560c680bb8b10d"
+  },
+  {
+    "file": "package.json",
+    "sha256": "ab9cb17415b3e19ea3cc666d7558b387b303b4c68865cbe48ee3171917524156"
+  },
+  {
+    "file": "phpunit.xml",
+    "sha256": "493369cfb7feea104da4bec214c2cc6526ca2f1b9d937c50a2961fc59cb61aaf"
+  },
+  {
+    "file": "playwright.config.js",
+    "sha256": "c808816aaff6d51281ff1c7fede207e9a579a8eda8c6ae69fb3174eff6ac35f8"
+  },
+  {
+    "file": "public/.htaccess",
+    "sha256": "b7e379c77639fd56144947dbae84c84eb466d9c686ea81f2f013ae85421da923"
+  },
+  {
+    "file": "public/assets/animals/.gitkeep",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "file": "public/assets/audio/.gitkeep",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "file": "public/assets/characters/shiha/portrait.svg",
+    "sha256": "5761a531c9c8e229404ca5014fe0561dff26bd7e8b2fb710518a7e25680ab7ed"
+  },
+  {
+    "file": "public/assets/effects/.gitkeep",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "file": "public/assets/nature/forest-daylight.svg",
+    "sha256": "bc8ef8e6d8dd4c1f1e25530306d541711a7e5843f1b5c09b914ebac9f2ea7b95"
+  },
+  {
+    "file": "public/assets/README.md",
+    "sha256": "e2ad5eb5be73f8792385c0295988ef79654adc6bd4559dcab6b9f53816203d97"
+  },
+  {
+    "file": "public/assets/tiles/.gitkeep",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "file": "public/assets/ui/.gitkeep",
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "file": "public/assets/ui/favicon.svg",
+    "sha256": "f4aba88696aeb189b7d4adba12bb549725469578e124684f995da78fb1c90eb8"
+  },
+  {
+    "file": "public/build/assets/app-BRZtVLfn.css",
+    "sha256": "f598e42832b22f260a86995ea301b1c97feda5194bd97be625250177fa8ca074"
+  },
+  {
+    "file": "public/build/assets/app-C0KY8Ivr.css",
+    "sha256": "b4e914d4608ef24febf06cb5f743b26ab8fc51130bb222ea1b73060051c9fe56"
+  },
+  {
+    "file": "public/build/assets/app-CFbwqaAI.js",
+    "sha256": "62a18dba7d641f9286eec86268a71eaee7ed463fbb1017feabb2c11960367af6"
+  },
+  {
+    "file": "public/build/assets/editor-Bk8UySzc.js",
+    "sha256": "df11455d13d65dd0e5ef98da4f744ae45d7bf7339676400880295c4911c756dd"
+  },
+  {
+    "file": "public/build/manifest.json",
+    "sha256": "328a68a0f4bab276ca01868ec11f0f7feb93e3c56328e5adc274a3bf2fb8e5d5"
+  },
+  {
+    "file": "public/favicon.ico",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "public/index.php",
+    "sha256": "eba77cba39695b6bd091fe5211d481f7ebb2ce2d8d26230b5a609465d0a4aff9"
+  },
+  {
+    "file": "public/robots.txt",
+    "sha256": "e5c4b84484ee4216e9373be99380320c25dd94805f99f0a805846f087636553f"
+  },
+  {
+    "file": "README.md",
+    "sha256": "ca2b80c59496c28b411b0c9a76a374dacfb6bee4c8b9a374f3be35fb150cee9e"
+  },
+  {
+    "file": "resources/css/app.css",
+    "sha256": "1f0d4b3f343b6f46e54cac89464e413439965dee8686aea4840131dab63639cf"
+  },
+  {
+    "file": "resources/css/maze-grid.css",
+    "sha256": "9af34c612e46c15fd65570b01b085f18782b5401e3d83cdfdf18439b7b1a3527"
+  },
+  {
+    "file": "resources/css/turtle-lessons.css",
+    "sha256": "75af5daffde779fed511e56da542efe18465bbe9953bfefef07f69b37f5d083c"
+  },
+  {
+    "file": "resources/data/code-match.json",
+    "sha256": "2bfb9cedf259a9fe7c2fabaedf872d25679392d6c85735440bf33367aa111d7a"
+  },
+  {
+    "file": "resources/data/levels.json",
+    "sha256": "7ef3fdb304a28b73ff74bfbb2a5815097a5d8feb7187420085be9cbe5689d738"
+  },
+  {
+    "file": "resources/data/turtle-lessons.json",
+    "sha256": "ee5da8a046d7b95120b450729485d97a6b51200fc0fffff7daef4e4c5304b88f"
+  },
+  {
+    "file": "resources/js/app.js",
+    "sha256": "5070bc8f910068952266a9d9a25220e70d378a3732d87f37e1218f808760a2e9"
+  },
+  {
+    "file": "resources/js/bootstrap.js",
+    "sha256": "6fd9fc82e68fa915a882f4e227b9faacbe7bfd66cb953c628840e83bda6b72f4"
+  },
+  {
+    "file": "resources/js/game/code-match.js",
+    "sha256": "f3b2e253c6570af3c8da20eef3730382da9228124f09245a01a493236a0daf30"
+  },
+  {
+    "file": "resources/js/game/Game.js",
+    "sha256": "3ffdcae4b9eb579f515bb4c6fa4588ee73c85c3076ad59747dea7a95df2ba49f"
+  },
+  {
+    "file": "resources/js/game/maze.js",
+    "sha256": "7c76b7f474326db70261867162b4f229deef71145a3f34975ff05b7ca7cfabab"
+  },
+  {
+    "file": "resources/js/game/systems/audio.js",
+    "sha256": "11e8f22380792de51048fa7bbc76d2e1d7aca669f1ea29ec377b4a44e5386eb8"
+  },
+  {
+    "file": "resources/js/game/systems/save-queue.js",
+    "sha256": "29eedb0e475eabed6973030d6adc301626f63ffe50a1c0cf12dae763fe5ec9c3"
+  },
+  {
+    "file": "resources/js/game/turtle/completions.js",
+    "sha256": "d9da41a1ce411a736891256e3daa3149aa97055f8e2b23ccf0aabd2a03d6ebcf"
+  },
+  {
+    "file": "resources/js/game/turtle/engine.js",
+    "sha256": "f93db7f51f8bd4f494c0848b16453caa44d74191a2ad99cf2b3892397754a7f3"
+  },
+  {
+    "file": "resources/js/game/turtle/learning.js",
+    "sha256": "2e4b9046e578849e9975689ab820b9e07ca42a389db1d2755785aa0201b93c4e"
+  },
+  {
+    "file": "resources/js/game/turtle/parser.js",
+    "sha256": "412884144f4cb227ad25935792f359720c5feeee2d6640a956dfaca1bc236f18"
+  },
+  {
+    "file": "resources/js/learning/lesson-quiz.js",
+    "sha256": "fe0df72b6879222c723afd00d1aa403ac20f00dfb2d9c6e7cb4e63c450fedd23"
+  },
+  {
+    "file": "resources/js/learning/lesson-tools.js",
+    "sha256": "91be1db811e8c1ade8465d47375d0d82701b6b2ac0e76f36283137f70a5ff04a"
+  },
+  {
+    "file": "resources/js/learning/turtle-practice.js",
+    "sha256": "0bf2807f5a2ee3615af69c318d1b5426af3b37347887a03eee3e5faab93df9af"
+  },
+  {
+    "file": "resources/views/auth/forgot-password.blade.php",
+    "sha256": "35cf27ce9e726c4e8df37161782087dfe257dae8c4f8f5249c6186d47894b8b6"
+  },
+  {
+    "file": "resources/views/auth/login.blade.php",
+    "sha256": "c96359ed37ebbb2c3ea48792b3939f544c2de83a3229614716210e0e9fb4e190"
+  },
+  {
+    "file": "resources/views/auth/register.blade.php",
+    "sha256": "9f883949e0f66e906bc9af90b4a2c42d8e66aa767bb660389a5e6f54c83c43ae"
+  },
+  {
+    "file": "resources/views/auth/reset-password.blade.php",
+    "sha256": "9845ab211d1509bad679b127ebb6bf66db2b518c4fcefd0fb9e5426bcff301fe"
+  },
+  {
+    "file": "resources/views/code-match/show.blade.php",
+    "sha256": "d649c85919bd185b82f0158b2d48510c822ee16b17b8e759b93ec7a813249f7e"
+  },
+  {
+    "file": "resources/views/components/card.blade.php",
+    "sha256": "954dcec83a442e6889511499a1c3d337aaa0b00160e15600937656f265208e32"
+  },
+  {
+    "file": "resources/views/components/code-editor.blade.php",
+    "sha256": "7b5e942e6128fdf09f41e78d38eed2b262ed2100c643eff2354f285be33401f0"
+  },
+  {
+    "file": "resources/views/components/command-pill.blade.php",
+    "sha256": "27b17fdf216b7bd227a5fe7c1b9f58e2a3d7bc7048173199c9b3dafb2308b51a"
+  },
+  {
+    "file": "resources/views/components/confirm-modal.blade.php",
+    "sha256": "6fa52f17f21144bd0af50c99239683d01a21fb4c6583d528bf5160c98113cc27"
+  },
+  {
+    "file": "resources/views/components/dialog.blade.php",
+    "sha256": "120e10bb50542d478e9201ab44a5a70f9371df6fb85ff5a40de1dbc3c98f7b22"
+  },
+  {
+    "file": "resources/views/components/final-reward.blade.php",
+    "sha256": "7045d0101ca0ed51d90810a2506b2b5bea4bbe9bfa4bfea9eadbdc175f90528f"
+  },
+  {
+    "file": "resources/views/components/google-button.blade.php",
+    "sha256": "344c61c143023e6cfcf5cf8933cf53feda2677781f34735bbe3742d6dded4c8b"
+  },
+  {
+    "file": "resources/views/components/level-card.blade.php",
+    "sha256": "d437a2c31e06a7ab2fa30d89b6c7183e9dbda6da55a2297d15e09b252e4b5fdc"
+  },
+  {
+    "file": "resources/views/components/maze-learning.blade.php",
+    "sha256": "ec81540ec3117e860e4543b877612048ebe4ec57e3b82da48efda628476bc002"
+  },
+  {
+    "file": "resources/views/components/navbar.blade.php",
+    "sha256": "ed6908b4e798a7195f645ecc63e93d899f2e2d2e8afc8f83638f3716c1337537"
+  },
+  {
+    "file": "resources/views/components/password-input.blade.php",
+    "sha256": "ab8e6191065085e596c3b83d8fdd8dc5a07e8300e11e4dd5c61acb3de40fd45b"
+  },
+  {
+    "file": "resources/views/components/progress-bar.blade.php",
+    "sha256": "938952ab8502e9553d0029bd0df4756d3f38766480b1531416440667fe00ab46"
+  },
+  {
+    "file": "resources/views/components/turtle-badge.blade.php",
+    "sha256": "2e57855acabc014f25d550c113d32ef4cdeac5c98f2559ed1078f5ea8c54c0d6"
+  },
+  {
+    "file": "resources/views/errors/403.blade.php",
+    "sha256": "aaaa131a452d3d679431c4f549c25e3c9bf68b09bba2cbc7a6a279aecfee3ae2"
+  },
+  {
+    "file": "resources/views/errors/404.blade.php",
+    "sha256": "7fe2df3552123648318699266af4464ac5205dbecdce3dcfd2860e7b075145b9"
+  },
+  {
+    "file": "resources/views/errors/419.blade.php",
+    "sha256": "41cd169b43b8a20df27ff97215d22bccfcb77964cd9365a895dbd63a84d715a6"
+  },
+  {
+    "file": "resources/views/home/index.blade.php",
+    "sha256": "7fb271f20a36892b0238eaae1b6e914f5c82da863422dec7d78f3bc231aff7be"
+  },
+  {
+    "file": "resources/views/layouts/app.blade.php",
+    "sha256": "231e64a2001358c44f3a4854941dd44b8e6ab55a4b8e17f7166470aeaff6cab0"
+  },
+  {
+    "file": "resources/views/layouts/auth.blade.php",
+    "sha256": "ca9bf680e57664219c99e07ef2725b6ba78e8723a54e259e4c35d5d7d1626dab"
+  },
+  {
+    "file": "resources/views/leaderboard/index.blade.php",
+    "sha256": "8ec1245a440830e8ec6b5dfcd82e9b97a65dfbcf029662cf42c5d32946a1ad8f"
+  },
+  {
+    "file": "resources/views/maze/index.blade.php",
+    "sha256": "ce5595ee1a722672cfb3875f69505706ee9a3b284f718b61849e21d07a663e0d"
+  },
+  {
+    "file": "resources/views/maze/show.blade.php",
+    "sha256": "4fa778eb80e144bc4ded825aeec162f8908951fc70344e9d77f9e8facc1f8e6d"
+  },
+  {
+    "file": "resources/views/modules/index.blade.php",
+    "sha256": "e48240fa1a96759706774f6fbbae730f402d8fc31a9e87fe3b707d4100afd6cc"
+  },
+  {
+    "file": "resources/views/modules/legacy.blade.php",
+    "sha256": "553dc97a0da2edb3f8cb56e7a7dde01005d6ce4572c1e43d9ba87c8d8a1af69a"
+  },
+  {
+    "file": "resources/views/modules/show.blade.php",
+    "sha256": "3b5ad11289a41b89aa82b62ebefa995120bd45ded09adb58eebe86d39a02b1d5"
+  },
+  {
+    "file": "resources/views/progress/index.blade.php",
+    "sha256": "99f15300b2dba6e1bf1b0e53f0d7a9fdeb86146a4152fced9d41a97ba70eb6cf"
+  },
+  {
+    "file": "resources/views/settings/index.blade.php",
+    "sha256": "51faa99202b5cf8c00bcf30683ec35b97a1203357572845a48410f69112814f2"
+  },
+  {
+    "file": "resources/views/settings/profile.blade.php",
+    "sha256": "4fde047d16020dd1892cee780d4f21b8733771e1aa0cb70512659635f5efa43b"
+  },
+  {
+    "file": "resources/views/welcome.blade.php",
+    "sha256": "e50e41602994840b788471625fec54a4db6138ec971be05cfdfba40daf906c22"
+  },
+  {
+    "file": "routes/console.php",
+    "sha256": "9adccc33e7dd400683e434774077c7fdb2f299c5712cedf16a43fdf56f2850fa"
+  },
+  {
+    "file": "routes/web.php",
+    "sha256": "b6b55cca684e7316e54fe49c5cbbd5f449badc726bc41c5063284f27d6014ca2"
+  },
+  {
+    "file": "scripts/test-server.mjs",
+    "sha256": "65ba87a671fb73915b450721f650c8e985a6c5e363da8daadf1d52578a3c6e66"
+  },
+  {
+    "file": "tests/browser/adventure.spec.js",
+    "sha256": "f0b8b323ec3cf4fee848561f17f3f426d9f765bf1df1ddd35d260822f8f6ec5d"
+  },
+  {
+    "file": "tests/browser/learning.spec.js",
+    "sha256": "b818cf033b79ce5e35148a9a3bd4394fa9d8123200fc3eacdaaff4fdf6644da8"
+  },
+  {
+    "file": "tests/Feature/AdventureTest.php",
+    "sha256": "7ff9124da4a41ef3e129c293b6d749c467c94f5037f0d25d8aa1fa57a74d0bd0"
+  },
+  {
+    "file": "tests/Feature/ExampleTest.php",
+    "sha256": "46469a0f72021ecc1bbdba1ad87ca3f9b4012afce25fb9b1669eb201418a1f10"
+  },
+  {
+    "file": "tests/Feature/FinalRewardTest.php",
+    "sha256": "c9e0d442b52508a6c0adf162bfb42cd9bd30cb740db5468dff82624db3cba82c"
+  },
+  {
+    "file": "tests/Feature/GoogleAuthTest.php",
+    "sha256": "e663a7130220f20652545ee6819a890cfcf51ffad02643c50841d193a549caed"
+  },
+  {
+    "file": "tests/Feature/MazeGridFeatureTest.php",
+    "sha256": "815df1500c9d947162e650d4a29437bc2b6c780fb6a805cd669b1b210ca44118"
+  },
+  {
+    "file": "tests/Feature/TurtleBasicsTest.php",
+    "sha256": "6024e0e0060cab9155ed148d9ae94b0eb39e8999129aa86d29e09207f3f5793e"
+  },
+  {
+    "file": "tests/game/completions.test.mjs",
+    "sha256": "c3e9d0797f7c3b595e8ef614765253bd7fb89be6fa4d7078decb3217129dbc13"
+  },
+  {
+    "file": "tests/game/learning.test.mjs",
+    "sha256": "571baf68c50570dbb4d3373a165e477c629b5a124417fed492f2ecd6cf16030a"
+  },
+  {
+    "file": "tests/game/maze-editor.test.mjs",
+    "sha256": "0178b54388fbc041e64a0b25a0f204e867ca97754a4ad5eac95bc0a00e1a5277"
+  },
+  {
+    "file": "tests/game/maze-grid.test.mjs",
+    "sha256": "14855870e7de643f5ee62c01364abec48c58911dd9a16babe39beb664e2bb3e8"
+  },
+  {
+    "file": "tests/js/turtle.test.js",
+    "sha256": "97dc46f47d5deeb3962018a596f0e887fc78073737c7d2e632db8ffbdfb95278"
+  },
+  {
+    "file": "tests/learning/lesson-quiz.test.mjs",
+    "sha256": "fb13ec9cbe214803a0b2cc8c484e30f484d660cdb917108b4c5554cd0ae7b2b1"
+  },
+  {
+    "file": "tests/learning/turtle-practice.test.mjs",
+    "sha256": "05db919c580dfaae517cc5798fedb9d8fa1d6a30d140684db60f47f571e66ea9"
+  },
+  {
+    "file": "tests/TestCase.php",
+    "sha256": "c7c209f5579c42647c1f7b2a79ac828e8b54ac62a98442045a6e94fa2c0d0ebc"
+  },
+  {
+    "file": "tests/Unit/ExampleTest.php",
+    "sha256": "ffacae5c1a2a44c809420af5b3b404910da1b12167d58764dac6d10b8ba8cfaf"
+  },
+  {
+    "file": "tests/Unit/LessonAccessTest.php",
+    "sha256": "e0501bfa44c6ee2c7ed844d90779fa33edf5eae39dfddd7baf910bc7f35c9f35"
+  },
+  {
+    "file": "tests/Unit/MazeGridTest.php",
+    "sha256": "724cebf5551387c7b4753278ec5ca2d2c27fd6847a22a5a101431ddf5131a13b"
+  },
+  {
+    "file": "tests/Unit/TurtleTest.php",
+    "sha256": "453f31fcf93ecb9873f83524f10607fb1de422d630331fdff84691581bea9fb1"
+  },
+  {
+    "file": "vite.config.js",
+    "sha256": "772bf7d8f7a10aeaf504aa0acb6aac7213048bf82a5a2ac4d561eed92a665f13"
+  }
+]

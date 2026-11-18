@@ -1,0 +1,22 @@
+@startuml
+title UC15 Melihat progres belajar
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Membuka Progres;
+|PyTurtle|
+label N1
+:Mengambil level dan progres milik pengguna;
+|PyTurtle|
+label N2
+:Menghitung materi selesai dan total materi;
+|PyTurtle|
+label N3
+:Menampilkan ringkasan progres serta skor level;
+|Pengguna|
+label N4
+:Meninjau kemajuan belajar;
+stop
+@enduml

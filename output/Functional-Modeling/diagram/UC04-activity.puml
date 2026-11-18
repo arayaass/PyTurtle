@@ -1,0 +1,32 @@
+@startuml
+title UC04 Memulihkan kata sandi
+skinparam monochrome true
+|Pengunjung|
+start
+|Pengunjung|
+label N0
+:Mengisi email pada Lupa kata sandi;
+|PyTurtle|
+label N1
+:Memvalidasi email dan memproses tautan pemulihan;
+|PyTurtle|
+label N2
+:Menampilkan konfirmasi umum;
+|Pengunjung|
+label N3
+:Membuka tautan lalu mengisi kata sandi baru;
+|PyTurtle|
+label N4
+if (Data pemulihan valid?) then (Tidak)
+:Tampilkan pesan dan minta perbaikan atau tautan baru;
+stop
+else (Ya)
+endif
+|PyTurtle|
+label N5
+:Menyimpan kata sandi baru dan memperbarui token;
+|PyTurtle|
+label N6
+:Mengarahkan ke halaman login;
+stop
+@enduml

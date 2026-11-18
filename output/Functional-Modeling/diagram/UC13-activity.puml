@@ -1,0 +1,32 @@
+@startuml
+title UC13 Memulai ulang petualangan
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Memilih Mulai ulang petualangan;
+|PyTurtle|
+label N1
+:Menampilkan dialog konfirmasi;
+|Pengguna|
+label N2
+if (Setuju mengulang?) then (Tidak)
+:Tutup dialog tanpa perubahan;
+stop
+else (Ya)
+endif
+|PyTurtle|
+label N3
+:Menghapus progres level, progres game dan submission;
+|PyTurtle|
+label N4
+:Menaikkan versi petualangan dan menetapkan level pertama;
+|PyTurtle|
+label N5
+:Menghitung ulang XP;
+|PyTurtle|
+label N6
+:Menampilkan daftar Maze Quest;
+stop
+@enduml

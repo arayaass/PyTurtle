@@ -1,0 +1,29 @@
+@startuml
+title UC10 Melanjutkan petualangan
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Memilih Lanjut petualangan;
+|PyTurtle|
+label N1
+:Membaca chapter terakhir atau memilih chapter pertama;
+|PyTurtle|
+label N2
+if (Chapter selesai?) then (Ya)
+:Pilih chapter berikutnya, maksimal chapter 3;
+goto N3
+else (Tidak)
+endif
+|PyTurtle|
+label N3
+:Mengarahkan ke chapter terpilih;
+|PyTurtle|
+label N4
+:Memeriksa hak akses dan membuka halaman level;
+|Pengguna|
+label N5
+:Melanjutkan dengan menulis kode baru;
+stop
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+title UC07 Mempelajari dan menyelesaikan materi
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Membuka daftar dan memilih materi;
+|PyTurtle|
+label N1
+if (Materi terbuka?) then (Tidak)
+:Arahkan ke materi prasyarat;
+stop
+else (Ya)
+endif
+|PyTurtle|
+label N2
+:Menampilkan materi, contoh dan kuis;
+|Pengguna|
+label N3
+:Mempelajari materi dan mengirim jawaban;
+|PyTurtle|
+label N4
+if (Jawaban benar?) then (Tidak)
+:Tampilkan kesalahan atau penjelasan;
+goto N3
+else (Ya)
+endif
+|PyTurtle|
+label N5
+:Mencatat penyelesaian dan memperbarui XP;
+|PyTurtle|
+label N6
+:Menampilkan hasil dan akses materi berikutnya;
+stop
+@enduml

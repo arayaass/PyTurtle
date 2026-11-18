@@ -1,0 +1,11 @@
+PATCH PENJELASAN UJI LOGIKA UNTUK PEMULA
+
+Untuk proyek yang sudah memasang patch Uji Logika.
+Salin isi folder ini ke folder proyek lama, gabungkan dan Replace.
+Jalankan: php artisan view:clear
+Lalu Ctrl+F5 di browser.
+Tidak perlu composer install, migrasi, atau build ulang.
+Jika memakai npm run dev, mulai ulang Vite.
+
+Penjelasan memakai arah wajah dan arah layar; hasil posisi ditulis dalam kalimat.
+Aturan jawaban, progress dan skor tidak berubah. .env dan database tidak disertakan.

@@ -1,0 +1,27 @@
+{
+  "_editor-Bk8UySzc.js": {
+    "file": "assets/editor-Bk8UySzc.js",
+    "name": "editor"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-C0KY8Ivr.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CFbwqaAI.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_editor-Bk8UySzc.js"
+    ],
+    "css": [
+      "assets/app-BRZtVLfn.css"
+    ]
+  }
+}

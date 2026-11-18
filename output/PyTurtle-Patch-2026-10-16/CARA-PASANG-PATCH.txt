@@ -1,0 +1,49 @@
+PYTURTLE - PATCH 16 OKTOBER 2026
+
+Paket ini HANYA berisi file baru/berubah untuk fitur terbaru, dibandingkan
+ZIP PyTurtle-Terbaru-Perbaikan.zip yang sebelumnya diberikan.
+File aplikasi yang tidak berubah, vendor, node_modules, .env asli, database,
+sesi/log, dan berkas pengujian tidak disertakan.
+
+Fitur: shortcut Maze, reward/badge/replay, Google Login, lihat kata sandi,
+dan Laboratorium Logika Prediksi -> Telusuri -> Perbaiki.
+
+PASANG
+1. Cadangkan proyek dan database.
+2. Ekstrak ZIP, buka folder PyTurtle-Patch-2026-10-16.
+3. Salin ISINYA ke folder proyek lama yang berisi artisan.
+   Gabungkan folder dan pilih Replace untuk file yang sama.
+   Jangan hapus folder proyek lama. Jangan menimpa .env dengan .env.example.
+4. Pastikan MySQL aktif, lalu jalankan di terminal folder proyek:
+
+   composer install --no-interaction --prefer-dist
+   php artisan config:clear
+   php artisan migrate --force
+   php artisan view:clear
+
+5. Jika server belum berjalan:
+   php artisan serve
+
+6. Buka http://127.0.0.1:8000 lalu Ctrl+F5.
+
+Aset public/build sudah disertakan: tidak perlu npm install/build untuk
+memakai pembaruan ini. Jika menggunakan npm run dev, jalankan npm install
+lalu mulai ulang Vite. Jika memilih aset build, hentikan Vite; hapus
+public/hot hanya bila file itu masih tertinggal setelah Vite dihentikan.
+Tidak perlu menjalankan seeder untuk patch ini.
+JANGAN menjalankan migrate:fresh atau migrate:refresh pada database lama.
+
+Jika ZIP lengkap 16 Oktober sudah disalin, tidak perlu menyalin patch lagi:
+isinya adalah versi yang sama, hanya file yang tidak berubah dikeluarkan.
+Jika tetap disalin, file yang sama akan ditimpa dengan isi yang sama.
+
+GOOGLE LOGIN
+Google Login tetap perlu Client ID dan Client Secret dari Google Cloud.
+Isi GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REDIRECT_URI pada .env.
+Untuk port 8000, daftarkan callback yang sama di Google Cloud:
+http://127.0.0.1:8000/auth/google/callback
+Jalankan php artisan config:clear setelah mengisi .env.
+Panduan lengkap: docs/GOOGLE-AUTH.md.
+
+DAFTAR-FILE-PATCH.json memuat daftar file pembaruan beserta SHA256.
+File lama public/build yang tidak digunakan manifest boleh tetap ada.

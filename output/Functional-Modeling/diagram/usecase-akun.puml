@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+skinparam monochrome true
+actor "Pengguna terdaftar" as A
+actor Google as G
+rectangle "Sistem PyTurtle" {
+usecase "UC05\nKeluar dari akun" as UC05
+usecase "UC06\nMelihat beranda" as UC06
+usecase "UC15\nMelihat progres belajar" as UC15
+usecase "UC16\nMelihat leaderboard" as UC16
+usecase "UC17\nMemperbarui profil" as UC17
+usecase "UC18\nMenautkan akun Google" as UC18
+usecase "UC19\nMengubah pengaturan" as UC19
+}
+A -- UC05
+A -- UC06
+A -- UC15
+A -- UC16
+A -- UC17
+A -- UC18
+A -- UC19
+G -- UC18
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+title UC08 Menyelesaikan Code Match
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Membuka Code Match;
+|PyTurtle|
+label N1
+:Menampilkan empat pasangan yang harus dicocokkan;
+|Pengguna|
+label N2
+:Memilih deskripsi dan potongan kode;
+|PyTurtle|
+label N3
+if (Pasangan benar?) then (Tidak)
+:Tampilkan umpan balik salah;
+goto N2
+else (Ya)
+endif
+|PyTurtle|
+label N4
+:Mengunci pasangan benar;
+|PyTurtle|
+label N5
+if (Semua pasangan selesai?) then (Tidak)
+:Lanjutkan pasangan berikutnya;
+goto N2
+else (Ya)
+endif
+|PyTurtle|
+label N6
+:Menilai ulang riwayat dan menyimpan hasil;
+|PyTurtle|
+label N7
+:Menampilkan skor serta akurasi;
+stop
+@enduml

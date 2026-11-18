@@ -1,0 +1,29 @@
+@startuml
+title UC17 Memperbarui profil
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Membuka Profil saya;
+|PyTurtle|
+label N1
+:Menampilkan profil saat ini;
+|Pengguna|
+label N2
+:Mengubah nama tampilan dan menyimpan;
+|PyTurtle|
+label N3
+if (Nama tampilan valid?) then (Tidak)
+:Tampilkan kesalahan isian;
+goto N2
+else (Ya)
+endif
+|PyTurtle|
+label N4
+:Menyimpan nama tampilan;
+|PyTurtle|
+label N5
+:Menampilkan konfirmasi profil diperbarui;
+stop
+@enduml

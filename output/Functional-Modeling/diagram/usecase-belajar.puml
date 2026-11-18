@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+skinparam monochrome true
+actor "Pengguna terdaftar" as A
+rectangle "Sistem PyTurtle" {
+usecase "UC07\nMempelajari dan menyelesaikan materi" as UC07
+usecase "UC08\nMenyelesaikan Code Match" as UC08
+usecase "UC09\nBermain Maze Quest" as UC09
+usecase "UC10\nMelanjutkan petualangan" as UC10
+usecase "UC11\nMeminta hint" as UC11
+usecase "UC12\nMengulangi penilaian chapter tiga" as UC12
+usecase "UC13\nMemulai ulang petualangan" as UC13
+usecase "UC14\nMenyelesaikan Uji Logika" as UC14
+}
+A -- UC07
+A -- UC08
+A -- UC09
+A -- UC10
+A -- UC11
+A -- UC12
+A -- UC13
+A -- UC14
+UC11 ..> UC09 : <<extend>>
+Saat membutuhkan petunjuk
+@enduml

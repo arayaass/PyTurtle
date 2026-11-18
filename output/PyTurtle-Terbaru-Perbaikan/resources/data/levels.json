@@ -1,0 +1,207 @@
+[
+    {
+        "id": 1,
+        "title": "Memasuki Hutan",
+        "subtitle": "Langkah pertama, petualangan besar.",
+        "objective": "Maju 3 kotak ke timur untuk mencapai tujuan. Penanda pertama berada 1 kotak dari titik awal. Setiap kotak berarti 1 langkah.",
+        "commands": [
+            "forward",
+            "backward"
+        ],
+        "start": {
+            "x": 90,
+            "y": 270,
+            "angle": 0
+        },
+        "path": [
+            [
+                60,
+                244,
+                240,
+                52
+            ]
+        ],
+        "checkpoints": [
+            [
+                150,
+                270
+            ],
+            [
+                270,
+                270
+            ]
+        ],
+        "starter": "",
+        "solution": "forward(3)",
+        "hint": "Tujuan berjarak 3 kotak ke timur. Gunakan forward(3), atau gabungkan forward(1) dan forward(2).",
+        "dialogue": [
+            "Jadi ini hutan yang ditunjukkan peta Kakek… Aku Shiha. Maukah kamu menemaniku?",
+            "Satu kotak berarti satu langkah. forward(1) maju satu kotak, dan forward(3) maju tiga kotak. Shiha mulai menghadap timur."
+        ],
+        "outro": [
+            "Kita berhasil melewati pintu hutan! Jejak Kakek berlanjut menuju sungai."
+        ],
+        "movement_unit": "grid",
+        "step_size": 60
+    },
+    {
+        "id": 2,
+        "title": "Jembatan Sungai",
+        "subtitle": "Belokan baru, sudut pandang baru.",
+        "objective": "Maju 3 kotak ke timur, belok kiri 90°, maju 3 kotak ke utara melewati jembatan, lalu belok kanan 90° dan maju 3 kotak ke timur.",
+        "commands": [
+            "forward",
+            "backward",
+            "left",
+            "right"
+        ],
+        "start": {
+            "x": 90,
+            "y": 350,
+            "angle": 0
+        },
+        "path": [
+            [
+                60,
+                324,
+                236,
+                52
+            ],
+            [
+                244,
+                144,
+                52,
+                232
+            ],
+            [
+                244,
+                144,
+                232,
+                52
+            ]
+        ],
+        "checkpoints": [
+            [
+                270,
+                350
+            ],
+            [
+                270,
+                170
+            ],
+            [
+                450,
+                170
+            ]
+        ],
+        "starter": "",
+        "solution": "forward(3)\nleft(90)\nforward(3)\nright(90)\nforward(3)",
+        "hint": "Setiap bagian jalan berjarak 3 kotak. Gunakan forward(3), left(90), forward(3), right(90), lalu forward(3).",
+        "dialogue": [
+            "Dengar suara air itu! Jembatan ini pasti yang digambar Kakek.",
+            "Hitung kotak jalannya: tiga ke timur, tiga ke utara, lalu tiga ke timur. left(90) berbelok ke kiri; right(90) ke kanan."
+        ],
+        "outro": [
+            "Jembatan terlewati. Di balik pepohonan, aku melihat reruntuhan yang ada di peta!"
+        ],
+        "movement_unit": "grid",
+        "step_size": 60
+    },
+    {
+        "id": 3,
+        "title": "Jejak Terakhir",
+        "subtitle": "Setiap langkah menyimpan cerita.",
+        "objective": "Ikuti penanda berurutan: timur 2 kotak, utara 2, timur 3, selatan 2, timur 2, lalu utara 3 kotak. Belokan memakai left(90) atau right(90).",
+        "commands": [
+            "forward",
+            "backward",
+            "left",
+            "right",
+            "penup",
+            "pendown"
+        ],
+        "start": {
+            "x": 90,
+            "y": 350,
+            "angle": 0
+        },
+        "path": [
+            [
+                64,
+                324,
+                172,
+                52
+            ],
+            [
+                184,
+                204,
+                52,
+                172
+            ],
+            [
+                184,
+                204,
+                232,
+                52
+            ],
+            [
+                364,
+                204,
+                52,
+                172
+            ],
+            [
+                364,
+                324,
+                172,
+                52
+            ],
+            [
+                484,
+                144,
+                52,
+                232
+            ]
+        ],
+        "checkpoints": [
+            [
+                210,
+                350
+            ],
+            [
+                210,
+                230
+            ],
+            [
+                390,
+                230
+            ],
+            [
+                390,
+                350
+            ],
+            [
+                510,
+                350
+            ],
+            [
+                510,
+                170
+            ]
+        ],
+        "starter": "",
+        "solution": "forward(2)\nleft(90)\nforward(2)\nright(90)\nforward(3)\nright(90)\nforward(2)\nleft(90)\nforward(2)\nleft(90)\nforward(3)",
+        "hint": "Jumlah kotak setiap bagian adalah 2, 2, 3, 2, 2, 3. Arah: timur, utara, timur, selatan, timur, utara. penup() mengangkat pena; Shiha tetap harus mengikuti jalan.",
+        "dialogue": [
+            "Ini tempatnya. Reruntuhan tua dengan tanda yang sama seperti di peta!",
+            "Tulislah kodemu dari awal. Ikuti kotak dan penanda secara berurutan: 2, 2, 3, 2, 2, lalu 3 langkah."
+        ],
+        "outro": [
+            "Di dalam peti ada kompas, catatan perjalanan, dan sepucuk surat dari Kakek.",
+            "‘Shiha, harta terbaik bukan yang kamu bawa pulang, tetapi hal yang kamu pelajari di perjalanan.’",
+            "Terima kasih sudah membantuku. Sekarang kamu juga seorang penjelajah Python Turtle!"
+        ],
+        "movement_unit": "grid",
+        "step_size": 60
+    }
+]

@@ -1,0 +1,29 @@
+@startuml
+title UC12 Mengulangi penilaian chapter tiga
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Memilih Ulangi penilaian di chapter 3;
+|PyTurtle|
+label N1
+if (Akses dan versi valid?) then (Tidak)
+:Tampilkan pesan dan minta muat ulang;
+stop
+else (Ya)
+endif
+|PyTurtle|
+label N2
+:Menaikkan versi dan mereset kegagalan serta hint penilaian;
+|PyTurtle|
+label N3
+:Mengembalikan karakter ke awal chapter 3;
+|PyTurtle|
+label N4
+:Mempertahankan best score dan badge yang telah diperoleh;
+|Pengguna|
+label N5
+:Mengerjakan kembali kode pada penilaian baru;
+stop
+@enduml

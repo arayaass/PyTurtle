@@ -1,0 +1,22 @@
+@startuml
+title UC16 Melihat leaderboard
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Membuka Leaderboard;
+|PyTurtle|
+label N1
+:Mengambil nama tampilan, XP dan status badge;
+|PyTurtle|
+label N2
+:Mengurutkan XP menurun lalu ID pengguna;
+|PyTurtle|
+label N3
+:Menampilkan peringkat dengan paginasi;
+|Pengguna|
+label N4
+:Membaca peringkat atau memilih halaman lain;
+stop
+@enduml

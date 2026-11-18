@@ -1,0 +1,39 @@
+@startuml
+title UC09 Bermain Maze Quest
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Memilih level pada Maze Quest;
+|PyTurtle|
+label N1
+if (Level terbuka?) then (Tidak)
+:Tolak akses ke level terkunci;
+stop
+else (Ya)
+endif
+|PyTurtle|
+label N2
+:Menampilkan cerita, peta dan editor;
+|Pengguna|
+label N3
+:Menulis kode dan memilih Run;
+|PyTurtle|
+label N4
+:Memvalidasi kode, menjalankan simulasi dan menyimpan hasil;
+|PyTurtle|
+label N5
+if (Tujuan tercapai?) then (Tidak)
+:Tampilkan ERROR atau PARTIAL;
+goto N3
+else (Ya)
+endif
+|PyTurtle|
+label N6
+:Catat sukses, hitung reward dan buka level berikutnya;
+|PyTurtle|
+label N7
+:Menampilkan hasil dan cerita penyelesaian;
+stop
+@enduml

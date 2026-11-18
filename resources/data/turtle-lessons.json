@@ -1,0 +1,654 @@
+[
+    {
+        "key": "runestone-turtle-01",
+        "order": 1,
+        "title": "Halo, Turtle!",
+        "command": "Gerak, arah, dan jejak",
+        "description": "Kenali cara Turtle bergerak, berbelok, dan menggambar.",
+        "practice_level": 1,
+        "content": {
+            "source_section": "4.1",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/intro-HelloLittleTurtles.html",
+            "minutes": 5,
+            "goals": [
+                "Mengenali Turtle sebagai alat untuk menggambar.",
+                "Memahami bahwa maju mengubah posisi, sedangkan berbelok hanya mengubah arah."
+            ],
+            "sections": [
+                {
+                    "title": "Turtle itu apa?",
+                    "paragraphs": [
+                        "Turtle adalah alat gambar di Python. Kita memberi perintah, lalu Turtle bergerak di layar sambil meninggalkan garis jika penanya menyentuh kertas."
+                    ]
+                },
+                {
+                    "title": "Maju dan berbelok",
+                    "paragraphs": [
+                        "forward(95) menggerakkan Turtle sejauh 95 langkah ke arah yang sedang dihadapinya. left(90) memutarnya 90 derajat ke kiri. Berbelok saja tidak memindahkan Turtle."
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Satu garis, lalu berbelok",
+                    "code": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\n\nshiha.forward(95)\nshiha.left(90)\nshiha.forward(65)\n\nlayar.exitonclick()",
+                    "explanation": "Turtle menggambar satu garis ke kanan, berbelok ke kiri, lalu menggambar garis kedua ke atas."
+                }
+            ],
+            "exercise": {
+                "task": "Ubah forward(95) menjadi forward(130), lalu jalankan. Bandingkan panjang garis pertama; garis setelah belokan tetap sama.",
+                "hint": "Ubah hanya angka pada perintah forward pertama."
+            },
+            "quiz": {
+                "question": "Perintah left(90) dijalankan. Apa yang berubah?",
+                "options": [
+                    "Posisi Turtle.",
+                    "Arah hadap Turtle.",
+                    "Panjang garis yang sudah digambar."
+                ],
+                "answer": 1,
+                "explanation": "Turtle berputar di tempat. Posisi dan garis yang sudah dibuat tidak berubah."
+            },
+            "practice": {
+                "instruction": "Ubah jarak pertama, lalu jalankan untuk membandingkan bentuknya.",
+                "code": "forward(95)\nleft(90)\nforward(65)"
+            }
+        }
+    },
+    {
+        "key": "runestone-turtle-02",
+        "order": 2,
+        "title": "Program Turtle pertama",
+        "command": "import · Screen · Turtle",
+        "description": "Susun program sederhana untuk menggerakkan Turtle.",
+        "practice_level": 1,
+        "content": {
+            "source_section": "4.2",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/OurFirstTurtleProgram.html",
+            "minutes": 7,
+            "goals": [
+                "Mengenali bagian utama program Turtle.",
+                "Memahami nama objek, perintah, dan angka jarak."
+            ],
+            "sections": [
+                {
+                    "title": "Siapkan layar dan Turtle",
+                    "paragraphs": [
+                        "import turtle memuat alat gambar Turtle. turtle.Screen() membuat layar dan turtle.Turtle() membuat objek yang bisa bergerak. Di contoh ini, objek itu diberi nama shiha."
+                    ]
+                },
+                {
+                    "title": "Baca perintahnya",
+                    "paragraphs": [
+                        "Pada shiha.forward(110), shiha adalah nama objek dan forward adalah perintah untuk maju. Angka 110 adalah jarak. Huruf besar dan kecil harus ditulis tepat: Turtle berbeda dari turtle."
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Jalur berbelok",
+                    "code": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\n\nshiha.forward(110)\nshiha.left(90)\nshiha.forward(55)\n\nlayar.exitonclick()",
+                    "explanation": "Turtle bergerak 110 langkah ke kanan, berbelok 90 derajat ke kiri, lalu bergerak 55 langkah ke atas."
+                }
+            ],
+            "exercise": {
+                "task": "Tambahkan gerakan dan belokan sampai jalurnya menjadi persegi panjang tertutup.",
+                "hint": "Sisi panjangnya 110, sisi pendeknya 55. Setelah setiap sisi, belok kiri 90 derajat.",
+                "solution": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\n\nshiha.forward(110)\nshiha.left(90)\nshiha.forward(55)\nshiha.left(90)\nshiha.forward(110)\nshiha.left(90)\nshiha.forward(55)\nshiha.left(90)\n\nlayar.exitonclick()"
+            },
+            "quiz": {
+                "question": "Pada shiha.forward(110), apa arti angka 110?",
+                "options": ["Warna garis.", "Jarak gerak maju.", "Jumlah Turtle di layar."],
+                "answer": 1,
+                "explanation": "Angka di dalam forward() menentukan jarak yang ditempuh."
+            },
+            "practice": {
+                "instruction": "Lengkapi jalur ini menjadi persegi panjang.",
+                "code": "forward(110)\nleft(90)\nforward(55)"
+            }
+        }
+    },
+    {
+        "key": "runestone-turtle-03",
+        "order": 3,
+        "title": "Lebih dari satu Turtle",
+        "command": "Objek dan instance",
+        "description": "Pelajari cara kerja beberapa objek Turtle dalam satu layar.",
+        "practice_level": 1,
+        "content": {
+            "source_section": "4.3",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/InstancesAHerdofTurtles.html",
+            "minutes": 7,
+            "goals": [
+                "Memahami bahwa setiap Turtle adalah objek yang berbeda.",
+                "Memilih nama objek yang tepat sebelum memberi perintah."
+            ],
+            "sections": [
+                {
+                    "title": "Setiap Turtle punya keadaan sendiri",
+                    "paragraphs": [
+                        "Satu layar dapat berisi beberapa objek Turtle. Setiap objek punya posisi, arah, dan warna sendiri. Menggerakkan satu objek tidak otomatis menggerakkan objek lain."
+                    ]
+                },
+                {
+                    "title": "Pilih objeknya dengan nama",
+                    "paragraphs": [
+                        "Nama sebelum titik menunjukkan objek yang menerima perintah. shiha.forward(95) menggerakkan Shiha, sedangkan teman.forward(65) menggerakkan teman."
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Dua jalur di satu layar",
+                    "code": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\nteman = turtle.Turtle()\n\nshiha.color(\"forestgreen\")\nshiha.forward(95)\nteman.color(\"darkorange\")\nteman.left(90)\nteman.forward(65)\n\nlayar.exitonclick()",
+                    "explanation": "Shiha menggambar ke kanan dengan warna hijau. Teman berbelok ke kiri, lalu menggambar ke atas dengan warna jingga."
+                }
+            ],
+            "exercise": {
+                "task": "Pada contoh, ubah teman.left(90) menjadi teman.left(180). Jalankan dan perhatikan bahwa hanya arah teman yang berubah; Shiha tetap menghadap ke arah semula.",
+                "hint": "Ubah angka pada perintah teman.left(...), bukan pada perintah shiha."
+            },
+            "practice": {
+                "instruction": "Editor gerak ini memakai satu Turtle. Coba jalur kedua tanpa garis dengan penup(), lalu turunkan pena lagi. Untuk mencoba dua objek dan warna berbeda, gunakan contoh lengkap atau Runestone.",
+                "code": "forward(80)\npenup()\nbackward(80)\nleft(90)\nforward(55)\npendown()\nforward(65)"
+            },
+            "quiz": {
+                "question": "Jika teman.left(90) dijalankan, apa yang terjadi pada arah Shiha?",
+                "options": [
+                    "Arah Shiha juga berubah.",
+                    "Arah Shiha tetap karena itu objek berbeda.",
+                    "Shiha kembali ke titik awal."
+                ],
+                "answer": 1,
+                "explanation": "Perintah teman.left(90) hanya mengubah arah objek teman."
+            }
+        }
+    },
+    {
+        "key": "runestone-turtle-04",
+        "order": 4,
+        "title": "Pengulangan dengan for",
+        "command": "for · daftar · indentasi",
+        "description": "Gunakan for untuk mengulang perintah.",
+        "practice_level": 1,
+        "content": {
+            "source_section": "4.4",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/TheforLoop.html",
+            "minutes": 5,
+            "goals": [
+                "Memahami bahwa for mengulang sekumpulan perintah.",
+                "Mengenali indentasi sebagai penanda isi pengulangan."
+            ],
+            "sections": [
+                {
+                    "title": "Apa yang diulang?",
+                    "paragraphs": [
+                        "for menjalankan perintah yang ada di dalam bloknya berulang kali. Pada Turtle, kita bisa mengulang gerakan maju dan belok untuk menggambar bentuk."
+                    ]
+                },
+                {
+                    "title": "Indentasi menunjukkan isi blok",
+                    "paragraphs": [
+                        "Tanda titik dua mengawali blok for. Baris di bawahnya harus menjorok dengan jumlah spasi yang sama. Baris yang kembali ke kiri berada di luar pengulangan."
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Menampilkan Halo untuk tiga nama",
+                    "code": "for nama in [\"Shiha\", \"Nara\", \"Bimo\"]:\n    print(\"Halo\", nama)\nprint(\"Ayo berangkat!\")",
+                    "explanation": "Python menampilkan teks Halo untuk Shiha, Nara, dan Bimo. Pesan Ayo berangkat! berada di luar blok for, jadi tampil satu kali setelahnya."
+                }
+            ],
+            "exercise": {
+                "task": "Tambahkan satu nama ke daftar di dalam tanda kurung siku. Jalankan program dan hitung berapa kali teks Halo ditampilkan.",
+                "hint": "Setiap nama di dalam daftar membuat Python menampilkan Halo satu kali."
+            },
+            "practice": {
+                "instruction": "Pola maju lalu belok diulang empat kali untuk membentuk persegi. Coba ubah angka 4 atau jarak 65.",
+                "code": "for sisi in range(4):\n    forward(65)\n    left(90)"
+            },
+            "quiz": {
+                "question": "Baris mana yang diulang oleh for?",
+                "options": [
+                    "Baris yang menjorok di dalam blok for.",
+                    "Semua baris setelah for.",
+                    "Hanya baris pertama program."
+                ],
+                "answer": 0,
+                "explanation": "Indentasi menunjukkan perintah yang menjadi bagian dari blok for."
+            }
+        }
+    },
+    {
+        "key": "runestone-turtle-05",
+        "order": 5,
+        "title": "Alur kerja pengulangan",
+        "command": "Baca → ulangi → lanjut",
+        "description": "Ikuti urutan program saat perulangan berjalan.",
+        "practice_level": 1,
+        "content": {
+            "source_section": "4.5",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/FlowofExecutionoftheforLoop.html",
+            "minutes": 5,
+            "goals": [
+                "Mengikuti urutan perintah pada setiap putaran for.",
+                "Membedakan perintah di dalam dan di luar blok pengulangan."
+            ],
+            "sections": [
+                {
+                    "title": "for kembali ke awal blok",
+                    "paragraphs": [
+                        "Setelah perintah di dalam blok selesai, Python mengambil nilai berikutnya dan menjalankan blok lagi. Jika tidak ada nilai berikutnya, Python melanjutkan ke baris setelah blok."
+                    ]
+                },
+                {
+                    "title": "Ikuti satu baris demi satu baris",
+                    "paragraphs": [
+                        "Catat apa yang dilakukan pada setiap putaran. Baris yang menjorok termasuk dalam pengulangan. Baris yang sejajar dengan for baru dijalankan setelah semua putaran selesai."
+                    ],
+                    "table": {
+                        "headers": ["Putaran", "Nilai langkah", "Teks tercetak"],
+                        "rows": [
+                            ["1", "2", "Pos 2"],
+                            ["2", "4", "Pos 4"],
+                            ["Setelah for", "4", "Selesai"]
+                        ]
+                    }
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Mengunjungi dua pos",
+                    "code": "for langkah in [2, 4]:\n    print(\"Pos\", langkah)\nprint(\"Selesai\")",
+                    "explanation": "Python mencetak Pos 2, lalu Pos 4. Setelah dua putaran, Python mencetak Selesai satu kali."
+                }
+            ],
+            "exercise": {
+                "task": "Coba geser indentasi print(\"Selesai\") agar sejajar dengan perintah di dalam for, lalu jalankan. Bandingkan kapan pesan itu muncul.",
+                "hint": "Baris yang menjorok ke dalam blok for akan dijalankan pada setiap putaran."
+            },
+            "practice": {
+                "instruction": "Dua perintah pertama diulang dua kali. forward(30) berada di luar blok, jadi dijalankan satu kali setelah pengulangan selesai.",
+                "code": "for langkah in range(2):\n    forward(45)\n    left(90)\nforward(30)"
+            },
+            "quiz": {
+                "question": "Pada contoh, berapa kali pesan Selesai dicetak?",
+                "options": [
+                    "Satu kali setelah pengulangan.",
+                    "Dua kali di dalam pengulangan.",
+                    "Tidak pernah."
+                ],
+                "answer": 0,
+                "explanation": "print(\"Selesai\") sejajar dengan for, jadi perintah itu dijalankan sekali setelah blok selesai."
+            }
+        }
+    },
+    {
+        "key": "runestone-turtle-06",
+        "order": 6,
+        "title": "Menggambar dengan pola berulang",
+        "command": "Sisi + belokan = pola",
+        "description": "Gunakan pola berulang untuk menggambar persegi.",
+        "practice_level": 2,
+        "content": {
+            "source_section": "4.6",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/IterationSimplifiesourTurtleProgram.html",
+            "minutes": 7,
+            "goals": [
+                "Menemukan gerakan yang berulang dalam sebuah bentuk.",
+                "Menggambar persegi dengan mengulang satu sisi dan satu belokan."
+            ],
+            "sections": [
+                {
+                    "title": "Cari pola persegi",
+                    "paragraphs": [
+                        "Persegi memiliki empat sisi sama panjang. Untuk setiap sisi, Turtle maju lalu berbelok 90 derajat. Dua perintah ini membentuk satu pola."
+                    ]
+                },
+                {
+                    "title": "Ulangi polanya",
+                    "paragraphs": [
+                        "Ulangi pola itu empat kali. Setelah empat belokan 90 derajat, Turtle kembali menghadap arah semula dan bentuk persegi tertutup."
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Persegi milik Shiha",
+                    "code": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\n\nfor sisi in [1, 2, 3, 4]:\n    shiha.forward(75)\n    shiha.left(90)\n\nlayar.exitonclick()",
+                    "explanation": "Pada setiap putaran, Turtle menggambar satu sisi sepanjang 75 langkah lalu berbelok 90 derajat. Empat putaran membentuk persegi."
+                }
+            ],
+            "exercise": {
+                "task": "Ubah angka jarak pada forward(75) menjadi 105, lalu jalankan. Semua sisi persegi akan menjadi lebih panjang.",
+                "hint": "Angka jarak berada pada satu perintah forward di dalam pola yang diulang."
+            },
+            "quiz": {
+                "question": "Apa yang dilakukan satu putaran for pada contoh persegi?",
+                "options": [
+                    "Menggambar satu sisi lalu berbelok.",
+                    "Menggambar seluruh persegi.",
+                    "Menghapus satu sisi."
+                ],
+                "answer": 0,
+                "explanation": "Satu putaran menjalankan forward(75) dan left(90), jadi menggambar satu sisi lalu menghadap ke sisi berikutnya."
+            },
+            "practice": {
+                "instruction": "Ini gerakan yang sama, ditulis satu per satu. Ubah semua jaraknya menjadi 105.",
+                "code": "forward(75)\nleft(90)\nforward(75)\nleft(90)\nforward(75)\nleft(90)\nforward(75)\nleft(90)"
+            }
+        }
+    },
+    {
+        "key": "runestone-turtle-07",
+        "order": 7,
+        "title": "Mengatur jumlah ulang dengan range",
+        "command": "range(start, stop, step)",
+        "description": "Gunakan range untuk menentukan jumlah dan urutan pengulangan.",
+        "practice_level": 2,
+        "content": {
+            "source_section": "4.7",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/TherangeFunction.html",
+            "minutes": 7,
+            "goals": [
+                "Memahami bahwa range menentukan nilai untuk setiap putaran.",
+                "Mengenali nilai awal, batas akhir, dan jarak antar nilai pada range."
+            ],
+            "sections": [
+                {
+                    "title": "Batas akhir tidak ikut",
+                    "paragraphs": [
+                        "range(4) menghasilkan 0, 1, 2, 3: ada empat nilai dan angka 4 tidak ikut. range(1, 5) dimulai dari 1 dan berhenti sebelum 5, jadi hasilnya 1, 2, 3, 4."
+                    ]
+                },
+                {
+                    "title": "Atur jarak antar nilai",
+                    "paragraphs": [
+                        "range(2, 9, 3) dimulai dari 2 dan bertambah 3. Hasilnya 2, 5, 8; 9 menjadi batas yang tidak ikut. list() menampilkan nilai-nilai itu sebagai daftar."
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Lihat urutan bilangan",
+                    "code": "print(list(range(4)))\nprint(list(range(1, 5)))\nprint(list(range(2, 9, 3)))",
+                    "explanation": "Contoh pertama menampilkan tiga urutan angka. Pada contoh kedua, range(4) menjalankan gerakan persegi empat kali."
+                },
+                {
+                    "title": "Persegi dengan range",
+                    "code": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\n\nfor sisi in range(4):\n    shiha.forward(75)\n    shiha.left(90)\n\nlayar.exitonclick()",
+                    "explanation": "Empat putaran menggantikan daftar empat item."
+                }
+            ],
+            "exercise": {
+                "task": "Ubah range(4) pada editor menjadi range(3). Sebelum menjalankan, tebak berapa sisi yang akan digambar.",
+                "hint": "Angka di dalam range menentukan berapa kali pola diulang."
+            },
+            "practice": {
+                "instruction": "Editor ini menggambar bagian persegi dengan range(4): setiap putaran maju 75 langkah lalu berbelok 90 derajat. Untuk melihat daftar angka dari range(), jalankan contoh \"Lihat urutan bilangan\" di Runestone atau Python.",
+                "code": "for sisi in range(4):\n    forward(75)\n    left(90)"
+            },
+            "quiz": {
+                "question": "Apa hasil list(range(2, 7, 2))?",
+                "options": ["[2, 4, 6]", "[2, 4, 6, 7]", "[0, 2, 4, 6]"],
+                "answer": 0,
+                "explanation": "Urutan dimulai dari 2 dan bertambah 2. Python berhenti sebelum mencapai batas 7."
+            }
+        }
+    },
+    {
+        "key": "runestone-turtle-08",
+        "order": 8,
+        "title": "Pena, bentuk, dan cap Turtle",
+        "command": "penup · pendown · stamp",
+        "description": "Berpindah tanpa garis dan tinggalkan cap Turtle.",
+        "practice_level": 3,
+        "content": {
+            "source_section": "4.8",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/AFewMoreturtleMethodsandObservations.html",
+            "minutes": 5,
+            "goals": [
+                "Mengangkat pena agar Turtle berpindah tanpa menggambar.",
+                "Memahami perbedaan bentuk penunjuk dan cap yang ditinggalkan."
+            ],
+            "sections": [
+                {
+                    "title": "Angkat pena saat berpindah",
+                    "paragraphs": [
+                        "penup() mengangkat pena. Turtle tetap bergerak, tetapi tidak meninggalkan garis. pendown() menurunkan pena agar gerakan berikutnya menggambar lagi."
+                    ]
+                },
+                {
+                    "title": "Bentuk dan cap Turtle",
+                    "paragraphs": [
+                        "shape(\"turtle\") mengubah bentuk penunjuk. stamp() mencetak bentuk itu pada posisi saat ini. speed(0) membuat gambar berjalan secepat mungkin; speed(1) adalah kecepatan paling lambat. Jarak negatif membuat Turtle bergerak mundur."
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Cap di ujung perjalanan",
+                    "code": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\n\nshiha.shape(\"turtle\")\nshiha.penup()\nshiha.forward(85)\nshiha.stamp()\nshiha.pendown()\nshiha.forward(55)\n\nlayar.exitonclick()",
+                    "explanation": "Turtle bergerak 85 langkah tanpa menggambar, meninggalkan cap, lalu bergerak 55 langkah sambil menggambar garis."
+                }
+            ],
+            "exercise": {
+                "task": "Ubah forward(85) menjadi forward(-85). Jalankan dan lihat bahwa Turtle bergerak ke belakang, berlawanan dengan arah hadapnya.",
+                "hint": "Nilai negatif membalik arah gerak."
+            },
+            "quiz": {
+                "question": "Apa yang dilakukan stamp()?",
+                "options": [
+                    "Membuat Turtle baru yang bisa bergerak.",
+                    "Meninggalkan gambar bentuk Turtle pada posisi saat ini.",
+                    "Mengangkat pena."
+                ],
+                "answer": 1,
+                "explanation": "stamp() meninggalkan cap pada layar. Cap itu bukan objek Turtle baru."
+            },
+            "practice": {
+                "instruction": "Perhatikan bagian perjalanan yang tidak meninggalkan garis.",
+                "code": "penup()\nforward(85)\npendown()\nforward(55)"
+            }
+        }
+    },
+    {
+        "key": "runestone-turtle-09",
+        "order": 9,
+        "title": "Ringkasan metode Turtle",
+        "command": "Lihat, pilih, lalu gunakan",
+        "description": "Pilih metode Turtle yang sesuai dengan tujuanmu.",
+        "practice_level": 3,
+        "content": {
+            "source_section": "4.9",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/SummaryofTurtleMethods.html",
+            "minutes": 5,
+            "goals": [
+                "Memilih metode Turtle sesuai tujuan.",
+                "Membedakan bergerak berdasarkan jarak dan berpindah ke koordinat tertentu."
+            ],
+            "sections": [
+                {
+                    "title": "Pilih metode sesuai kebutuhan",
+                    "paragraphs": [
+                        "Metode adalah perintah yang dijalankan oleh sebuah objek, misalnya shiha.forward(75). forward() bergerak mengikuti arah hadap; penup() mengangkat pena."
+                    ],
+                    "table": {
+                        "headers": ["Metode", "Kegunaan"],
+                        "rows": [
+                            ["forward(jarak)", "Maju mengikuti arah hadap."],
+                            ["backward(jarak)", "Mundur; arah hadap tetap."],
+                            ["left(sudut) / right(sudut)", "Putar kiri / kanan."],
+                            ["penup() / pendown()", "Angkat / turunkan pena."],
+                            ["color(\"green\")", "Atur warna pena dan penunjuk."],
+                            ["pensize(3)", "Atur ketebalan garis."],
+                            ["heading() / position()", "Baca arah / posisi."],
+                            ["goto(x, y)", "Pindah ke koordinat tujuan."],
+                            ["fillcolor(\"gold\")", "Atur warna isi."],
+                            ["begin_fill() / end_fill()", "Mulai / akhiri pengisian bentuk."],
+                            ["dot() / stamp()", "Tinggalkan titik / cap."],
+                            ["shape(\"turtle\")", "Atur bentuk penunjuk."]
+                        ]
+                    }
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Berpindah tanpa menggambar",
+                    "code": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\n\nshiha.penup()\nshiha.goto(-65, 35)\nshiha.pendown()\nshiha.forward(90)\n\nlayar.exitonclick()",
+                    "explanation": "Turtle mengangkat pena, pindah ke koordinat (-65, 35) tanpa menggambar, lalu menurunkan pena dan menggambar garis ke arah hadapnya."
+                }
+            ],
+            "exercise": {
+                "task": "Di contoh interaktif, ubah forward(80) menjadi backward(80). Bandingkan arah garis. Untuk membaca angka posisi tanpa bergerak, lihat metode position() pada tabel atau coba contoh Python lengkap.",
+                "hint": "backward() bergerak mundur tanpa mengubah arah hadap."
+            },
+            "practice": {
+                "instruction": "Coba beberapa metode yang didukung editor: bergerak tanpa menggambar, berbelok, lalu menggambar garis. goto(), position(), dan metode warna bisa dicoba pada Python atau Runestone.",
+                "code": "penup()\nforward(45)\nleft(90)\npendown()\nforward(80)"
+            },
+            "quiz": {
+                "question": "Apa perbedaan goto(90, 0) dan forward(90)?",
+                "options": [
+                    "Keduanya selalu melakukan gerakan yang sama.",
+                    "goto() menuju koordinat; forward() bergerak mengikuti arah hadap.",
+                    "goto() menghapus layar."
+                ],
+                "answer": 1,
+                "explanation": "goto() menentukan titik tujuan. forward() menentukan jarak gerak dari posisi sekarang."
+            }
+        }
+    },
+    {
+        "key": "runestone-turtle-10",
+        "order": 10,
+        "title": "Kamus kecil Turtle",
+        "command": "Istilah tanpa bahasa rumit",
+        "description": "Kenali istilah dasar dalam program Turtle.",
+        "practice_level": 3,
+        "content": {
+            "source_section": "4.10",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/Glossary.html",
+            "minutes": 5,
+            "goals": [
+                "Memahami istilah dasar yang digunakan dalam program Turtle.",
+                "Membedakan objek, metode, atribut, dan pengulangan."
+            ],
+            "sections": [
+                {
+                    "title": "Istilah dalam program",
+                    "paragraphs": [
+                        "Module adalah kumpulan alat yang bisa dimuat dengan import. Object adalah benda yang dibuat dari alat itu, misalnya Turtle bernama shiha. Canvas adalah area tempat gambar muncul."
+                    ],
+                    "table": {
+                        "headers": ["Istilah", "Arti singkat"],
+                        "rows": [
+                            [
+                                "Module",
+                                "Kumpulan perintah tambahan yang bisa dimuat dengan import."
+                            ],
+                            [
+                                "Object / instance",
+                                "Turtle tertentu yang dibuat dalam program, misalnya shiha."
+                            ],
+                            ["Attribute", "Sifat yang dimiliki objek, misalnya warna penanya."],
+                            ["Method / invoke", "Perintah milik objek / menjalankan perintah itu."],
+                            ["Canvas", "Area layar tempat Turtle menggambar."],
+                            [
+                                "Iteration / for loop",
+                                "Pengulangan perintah / bagian kode yang mengulang perintah."
+                            ],
+                            ["Loop body", "Baris menjorok yang dijalankan berulang di dalam for."],
+                            ["Loop variable", "Nama yang nilainya berubah pada setiap putaran."],
+                            [
+                                "range",
+                                "Pembuat urutan angka untuk menentukan jumlah atau nilai putaran."
+                            ],
+                            ["Sequential / control flow", "Urutan baris yang dijalankan Python."],
+                            ["State", "Keadaan Turtle saat ini, seperti posisi dan arah hadap."],
+                            [
+                                "Terminating condition",
+                                "Aturan yang menentukan kapan pengulangan berhenti."
+                            ]
+                        ]
+                    }
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Kenali istilah dalam kode",
+                    "code": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\n\nfor langkah in range(2):\n    shiha.forward(45)\n\nlayar.exitonclick()",
+                    "explanation": "shiha adalah objek, forward() adalah metode, dan for mengulang dua gerakan maju."
+                }
+            ],
+            "exercise": {
+                "task": "Jelaskan perbedaan method dan attribute dengan contoh: forward() adalah tindakan, sedangkan warna adalah sifat.",
+                "hint": "Tanyakan: apakah contoh itu berupa tindakan yang dilakukan atau sifat yang dimiliki?"
+            },
+            "practice": {
+                "instruction": "Variabel langkah menyimpan jarak 40. forward(langkah) memakai nilai itu untuk bergerak; for mengulang gerakan tiga kali.",
+                "code": "langkah = 40\nfor sisi in range(3):\n    forward(langkah)\n    left(120)"
+            },
+            "quiz": {
+                "question": "Manakah contoh attribute (sifat) sebuah objek Turtle?",
+                "options": ["Warna pena Turtle.", "Perintah forward().", "Baris di dalam for."],
+                "answer": 0,
+                "explanation": "Warna adalah sifat yang dimiliki objek. forward() adalah metode atau tindakan."
+            }
+        }
+    },
+    {
+        "key": "runestone-turtle-11",
+        "order": 11,
+        "title": "Latihan petualangan Turtle",
+        "command": "Rancang → coba → perbaiki",
+        "description": "Gabungkan gerakan dan pengulangan untuk membuat bentuk.",
+        "practice_level": 3,
+        "content": {
+            "source_section": "4.11",
+            "source_url": "https://runestone.academy/ns/books/published/thinkcspy/PythonTurtle/Exercises.html",
+            "minutes": 7,
+            "goals": [
+                "Menggunakan perulangan untuk menggambar bentuk beraturan.",
+                "Menghitung sudut belok dari jumlah sisi dan memeriksa hasil gambar."
+            ],
+            "sections": [
+                {
+                    "title": "Mulai dari bentuk sederhana",
+                    "paragraphs": [
+                        "Bentuk beraturan memiliki sisi yang sama panjang. Untuk menutup bentuk, Turtle berbelok sebesar 360 derajat dibagi jumlah sisi pada setiap putaran."
+                    ]
+                },
+                {
+                    "title": "Rancang, jalankan, periksa",
+                    "paragraphs": [
+                        "Untuk segitiga, lakukan tiga putaran dan belok 120 derajat setiap kali. Untuk segi enam, lakukan enam putaran dan belok 60 derajat. Jika bentuk belum tertutup, periksa jumlah putaran, jarak, dan sudutnya."
+                    ]
+                }
+            ],
+            "examples": [
+                {
+                    "title": "Segi enam di peta",
+                    "code": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\n\njumlah_sisi = 6\nfor sisi in range(jumlah_sisi):\n    shiha.forward(55)\n    shiha.left(360 / jumlah_sisi)\n\nlayar.exitonclick()",
+                    "explanation": "Segi enam memiliki enam sisi. Setiap putaran menggambar satu sisi lalu berbelok 60 derajat (360 dibagi 6)."
+                }
+            ],
+            "exercise": {
+                "task": "Ubah contoh menjadi segitiga. Atur pengulangan menjadi tiga kali dan sudut belok menjadi 120 derajat, lalu jalankan.",
+                "hint": "Jumlah putaran sama dengan jumlah sisi. Sudut beloknya 360 dibagi jumlah sisi.",
+                "solution": "import turtle\n\nlayar = turtle.Screen()\nshiha = turtle.Turtle()\n\nfor sisi in range(3):\n    shiha.forward(55)\n    shiha.left(120)\n\nlayar.exitonclick()"
+            },
+            "quiz": {
+                "question": "Berapa derajat Turtle harus berbelok setiap sisi saat menggambar segi delapan beraturan?",
+                "options": ["45 derajat.", "90 derajat.", "135 derajat."],
+                "answer": 0,
+                "explanation": "Sudut belok luar adalah 360 dibagi 8, yaitu 45 derajat."
+            },
+            "practice": {
+                "instruction": "Bentuk segi enam ini memakai enam gerakan dan enam putaran. Ubah menjadi segitiga.",
+                "code": "forward(55)\nleft(60)\nforward(55)\nleft(60)\nforward(55)\nleft(60)\nforward(55)\nleft(60)\nforward(55)\nleft(60)\nforward(55)\nleft(60)"
+            }
+        }
+    }
+]

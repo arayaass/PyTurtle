@@ -1,0 +1,24 @@
+@extends('layouts.app')
+@section('title', 'Uji Logika · '.$definition['title'])
+@section('content')
+<div x-data="logicChallenge" x-init="boot()">
+<div class="breadcrumb"><a href="/uji-logika">Uji Logika</a><span>/ Tantangan {{ $challenge }}</span></div>
+<div class="page-heading"><div><span class="eyebrow">TANTANGAN {{ $challenge }} / 6</span><h1>{{ $definition['title'] }}</h1><p>Coba apakah kalimat di bawah benar untuk setiap arah. Cari percobaan yang hasilnya berbeda, lalu pilih alasannya.</p></div><span class="tag" x-show="completed" x-cloak>✓ Sudah selesai</span></div>
+<section class="card logic-claim"><span class="eyebrow">BENARKAH KALIMAT INI?</span><blockquote>{{ $definition['claim'] }}</blockquote><p>Kalimat di atas belum tentu benar. Tugasmu mencari satu percobaan yang tidak cocok dengan kalimat itu.</p></section>
+<div class="logic-workspace"><section class="card logic-controls"><h2>1. Pilih arah wajah Shiha</h2><p>Bayangkan kamu adalah Shiha. Maju berarti berjalan ke arah wajahmu; mundur berarti berjalan ke belakang tanpa membalik badan. Shiha mulai dari lingkaran di tengah papan.</p>
+<fieldset :disabled="busy"><label>Arah awal wajah Shiha<select x-model.number="angle" @change="invalidate()"><option value="0">Kanan layar → (Timur)</option><option value="90">Atas layar ↑ (Utara)</option><option value="180">Kiri layar ← (Barat)</option><option value="270">Bawah layar ↓ (Selatan)</option></select></label>
+@if(collect($definition['a'])->contains(fn($command)=>$command[1]==='distance'))<label>Jarak maju (kotak)<select x-model.number="distance" @change="invalidate()">@for($n=1;$n<=4;$n++)<option value="{{ $n }}">{{ $n }} kotak</option>@endfor</select></label>@endif
+<p class="notice" x-text="'Wajah Shiha menghadap '+direction(angle)+'. Jika maju, Shiha berjalan ke arah itu.'"></p><details><summary>Contoh maju dan mundur</summary><p>Wajah ke kanan → maju ke kanan, mundur ke kiri.<br>Wajah ke kiri ← maju ke kiri, mundur ke kanan.<br><b>Bergerak ke kiri layar tidak selalu berarti mundur.</b></p></details><h3>Program A</h3><pre class="code-sample" x-text="program(definition.a)"></pre>
+@if($definition['b'])<h3>Program B</h3><pre class="code-sample" x-text="program(definition.b)"></pre>@endif
+<button class="primary full" @click="experiment()" x-text="busy ? 'Memeriksa…' : 'Uji pernyataan'">Uji pernyataan</button></fieldset>
+<p class="small muted">Ubah arah atau jarak untuk percobaan baru. Eksperimen ini tidak mengurangi skor Maze.</p></section>
+<section class="card logic-result"><h2>2. Lihat Shiha bergerak ke mana</h2><p x-show="!result">Klik Uji pernyataan. Setelah itu, bandingkan gerakan pada papan dengan kalimat yang diuji.</p><canvas x-ref="board" width="640" height="480" aria-label="Papan eksperimen. Hasil posisi dan arah juga tersedia dalam tabel di bawah."></canvas>
+<div role="status" aria-live="polite" class="notice" x-show="message" x-text="message"></div>
+<div x-show="result" x-cloak><p class="small">● A: hijau · B: jingga · ○ titik awal. Panah menunjukkan arah akhir; angka pada garis adalah nomor instruksi.</p><div class="table-scroll"><table><thead><tr><th>Program</th><th>Berhenti di mana?</th><th>Arah akhir</th></tr></thead><tbody><template x-for="row in observations" :key="row.name"><tr><td x-text="row.name"></td><td x-text="position(row)"></td><td x-text="direction(row.angle)"></td></tr></template></tbody></table></div>
+<details><summary>Lihat hasil setiap instruksi</summary><template x-for="row in observations" :key="row.name"><div><h3 x-text="'Program '+row.name"></h3><template x-for="(step,index) in row.steps" :key="index"><p class="small" x-text="step.code+' → ('+step.x+', '+step.y+'), '+direction(step.angle)"></p></template></div></template></details></div></section></div>
+<section class="card logic-answer" x-show="result && result.counterexample" x-cloak><h2>3. Mengapa kalimat tadi tidak selalu benar?</h2><fieldset :disabled="busy || correct"><legend>Pilih alasan yang sesuai dengan hasil percobaanmu.</legend>@foreach($definition['options'] as $index=>$option)<label class="logic-option"><input type="radio" x-model="answer" value="{{ $index }}" name="reason">{{ $option }}</label>@endforeach</fieldset><button class="primary" @click="submit()" :disabled="busy || answer==='' || correct">Periksa alasan</button><p role="status" class="notice" x-show="answerMessage" x-text="answerMessage"></p><div x-show="correct"><a class="secondary" href="{{ $challenge<6 ? '/uji-logika/'.($challenge+1) : '/uji-logika' }}">{{ $challenge<6 ? 'Tantangan berikutnya →' : 'Lihat semua tantangan →' }}</a></div></section>
+</div>
+@endsection
+@push('scripts')
+<script type="application/json" id="logic-data">@json(['id'=>$challenge,'definition'=>$definition,'completed'=>$completed], JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT)</script>
+@endpush

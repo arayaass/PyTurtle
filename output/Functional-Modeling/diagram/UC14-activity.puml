@@ -1,0 +1,36 @@
+@startuml
+title UC14 Menyelesaikan Uji Logika
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Memilih tantangan dan membaca pernyataan;
+|Pengguna|
+label N1
+:Memilih arah serta jarak lalu menguji;
+|PyTurtle|
+label N2
+:Menjalankan simulasi dan mencatat eksperimen;
+|PyTurtle|
+label N3
+if (Ada contoh bantahan?) then (Tidak)
+:Tampilkan hasil dan minta kondisi lain;
+goto N1
+else (Ya)
+endif
+|Pengguna|
+label N4
+:Memilih alasan lalu mengirim jawaban;
+|PyTurtle|
+label N5
+if (Data dan alasan valid?) then (Tidak)
+:Tolak data atau tampilkan koreksi alasan;
+goto N4
+else (Ya)
+endif
+|PyTurtle|
+label N6
+:Mencatat penyelesaian dan menampilkan penjelasan;
+stop
+@enduml

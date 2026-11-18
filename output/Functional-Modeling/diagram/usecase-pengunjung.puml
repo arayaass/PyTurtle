@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+skinparam monochrome true
+actor "Pengunjung" as A
+actor Google as G
+rectangle "Sistem PyTurtle" {
+usecase "UC01\nMendaftar akun" as UC01
+usecase "UC02\nMasuk dengan email" as UC02
+usecase "UC03\nMasuk dengan Google" as UC03
+usecase "UC04\nMemulihkan kata sandi" as UC04
+}
+A -- UC01
+A -- UC02
+A -- UC03
+A -- UC04
+G -- UC03
+@enduml

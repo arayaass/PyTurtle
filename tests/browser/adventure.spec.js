@@ -1,0 +1,183 @@
+import { test, expect } from '@playwright/test';
+import fs from 'node:fs';
+import { completeReading } from './module-helpers.js';
+const levels = JSON.parse(fs.readFileSync('resources/data/levels.json', 'utf8'));
+async function register(page) {
+    await page.goto('/register');
+    await page.getByLabel('Nama penjelajah').fill('Raya Explorer');
+    await page
+        .getByLabel('Email', { exact: true })
+        .fill('explorer-' + Date.now() + '@example.test');
+    await page.getByLabel('Kata sandi Minimal 8 karakter').fill('ForestAdventure123!');
+    await page.getByLabel('Ulangi kata sandi', { exact: true }).fill('ForestAdventure123!');
+    await page.getByRole('button', { name: 'Buat akun & mulai jelajah' }).click();
+    await expect(page).toHaveURL(/\/home$/);
+}
+async function dialogue(page) {
+    const dialog = page.getByRole('dialog', { name: 'Cerita Shiha' });
+    for (let i = 0; i < 5 && (await dialog.isVisible()); i++) {
+        await dialog.getByRole('button', { name: 'Tampilkan teks' }).click();
+        await dialog.getByRole('button', { name: /Berikutnya|Lanjutkan/ }).click();
+    }
+    await expect(dialog).toBeHidden();
+}
+async function code(page, text) {
+    const editor = page.locator('.cm-content');
+    await editor.fill(text);
+}
+test('complete student journey, checkpoints, refresh, matching, settings and restart', async ({
+    page,
+}) => {
+    const errors = [];
+    page.on('pageerror', (e) => errors.push(e.message));
+    await page.goto('/login');
+    await page.screenshot({ path: 'storage/testing/login.png', fullPage: true });
+    await register(page);
+    await page.screenshot({ path: 'storage/testing/home.png', fullPage: true });
+    await page.goto('/modules');
+    await page.getByRole('link', { name: /Halo, Turtle!/ }).click();
+    await page.getByLabel('Arah berubah; posisi tetap.').check();
+    await page.getByRole('button', { name: 'Periksa jawaban' }).click();
+    await expect(page.locator('.turtle-result-dialog')).toBeVisible();
+    await completeReading(page);
+    await page.goto('/maze/2');
+    await expect(page.locator('body')).toContainText('403');
+    await page.goto('/maze/1');
+    await dialogue(page);
+    await expect(page.locator('.cm-editor')).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+    await code(page, 'forward 100');
+    await page.getByRole('button', { name: 'Run Code' }).click();
+    await expect(page.locator('.feedback')).toContainText('baris 1');
+    await expect(page.getByRole('button', { name: 'Run Code' })).toBeEnabled();
+    await code(page, 'forward(1)');
+    await page.getByRole('button', { name: 'Run Code' }).click();
+    await expect(page.locator('.world-top')).toContainText('1 / 2 checkpoint');
+    await expect(page.locator('.save-status')).toHaveText('Progress tersimpan');
+    await page.reload();
+    await expect(page.locator('.world-top')).toContainText('0 / 2 checkpoint');
+    await expect(page.locator('.cm-content')).toHaveText('');
+    await page.screenshot({ path: 'storage/testing/maze.png', fullPage: true });
+    await page.getByRole('button', { name: 'Reset Code' }).click();
+    await expect(page.locator('.feedback')).toContainText('dikosongkan');
+    for (const [stage, tutorial] of levels[0].tutorial_stages.entries()) {
+        await page.getByLabel('Kecepatan').selectOption('4');
+        await code(page, tutorial.solution);
+        await page.getByRole('button', { name: 'Run Code' }).click();
+        await expect(page.locator('.feedback')).toContainText('Challenge berhasil', {
+            timeout: 20000,
+        });
+        await expect(page.locator('.save-status')).toHaveText('Progress tersimpan');
+        if (stage < 2) await page.getByRole('button', { name: 'Sublevel berikutnya' }).click();
+        else await dialogue(page);
+    }
+    for (const level of levels.slice(1)) {
+        await page.goto('/maze/' + level.id);
+        await dialogue(page);
+        if (level.id === 5) {
+            await page.locator('.cm-content').focus();
+            await page.keyboard.press('Control+Space');
+            await expect
+                .poll(async () =>
+                    (await page.locator('.cm-completionLabel').allTextContents()).sort(),
+                )
+                .toEqual(['for', 'forward', 'left', 'range', 'right', 'variabel']);
+            await page.keyboard.press('Escape');
+            await code(page, 'invalid()');
+            await page.getByRole('button', { name: 'Run Code' }).click();
+            await expect(page.locator('.final-reward')).toContainText(
+                'Kesalahan pada penilaian ini: 1',
+            );
+        }
+        await page.getByLabel('Kecepatan').selectOption('4');
+        await code(page, level.solution);
+        await page.getByRole('button', { name: 'Run Code' }).click();
+        await expect(page.locator('.feedback')).toContainText('Challenge berhasil', {
+            timeout: 20000,
+        });
+        await expect(page.locator('.save-status')).toHaveText('Progress tersimpan', {
+            timeout: 20000,
+        });
+        await expect(page.getByRole('dialog', { name: 'Cerita Shiha' })).toBeVisible();
+        await dialogue(page);
+    }
+    await expect(page.getByText('Reward percobaan: 95 XP.', { exact: false })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Run Code' })).toBeDisabled();
+    await page.getByRole('button', { name: 'Ulangi penilaian' }).click();
+    await expect(page.getByRole('button', { name: 'Run Code' })).toBeEnabled();
+    await code(page, levels[4].solution);
+    await page.getByRole('button', { name: 'Run Code' }).click();
+    await expect(page.getByRole('dialog', { name: 'Cerita Shiha' })).toBeVisible({
+        timeout: 20000,
+    });
+    await dialogue(page);
+    await expect(page.getByText('Pengerjaan sempurna!', { exact: false })).toBeVisible();
+    await page.screenshot({ path: 'storage/testing/final-reward.png', fullPage: true });
+    await page.goto('/leaderboard');
+    await expect(page.locator('.my-rank')).toContainText('Turtle Master');
+    await page.screenshot({ path: 'storage/testing/leaderboard.png', fullPage: true });
+    await page.goto('/profile');
+    await expect(page.getByText('Hubungkan Google', { exact: true })).toBeVisible();
+    await page.goto('/progress');
+    await expect(page.getByText('100%', { exact: true })).toBeVisible();
+    await page.goto('/modules');
+    await page.locator('.lesson-card').first().click();
+    const match = page.locator('#module-code-match');
+    await match.getByRole('button', { name: /Reset/ }).click();
+    await match.locator('.match-card').filter({ hasText: 'Bergerak maju' }).click();
+    await match.locator('.snippet').filter({ hasText: 'left(90)' }).click();
+    await expect(match.getByRole('status')).toContainText('Belum cocok');
+    const pairs = [
+        ['Bergerak maju', 'forward(80)'],
+        ['Berputar ke kiri', 'left(90)'],
+        ['Berputar ke kanan', 'right(90)'],
+        ['Bergerak tanpa jejak', 'penup()'],
+    ];
+    for (const [title, snippet] of pairs) {
+        await match.locator('.match-card').filter({ hasText: title }).click();
+        await match.locator('.snippet').filter({ hasText: snippet }).click();
+    }
+    await expect(match.getByRole('status')).toContainText('Hasil tersimpan');
+    await expect(match.locator('.match-card.wrong')).toHaveCount(0);
+    await expect(match.getByRole('status')).toContainText('Progress tersimpan');
+    await expect(match.getByText('80%', { exact: true })).toBeVisible();
+    await page.screenshot({ path: 'storage/testing/code-match.png', fullPage: true });
+    await page.goto('/settings');
+    await page.getByLabel('Kurangi animasi').check();
+    await page.getByRole('button', { name: 'Simpan pengaturan' }).click();
+    await expect(page.getByLabel('Kurangi animasi')).toBeChecked();
+    await page.goto('/progress');
+    await page.getByRole('button', { name: 'Mulai Ulang Petualangan' }).click();
+    await expect(page.getByRole('dialog')).toBeVisible();
+    await page.getByRole('button', { name: 'Batal', exact: true }).click();
+    await expect(page.getByRole('dialog')).toBeHidden();
+    await page.getByRole('button', { name: 'Mulai Ulang Petualangan' }).click();
+    await page.getByRole('button', { name: 'Mulai Ulang', exact: true }).click();
+    await expect(page).toHaveURL(/\/maze$/);
+    await expect(page.getByRole('status')).toContainText('dimulai ulang');
+    expect(errors).toEqual([]);
+});
+test('offline progress retries and mobile layout fits viewport', async ({ page, context }) => {
+    await register(page);
+    await completeReading(page, 4);
+    await page.goto('/maze/1');
+    await dialogue(page);
+    await expect(page.locator('.save-status')).toHaveText('Progress tersimpan');
+    await context.setOffline(true);
+    await code(page, 'forward(1)');
+    await page.getByRole('button', { name: 'Run Code' }).click();
+    await expect(page.locator('.save-status')).toContainText('sementara di perangkat', {
+        timeout: 20000,
+    });
+    await context.setOffline(false);
+    await expect(page.locator('.save-status')).toHaveText('Progress tersimpan', { timeout: 20000 });
+    await page.reload();
+    await expect(page.locator('.world-top')).toContainText('0 / 2 checkpoint');
+    await page.setViewportSize({ width: 390, height: 844 });
+    for (const path of ['/home', '/modules', '/maze/1', '/modules/7', '/progress', '/settings']) {
+        await page.goto(path);
+        expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+            true,
+        );
+    }
+    await page.screenshot({ path: 'storage/testing/mobile.png', fullPage: true });
+});

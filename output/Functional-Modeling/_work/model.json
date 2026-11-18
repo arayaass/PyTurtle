@@ -1,0 +1,815 @@
+[
+  {
+    "id": "UC01",
+    "name": "Mendaftar akun",
+    "actor": "Pengunjung",
+    "goal": "Membuat akun untuk mulai belajar.",
+    "pre": "Belum masuk ke PyTurtle.",
+    "post": "Akun dibuat dan pengguna masuk ke beranda.",
+    "nodes": [
+      [
+        "Pengunjung",
+        "Membuka formulir pendaftaran"
+      ],
+      [
+        "Pengunjung",
+        "Mengisi nama, email, kata sandi dan konfirmasi"
+      ],
+      [
+        "PyTurtle",
+        "Data akun valid?",
+        [
+          "Tidak",
+          "Tampilkan kesalahan isian",
+          1
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Membuat akun dan nama tampilan"
+      ],
+      [
+        "PyTurtle",
+        "Membuat sesi masuk"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan beranda"
+      ]
+    ],
+    "note": "Nama maksimal 40 karakter. Kata sandi minimal 8 karakter dan harus sama dengan konfirmasi. Isian yang ditolak diperbaiki lalu dikirim ulang.",
+    "source": "AuthController::register; /register"
+  },
+  {
+    "id": "UC02",
+    "name": "Masuk dengan email",
+    "actor": "Pengunjung",
+    "goal": "Mengakses akun menggunakan email dan kata sandi.",
+    "pre": "Sudah memiliki akun dan belum masuk.",
+    "post": "Sesi aktif dan halaman tujuan ditampilkan.",
+    "nodes": [
+      [
+        "Pengunjung",
+        "Membuka halaman login"
+      ],
+      [
+        "Pengunjung",
+        "Mengisi email, kata sandi dan opsi ingat saya"
+      ],
+      [
+        "PyTurtle",
+        "Isian dan batas valid?",
+        [
+          "Tidak",
+          "Tampilkan kesalahan atau waktu tunggu",
+          1
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Kredensial cocok?",
+        [
+          "Tidak",
+          "Catat kegagalan dan tampilkan pesan",
+          1
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Membuat ulang sesi masuk"
+      ],
+      [
+        "PyTurtle",
+        "Membuka halaman tujuan atau beranda"
+      ]
+    ],
+    "note": "Kegagalan autentikasi dibatasi menurut email dan alamat IP. Pengguna menunggu jika batas percobaan tercapai.",
+    "source": "AuthController::login; /login"
+  },
+  {
+    "id": "UC03",
+    "name": "Masuk dengan Google",
+    "actor": "Pengunjung dan Google",
+    "goal": "Mengakses PyTurtle memakai identitas Google.",
+    "pre": "Belum masuk dan integrasi Google telah dikonfigurasi.",
+    "post": "Identitas dipetakan ke akun dan sesi masuk aktif.",
+    "nodes": [
+      [
+        "Pengunjung",
+        "Memilih Masuk dengan Google"
+      ],
+      [
+        "PyTurtle",
+        "Mengarahkan permintaan autentikasi"
+      ],
+      [
+        "Google",
+        "Meminta pemilihan akun dan persetujuan"
+      ],
+      [
+        "Google",
+        "Mengembalikan hasil autentikasi"
+      ],
+      [
+        "PyTurtle",
+        "Identitas valid?",
+        [
+          "Tidak",
+          "Tampilkan kegagalan atau pembatalan",
+          null
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Akun tertaut atau baru?",
+        [
+          "Tidak",
+          "Minta login email lalu tautkan di profil",
+          null
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Mengambil akun tertaut atau membuat akun baru"
+      ],
+      [
+        "PyTurtle",
+        "Membuat sesi dan membuka halaman tujuan"
+      ]
+    ],
+    "note": "Email Google harus terverifikasi. Email yang sudah memiliki akun PyTurtle tidak digabung otomatis; pemilik masuk dengan kata sandi lalu menjalankan UC18. Jika integrasi belum aktif, sistem menampilkan pesan.",
+    "source": "GoogleAuthController; GoogleAccountService; /auth/google"
+  },
+  {
+    "id": "UC04",
+    "name": "Memulihkan kata sandi",
+    "actor": "Pengunjung",
+    "goal": "Mengganti kata sandi yang terlupa melalui tautan pemulihan.",
+    "pre": "Belum masuk dan memiliki akun dengan email terdaftar.",
+    "post": "Kata sandi diperbarui dan halaman login ditampilkan.",
+    "nodes": [
+      [
+        "Pengunjung",
+        "Mengisi email pada Lupa kata sandi"
+      ],
+      [
+        "PyTurtle",
+        "Memvalidasi email dan memproses tautan pemulihan"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan konfirmasi umum"
+      ],
+      [
+        "Pengunjung",
+        "Membuka tautan lalu mengisi kata sandi baru"
+      ],
+      [
+        "PyTurtle",
+        "Data pemulihan valid?",
+        [
+          "Tidak",
+          "Tampilkan pesan dan minta perbaikan atau tautan baru",
+          null
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Menyimpan kata sandi baru dan memperbarui token"
+      ],
+      [
+        "PyTurtle",
+        "Mengarahkan ke halaman login"
+      ]
+    ],
+    "note": "Konfirmasi permintaan tidak mengungkap apakah email terdaftar. Token tidak valid atau kedaluwarsa memerlukan tautan baru. Pada konfigurasi pengembangan, email dicatat ke log; pengiriman ke inbox memerlukan konfigurasi email.",
+    "source": "AuthController::forgot/reset; /forgot-password; /reset-password"
+  },
+  {
+    "id": "UC05",
+    "name": "Keluar dari akun",
+    "actor": "Pengguna terdaftar",
+    "goal": "Mengakhiri sesi penggunaan akun.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Sesi diakhiri dan halaman login ditampilkan.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Memilih Keluar"
+      ],
+      [
+        "PyTurtle",
+        "Mengakhiri autentikasi pengguna"
+      ],
+      [
+        "PyTurtle",
+        "Menghapus sesi aktif dan memperbarui token"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan halaman login"
+      ]
+    ],
+    "note": "Akses kembali ke fitur yang dilindungi memerlukan login.",
+    "source": "AuthController::logout; /logout"
+  },
+  {
+    "id": "UC06",
+    "name": "Melihat beranda",
+    "actor": "Pengguna terdaftar",
+    "goal": "Mengetahui ringkasan belajar dan pilihan kegiatan berikutnya.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Ringkasan akun, XP dan kemajuan tersedia.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Membuka Beranda"
+      ],
+      [
+        "PyTurtle",
+        "Mengambil profil, materi dan progres level"
+      ],
+      [
+        "PyTurtle",
+        "Menyusun ringkasan XP dan kemajuan"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan beranda dan navigasi belajar"
+      ],
+      [
+        "Pengguna",
+        "Membaca ringkasan dan pilihan kegiatan"
+      ]
+    ],
+    "note": "Memilih kegiatan dari beranda memulai use case terkait, misalnya belajar materi atau melanjutkan petualangan.",
+    "source": "HomeController; /home"
+  },
+  {
+    "id": "UC07",
+    "name": "Mempelajari dan menyelesaikan materi",
+    "actor": "Pengguna terdaftar",
+    "goal": "Memahami materi Turtle dan menyelesaikan kuisnya.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Materi selesai, XP diperbarui dan materi berikutnya terbuka.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Membuka daftar dan memilih materi"
+      ],
+      [
+        "PyTurtle",
+        "Materi terbuka?",
+        [
+          "Tidak",
+          "Arahkan ke materi prasyarat",
+          null
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan materi, contoh dan kuis"
+      ],
+      [
+        "Pengguna",
+        "Mempelajari materi dan mengirim jawaban"
+      ],
+      [
+        "PyTurtle",
+        "Jawaban benar?",
+        [
+          "Tidak",
+          "Tampilkan kesalahan atau penjelasan",
+          3
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Mencatat penyelesaian dan memperbarui XP"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan hasil dan akses materi berikutnya"
+      ]
+    ],
+    "note": "Materi dasar dibuka berurutan. Penyelesaian pertama memberi 20 XP; pengulangan materi yang sudah selesai tidak menggandakan XP.",
+    "source": "ModuleController; LessonAccessService; /modules"
+  },
+  {
+    "id": "UC08",
+    "name": "Menyelesaikan Code Match",
+    "actor": "Pengguna terdaftar",
+    "goal": "Mencocokkan empat deskripsi dengan potongan kode yang tepat.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Hasil, akurasi dan skor tersimpan serta XP diperbarui.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Membuka Code Match"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan empat pasangan yang harus dicocokkan"
+      ],
+      [
+        "Pengguna",
+        "Memilih deskripsi dan potongan kode"
+      ],
+      [
+        "PyTurtle",
+        "Pasangan benar?",
+        [
+          "Tidak",
+          "Tampilkan umpan balik salah",
+          2
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Mengunci pasangan benar"
+      ],
+      [
+        "PyTurtle",
+        "Semua pasangan selesai?",
+        [
+          "Tidak",
+          "Lanjutkan pasangan berikutnya",
+          2
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Menilai ulang riwayat dan menyimpan hasil"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan skor serta akurasi"
+      ]
+    ],
+    "note": "Server memeriksa riwayat pilihan dan menolak penyelesaian yang belum lengkap. Pengiriman ulang dengan ID yang sama tidak membuat hasil ganda. Kegagalan simpan perlu dicoba kembali.",
+    "source": "CodeMatchController; CodeMatchService; /code-match"
+  },
+  {
+    "id": "UC09",
+    "name": "Bermain Maze Quest",
+    "actor": "Pengguna terdaftar",
+    "goal": "Menyelesaikan level petualangan menggunakan perintah Turtle.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Hasil percobaan tersimpan; jika berhasil, progres dan reward diperbarui.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Memilih level pada Maze Quest"
+      ],
+      [
+        "PyTurtle",
+        "Level terbuka?",
+        [
+          "Tidak",
+          "Tolak akses ke level terkunci",
+          null
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan cerita, peta dan editor"
+      ],
+      [
+        "Pengguna",
+        "Menulis kode dan memilih Run"
+      ],
+      [
+        "PyTurtle",
+        "Memvalidasi kode, menjalankan simulasi dan menyimpan hasil"
+      ],
+      [
+        "PyTurtle",
+        "Tujuan tercapai?",
+        [
+          "Tidak",
+          "Tampilkan ERROR atau PARTIAL",
+          3
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Catat sukses, hitung reward dan buka level berikutnya"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan hasil dan cerita penyelesaian"
+      ]
+    ],
+    "note": "Validasi ulang server menentukan hasil resmi. Hint tersedia melalui UC11. Reset editor mengosongkan kode dan mengembalikan karakter ke awal tanpa menghapus best score. Saat offline pada halaman yang telah dimuat, antrean disimpan lokal dan dicoba lagi; reward resmi menunggu sinkronisasi.",
+    "source": "MazeController; GameProgressService; game/maze.js; /maze"
+  },
+  {
+    "id": "UC10",
+    "name": "Melanjutkan petualangan",
+    "actor": "Pengguna terdaftar",
+    "goal": "Membuka kembali chapter petualangan yang sesuai progres.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Halaman chapter yang dipilih sistem terbuka.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Memilih Lanjut petualangan"
+      ],
+      [
+        "PyTurtle",
+        "Membaca chapter terakhir atau memilih chapter pertama"
+      ],
+      [
+        "PyTurtle",
+        "Chapter selesai?",
+        [
+          "Ya",
+          "Pilih chapter berikutnya, maksimal chapter 3",
+          3
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Mengarahkan ke chapter terpilih"
+      ],
+      [
+        "PyTurtle",
+        "Memeriksa hak akses dan membuka halaman level"
+      ],
+      [
+        "Pengguna",
+        "Melanjutkan dengan menulis kode baru"
+      ]
+    ],
+    "note": "Cabang Tidak memakai chapter terakhir. Cabang Ya memilih chapter sesudahnya, dibatasi chapter 3. Editor dibuka kosong dan karakter berada di titik awal; fitur ini melanjutkan chapter, bukan mengeksekusi ulang kode tersimpan.",
+    "source": "MazeController::resume/show; /game/continue"
+  },
+  {
+    "id": "UC11",
+    "name": "Meminta hint",
+    "actor": "Pengguna terdaftar",
+    "goal": "Mendapatkan petunjuk saat mengerjakan Maze Quest.",
+    "pre": "Level terbuka; pada chapter 3 penilaian masih aktif.",
+    "post": "Petunjuk ditampilkan dan penggunaan hint tercatat.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Memilih Hint pada halaman level"
+      ],
+      [
+        "PyTurtle",
+        "Akses dan versi valid?",
+        [
+          "Tidak",
+          "Tolak permintaan dan tampilkan pesan",
+          null
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Mencatat penggunaan hint"
+      ],
+      [
+        "PyTurtle",
+        "Mengirim petunjuk level"
+      ],
+      [
+        "Pengguna",
+        "Membaca petunjuk dan kembali menulis kode"
+      ]
+    ],
+    "note": "UC11 merupakan perluasan opsional UC09 pada saat pengerjaan kode. Penggunaan hint memengaruhi skor penyelesaian; chapter 3 memakai status hint per penilaian.",
+    "source": "GameProgressController::hint; /game/{level}/hint"
+  },
+  {
+    "id": "UC12",
+    "name": "Mengulangi penilaian chapter tiga",
+    "actor": "Pengguna terdaftar",
+    "goal": "Memulai penilaian baru pada chapter akhir.",
+    "pre": "Chapter 3 terbuka dan pengguna sudah masuk.",
+    "post": "Penilaian baru aktif dengan best score sebelumnya dipertahankan.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Memilih Ulangi penilaian di chapter 3"
+      ],
+      [
+        "PyTurtle",
+        "Akses dan versi valid?",
+        [
+          "Tidak",
+          "Tampilkan pesan dan minta muat ulang",
+          null
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Menaikkan versi dan mereset kegagalan serta hint penilaian"
+      ],
+      [
+        "PyTurtle",
+        "Mengembalikan karakter ke awal chapter 3"
+      ],
+      [
+        "PyTurtle",
+        "Mempertahankan best score dan badge yang telah diperoleh"
+      ],
+      [
+        "Pengguna",
+        "Mengerjakan kembali kode pada penilaian baru"
+      ]
+    ],
+    "note": "Permintaan versi lama ditolak. Kesempatan memperoleh 100 XP dan badge Turtle Master tersedia dengan penyelesaian bersih tanpa kesalahan dan tanpa hint.",
+    "source": "GameProgressController::replay; FinalLevelRewardService; /game/3/replay"
+  },
+  {
+    "id": "UC13",
+    "name": "Memulai ulang petualangan",
+    "actor": "Pengguna terdaftar",
+    "goal": "Mengulang progres petualangan dari level pertama.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Progres game direset dan XP dihitung ulang.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Memilih Mulai ulang petualangan"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan dialog konfirmasi"
+      ],
+      [
+        "Pengguna",
+        "Setuju mengulang?",
+        [
+          "Tidak",
+          "Tutup dialog tanpa perubahan",
+          null
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Menghapus progres level, progres game dan submission"
+      ],
+      [
+        "PyTurtle",
+        "Menaikkan versi petualangan dan menetapkan level pertama"
+      ],
+      [
+        "PyTurtle",
+        "Menghitung ulang XP"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan daftar Maze Quest"
+      ]
+    ],
+    "note": "Akun, materi yang selesai, hasil Code Match dan pengaturan dipertahankan. Antrean penyimpanan dari versi petualangan lama ditolak.",
+    "source": "GameProgressController::restart; /game/restart"
+  },
+  {
+    "id": "UC14",
+    "name": "Menyelesaikan Uji Logika",
+    "actor": "Pengguna terdaftar",
+    "goal": "Menguji pernyataan tentang Turtle dan menjelaskan contoh bantahannya.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Penyelesaian tantangan tercatat setelah contoh dan alasan benar.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Memilih tantangan dan membaca pernyataan"
+      ],
+      [
+        "Pengguna",
+        "Memilih arah serta jarak lalu menguji"
+      ],
+      [
+        "PyTurtle",
+        "Menjalankan simulasi dan mencatat eksperimen"
+      ],
+      [
+        "PyTurtle",
+        "Ada contoh bantahan?",
+        [
+          "Tidak",
+          "Tampilkan hasil dan minta kondisi lain",
+          1
+        ]
+      ],
+      [
+        "Pengguna",
+        "Memilih alasan lalu mengirim jawaban"
+      ],
+      [
+        "PyTurtle",
+        "Data dan alasan valid?",
+        [
+          "Tidak",
+          "Tolak data atau tampilkan koreksi alasan",
+          4
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Mencatat penyelesaian dan menampilkan penjelasan"
+      ]
+    ],
+    "note": "Enam tantangan tersedia. Arah pilihan 0, 90, 180 atau 270 derajat dan jarak 1 sampai 4. Alasan hanya diterima setelah eksperimen menjadi contoh bantahan. Penyelesaian Uji Logika tidak menambah XP pada implementasi saat ini.",
+    "source": "LogicChallengeController; LogicChallengeService; /uji-logika"
+  },
+  {
+    "id": "UC15",
+    "name": "Melihat progres belajar",
+    "actor": "Pengguna terdaftar",
+    "goal": "Memantau kemajuan materi dan petualangan pribadi.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Progres materi dan tiap level ditampilkan.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Membuka Progres"
+      ],
+      [
+        "PyTurtle",
+        "Mengambil level dan progres milik pengguna"
+      ],
+      [
+        "PyTurtle",
+        "Menghitung materi selesai dan total materi"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan ringkasan progres serta skor level"
+      ],
+      [
+        "Pengguna",
+        "Meninjau kemajuan belajar"
+      ]
+    ],
+    "note": "Pengguna yang belum belajar melihat kondisi awal. Data progres berasal dari akun yang sedang masuk.",
+    "source": "ProgressController; /progress"
+  },
+  {
+    "id": "UC16",
+    "name": "Melihat leaderboard",
+    "actor": "Pengguna terdaftar",
+    "goal": "Membandingkan pencapaian melalui peringkat XP.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Daftar peringkat dan badge tersedia.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Membuka Leaderboard"
+      ],
+      [
+        "PyTurtle",
+        "Mengambil nama tampilan, XP dan status badge"
+      ],
+      [
+        "PyTurtle",
+        "Mengurutkan XP menurun lalu ID pengguna"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan peringkat dengan paginasi"
+      ],
+      [
+        "Pengguna",
+        "Membaca peringkat atau memilih halaman lain"
+      ]
+    ],
+    "note": "Setiap halaman memuat sampai 20 pengguna. Email tidak ditampilkan. Permintaan halaman berikutnya mengulangi pengambilan data sesuai halaman yang dipilih.",
+    "source": "LeaderboardController; /leaderboard"
+  },
+  {
+    "id": "UC17",
+    "name": "Memperbarui profil",
+    "actor": "Pengguna terdaftar",
+    "goal": "Mengubah nama tampilan akun.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Nama tampilan baru tersimpan.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Membuka Profil saya"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan profil saat ini"
+      ],
+      [
+        "Pengguna",
+        "Mengubah nama tampilan dan menyimpan"
+      ],
+      [
+        "PyTurtle",
+        "Nama tampilan valid?",
+        [
+          "Tidak",
+          "Tampilkan kesalahan isian",
+          2
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Menyimpan nama tampilan"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan konfirmasi profil diperbarui"
+      ]
+    ],
+    "note": "Perubahan profil yang tersedia pada formulir ini adalah nama tampilan.",
+    "source": "SettingsController::profile/updateProfile; /profile"
+  },
+  {
+    "id": "UC18",
+    "name": "Menautkan akun Google",
+    "actor": "Pengguna terdaftar dan Google",
+    "goal": "Menghubungkan identitas Google ke akun PyTurtle yang sedang digunakan.",
+    "pre": "Sudah masuk dan integrasi Google telah dikonfigurasi.",
+    "post": "Identitas Google tertaut ke akun yang sama.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Memilih Hubungkan Google pada Profil saya"
+      ],
+      [
+        "PyTurtle",
+        "Mengarahkan permintaan penautan"
+      ],
+      [
+        "Google",
+        "Meminta pemilihan akun dan persetujuan"
+      ],
+      [
+        "Google",
+        "Mengembalikan identitas terverifikasi"
+      ],
+      [
+        "PyTurtle",
+        "Data penautan valid?",
+        [
+          "Tidak",
+          "Tolak penautan dan tampilkan pesan",
+          null
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Menyimpan identitas Google pada akun aktif"
+      ],
+      [
+        "PyTurtle",
+        "Membuat ulang sesi dan menampilkan konfirmasi"
+      ]
+    ],
+    "note": "Email Google harus sama dengan email akun aktif. Akun Google yang telah tertaut ke pengguna lain, identitas pengganti yang bertentangan, pembatalan atau sesi kedaluwarsa menyebabkan penolakan. Progres dan XP tetap melekat pada akun.",
+    "source": "GoogleAuthController; GoogleAccountService; POST /profile/google"
+  },
+  {
+    "id": "UC19",
+    "name": "Mengubah pengaturan",
+    "actor": "Pengguna terdaftar",
+    "goal": "Menyesuaikan musik, suara dan pengurangan animasi.",
+    "pre": "Pengguna sudah masuk.",
+    "post": "Preferensi tersimpan pada akun.",
+    "nodes": [
+      [
+        "Pengguna",
+        "Membuka Pengaturan"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan preferensi saat ini"
+      ],
+      [
+        "Pengguna",
+        "Mengubah musik, suara atau pengurangan animasi"
+      ],
+      [
+        "Pengguna",
+        "Memilih Simpan"
+      ],
+      [
+        "PyTurtle",
+        "Pengaturan valid?",
+        [
+          "Tidak",
+          "Tampilkan kesalahan pengaturan",
+          2
+        ]
+      ],
+      [
+        "PyTurtle",
+        "Membuat atau memperbarui preferensi akun"
+      ],
+      [
+        "PyTurtle",
+        "Menampilkan konfirmasi tersimpan"
+      ]
+    ],
+    "note": "Preferensi disimpan sebagai nilai aktif atau nonaktif. Pengaturan digunakan pada tampilan permainan.",
+    "source": "SettingsController::index/update; /settings"
+  }
+]

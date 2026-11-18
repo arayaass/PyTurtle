@@ -1,0 +1,39 @@
+/* Maze distances are counted in visible grid cells. */
+.maze-grid-guide {
+    display: grid;
+    gap: 7px;
+    margin-top: 16px;
+    padding: 13px 15px;
+    background: #edf4e7;
+    border: 1px solid #dbe6d2;
+    border-radius: 9px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #53634f;
+}
+.maze-grid-guide b {
+    color: #286542;
+    font-size: 16px;
+}
+.maze-grid-guide code {
+    font-size: 14px;
+    color: #286542;
+}
+.maze-grid-badge {
+    display: inline-block;
+    margin-left: 9px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    background: #edf4e7;
+    color: #37664a;
+    font-size: 13px;
+}
+@media (max-width: 560px) {
+    .maze-grid-badge {
+        display: block;
+        margin: 6px 0 0;
+    }
+    .maze-grid-guide {
+        font-size: 14px;
+    }
+}

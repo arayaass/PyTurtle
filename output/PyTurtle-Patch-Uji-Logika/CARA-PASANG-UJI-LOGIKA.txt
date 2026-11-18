@@ -1,0 +1,47 @@
+PYTURTLE - PATCH UJI LOGIKA
+Dasar: proyek yang sudah memasang patch PyTurtle 16 Oktober 2026.
+Hanya file baru/berubah dan aset build terkait yang disertakan.
+
+ISI
+- Menu Uji Logika terpisah dari Maze dan Code Match, dengan 6 tantangan.
+- Ubah arah/jarak, jalankan eksperimen, amati diagram dan hasil per instruksi.
+- Temukan contoh bantahan lalu pilih alasan. Progress disimpan per akun.
+- Penilaian di server; alasan benar tanpa bukti yang sesuai tidak diterima.
+- Percobaan tidak memberi atau mengurangi XP Maze.
+- Laboratorium Logika di Maze dihapus, termasuk logika bantuan fiturnya.
+- Hint biasa, Google Login, lihat kata sandi, reward dan badge tetap tersedia.
+
+PASANG
+1. Cadangkan proyek dan database.
+2. Ekstrak ZIP lalu salin ISI folder PyTurtle-Patch-Uji-Logika ke folder
+   proyek lama yang berisi artisan. Gabungkan folder dan Replace file yang sama.
+3. Pastikan MySQL aktif dan .env menunjuk database yang benar.
+4. Di terminal PowerShell VS Code pada folder proyek jalankan:
+
+   powershell -ExecutionPolicy Bypass -File .\BERSIHKAN-LABORATORIUM.ps1
+   php artisan config:clear
+   php artisan migrate --force
+   php artisan view:clear
+   php artisan route:clear
+
+   Script pembersih hanya menghapus 5 file fitur Laboratorium Logika lama.
+   Migrasi menambahkan dua tabel baru; tidak menghapus akun/progress lama.
+   Jangan gunakan migrate:fresh atau migrate:refresh.
+5. Jika server belum berjalan:
+
+   php artisan serve
+
+6. Buka http://127.0.0.1:8000/uji-logika lalu Ctrl+F5.
+
+Tidak perlu composer install, npm install, build ulang, atau seeder khusus
+untuk patch ini. Dependensi dari patch sebelumnya harus sudah terpasang.
+Aset public/build sudah tersedia. Jika npm run dev sedang berjalan, mulai
+ulang Vite; jika memakai build, hentikan Vite dan hapus public/hot bila tertinggal.
+
+.env, database, vendor, node_modules, storage/sesi/log tidak disertakan.
+Tidak ada perubahan pada kredensial Google atau konfigurasi database kalian.
+
+VERIFIKASI
+47 tes PHP lulus (517 assertions), 8 tes JavaScript lulus, tes browser Uji
+Logika lulus (bantahan, alasan salah/benar, progress, mobile, penghapusan panel).
+Build Vite berhasil. Tampilan desktop dan mobile diperiksa dari screenshot.

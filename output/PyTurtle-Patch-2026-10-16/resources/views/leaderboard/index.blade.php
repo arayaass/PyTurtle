@@ -1,0 +1,7 @@
+@extends('layouts.app')
+@section('title','Leaderboard')
+@section('content')
+<div class="page-heading"><div><span class="eyebrow">TUMBUH BERSAMA</span><h1>Para penjelajah hutan.</h1><p>Bukan tentang siapa tercepat. Ini tentang terus melangkah.</p></div><span class="tag">Peringkat berdasarkan total XP</span></div>
+<x-card class="leaderboard-card"><div class="section-heading"><h2>Explorer leaderboard</h2><span class="small muted">Semua waktu</span></div><div class="table-scroll"><table><thead><tr><th>Rank</th><th>Penjelajah</th><th>Level</th><th>Total XP</th><th>Badge</th></tr></thead><tbody>@forelse($leaders as $i=>$leader)<tr class="{{ $leader->id===auth()->id()?'my-rank':'' }}"><td><span class="rank">{{ $leaders->firstItem()+$i }}</span></td><td><span class="leader-name"><span class="avatar">{{ mb_substr($leader->display_name??$leader->name,0,1) }}</span>{{ $leader->display_name??$leader->name }} @if($leader->id===auth()->id())<span class="tag">Kamu</span>@endif</span></td><td>Level {{ 1+intdiv($leader->xp,100) }}</td><td><b>{{ $leader->xp }} XP</b></td><td>@if($leader->has_turtle_badge)<x-turtle-badge/>@else<span class="muted">Belum ada</span>@endif</td></tr>@empty<tr><td colspan="5">Jadilah penjelajah pertama.</td></tr>@endforelse</tbody></table></div><div class="pagination">{{ $leaders->links() }}</div></x-card>
+<p class="reference-note">XP berasal dari skor terbaik setiap chapter, skor terbaik Code Match, dan materi yang selesai. Mengulang aktivitas tidak menggandakan XP.</p>
+@endsection

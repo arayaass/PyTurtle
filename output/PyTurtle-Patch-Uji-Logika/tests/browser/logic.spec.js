@@ -1,0 +1,42 @@
+import { test, expect } from '@playwright/test';
+test('logic challenge evidence, explanation, saved progress and mobile', async ({ page }) => {
+    const errors = [];
+    page.on('pageerror', (e) => errors.push(e.message));
+    await page.goto('/register');
+    await page.getByLabel('Nama penjelajah').fill('Logic Student');
+    await page.getByLabel('Email', { exact: true }).fill(`logic-${Date.now()}@example.test`);
+    await page.locator('input[name="password"]').fill('ForestAdventure123!');
+    await page.locator('input[name="password_confirmation"]').fill('ForestAdventure123!');
+    await page.getByRole('button', { name: 'Buat akun & mulai jelajah' }).click();
+    await expect(page).toHaveURL(/\/home$/);
+    await page.getByRole('link', { name: 'Uji Logika', exact: true }).click();
+    await expect(page.locator('.logic-card')).toHaveCount(6);
+    await page.locator('.logic-card').first().click();
+    await page.getByRole('button', { name: 'Uji pernyataan' }).click();
+    await expect(page.locator('.logic-result')).toContainText('Belum terbantahkan');
+    await page.getByLabel('Arah awal').selectOption('90');
+    await page.getByRole('button', { name: 'Uji pernyataan' }).click();
+    await expect(page.locator('.logic-result')).toContainText('Contoh bantahan ditemukan');
+    await page.getByLabel('Gerak maju selalu mengikuti kanan layar.').check();
+    await page.getByRole('button', { name: 'Periksa alasan' }).click();
+    await expect(page.locator('.logic-answer')).toContainText('alasannya belum sesuai');
+    await page.getByLabel('Gerak maju mengikuti arah hadap awal.').check();
+    await page.getByRole('button', { name: 'Periksa alasan' }).click();
+    await expect(page.locator('.logic-answer')).toContainText('progress tersimpan');
+    await page.screenshot({ path: 'storage/testing/uji-logika-desktop.png', fullPage: true });
+    await page.reload();
+    await expect(page.getByText('✓ Sudah selesai')).toBeVisible();
+    await page.goto('/uji-logika');
+    await expect(page.getByText('1 / 6 selesai')).toBeVisible();
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/uji-logika/2');
+    await page.getByRole('button', { name: 'Uji pernyataan' }).click();
+    await expect(page.locator('tbody tr')).toHaveCount(2);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(
+        true,
+    );
+    await page.screenshot({ path: 'storage/testing/uji-logika-mobile.png', fullPage: true });
+    await page.goto('/maze/1');
+    await expect(page.locator('.maze-learning')).toHaveCount(0);
+    expect(errors).toEqual([]);
+});

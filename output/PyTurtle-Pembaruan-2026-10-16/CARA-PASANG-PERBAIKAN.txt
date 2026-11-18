@@ -1,0 +1,78 @@
+PYTURTLE - PEMBARUAN 16 OKTOBER 2026
+
+Paket untuk digabungkan ke proyek PyTurtle-PHP yang sudah ada.
+
+FITUR YANG DISERTAKAN
+- Shortcut Maze sesuai level: forward, left, right.
+- Reward chapter terakhir berdasarkan pengerjaan: maksimal 100 XP dan badge Turtle Master.
+- Ulangi penilaian memperbarui skor terbaik, bukan menumpuk XP.
+- Google Login/register dan penautan akun dari Profil.
+- Tombol Lihat/Sembunyikan kata sandi pada login, register, dan reset password.
+- Laboratorium Logika: Prediksi -> Telusuri per instruksi -> Refleksi dan perbaikan.
+- Seluruh sumber proyek terkini dan aset public/build yang sudah dibangun.
+
+CARA MEMASANG
+1. Cadangkan folder proyek dan database terlebih dahulu.
+2. Ekstrak ZIP. Buka folder PyTurtle-Pembaruan-2026-10-16 di dalamnya.
+3. Salin ISI folder tersebut ke folder proyek lama yang berisi file artisan.
+   Gabungkan folder, pilih Replace untuk file dengan nama sama.
+   Jangan menaruh seluruh folder pembaruan sebagai subfolder proyek.
+   Pertahankan .env, vendor, node_modules, dan storage milik proyek lama.
+4. Buka terminal di folder proyek, lalu jalankan:
+
+   composer install --no-interaction --prefer-dist
+   php artisan config:clear
+   php artisan migrate --force
+   php artisan view:clear
+
+   Composer diperlukan untuk memasang Laravel Socialite. Internet diperlukan
+   jika dependensi belum tersedia. Pastikan MySQL aktif dan koneksi .env benar.
+   Migrasi menambah kolom tanpa menghapus akun atau skor lama.
+   JANGAN jalankan migrate:fresh atau migrate:refresh pada database pengguna.
+5. Jika materi Runestone atau Maze grid belum dipasang sebelumnya, jalankan:
+
+   php artisan db:seed --class=RunestoneTurtleSeeder
+   php artisan db:seed --class=MazeGridSeeder
+
+   Seeder memperbarui konten bawaan tanpa mereset progress.
+   Tinjau dahulu jika kalian sudah mengubah konten materi/peta sendiri.
+6. Aset sudah dibangun sehingga npm install/build tidak wajib untuk memakai web.
+   Jika sedang menjalankan npm run dev, hentikan server Vite lalu mulai ulang
+   setelah npm install, atau gunakan aset build tanpa server Vite.
+   Jika public/hot tersisa setelah Vite dihentikan, hapus file public/hot tersebut.
+7. Jalankan php artisan serve jika server belum berjalan, lalu Ctrl+F5 di browser.
+
+AKTIFKAN GOOGLE LOGIN
+Fitur tetap nonaktif sebelum kredensial Google Cloud milik kalian diisi.
+Buat OAuth Client bertipe Web application dan daftarkan callback tepat ini
+jika aplikasi dibuka pada http://127.0.0.1:8000:
+
+   http://127.0.0.1:8000/auth/google/callback
+
+Tambahkan/isi pada .env lama (bukan menyalin .env.example menimpa .env):
+
+   GOOGLE_CLIENT_ID=client_id_dari_google
+   GOOGLE_CLIENT_SECRET=client_secret_dari_google
+   GOOGLE_REDIRECT_URI=http://127.0.0.1:8000/auth/google/callback
+
+Jalankan php artisan config:clear, lalu refresh halaman.
+Jika menggunakan preview port 8011, ganti port callback menjadi 8011 juga
+pada Google Cloud dan .env. Detail: docs/GOOGLE-AUTH.md.
+
+CATATAN MODE BELAJAR
+Penelusuran dihitung sebagai bantuan seperti Hint (5 poin sekali), tidak
+memberikan XP sendiri. Gunakan Run Code untuk penilaian. Pada chapter 3,
+Ulangi penilaian memberi kesempatan mencoba kembali tanpa bantuan.
+Panduan: docs/LOGIC-LAB.md.
+
+VERIFIKASI
+- Build Vite berhasil.
+- 9 tes JavaScript lulus.
+- 3 tes browser lulus, termasuk penelusuran, reward, offline, dan mobile.
+- Backend reward/Google sebelumnya lolos 44 tes PHP (482 assertions).
+- Login Google nyata memerlukan kredensial kalian dan belum diuji end-to-end.
+
+TIDAK DISERTAKAN
+.env asli, kredensial, database, storage/sesi/log, vendor, node_modules,
+cache runtime, dan hasil tes/screenshot. Jangan mengganti data pengguna.
+DAFTAR-FILE-SHA256.json berisi checksum setiap file paket.

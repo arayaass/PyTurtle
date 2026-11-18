@@ -1,0 +1,33 @@
+@startuml
+title UC02 Masuk dengan email
+skinparam monochrome true
+|Pengunjung|
+start
+|Pengunjung|
+label N0
+:Membuka halaman login;
+|Pengunjung|
+label N1
+:Mengisi email, kata sandi dan opsi ingat saya;
+|PyTurtle|
+label N2
+if (Isian dan batas valid?) then (Tidak)
+:Tampilkan kesalahan atau waktu tunggu;
+goto N1
+else (Ya)
+endif
+|PyTurtle|
+label N3
+if (Kredensial cocok?) then (Tidak)
+:Catat kegagalan dan tampilkan pesan;
+goto N1
+else (Ya)
+endif
+|PyTurtle|
+label N4
+:Membuat ulang sesi masuk;
+|PyTurtle|
+label N5
+:Membuka halaman tujuan atau beranda;
+stop
+@enduml

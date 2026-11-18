@@ -1,0 +1,27 @@
+{
+  "_editor-DS8BLRtc.js": {
+    "file": "assets/editor-DS8BLRtc.js",
+    "name": "editor"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DJpGJTow.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-BGZBNuxT.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_editor-DS8BLRtc.js"
+    ],
+    "css": [
+      "assets/app-BRZtVLfn.css"
+    ]
+  }
+}

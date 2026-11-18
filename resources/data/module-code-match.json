@@ -1,0 +1,288 @@
+{
+    "runestone-turtle-01": [
+        {
+            "id": "a",
+            "title": "Bergerak maju",
+            "description": "Turtle maju 80 unit mengikuti arah hadapnya.",
+            "code": "shiha.forward(80)"
+        },
+        {
+            "id": "b",
+            "title": "Berputar ke kiri",
+            "description": "Arah Turtle berputar ke kiri 90 derajat tanpa berpindah tempat.",
+            "code": "shiha.left(90)"
+        },
+        {
+            "id": "c",
+            "title": "Berputar ke kanan",
+            "description": "Arah Turtle berputar ke kanan 90 derajat tanpa berpindah tempat.",
+            "code": "shiha.right(90)"
+        },
+        {
+            "id": "d",
+            "title": "Bergerak tanpa jejak",
+            "description": "Angkat pena, lalu maju 60 unit tanpa menggambar garis.",
+            "code": "shiha.penup()\nshiha.forward(60)"
+        }
+    ],
+    "runestone-turtle-02": [
+        {
+            "id": "a",
+            "title": "Memuat modul",
+            "description": "Jalankan baris ini agar Python dapat memakai perintah Turtle.",
+            "code": "import turtle"
+        },
+        {
+            "id": "b",
+            "title": "Menyiapkan layar",
+            "description": "Buat area gambar dan simpan area itu dengan nama layar.",
+            "code": "layar = turtle.Screen()"
+        },
+        {
+            "id": "c",
+            "title": "Membuat Turtle",
+            "description": "Buat satu Turtle dan beri nama shiha.",
+            "code": "shiha = turtle.Turtle()"
+        },
+        {
+            "id": "d",
+            "title": "Menutup lewat klik",
+            "description": "Tunggu sampai layar diklik, lalu tutup jendela gambar.",
+            "code": "layar.exitonclick()"
+        }
+    ],
+    "runestone-turtle-03": [
+        {
+            "id": "a",
+            "title": "Dua objek berbeda",
+            "description": "Buat dua Turtle bernama shiha dan teman. Keduanya dapat bergerak sendiri-sendiri.",
+            "code": "shiha = turtle.Turtle()\nteman = turtle.Turtle()"
+        },
+        {
+            "id": "b",
+            "title": "Shiha berwarna hijau",
+            "description": "Ubah pena dan penunjuk Shiha menjadi hijau tanpa mengubah warna Teman.",
+            "code": "shiha.color(\"forestgreen\")"
+        },
+        {
+            "id": "c",
+            "title": "Teman berwarna oranye",
+            "description": "Ubah pena dan penunjuk Teman menjadi jingga tanpa mengubah warna Shiha.",
+            "code": "teman.color(\"darkorange\")"
+        },
+        {
+            "id": "d",
+            "title": "Perintah untuk Teman",
+            "description": "Putar Teman 90 derajat ke kiri, lalu gerakkan Teman maju 65 langkah.",
+            "code": "teman.left(90)\nteman.forward(65)"
+        }
+    ],
+    "runestone-turtle-04": [
+        {
+            "id": "a",
+            "title": "Sapa tiga nama",
+            "description": "Tampilkan Halo diikuti nama Shiha, Nara, lalu Bimo.",
+            "code": "for nama in [\"Shiha\", \"Nara\", \"Bimo\"]:\n    print(\"Halo\", nama)"
+        },
+        {
+            "id": "b",
+            "title": "Dua baris diulang",
+            "description": "Untuk setiap nama, tampilkan nama itu lalu tampilkan Ayo belajar!.",
+            "code": "for nama in [\"Shiha\", \"Nara\"]:\n    print(nama)\n    print(\"Ayo belajar!\")"
+        },
+        {
+            "id": "c",
+            "title": "Pesan sesudah pengulangan",
+            "description": "Tampilkan Shiha dan Nara, lalu tampilkan Selesai satu kali setelah pengulangan.",
+            "code": "for nama in [\"Shiha\", \"Nara\"]:\n    print(nama)\nprint(\"Selesai\")"
+        },
+        {
+            "id": "d",
+            "title": "Satu putaran",
+            "description": "Jalankan isi for satu kali karena daftar hanya berisi nama Shiha.",
+            "code": "for nama in [\"Shiha\"]:\n    print(nama)"
+        }
+    ],
+    "runestone-turtle-05": [
+        {
+            "id": "a",
+            "title": "Telusuri nilai langkah",
+            "description": "Tampilkan Pos 2, lalu Pos 4.",
+            "code": "for langkah in [2, 4]:\n    print(\"Pos\", langkah)"
+        },
+        {
+            "id": "b",
+            "title": "Penanda setiap putaran",
+            "description": "Tampilkan Pos 2, Selesai, Pos 4, Selesai. Kedua perintah ada di dalam pengulangan.",
+            "code": "for langkah in [2, 4]:\n    print(\"Pos\", langkah)\n    print(\"Selesai\")"
+        },
+        {
+            "id": "c",
+            "title": "Penanda setelah putaran",
+            "description": "Tampilkan Pos 2 dan Pos 4, lalu tampilkan Selesai satu kali setelah pengulangan.",
+            "code": "for langkah in [2, 4]:\n    print(\"Pos\", langkah)\nprint(\"Selesai\")"
+        },
+        {
+            "id": "d",
+            "title": "Urutan isi daftar",
+            "description": "Tampilkan Pos 4, lalu Pos 2 sesuai urutan di dalam daftar.",
+            "code": "for langkah in [4, 2]:\n    print(\"Pos\", langkah)"
+        }
+    ],
+    "runestone-turtle-06": [
+        {
+            "id": "a",
+            "title": "Persegi berulang",
+            "description": "Gambar persegi dengan empat sisi sepanjang 75 langkah. Setelah tiap sisi, belok kiri 90 derajat.",
+            "code": "for sisi in [1, 2, 3, 4]:\n    shiha.forward(75)\n    shiha.left(90)"
+        },
+        {
+            "id": "b",
+            "title": "Satu bagian pola",
+            "description": "Gambar satu sisi sepanjang 75 langkah, lalu belok kiri 90 derajat.",
+            "code": "shiha.forward(75)\nshiha.left(90)"
+        },
+        {
+            "id": "c",
+            "title": "Sisi lebih panjang",
+            "description": "Gambar persegi dengan empat sisi sepanjang 100 langkah.",
+            "code": "for sisi in [1, 2, 3, 4]:\n    shiha.forward(100)\n    shiha.left(90)"
+        },
+        {
+            "id": "d",
+            "title": "Garis tanpa belokan",
+            "description": "Maju 75 langkah sebanyak empat kali tanpa berbelok.",
+            "code": "for sisi in [1, 2, 3, 4]:\n    shiha.forward(75)"
+        }
+    ],
+    "runestone-turtle-07": [
+        {
+            "id": "a",
+            "title": "Mulai dari nol",
+            "description": "Buat daftar angka 0, 1, 2, 3. Angka 4 menjadi batas dan tidak ikut.",
+            "code": "list(range(4))"
+        },
+        {
+            "id": "b",
+            "title": "Mulai dari satu",
+            "description": "Mulai dari 1 dan berhenti sebelum 5, sehingga daftarnya 1, 2, 3, 4.",
+            "code": "list(range(1, 5))"
+        },
+        {
+            "id": "c",
+            "title": "Selisih tiga",
+            "description": "Mulai dari 2 dan tambah 3 setiap kali. Hasilnya 2, 5, 8; batas 9 tidak ikut.",
+            "code": "list(range(2, 9, 3))"
+        },
+        {
+            "id": "d",
+            "title": "Empat sisi dengan range",
+            "description": "Ulangi empat kali: maju 75 langkah, lalu belok kiri 90 derajat.",
+            "code": "for sisi in range(4):\n    shiha.forward(75)\n    shiha.left(90)"
+        }
+    ],
+    "runestone-turtle-08": [
+        {
+            "id": "a",
+            "title": "Angkat pena",
+            "description": "Angkat pena. Gerakan berikutnya tidak akan menggambar garis.",
+            "code": "shiha.penup()"
+        },
+        {
+            "id": "b",
+            "title": "Turunkan pena",
+            "description": "Turunkan pena. Gerakan berikutnya akan menggambar garis.",
+            "code": "shiha.pendown()"
+        },
+        {
+            "id": "c",
+            "title": "Ubah bentuk penunjuk",
+            "description": "Ubah penunjuk menjadi berbentuk kura-kura.",
+            "code": "shiha.shape(\"turtle\")"
+        },
+        {
+            "id": "d",
+            "title": "Tinggalkan cap",
+            "description": "Cetak gambar kecil penunjuk Turtle di posisi saat ini.",
+            "code": "shiha.stamp()"
+        }
+    ],
+    "runestone-turtle-09": [
+        {
+            "id": "a",
+            "title": "Menuju koordinat",
+            "description": "Pindahkan Turtle ke titik x = -65, y = 35.",
+            "code": "shiha.goto(-65, 35)"
+        },
+        {
+            "id": "b",
+            "title": "Membaca posisi",
+            "description": "Baca koordinat Turtle saat ini tanpa memindahkannya.",
+            "code": "shiha.position()"
+        },
+        {
+            "id": "c",
+            "title": "Membaca arah",
+            "description": "Baca arah hadap Turtle saat ini tanpa memutarnya.",
+            "code": "shiha.heading()"
+        },
+        {
+            "id": "d",
+            "title": "Bergerak mundur",
+            "description": "Gerakkan Turtle mundur 40 langkah tanpa mengubah arah hadap.",
+            "code": "shiha.backward(40)"
+        }
+    ],
+    "runestone-turtle-10": [
+        {
+            "id": "a",
+            "title": "Modul",
+            "description": "Muat kumpulan perintah Turtle agar bisa dipakai dalam program.",
+            "code": "import turtle"
+        },
+        {
+            "id": "b",
+            "title": "Objek",
+            "description": "Buat Turtle baru dan simpan namanya sebagai shiha.",
+            "code": "shiha = turtle.Turtle()"
+        },
+        {
+            "id": "c",
+            "title": "Metode dan argumen",
+            "description": "Jalankan perintah maju milik shiha sejauh 45 langkah.",
+            "code": "shiha.forward(45)"
+        },
+        {
+            "id": "d",
+            "title": "Badan pengulangan",
+            "description": "Ulangi perintah maju sejauh 45 langkah sebanyak dua kali.",
+            "code": "for langkah in range(2):\n    shiha.forward(45)"
+        }
+    ],
+    "runestone-turtle-11": [
+        {
+            "id": "a",
+            "title": "Segitiga beraturan",
+            "description": "Gambar segitiga: tiga sisi sepanjang 55 langkah, dengan belokan 120 derajat.",
+            "code": "for sisi in range(3):\n    shiha.forward(55)\n    shiha.left(120)"
+        },
+        {
+            "id": "b",
+            "title": "Persegi",
+            "description": "Gambar persegi: empat sisi sepanjang 55 langkah, dengan belokan 90 derajat.",
+            "code": "for sisi in range(4):\n    shiha.forward(55)\n    shiha.left(90)"
+        },
+        {
+            "id": "c",
+            "title": "Segi enam beraturan",
+            "description": "Gambar segi enam: enam sisi sepanjang 55 langkah. Hitung sudut belok dari jumlah sisinya.",
+            "code": "jumlah_sisi = 6\nfor sisi in range(jumlah_sisi):\n    shiha.forward(55)\n    shiha.left(360 / jumlah_sisi)"
+        },
+        {
+            "id": "d",
+            "title": "Pindah awal gambar",
+            "description": "Angkat pena, pindah ke titik (-80, 20), lalu turunkan pena untuk mulai menggambar.",
+            "code": "shiha.penup()\nshiha.goto(-80, 20)\nshiha.pendown()"
+        }
+    ]
+}

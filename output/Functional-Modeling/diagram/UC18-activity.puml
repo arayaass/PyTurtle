@@ -1,0 +1,32 @@
+@startuml
+title UC18 Menautkan akun Google
+skinparam monochrome true
+|Pengguna|
+start
+|Pengguna|
+label N0
+:Memilih Hubungkan Google pada Profil saya;
+|PyTurtle|
+label N1
+:Mengarahkan permintaan penautan;
+|Google|
+label N2
+:Meminta pemilihan akun dan persetujuan;
+|Google|
+label N3
+:Mengembalikan identitas terverifikasi;
+|PyTurtle|
+label N4
+if (Data penautan valid?) then (Tidak)
+:Tolak penautan dan tampilkan pesan;
+stop
+else (Ya)
+endif
+|PyTurtle|
+label N5
+:Menyimpan identitas Google pada akun aktif;
+|PyTurtle|
+label N6
+:Membuat ulang sesi dan menampilkan konfirmasi;
+stop
+@enduml

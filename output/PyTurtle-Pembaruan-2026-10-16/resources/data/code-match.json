@@ -1,0 +1,26 @@
+[
+    {
+        "id": "a",
+        "title": "Maju mengikuti arah",
+        "description": "Bergerak maju 100 unit tanpa berputar.",
+        "code": "forward(100)"
+    },
+    {
+        "id": "b",
+        "title": "Maju, lalu ke selatan",
+        "description": "Dari timur: maju 80, putar kanan 90°, lalu maju 80 unit.",
+        "code": "forward(80)\nright(90)\nforward(80)"
+    },
+    {
+        "id": "c",
+        "title": "Kembali sedikit",
+        "description": "Maju 120 unit, lalu mundur 40 unit.",
+        "code": "forward(120)\nbackward(40)"
+    },
+    {
+        "id": "d",
+        "title": "Belok ke utara",
+        "description": "Dari timur: putar kiri 90°, lalu maju 60 unit.",
+        "code": "left(90)\nforward(60)"
+    }
+]
