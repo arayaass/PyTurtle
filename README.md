@@ -245,6 +245,3 @@ node scripts/verify-adventure.mjs
 ```
 
 Lihat `docs/VERIFICATION-2026-10-20.md` untuk hasil pengujian dan perbandingan media rujukan.
-# PyTurtle
-
-Ini adalah hasil project matkul Perangkat Lunak aku dan kelompok.
